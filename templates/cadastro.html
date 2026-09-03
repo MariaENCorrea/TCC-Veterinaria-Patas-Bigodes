@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro - Patas & Bigodes</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --verde-escuro: #005744;
+            --verde: #4d8b7d;
+            --verde-claro: #dceee7;
+            --amarelo: #e4a52b;
+            --branco: #ffffff;
+            --preto: #000000;
+        }
+
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: var(--verde-claro);
+            font-family: Georgia, "Times New Roman", serif;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        header {
+            background-color: var(--verde-escuro);
+            height: 70px;
+        }
+
+        .navbar {
+            height: 100%;
+        }
+
+        .logo {
+            width: 42px;
+            height: 42px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+
+        main {
+            flex: 1;
+            padding: 0 15px 5px;
+        }
+
+
+        /* TÍTULO */
+
+        .titulo {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            margin: 3 4 10;
+            line-height: 2;
+        }
+
+
+
+        .formulario {
+            width: 700px;
+            background-color: var(--verde);
+            border-radius: 13px;
+            padding: 5px 12px 8px;
+            margin: 0 auto;
+        }
+
+
+
+        .form-label {
+            color: #e4a52b;
+            font-size: 18px;
+            margin: 0;
+            line-height: 1;
+        }
+
+
+        .form-control {
+            height: 35px;
+            padding: 1px 3px;
+            font-size: 16px;
+            border: 1px solid #222;
+            border-radius: 10;
+            margin-bottom: 20px;
+        }
+
+        .form-control:focus {
+            border-color: var(--amarelo);
+            box-shadow: none;
+        }
+
+
+        .opcoes {
+            color: white;
+            font-size: 10px;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .opcoes .form-check {
+            min-height: 20px;
+            margin: 10;
+        }
+
+        .opcoes .form-check-input {
+            width: 14px;
+            height: 13px;
+            margin-top: 1px;
+        }
+
+        .opcoes .form-check-label {
+            font-size: 16px;
+            margin-left: 2px;
+        }
+
+
+        .btn-cadastrar {
+            display: block;
+            width: 200px;
+            height: 40px;
+
+            margin: 10px auto 0;
+
+            background-color: var(--amarelo);
+            border: 2px solid #222;
+            border-radius: 5px;
+
+            color: #111;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .btn-cadastrar:hover {
+            background-color: #c98e18;
+            color: white;
+        }
+
+
+        footer {
+            height: 30px;
+            background-color: var(--verde-escuro);
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 20px;
+
+            font-size: 15px;
+        }
+
+        .contatos {
+            color: var(--amarelo);
+            font-size: 14px;
+        }
+
+
+
+        @media (max-width: 576px) {
+
+            .titulo {
+                font-size: 25px;
+            }
+
+            .formulario {
+                width: 150px;
+                padding: 8px 15px;
+            }
+
+            .form-label {
+                font-size: 12px;
+            }
+
+            .form-control {
+                height: 20px;
+                font-size: 9px;
+            }
+
+            .opcoes .form-check-label {
+                font-size: 8px;
+            }
+
+            .btn-cadastrar {
+                width: 150px;
+                height: 25px;
+                font-size: 8px;
+            }
+        }
+
+        .btn-voltar {
+            display: block;
+            width: 50px;
+            height: 30px;
+
+            margin: 10px auto 1;
+
+            background-color: var(--amarelo);
+            border: 200px solid #222;
+            border-radius: 5px;
+            color: #111;
+            font-size: 60px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .btn-voltar:hover {
+            background-color: #c98e18;
+            color: white;
+        }
+
+        .btn-voltar {
+            background-color: var(--amarelo);
+            border: none;
+            color: #000;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 2px 16px;
+            margin-bottom: 1px;
+            border-radius: 4px;
+            line-height: 1.5;
+        }
+
+        .btn-voltar:hover {
+            background-color: #c88d16;
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+</head>
+
+
+<body>
+
+
+
+    <header>
+
+        <nav class="navbar p-0">
+
+            <div class="container-fluid">
+
+                <a href="#">
+                    <img src="../img/logo.png" alt="Patas & Bigodes" class="logo">
+                </a>
+                <a href="index.html" class="btn-voltar">
+                    <i class="bi bi-box-arrow-left"></i>
+                </a>
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <main>
+
+        <div class="container-fluid">
+
+
+            <h1 class="titulo">
+                Cadastre-se
+            </h1>
+
+
+            <form class="formulario">
+
+
+
+                <label for="nomeAnimal" class="form-label">
+                    Nome do Animal
+                </label>
+
+                <input type="text" class="form-control" id="nomeAnimal" placeholder="NOME">
+
+
+
+                <label class="form-label">
+                    Sexo do Animal
+                </label>
+
+                <div class="opcoes">
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sexo" id="macho" value="macho">
+
+                        <label class="form-check-label" for="macho">
+                            Macho
+                        </label>
+                    </div>
+
+
+                    <div class="form-check">
+
+                        <input class="form-check-input" type="radio" name="sexo" id="femea" value="femea">
+
+                        <label class="form-check-label" for="femea">
+                            Fêmea
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+
+                <label for="idade" class="form-label">
+                    Idade do Animal
+                </label>
+
+                <input type="number" class="form-control" id="idade" placeholder="IDADE">
+
+
+
+                <label for="proprietario" class="form-label">
+                    Nome do Proprietário
+                </label>
+
+                <input type="text" class="form-control" id="proprietario" placeholder="NOME">
+
+
+
+                <label for="cpf" class="form-label">
+                    CPF do Proprietário
+                </label>
+
+                <input type="text" class="form-control" id="cpf" placeholder="CPF">
+
+
+                <label for="cpf" class="form-label">
+                    RG do Proprietário
+                </label>
+
+                <input type="text" class="form-control" id="rg" placeholder="RG">
+
+
+                <label for="cpf" class="form-label">
+                    Número de Celular
+                </label>
+
+                <input type="text" class="form-control" id="numero" placeholder="NÚMERO">
+
+
+                <label for="cpf" class="form-label">
+                    E-mail do Proprietário
+                </label>
+
+                <input type="text" class="form-control" id="email" placeholder="E-MAIL">
+
+
+                <label for="proprietario" class="form-label">
+                    Cidade
+                </label>
+
+                <input type="text" class="form-control" id="cidade" placeholder="CIDADE">
+
+
+                <label for="proprietario" class="form-label">
+                    Bairro
+                </label>
+
+                <input type="text" class="form-control" id="bairro" placeholder="BAIRRO">
+
+            </form>
+
+
+
+            <a href="login.html" type="button" class="btn btn-cadastrar">
+                Cadastra-se
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <span>
+            © 2025 Company, Inc
+        </span>
+
+        <span class="contatos">
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-facebook"></i>
+        </span>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+
+</html>
