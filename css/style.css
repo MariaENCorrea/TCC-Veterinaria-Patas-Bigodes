@@ -1,16 +1,27 @@
-body{
-    background-color: #D7E9DE;
-}
-
-
-/* MARIA */
-
 body {
     background-color: #C8E3FF;
 }
 
+header {
+    background-color: var(--verde-escuro);
+    height: 70px;
+}
+
+
+
+.nav-link {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    column-gap: 20px;
+    height: 100%;
+}
+
 .fundo {
-    background-image: url("img copy/pata.png");
+    background-image: url("img/pata.png");
     background-size: 50px 50px;
     background-position: center;
     background-repeat: repeat;
@@ -21,9 +32,9 @@ body {
     background-color: #C8E3FF;
 
     background-image:
-        url("../img/pata.png"),
-        url("../img/pata.png"),
-        url("../img/pata.png");
+        url("img/pata.png"),
+        url("img/pata.png"),
+        url("img/pata.png");
 
     background-size:
         50px 50px,
