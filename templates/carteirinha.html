@@ -7,29 +7,39 @@
     <meta name="description" content="Carteirinha do [Panteira] - Tutora [Nycole]">
     <meta name="author" content="Nycole">
     <meta name="keywords" content="">
-    <link rel="icon" type="imagem/png" href="../favicon.png">
+    <link rel="icon" type="imagem/png" href="../static/img/favicon.png">
     <title>Carteirinha do [Panteira] - Tutora [Nycole]</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../static/css/carteirinha2.css">
+    <link rel="stylesheet" href="../static/css/carteirinha.css">
 </head>
 
 <body>
 
     <header>
-        <div class="">
-            <nav class="nav p-3" style="background-color: #3E7CB1;">
-                <img src="../static/img/logo.png" class="rounded-circle" alt="Imagem Patas e Bigodes" width="36"
-                    height="36">
-                <a class="nav-link active" aria-current="page" href="#">Início</a>
-                <a class="nav-link" href="#">Horários</a>
-                <a class="nav-link" href="#">Consultas</a>
+
+            <nav class="navbar-custom">
+
+                <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+
+                    <div class="logo">
+                        <img src="../static/img/logo.png" alt="Logo" class="logo">
+                    </div>
+
+                    <div>
+                        <a href="apresentacao.html" class="btn-menu">Início</a>
+                        <a href="horarios.html" class="btn-menu">Horários</a>
+                        <a href="consultas.html" class="btn-menu">Consulta</a>
+                    </div>
+
+                </div>
+
             </nav>
-        </div>
-    </header>
+
+        </header>
     <div class="fundo">
 
 
@@ -65,13 +75,13 @@
                 <div class="container text-center rounded-5 mx-auto my-2" style="background-color: #C8E3FF;">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="atualizacao-medica-tab" data-bs-toggle="tab"
+                            <button class="btn-atualizacoes" id="atualizacao-medica-tab" data-bs-toggle="tab"
                                 data-bs-target="#atualizacao-medica-tab-pane" type="button" role="tab"
                                 aria-controls="atualizacao-medica-tab-pane" aria-selected="true">Atualizações
                                 Médicas</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="vacinas-tab" data-bs-toggle="tab"
+                            <button class="btn-vacinas" id="vacinas-tab" data-bs-toggle="tab"
                                 data-bs-target="#vacinas-tab-pane" type="button" role="tab"
                                 aria-controls="vacinas-tab-pane" aria-selected="false">Vacinas</button>
                         </li>
