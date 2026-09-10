@@ -145,7 +145,7 @@
             margin-bottom: 40px;
         }
 
-        .btn-confirmar {
+        .btn-primary {
             display: block;
             width: 300px;
             height: 40px;
@@ -163,9 +163,26 @@
             margin-bottom: 30px;
         }
 
-        .btn-confirmar:hover {
+        .btn-primary:hover {
             background-color: #c98e18;
             color: white;
+        }
+
+        .btn-ver-fechar {
+            background-color: #4F86B8;
+            color: #D7E9DE;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin-left: 25px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .btn-ver-fechar:hover {
+            background-color: #DE9E36;
+            color: #034C3C;
         }
 
 
@@ -243,6 +260,7 @@
             font-size: 20px;
             margin-left: 2px;
         }
+
         /* =========================
            RESPONSIVO
         ========================= */
@@ -518,9 +536,30 @@
                 </div>
 
             </div>
-            <a href="login.html" type="button" class="btn btn-confirmar">
-                Confirmar Consulta
-            </a>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                CONFIRMAR CONSULTA
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Sua consulta foi confirmada! <i class="bi bi-emoji-smile"></i></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Para saber mais sobre a sua consulta, clique em VER ou na foto do seu cachorro para acessar a "Carteira-pet".
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-ver-fechar" data-bs-dismiss="modal">FECHAR</button>
+                             <a href="carteirinha.html" class="btn btn-ver-fechar">VER</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </main>
 
