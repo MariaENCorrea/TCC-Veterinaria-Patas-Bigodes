@@ -6,6 +6,11 @@ header {
     background-color: #4F86B8;
 }
 
+.menu {
+    background-color: #4F86B8;
+margin: 0 auto;
+}
+
 .navbar-custom {
     height: 90px;
     display: flex;
