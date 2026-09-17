@@ -21,25 +21,25 @@
 
     <header>
 
-            <nav class="navbar-custom">
+        <nav class="navbar-custom">
 
-                <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+            <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
 
-                    <div class="logo">
-                        <img src="../static/img/logo.png" alt="Logo" class="logo">
-                    </div>
-
-                    <div>
-                        <a href="apresentacao.html" class="btn-menu">Início</a>
-                        <a href="horarios.html" class="btn-menu">Horários</a>
-                        <a href="consultas.html" class="btn-menu">Consulta</a>
-                    </div>
-
+                <div class="logo">
+                    <img src="../static/img/logo.png" alt="Logo" class="logo">
                 </div>
 
-            </nav>
+                <div>
+                    <a href="apresentacao.html" class="btn-menu">Início</a>
+                    <a href="horarios.html" class="btn-menu">Horários</a>
+                    <a href="consultas.html" class="btn-menu">Consulta</a>
+                </div>
 
-        </header>
+            </div>
+
+        </nav>
+
+    </header>
     <div class="fundo">
 
 
@@ -48,23 +48,44 @@
                 <div class="card shadow-sm text-bg-dark capa rounded-top">
                     <img src="../static/img/img-capa.avif" class="card-img capa-img " alt="...">
                     <div class="card-img-overlay">
+                        <!-- imagem cachorro -->
                         <img src="../static/img/image.png"
                             class="rounded-circle border border-4 border-white float-start" alt="Imagem Patas e Bigodes"
                             width="100" height="100">
-                        <h5 class="card-title">[PANTERA]</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content.</p>
+                        <h5 class="card-title" id="nomePet">PANTERA</h5>
+
+                        <p class="card-text">
+                            Carteirinha de identificação do animal.
+                        </p>
+
                         <div class="informacoes">
-                            <p class="card-text">Data de Nascimento: ../../....</p>
-                            <p class="card-text">Tutor: ...........</p>
-                            <p class="card-text">Cor: ...........</p>
-                            <p class="card-text">Raça: ...........</p>
+                            <p class="card-text">
+                                Data de Nascimento: <span id="dataNascimento">../../....</span>
+                            </p>
+
+                            <p class="card-text">
+                                Tutor: <span id="tutor">...........</span>
+                            </p>
+
+                            <p class="card-text">
+                                Cor: <span id="cor">...........</span>
+                            </p>
+
+                            <p class="card-text">
+                                Raça: <span id="raca">...........</span>
+                            </p>
                         </div>
                         <p class="card-text"><small>Last updated 3 mins ago</small></p>
                         <button type="button" class="btn btn-light position-absolute top-0 end-0 m-3 imprimir"
                             onclick="window.print()">
                             <i class="bi bi-printer"></i>
                             Imprimir
+                        </button>
+                        <button type="button" class="btn btn-light position-absolute bottom-0 end-0 m-3"
+                            data-bs-toggle="modal" data-bs-target="#modalAtualizarCadastro">
+
+                            <i class="bi bi-pencil-square"></i>
+                            Atualizar cadastro
                         </button>
 
                     </div>
@@ -75,13 +96,13 @@
                 <div class="container text-center rounded-5 mx-auto my-2" style="background-color: #C8E3FF;">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="btn-atualizacoes" id="atualizacao-medica-tab" data-bs-toggle="tab"
+                            <button class="btn-atualizacoes border-0" id="atualizacao-medica-tab" data-bs-toggle="tab"
                                 data-bs-target="#atualizacao-medica-tab-pane" type="button" role="tab"
                                 aria-controls="atualizacao-medica-tab-pane" aria-selected="true">Atualizações
                                 Médicas</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="btn-vacinas" id="vacinas-tab" data-bs-toggle="tab"
+                            <button class="btn-vacinas border-0" id="vacinas-tab" data-bs-toggle="tab"
                                 data-bs-target="#vacinas-tab-pane" type="button" role="tab"
                                 aria-controls="vacinas-tab-pane" aria-selected="false">Vacinas</button>
                         </li>
@@ -245,7 +266,108 @@
                 </div>
 
             </div>
+            <!-- MODAL DE ATUALIZAÇÃO DO CADASTRO -->
+            <div class="modal fade" id="modalAtualizarCadastro" tabindex="-1"
+                aria-labelledby="modalAtualizarCadastroLabel" aria-hidden="true">
+
+                <div class="modal-dialog modal-dialog-centered">
+
+                    <div class="modal-content">
+
+                        <!-- Cabeçalho -->
+                        <div class="modal-header" style="background-color: #3E7CB1; color: white;">
+
+                            <h1 class="modal-title fs-5" id="modalAtualizarCadastroLabel">
+                                Atualizar cadastro
+                            </h1>
+
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="Fechar">
+                            </button>
+
+                        </div>
+
+                        <!-- Corpo -->
+                        <div class="modal-body">
+
+                            <form id="formCadastro">
+
+                                <!-- Nome -->
+                                <div class="mb-3">
+                                    <label for="inputNome" class="form-label">
+                                        Nome do pet
+                                    </label>
+
+                                    <input type="text" class="form-control" id="inputNome"
+                                        placeholder="Digite o nome do pet" required>
+                                </div>
+
+                                <!-- Data de nascimento -->
+                                <div class="mb-3">
+                                    <label for="inputDataNascimento" class="form-label">
+                                        Data de nascimento
+                                    </label>
+
+                                    <input type="date" class="form-control" id="inputDataNascimento" required>
+                                </div>
+
+                                <!-- Tutor -->
+                                <div class="mb-3">
+                                    <label for="inputTutor" class="form-label">
+                                        Tutor
+                                    </label>
+
+                                    <input type="text" class="form-control" id="inputTutor"
+                                        placeholder="Digite o nome do tutor" required>
+                                </div>
+
+                                <!-- Cor -->
+                                <div class="mb-3">
+                                    <label for="inputCor" class="form-label">
+                                        Cor
+                                    </label>
+
+                                    <input type="text" class="form-control" id="inputCor"
+                                        placeholder="Ex.: Preto e branco" required>
+                                </div>
+
+                                <!-- Raça -->
+                                <div class="mb-3">
+                                    <label for="inputRaca" class="form-label">
+                                        Raça
+                                    </label>
+
+                                    <input type="text" class="form-control" id="inputRaca" placeholder="Digite a raça"
+                                        required>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                        <!-- Rodapé -->
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                Cancelar
+                            </button>
+
+                            <button type="button" class="btn" style="background-color: #3E7CB1; color: white;"
+                                onclick="atualizarCadastro()">
+
+                                <i class="bi bi-check-lg"></i>
+                                Salvar alterações
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
         </main>
+
     </div>
 
     <footer class="mt-4 py-3 border-top" style="background-color: #3E7CB1;">
