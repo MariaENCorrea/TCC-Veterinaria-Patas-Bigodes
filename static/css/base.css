@@ -1,0 +1,243 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #D7E9DE;
+            font-family: Georgia, 'Times New Roman', serif;
+            color: #034C3C;
+        }
+
+        .pagina {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background-color: #034C3C;
+        }
+
+        /* =========================
+   HEADER / MENU
+========================= */
+
+        header {
+            background-color: #034C3C;
+        }
+
+        .navbar-custom {
+            height: 90px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-custom .container-fluid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* LOGO */
+
+        .logo {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: white;
+            border-radius: 50%;
+
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        /* LINKS DO MENU */
+
+        .menu-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-menu {
+            color: #D7E9DE;
+            text-decoration: none;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            padding: 10px 20px;
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        .btn-menu:hover {
+            background-color: #DE9E36;
+            color: #034C3C;
+        }
+
+        /* PERFIL */
+
+        .perfil-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            color: #D7E9DE;
+            text-decoration: none;
+
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .btn-carteirinha {
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            color: #D7E9DE;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .dog-img {
+            width: 42px;
+            height: 42px;
+
+            background-color: white;
+            border-radius: 50%;
+
+            object-fit: contain;
+        }
+
+        .perfil-link span {
+            margin: 0;
+        }
+
+        /* =========================
+   FOOTER / RODAPÉ
+========================= */
+
+        footer {
+            background-color: #034C3C;
+            color: #D7E9DE;
+
+            min-height: 80px;
+            padding: 20px 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-copy {
+            font-size: 15px;
+        }
+
+        .footer-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-icons a {
+            color: #DE9E36;
+            text-decoration: none;
+
+            font-size: 24px;
+
+            transition: 0.3s;
+        }
+
+        .footer-icons a:hover {
+            color: #D7E9DE;
+        }
+                .redes {
+            display: flex;
+            gap: 15px;
+            font-size: 20px;
+        }
+
+        .redes a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .redes a:hover {
+            color: #efa62f;
+        }
+
+        /* =========================
+   RESPONSIVO
+========================= */
+
+        @media (max-width: 768px) {
+
+            .navbar-custom {
+                height: auto;
+                padding: 15px 0;
+            }
+
+            .navbar-custom .container-fluid {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .logo,
+            .logo img {
+                width: 42px;
+                height: 42px;
+            }
+
+            .menu-links {
+                gap: 2px;
+            }
+
+            .btn-menu {
+                font-size: 15px;
+                padding: 8px 10px;
+            }
+
+            .perfil-link span {
+                display: none;
+            }
+
+            .dog-img {
+                width: 42px;
+                height: 42px;
+            }
+
+            footer {
+                min-height: 70px;
+                padding: 15px;
+            }
+
+            .footer-copy {
+                font-size: 13px;
+            }
+
+            .footer-icons {
+                gap: 15px;
+            }
+
+            .footer-icons a {
+                font-size: 20px;
+            }
+        }
