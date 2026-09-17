@@ -3,8 +3,51 @@ body {
 }
 
 header {
-    background-color: var(--verde-escuro);
-    height: 70px;
+    background-color: #4F86B8;
+}
+
+.navbar-custom {
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.btn-menu {
+    color: #D7E9DE;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 25px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-menu:hover {
+    background-color: #C8E3FF;
+    color: #4F86B8;
+}
+
+.dog-img {
+    width: 42px;
+    height: 42px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
 }
 
 
@@ -69,7 +112,6 @@ header {
 
 .capa {
     overflow: hidden;
-    border: none;
 }
 
 .capa-img {
@@ -117,6 +159,23 @@ h5 {
 }
 
 /* Atualizações médicas */
+
+.btn-atualizacoes {
+    color: #4F86B8;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 25px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-atualizacoes:hover {
+    background-color: #4F86B8;
+    color: #C8E3FF;
+}
+
 .mensagem {
     background-color: #4F86B8;
     width: min(932px, 95%);
@@ -145,6 +204,23 @@ h5 {
 }
 
 /* Vacinas */
+
+.btn-vacinas {
+    color: #4F86B8;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 25px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-vacinas:hover {
+    background-color: #4F86B8;
+    color: #C8E3FF;
+}
+
 .vacinas {
     background-color: #C8E3FF;
     width: 100%;
