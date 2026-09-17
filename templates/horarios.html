@@ -1,383 +1,48 @@
+
 <!doctype html>
-<html lang="pt-BR"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-br">
 
-    <title>Nossos Horários | Patas &amp; Bigodes</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Horários</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/horarios.css">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            min-height: 100vh;
-            font-family: Georgia, 'Times New Roman', serif;
-            background-color: #dceee5;
-            color: #004f43;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* =========================
-           CABEÇALHO
-        ========================= */
-
-        header {
-            height: 82px;
-            background-color: #005447;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 28px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-        }
-
-        .logo {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            object-fit: cover;
-            background-color: #fff;
-        }
-
-        nav {
-            display: flex;
-            gap: 70px;
-            margin-left: 100px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #efa62f;
-        }
-
-        .perfil {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #efa62f;
-        }
-
-
-        /* =========================
-           CONTEÚDO
-        ========================= */
-
-        main {
-            flex: 1;
-            padding: 55px 6% 70px;
-            text-align: center;
-        }
-
-        .titulo {
-            font-size: 40px;
-            color: #005447;
-            margin-bottom: 12px;
-        }
-
-        .subtitulo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            font-size: 16px;
-            color: #005447;
-            margin-bottom: 48px;
-        }
-
-        .linha {
-            width: 90px;
-            height: 3px;
-            background-color: #efa62f;
-            border-radius: 10px;
-        }
-
-
-        /* =========================
-           CARDS DE HORÁRIOS
-        ========================= */
-
-        .horarios {
-            display: flex;
-            justify-content: center;
-            gap: 42px;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            width: 360px;
-            min-height: 335px;
-            background-color: #005447;
-            border-radius: 18px;
-            padding: 38px 54px;
-            color: white;
-            box-shadow: 0 10px 20px rgba(0, 70, 60, 0.20);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 25px rgba(0, 70, 60, 0.28);
-        }
-
-        .icone {
-            font-size: 45px;
-            color: #efa62f;
-            margin-bottom: 25px;
-        }
-
-        .dia {
-            display: inline-block;
-            background-color: #efa62f;
-            color: #005447;
-            font-size: 24px;
-            font-weight: bold;
-            padding: 10px 17px;
-            border-radius: 9px;
-            margin-bottom: 17px;
-        }
-
-        .divisao {
-            width: 100%;
-            height: 2px;
-            background-color: rgba(255, 255, 255, 0.7);
-            margin: 0 auto 22px;
-        }
-
-        .hora {
-            color: #efa62f;
-            font-size: 26px;
-            font-weight: bold;
-            margin-bottom: 22px;
-        }
-
-        .descricao {
-            font-size: 15px;
-            letter-spacing: 0.5px;
-        }
-
-
-        /* =========================
-           STATUS
-        ========================= */
-
-        .status-area {
-            margin: 45px auto 0;
-            max-width: 760px;
-            background-color: #fff;
-            border-radius: 15px;
-            padding: 20px 25px;
-            box-shadow: 0 5px 15px rgba(0, 70, 60, 0.12);
-        }
-
-        .status {
-            font-size: 20px;
-            font-weight: bold;
-            color: #16834f;
-            margin-bottom: 7px;
-        }
-
-        .proximo {
-            font-size: 15px;
-            color: #005447;
-        }
-
-
-        /* =========================
-           EMERGÊNCIA
-        ========================= */
-
-        .emergencia {
-            max-width: 760px;
-            margin: 25px auto 0;
-            padding: 22px 30px;
-            border-radius: 15px;
-            background-color: #005447;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            text-align: left;
-            box-shadow: 0 7px 16px rgba(0, 70, 60, 0.18);
-        }
-
-        .emergencia h3 {
-            color: #efa62f;
-            font-size: 19px;
-            margin-bottom: 5px;
-        }
-
-        .emergencia p {
-            font-size: 14px;
-        }
-
-        .botao {
-            background-color: #efa62f;
-            color: #005447;
-            text-decoration: none;
-            padding: 11px 18px;
-            border-radius: 8px;
-            font-weight: bold;
-            white-space: nowrap;
-            transition: 0.3s;
-        }
-
-        .botao:hover {
-            background-color: #ffc45c;
-            transform: scale(1.04);
-        }
-
-
-        /* =========================
-           RODAPÉ
-        ========================= */
-
-        footer {
-            height: 72px;
-            background-color: #005447;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 38px;
-            font-size: 14px;
-        }
-
-        .redes {
-            display: flex;
-            gap: 15px;
-            font-size: 20px;
-        }
-
-        .redes a {
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .redes a:hover {
-            color: #efa62f;
-        }
-
-
-        /* =========================
-           RESPONSIVIDADE
-        ========================= */
-
-        @media (max-width: 900px) {
-
-            nav {
-                gap: 30px;
-                margin-left: 0;
-            }
-
-            .horarios {
-                gap: 25px;
-            }
-
-            .card {
-                width: 330px;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            header {
-                height: 70px;
-                padding: 0 15px;
-            }
-
-            nav {
-                gap: 18px;
-            }
-
-            nav a {
-                font-size: 14px;
-            }
-
-            .titulo {
-                font-size: 31px;
-            }
-
-
-            .logo {
-                width: 42px;
-                height: 42px;
-                border-radius: 50%;
-                object-fit: contain;
-                background-color: #f3f7ef;
-                padding: 2px;
-            }
-
-            .subtitulo {
-                font-size: 14px;
-            }
-
-            .linha {
-                width: 45px;
-            }
-
-            main {
-                padding: 40px 20px;
-            }
-
-            .card {
-                width: 100%;
-                padding: 32px 30px;
-            }
-
-            .emergencia {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            footer {
-                padding: 0 20px;
-            }
-        }
-    </style>
 </head>
-
 <body>
+    <div class="pagina">
 
-    <!-- =========================
-         CABEÇALHO
-    ========================== -->
+<header>
+    <nav class="navbar-custom">
+        <div class="container-fluid px-4">
 
-    <header>
+            <!-- LOGO -->
+            <a href="apresentacao.html" class="logo">
+                <img src="../static/img/logo.png" alt="Logo">
+            </a>
 
-        <!-- Troque pelo caminho da sua logo -->
-        <img src="../static/img/favicon.png" alt="Logo Patas &amp; Bigodes" class="logo">
+            <!-- MENU -->
+            <div class="menu-links">
+                <a href="apresentacao.html" class="btn-menu">Início</a>
+                <a href="consultas.html" class="btn-menu">Consultas</a>
+            </div>
 
+            <!-- PERFIL -->
+            <a href="carteirinha.html" class="btn-carteirinha">
+                <img src="../static/img/cachorro.png"
+                     class="dog-img"
+                     alt="Perfil">
 
-        <nav>
-            <a href="#">Início</a>
-            <a href="#">Consulta</a>
-        </nav>
+                <p>Perfil</p>
+            </a>
 
-        <!-- Troque pelo caminho da imagem do perfil -->
-        <img src="../static/img/dog.png" alt="Logo Patas &amp; Bigodes" class="logo">
-
-    </header>
-
-
-    <!-- =========================
-         CONTEÚDO PRINCIPAL
-    ========================== -->
-
-    <main>
+        </div>
+    </nav>
+</header>
+  <main class="container">
 
         <h1 class="titulo">Nossos Horários</h1>
 
@@ -501,157 +166,22 @@
         </div>
 
     </main>
+<footer>
+    <div class="footer-copy">
+        Todos os direitos reservados
+    </div>
 
+    <div class="footer-icons">
+        <a href="#" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+        </a>
 
-    <!-- =========================
-         RODAPÉ
-    ========================== -->
+        <a href="#" aria-label="Facebook">
+            <i class="bi bi-facebook"></i>
+        </a>
+    </div>
+</footer>
+</div>
+</body>
+</html>
 
-    <footer>
-
-        <span>
-            Todos os direitos reservados
-        </span>
-
-        <div class="redes">
-            <a href="#">◎</a>
-            <a href="#">●</a>
-        </div>
-
-    </footer>
-
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
-
-    <script>
-
-        function verificarHorario() {
-
-            const agora = new Date();
-
-            const dia = agora.getDay();
-            const hora = agora.getHours();
-            const minutos = agora.getMinutes();
-
-            const horarioAtual = hora * 60 + minutos;
-
-            const status = document.getElementById("status");
-            const proximo = document.getElementById("proximo");
-
-            // Segunda a sexta
-            if (dia >= 1 && dia <= 5) {
-
-                const abertura = 9 * 60;
-                const fechamento = 20 * 60;
-
-                if (horarioAtual >= abertura && horarioAtual < fechamento) {
-
-                    status.innerHTML = "🟢 ABERTO AGORA";
-
-                    proximo.innerHTML =
-                        "Estamos atendendo até às 20:00.";
-
-                } else if (horarioAtual < abertura) {
-
-                    status.innerHTML = "🔴 FECHADO AGORA";
-
-                    proximo.innerHTML =
-                        "Próximo atendimento hoje às 09:00.";
-
-                } else {
-
-                    status.innerHTML = "🔴 FECHADO AGORA";
-
-                    proximo.innerHTML =
-                        "Próximo atendimento amanhã às 09:00.";
-                }
-
-            }
-
-            // Sábado
-            else if (dia === 6) {
-
-                const abertura = 9 * 60;
-                const fechamento = 13 * 60;
-
-                if (horarioAtual >= abertura && horarioAtual < fechamento) {
-
-                    status.innerHTML = "🟢 ABERTO AGORA";
-
-                    proximo.innerHTML =
-                        "Estamos atendendo até às 13:00.";
-
-                } else if (horarioAtual < abertura) {
-
-                    status.innerHTML = "🔴 FECHADO AGORA";
-
-                    proximo.innerHTML =
-                        "Próximo atendimento hoje às 09:00.";
-
-                } else {
-
-                    status.innerHTML = "🔴 FECHADO AGORA";
-
-                    proximo.innerHTML =
-                        "Próximo atendimento segunda-feira às 09:00.";
-                }
-
-            }
-
-            // Domingo
-            else {
-
-                status.innerHTML = "🔴 FECHADO HOJE";
-
-                proximo.innerHTML =
-                    "Próximo atendimento segunda-feira às 09:00.";
-            }
-        }
-
-        verificarHorario();
-
-    </script>
-
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-
-
-</body></html>
