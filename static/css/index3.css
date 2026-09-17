@@ -1,0 +1,989 @@
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+:root {
+    --verde-escuro: #005744;
+    --verde: #4d8b7d;
+    --verde-claro: #dceee7;
+
+    --amarelo: #e4a52b;
+
+    --preto: #111111;
+    --branco: #ffffff;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background-color: var(--verde-claro);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: var(--preto);
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    width: 100%;
+    height: 72px;
+
+    background-color: var(--verde-escuro);
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+
+    position: relative;
+    z-index: 10;
+}
+
+
+.navbar {
+    height: 100%;
+}
+
+
+.navbar .container-fluid {
+    height: 100%;
+
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--branco) !important;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+.logo {
+    width: 45px;
+    height: 45px;
+
+    background-color: var(--branco);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+
+.logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+
+.nome-logo {
+    white-space: nowrap;
+}
+
+
+.nome-logo span {
+    color: var(--amarelo);
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+
+.menu a {
+    color: var(--branco);
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    position: relative;
+
+    transition: 0.3s ease;
+}
+
+
+.menu a:hover {
+    color: var(--amarelo);
+}
+
+
+.menu a.active {
+    color: var(--amarelo);
+
+    font-weight: bold;
+}
+
+
+.menu a.active::after {
+    content: "";
+
+    position: absolute;
+
+    height: 3px;
+
+    width: 100%;
+
+    left: 0;
+
+    bottom: -10px;
+
+    background-color: var(--amarelo);
+
+    border-radius: 5px;
+}
+
+
+/* =========================================================
+   BOTÃO AGENDAR
+========================================================= */
+
+.btn-agendar {
+    background-color: var(--amarelo);
+
+    color: #111 !important;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    padding: 11px 18px;
+
+    border-radius: 6px;
+
+    white-space: nowrap;
+
+    transition: 0.3s ease;
+}
+
+
+.btn-agendar:hover {
+    background-color: #f1bd4b;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SEÇÃO INICIAL
+========================================================= */
+
+.inicio {
+    width: 100%;
+
+    min-height: 650px;
+
+    padding: 60px 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--verde-claro);
+}
+
+
+/* =========================================================
+   CARD PRINCIPAL
+========================================================= */
+
+.card-clinica {
+    width: 100%;
+
+    max-width: 1100px;
+
+    min-height: 550px;
+
+    padding: 55px 60px;
+
+    margin: 0 auto;
+
+    background-color: var(--verde);
+
+    border-radius: 16px;
+
+    color: var(--preto);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   GRID DO HERO
+========================================================= */
+
+.card-clinica .row {
+    min-height: 440px;
+}
+
+
+/* =========================================================
+   CONTEÚDO DO HERO
+========================================================= */
+
+.conteudo {
+    width: 100%;
+}
+
+
+.tagline {
+    color: var(--branco);
+
+    font-size: 16px;
+
+    margin: 0 0 15px;
+
+    letter-spacing: 0.2px;
+}
+
+
+.tagline::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 25px;
+    height: 2px;
+
+    background-color: var(--amarelo);
+
+    margin-right: 8px;
+
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.titulo {
+    margin: 0;
+
+    font-size: clamp(40px, 4.5vw, 56px);
+
+    font-weight: bold;
+
+    line-height: 1.05;
+}
+
+
+.titulo span {
+    color: var(--amarelo);
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+========================================================= */
+
+.descricao {
+    max-width: 400px;
+
+    margin-top: 20px;
+
+    margin-bottom: 0;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    color: #102b27;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.botoes {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 28px;
+}
+
+
+.btn-clinica {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--amarelo);
+
+    border: none;
+
+    color: #000;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    padding: 10px 20px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+
+.btn-clinica:hover {
+    background-color: #f2bd48;
+
+    color: #000;
+
+    transform: translateY(-2px);
+}
+
+
+.btn-clinica i {
+    margin-right: 6px;
+}
+
+
+/* =========================================================
+   IMAGEM DOS ANIMAIS
+========================================================= */
+
+.animais {
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 430px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.animais img {
+    display: block;
+
+    width: 100%;
+
+    max-width: 520px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    filter: drop-shadow(
+        0 12px 12px rgba(0, 0, 0, 0.18)
+    );
+}
+
+
+/* =========================================================
+   LOCALIZAÇÃO
+========================================================= */
+
+.localizacao {
+    width: 100%;
+
+    min-height: 550px;
+
+    padding: 70px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    background-color: #e7f2ee;
+}
+
+
+.localizacao .container {
+    width: 100%;
+}
+
+
+.mapa-container {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 0 auto;
+}
+
+
+.mapa {
+    display: block;
+
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   ENDEREÇO
+========================================================= */
+
+.endereco {
+    width: 100%;
+
+    max-width: 330px;
+
+    margin: 0 auto;
+
+    padding: 30px;
+
+    background-color: var(--verde-escuro);
+
+    color: var(--branco);
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+
+.endereco h3 {
+    color: var(--amarelo);
+
+    font-size: 21px;
+
+    margin: 0 0 15px;
+}
+
+
+.endereco p {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    width: 100%;
+
+    min-height: 70px;
+
+    padding: 15px 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background-color: var(--verde-escuro);
+
+    color: var(--branco);
+
+    font-size: 12px;
+}
+
+
+.rodape-centro {
+    color: #e6eee9;
+
+    text-align: center;
+}
+
+
+.contatos {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.contatos a {
+    color: var(--branco);
+
+    font-size: 20px;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+
+.contatos a:hover {
+    color: var(--amarelo);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TABLETS / NOTEBOOKS PEQUENOS
+   Bootstrap LG = 992px
+========================================================= */
+
+@media (max-width: 1199.98px) {
+
+    .card-clinica {
+        max-width: 1000px;
+
+        padding: 50px;
+    }
+
+
+    .titulo {
+        font-size: 48px;
+    }
+
+
+    .animais img {
+        max-width: 470px;
+    }
+
+
+    .menu {
+        gap: 20px;
+    }
+
+
+    .menu a {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+    /* HEADER */
+
+    header {
+        height: auto;
+
+        min-height: 72px;
+    }
+
+
+    .navbar .container-fluid {
+        min-height: 72px;
+
+        height: auto;
+
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+
+    /* MENU */
+
+    .menu {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        margin: 5px 0 0;
+
+        padding-bottom: 5px;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+
+    .menu a.active::after {
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .inicio {
+        padding: 45px 25px;
+    }
+
+
+    .card-clinica {
+        max-width: 750px;
+
+        min-height: auto;
+
+        padding: 50px 40px;
+    }
+
+
+    .card-clinica .row {
+        min-height: auto;
+    }
+
+
+    .conteudo {
+        text-align: center;
+    }
+
+
+    .tagline {
+        margin-bottom: 20px;
+    }
+
+
+    .tagline::before {
+        display: none;
+    }
+
+
+    .descricao {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .botoes {
+        justify-content: center;
+    }
+
+
+    /* IMAGEM */
+
+    .animais {
+        min-height: 350px;
+
+        margin-top: 25px;
+    }
+
+
+    .animais img {
+        max-width: 450px;
+    }
+
+
+    /* LOCALIZAÇÃO */
+
+    .localizacao {
+        padding: 60px 25px;
+    }
+
+
+    .mapa-container {
+        max-width: 600px;
+    }
+
+
+    .mapa {
+        height: 320px;
+    }
+
+
+    .endereco {
+        margin-top: 35px;
+    }
+}
+
+
+/* =========================================================
+   CELULARES
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+    /* HEADER */
+
+    .navbar .container-fluid {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    .nome-logo {
+        font-size: 18px;
+    }
+
+
+    /* HERO */
+
+    .inicio {
+        padding: 30px 15px;
+    }
+
+
+    .card-clinica {
+        padding: 40px 25px 25px;
+
+        border-radius: 14px;
+    }
+
+
+    .titulo {
+        font-size: 42px;
+    }
+
+
+    .descricao {
+        font-size: 15px;
+    }
+
+
+    .animais {
+        min-height: 300px;
+
+        margin-top: 15px;
+    }
+
+
+    .animais img {
+        max-width: 380px;
+    }
+
+
+    /* LOCALIZAÇÃO */
+
+    .localizacao {
+        padding: 50px 20px;
+    }
+
+
+    .mapa {
+        height: 260px;
+    }
+
+
+    .endereco {
+        max-width: 100%;
+
+        padding: 25px 20px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 25px 20px;
+
+        gap: 12px;
+    }
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 575.98px) {
+
+    /* LOGO */
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .nome-logo {
+        font-size: 16px;
+    }
+
+
+    /* HERO */
+
+    .inicio {
+        padding: 20px 12px;
+    }
+
+
+    .card-clinica {
+        padding: 35px 18px 20px;
+    }
+
+
+    .titulo {
+        font-size: 36px;
+
+        line-height: 1.08;
+    }
+
+
+    .descricao {
+        font-size: 14px;
+
+        max-width: 300px;
+    }
+
+
+    /* BOTÕES */
+
+    .botoes {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .btn-clinica {
+        width: 100%;
+
+        max-width: 220px;
+    }
+
+
+    /* ANIMAIS */
+
+    .animais {
+        min-height: 240px;
+
+        margin-top: 10px;
+    }
+
+
+    .animais img {
+        max-width: 320px;
+    }
+
+
+    /* LOCALIZAÇÃO */
+
+    .localizacao {
+        padding: 40px 15px;
+    }
+
+
+    .mapa {
+        height: 220px;
+
+        border-radius: 8px;
+    }
+
+
+    .endereco {
+        padding: 25px 15px;
+
+        border-radius: 12px;
+    }
+
+
+    .endereco h3 {
+        font-size: 19px;
+    }
+
+
+    .endereco p {
+        font-size: 13px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        font-size: 11px;
+    }
+
+
+    .contatos a {
+        font-size: 19px;
+    }
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--amarelo);
+
+    outline-offset: 3px;
+}
