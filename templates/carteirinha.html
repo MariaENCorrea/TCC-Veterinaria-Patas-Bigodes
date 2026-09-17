@@ -20,30 +20,25 @@
 <body>
 
     <header>
-            <nav class="navbar-custom">
-
         <nav class="navbar-custom">
 
-            <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+            <nav class="navbar-custom">
 
-                <div class="logo">
-                    <img src="../static/img/logo.png" alt="Logo" class="logo">
-                </div>
+                <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+
+                    <div class="logo">
+                        <img src="../static/img/logo.png" alt="Logo" class="logo">
+                    </div>
 
                     <div class="menu">
                         <a href="apresentacao.html" class="btn-menu">Início</a>
                         <a href="horarios.html" class="btn-menu">Horários</a>
                         <a href="consultas.html" class="btn-menu">Consulta</a>
                     </div>
-                <div>
-                    <a href="apresentacao.html" class="btn-menu">Início</a>
-                    <a href="horarios.html" class="btn-menu">Horários</a>
-                    <a href="consultas.html" class="btn-menu">Consulta</a>
+
                 </div>
 
-            </div>
-
-        </nav>
+            </nav>
 
     </header>
     <div class="fundo">
@@ -272,11 +267,12 @@
                 </div>
 
             </div>
+            ```html
             <!-- MODAL DE ATUALIZAÇÃO DO CADASTRO -->
             <div class="modal fade" id="modalAtualizarCadastro" tabindex="-1"
                 aria-labelledby="modalAtualizarCadastroLabel" aria-hidden="true">
 
-                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
 
                     <div class="modal-content">
 
@@ -298,70 +294,141 @@
 
                             <form id="formCadastro">
 
-                                <!-- Nome -->
-                                <div class="mb-3">
-                                    <label for="inputNome" class="form-label">
-                                        Nome do pet
-                                    </label>
+                                <div class="row">
 
-                                    <input type="text" class="form-control" id="inputNome"
-                                        placeholder="Digite o nome do pet" required>
-                                </div>
+                                    <!-- Nome do animal -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputNomeAnimal" class="form-label">
+                                            Nome do animal
+                                        </label>
 
-                                <!-- Data de nascimento -->
-                                <div class="mb-3">
-                                    <label for="inputDataNascimento" class="form-label">
-                                        Data de nascimento
-                                    </label>
+                                        <input type="text" class="form-control" id="inputNomeAnimal"
+                                            placeholder="Digite o nome do animal" required>
+                                    </div>
 
-                                    <input type="date" class="form-control" id="inputDataNascimento" required>
-                                </div>
 
-                                <!-- Tutor -->
-                                <div class="mb-3">
-                                    <label for="inputTutor" class="form-label">
-                                        Tutor
-                                    </label>
+                                    <!-- Sexo do animal -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputSexoAnimal" class="form-label">
+                                            Sexo do animal
+                                        </label>
 
-                                    <input type="text" class="form-control" id="inputTutor"
-                                        placeholder="Digite o nome do tutor" required>
-                                </div>
+                                        <select class="form-select" id="inputSexoAnimal" required>
 
-                                <!-- Cor -->
-                                <div class="mb-3">
-                                    <label for="inputCor" class="form-label">
-                                        Cor
-                                    </label>
+                                            <option value="" selected disabled>
+                                                Selecione o sexo
+                                            </option>
 
-                                    <input type="text" class="form-control" id="inputCor"
-                                        placeholder="Ex.: Preto e branco" required>
-                                </div>
+                                            <option value="Macho">
+                                                Macho
+                                            </option>
 
-                                <!-- Raça -->
-                                <div class="mb-3">
-                                    <label for="inputRaca" class="form-label">
-                                        Raça
-                                    </label>
+                                            <option value="Fêmea">
+                                                Fêmea
+                                            </option>
 
-                                    <input type="text" class="form-control" id="inputRaca" placeholder="Digite a raça"
-                                        required>
+                                        </select>
+                                    </div>
+
+
+                                    <!-- Idade do animal -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputIdadeAnimal" class="form-label">
+                                            Idade do animal
+                                        </label>
+
+                                        <input type="number" class="form-control" id="inputIdadeAnimal"
+                                            placeholder="Digite a idade" min="0" required>
+                                    </div>
+
+
+                                    <!-- Nome do proprietário -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputNomeProprietario" class="form-label">
+                                            Nome do proprietário
+                                        </label>
+
+                                        <input type="text" class="form-control" id="inputNomeProprietario"
+                                            placeholder="Digite o nome do proprietário" required>
+                                    </div>
+
+
+                                    <!-- CPF do proprietário -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputCpf" class="form-label">
+                                            CPF do proprietário
+                                        </label>
+
+                                        <input type="text" class="form-control" id="inputCpf"
+                                            placeholder="000.000.000-00" maxlength="14" required>
+                                    </div>
+
+
+                                    <!-- Número de celular -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputCelular" class="form-label">
+                                            Número de celular
+                                        </label>
+
+                                        <input type="tel" class="form-control" id="inputCelular"
+                                            placeholder="(00) 00000-0000" required>
+                                    </div>
+
+
+                                    <!-- E-mail do proprietário -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputEmail" class="form-label">
+                                            E-mail do proprietário
+                                        </label>
+
+                                        <input type="email" class="form-control" id="inputEmail"
+                                            placeholder="exemplo@email.com" required>
+                                    </div>
+
+
+                                    <!-- Cidade -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputCidade" class="form-label">
+                                            Cidade
+                                        </label>
+
+                                        <input type="text" class="form-control" id="inputCidade"
+                                            placeholder="Digite a cidade" required>
+                                    </div>
+
+
+                                    <!-- Bairro -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="inputBairro" class="form-label">
+                                            Bairro
+                                        </label>
+
+                                        <input type="text" class="form-control" id="inputBairro"
+                                            placeholder="Digite o bairro" required>
+                                    </div>
+
                                 </div>
 
                             </form>
 
                         </div>
 
+
                         <!-- Rodapé -->
                         <div class="modal-footer">
 
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+
                                 Cancelar
+
                             </button>
+
 
                             <button type="button" class="btn" style="background-color: #3E7CB1; color: white;"
                                 onclick="atualizarCadastro()">
 
                                 <i class="bi bi-check-lg"></i>
+
                                 Salvar alterações
 
                             </button>
@@ -371,6 +438,7 @@
                     </div>
 
                 </div>
+
             </div>
         </main>
 
