@@ -44,108 +44,210 @@
             font-size: 22px;
         }
 
-        main {
-            background-color: var(--verde-claro);
-        }
+        /* ================= LOGIN ================= */
 
-        .inicio {
-            min-height: 500px;
+        main {
+            min-height: calc(100vh - 90px);
+            background-color: var(--verde-claro);
+
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 50px 40px;
+
+            padding: 50px 20px;
         }
 
-        .card-clinica {
-            background-color: var(--verde);
-            border: none;
-            border-radius: 10px;
+        .inicio {
             width: 100%;
-            max-width: 1000px;
-            padding: 200px;
-            color: black;
-        }
 
-        .titulosegundario {
-            font-size: 30px;
-            font-weight: bold;
-            line-height: 1.4;
-        }
-
-        .titulo span {
-            color: var(--amarelo);
-        }
-
-        .opcoes {
-            text-align: center;
-        }
-
-        .opcoes h6 {
-            font-size: 25px;
-            margin-bottom: 15px;
-            line-height: 2.1;
-        }
-
-        .btn-clinica {
-            background-color: var(--amarelo);
-            border: none;
-            color: #000;
-            font-weight: bold;
-            font-size: 17px;
-            padding: 7px 25px;
-            margin-bottom: 12px;
-            border-radius: 4px;
-            line-height: 1.7;
-        }
-
-        .btn-clinica:hover {
-            background-color: #c88d16;
-            color: white;
-        }
-
-        .localizacao {
-            min-height: 600px;
-            padding: 30px 30px;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
 
-        .mapa-container {
-            position: relative;
-            width: 400%;
-            max-width: 500px;
-            margin: auto;
-        }
+        /* CARD */
 
-        .mapa {
+        .card-clinica {
             width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
-            display: block;
+            max-width: 550px;
+
+            background-color: var(--branco);
+
+            border: 1px solid var(--borda);
+            border-radius: 25px;
+
+            padding: 45px;
+
+            box-shadow: 0 15px 40px rgba(3, 76, 60, 0.15);
+
+            position: relative;
+            overflow: hidden;
         }
 
-        .endereco {
-            background-color: var(--verde-escuro);
-            color: white;
-            border-radius: 18px;
-            padding: 25px;
-            max-width: 330px;
-            margin: auto;
+        /* DETALHE AMARELO NO TOPO */
+
+        .card-clinica::before {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 7px;
+
+            background-color: var(--amarelo);
+        }
+
+        /* TÍTULO */
+
+        .titulosegundario {
+            color: var(--verde-escuro);
+
+            font-size: 30px;
+            font-weight: bold;
+
             text-align: center;
-            border: 4px solid var(--verde-escuro);
+
+            line-height: 1.3;
+
+            margin-bottom: 10px;
         }
 
-        .endereco h3 {
-            color: var(--amarelo);
-            font-size: 20px;
-            margin-bottom: 15px;
+        /* TEXTO */
+
+        .login-descricao {
+            color: #666;
+
+            font-size: 15px;
+
+            text-align: center;
+
+            margin-bottom: 30px;
         }
 
-        .endereco p {
-            font-size: 14px;
-            line-height: 1.6;
-            margin: 0;
+        /* FORMULÁRIO */
+
+        .formulario {
+            width: 100%;
+        }
+
+        /* LABEL */
+
+        .form-label {
+            display: block;
+
+            color: var(--verde-escuro);
+
+            font-size: 15px;
+            font-weight: bold;
+
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        /* INPUT */
+
+        .form-control {
+            width: 100%;
+            height: 50px;
+
+            border: 1px solid var(--borda);
+            border-radius: 10px;
+
+            padding: 0 15px;
+
+            font-size: 15px;
+
+            background-color: #f9fcfb;
+
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--verde);
+
+            box-shadow: 0 0 0 3px rgba(76, 140, 126, 0.15);
+
+            outline: none;
+
+            background-color: white;
+        }
+
+        /* BOTÃO */
+
+        .btn-login {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: var(--verde-escuro);
+
+            color: white;
+
+            border: none;
+            border-radius: 10px;
+
+            padding: 14px;
+
+            margin-top: 28px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            background-color: var(--verde);
+
+            color: white;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 8px 18px rgba(3, 76, 60, 0.20);
+        }
+
+        /* ÍCONE */
+
+        .login-icon {
+            width: 70px;
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 20px;
+
+            background-color: var(--verde-claro);
+
+            color: var(--verde-escuro);
+
+            border-radius: 50%;
+
+            font-size: 32px;
+        }
+
+        /* RESPONSIVO */
+
+        @media (max-width: 600px) {
+
+            main {
+                padding: 30px 15px;
+            }
+
+            .card-clinica {
+                padding: 35px 25px;
+            }
+
+            .titulosegundario {
+                font-size: 26px;
+            }
         }
 
         /* =========================================================
@@ -394,7 +496,6 @@ FOOTER
             background-color: #c88d16;
             color: white;
         }
-
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="icon" type="image/png" href="../static/img/favicon.png">
@@ -406,9 +507,9 @@ FOOTER
         <nav class="navbar">
             <div class="container-fluid">
 
-                    <div class="logo">
-                        <img src="../static/img/logo.png" alt="Localização da Clínica Patas & Bigodes" class="mapa">
-                    </div>
+                <div class="logo">
+                    <img src="../static/img/logo.png" alt="Localização da Clínica Patas & Bigodes" class="mapa">
+                </div>
 
                 <a href="cadastro.html" class="btn-voltar">
                     <i class="bi bi-box-arrow-left"></i>
@@ -420,66 +521,78 @@ FOOTER
 
     <main>
 
-        <h1 class="titulo">
-            Login
-        </h1>
         <section class="inicio">
 
             <div class="card-clinica">
 
-                <div class="row align-items-center">
+                <!-- ÍCONE -->
 
-                    <div class="col-md-7">
-
-                        <h3 class="titulosegundario">
-                            Faça seu Login com seu nome de usuário e senha:
-                            </h13>
-
-                    </div>
-
-                    <form class="formulario">
-
-
-
-                        <label for="nomeAnimal" class="form-label">
-                            Coloque o nome de seu usuário
-                        </label>
-
-                        <input type="text" class="form-control" id="nomeUsuario" placeholder="NOME">
-
-                        <label for="nomeAnimal" class="form-label">
-                            Coloque sua senha
-                        </label>
-
-                        <input type="text" class="form-control" id="senha" placeholder="SENHA">
-
-                        <a href="apresentacao.html" class="btn btn-login">
-                            Confirmar
-                        </a>
-
-
+                <div class="login-icon">
+                    <i class="bi bi-person-heart"></i>
                 </div>
+
+
+                <!-- TÍTULO -->
+
+                <h1 class="titulosegundario">
+                    Bem-vindo à Patas & Bigodes!
+                </h1>
+
+                <p class="login-descricao">
+                    Faça seu login para acessar sua conta e
+                    acompanhar os cuidados do seu pet.
+                </p>
+
+
+                <!-- FORMULÁRIO -->
+
+                <form class="formulario">
+
+                    <label for="nomeUsuario" class="form-label">
+                        Nome de usuário
+                    </label>
+
+                    <input type="text" class="form-control" id="nomeUsuario" placeholder="Digite seu nome de usuário"
+                        required>
+
+
+                    <label for="senha" class="form-label">
+                        Senha
+                    </label>
+
+                    <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
+
+
+                    <a href="apresentacao.html" class="btn-login">
+
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        Entrar
+
+                    </a>
+
+                </form>
 
             </div>
 
         </section>
 
-        <footer>
+    </main>
+    <footer>
 
-            <div>
-                Todos os direitos reservados
-            </div>
+        <div>
+            Todos os direitos reservados
+        </div>
 
-            <div class="contatos">
-                <i class="bi bi-instagram"></i>
-                <i class="bi bi-facebook"></i>
-            </div>
+        <div class="contatos">
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-facebook"></i>
+        </div>
 
-        </footer>
+    </footer>
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
-        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
 
 </body>
 
