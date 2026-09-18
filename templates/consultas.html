@@ -1,24 +1,57 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Consutas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <title>Consultas | Patas & Bigodes</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="icon" type="image/png" href="../static/img/favicon.png">
 
     <style>
+
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --verde: #034C3C;
+            --verde-claro: #D7E9DE;
+            --verde-medio: #4D8B7D;
+            --azul: #DCECF8;
+            --azul-borda: #C4DCEB;
+            --dourado: #DE9E36;
+            --dourado-escuro: #C98E18;
+            --branco: #FFFFFF;
+            --texto: #26332F;
+        }
+
         body {
-            background-color: #D7E9DE;
+            min-height: 100vh;
+            background: linear-gradient(
+                135deg,
+                #D7E9DE 0%,
+                #EAF4EE 50%,
+                #DCECF8 100%
+            );
+
             font-family: Georgia, 'Times New Roman', serif;
-            color: #034C3C;
+            color: var(--texto);
         }
 
         .pagina {
@@ -27,66 +60,101 @@
             flex-direction: column;
         }
 
+
         /* =========================
            HEADER
         ========================= */
 
         header {
-            background-color: #034C3C;
+            background-color: var(--verde);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
         }
 
         .navbar-custom {
-            height: 90px;
+            min-height: 90px;
             display: flex;
             align-items: center;
+        }
+
+        .navbar-custom .container-fluid {
+            max-width: 1500px;
         }
 
         .logo {
-            width: 60px;
-            height: 60px;
-            background-color: white;
+            width: 62px;
+            height: 62px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-        }
-
-        .btn-carteirinha {
-            align-items: center;
-            gap: 5px;
-            text-decoration: none;
-            color: #D7E9DE;
-            font-size: 15px;
-            font-weight: bold;
+            object-fit: cover;
+            background-color: white;
+            padding: 4px;
         }
 
         .btn-menu {
-            color: #D7E9DE;
+            position: relative;
+            color: var(--verde-claro);
             text-decoration: none;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: bold;
-            margin-left: 25px;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: 0.3s;
+            margin-left: 10px;
+            padding: 12px 18px;
+            border-radius: 10px;
+            transition: 0.3s ease;
         }
 
         .btn-menu:hover {
-            background-color: #DE9E36;
-            color: #034C3C;
+            background-color: rgba(222, 158, 54, 0.15);
+            color: var(--dourado);
+        }
+
+        .btn-menu::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 6px;
+            left: 50%;
+            background-color: var(--dourado);
+            transition: 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .btn-menu:hover::after {
+            width: 60%;
+        }
+
+        .btn-carteirinha {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--verde-claro);
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-carteirinha:hover {
+            color: var(--dourado);
+        }
+
+        .btn-carteirinha p {
+            margin: 0;
         }
 
         .dog-img {
-            width: 60px;
-            height: 60px;
-            background-color: white;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
+            object-fit: cover;
+            background-color: white;
+            padding: 4px;
+            transition: 0.3s;
         }
+
+        .btn-carteirinha:hover .dog-img {
+            transform: scale(1.06);
+        }
+
 
         /* =========================
            MAIN
@@ -94,342 +162,694 @@
 
         main {
             flex: 1;
+            width: 100%;
+            padding: 55px 30px 70px;
         }
 
-        /* TÍTULO */
+        .conteudo {
+            max-width: 1450px;
+            margin: auto;
+        }
 
-        .titulo {
+
+        /* =========================
+           TÍTULO
+        ========================= */
+
+        .titulo-principal {
             text-align: center;
-            margin-top: 60px;
-            margin-bottom: 50px;
+            margin-bottom: 45px;
         }
 
-        .titulo h1 {
-            color: #034C3C;
-            font-size: 40px;
+        .titulo-principal h1 {
+            color: var(--verde);
+            font-size: 42px;
             font-weight: bold;
+            margin-bottom: 10px;
         }
 
-        .subtitulo {
+        .titulo-principal p {
+            color: #527168;
+            font-size: 17px;
+            margin: 0;
+        }
+
+        .linha-titulo {
+            width: 70px;
+            height: 4px;
+            background-color: var(--dourado);
+            border-radius: 20px;
+            margin: 16px auto 0;
+        }
+
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .coluna {
+            background: rgba(255, 255, 255, 0.82);
+
+            border: 1px solid rgba(196, 220, 235, 0.9);
+
+            border-radius: 22px;
+
+            padding: 40px 42px;
+
+            min-height: 390px;
+
+            box-shadow:
+                0 10px 30px rgba(3, 76, 60, 0.08),
+                0 2px 6px rgba(0, 0, 0, 0.04);
+
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+
+            backdrop-filter: blur(5px);
+        }
+
+        .coluna:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 16px 35px rgba(3, 76, 60, 0.12),
+                0 3px 8px rgba(0, 0, 0, 0.05);
+        }
+
+
+        /* =========================
+           TÍTULO DOS CARDS
+        ========================= */
+
+        .titulo-coluna {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
-            color: #034C3C;
-            font-size: 17px;
-        }
+            gap: 10px;
 
-        /* =========================
-   FORMS AZUIS
-========================= */
-
-        .coluna {
-            background-color: #c9e3f8;
-
-            border-radius: 20px;
-
-            padding: 100px;
-
-            min-height: 300px;
-
-            border: 1px solid #b5d5ee;
-
-            margin-bottom: 70px;
-        }
-
-        /* Título de cada formulário */
-
-        .titulo-coluna {
-            text-align: center;
+            color: var(--verde);
 
             font-size: 25px;
-
             font-weight: bold;
 
-            margin-bottom: 20px;
+            margin-bottom: 32px;
 
-            color: #111;
+            padding-bottom: 16px;
 
-            margin-bottom: 40px;
+            border-bottom: 2px solid #E1ECE7;
         }
 
-        .btn-primary {
-            display: block;
-            width: 300px;
-            height: 40px;
+        .titulo-coluna i {
+            color: var(--dourado);
+            font-size: 23px;
+        }
 
-            margin: 10px auto 0;
 
-            background-color: var(--amarelo);
-            border: 2px solid #222;
-            border-radius: 5px;
+        /* =========================
+           RADIO BUTTONS
+        ========================= */
 
-            color: #111;
+        .opcoes-pet {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+
+            margin-bottom: 25px;
+            padding: 12px;
+
+            background-color: #F2F7F4;
+            border-radius: 12px;
+        }
+
+        .form-check {
+            margin: 0;
+        }
+
+        .form-check-input {
+            cursor: pointer;
+        }
+
+        .form-check-input:checked {
+            background-color: var(--verde);
+            border-color: var(--verde);
+        }
+
+        .form-check-label {
+            cursor: pointer;
             font-size: 16px;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-        }
-
-        .btn-primary:hover {
-            background-color: #c98e18;
-            color: white;
-        }
-
-        .btn-ver-fechar {
-            background-color: #4F86B8;
-            color: #D7E9DE;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            margin-left: 25px;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .btn-ver-fechar:hover {
-            background-color: #DE9E36;
-            color: #034C3C;
+            margin-left: 3px;
         }
 
 
-        .modal-title{
-            color: #DE9E36;
-            font-weight: bold;
-        }
-
-        /* Labels */
+        /* =========================
+           LABELS
+        ========================= */
 
         .form-label {
             display: block;
 
-            font-size: 20px;
+            color: var(--verde);
 
+            font-size: 17px;
             font-weight: bold;
 
-            margin-top: 15px;
-
-            margin-bottom: 5px;
+            margin-top: 18px;
+            margin-bottom: 7px;
         }
 
-        /* Campos */
+
+        /* =========================
+           CAMPOS
+        ========================= */
 
         .form-control,
         .form-select {
+
             width: 100%;
 
-            background-color: #4d8b7d;
+            background-color: #F7FAF8;
 
-            border: 1px solid #3b7669;
+            border: 1px solid #C9D9D3;
 
-            border-radius: 5px;
+            border-radius: 10px;
 
-            height: 32px;
+            min-height: 43px;
 
-            padding: 5px 8px;
+            padding: 9px 13px;
 
-            font-size: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+
+            color: #26332F;
+
+            transition: 0.25s ease;
+        }
+
+        .form-control::placeholder {
+            color: #8A9994;
         }
 
         .form-control:focus,
         .form-select:focus {
-            background-color: #ffffff;
 
-            border-color: #e4a52b;
+            background-color: white;
 
-            box-shadow: 0 0 0 2px rgba(228, 165, 43, 0.25);
+            border-color: var(--verde-medio);
+
+            box-shadow:
+                0 0 0 3px rgba(77, 139, 125, 0.15);
+
+            outline: none;
         }
 
-        footer {
-            background-color: #034C3C;
-            color: #D7E9DE;
+        textarea.form-control {
+            min-height: 95px;
+            resize: vertical;
+        }
 
-            min-height: 80px;
-            padding: 20px 40px;
+
+        /* =========================
+           BOTÃO CONFIRMAR
+        ========================= */
+
+        .area-confirmar {
+            display: flex;
+            justify-content: center;
+            margin-top: 42px;
+        }
+
+        .btn-confirmar {
+
+            min-width: 300px;
+
+            padding: 14px 28px;
+
+            background-color: var(--dourado);
+
+            border: none;
+
+            border-radius: 12px;
+
+            color: var(--verde);
+
+            font-family: Georgia, 'Times New Roman', serif;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            letter-spacing: 0.5px;
+
+            box-shadow:
+                0 6px 15px rgba(222, 158, 54, 0.25);
+
+            transition: 0.3s ease;
+        }
+
+        .btn-confirmar:hover {
+
+            background-color: var(--dourado-escuro);
+
+            color: white;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 9px 20px rgba(201, 142, 24, 0.3);
+        }
+
+        .btn-confirmar i {
+            margin-right: 8px;
+        }
+
+
+        /* =========================
+           MODAL
+        ========================= */
+
+        .modal-content {
+
+            border: none;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-header {
+
+            background-color: var(--verde);
+
+            border: none;
+
+            padding: 22px 25px;
+        }
+
+        .modal-title {
+
+            color: var(--dourado);
+
+            font-size: 21px;
+
+            font-weight: bold;
+        }
+
+        .modal-header .btn-close {
+            filter: brightness(0) invert(1);
+        }
+
+        .modal-body {
+
+            padding: 28px;
+
+            color: #42524C;
+
+            font-family: Arial, sans-serif;
+
+            line-height: 1.6;
+        }
+
+        .modal-footer {
+
+            border: none;
+
+            padding: 15px 25px 25px;
+
+            gap: 10px;
+        }
+
+        .btn-ver-fechar {
+
+            background-color: var(--verde);
+
+            color: white;
+
+            border: none;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            padding: 10px 22px;
+
+            border-radius: 9px;
+
+            transition: 0.3s;
+        }
+
+        .btn-ver-fechar:hover {
+
+            background-color: var(--dourado);
+
+            color: var(--verde);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background-color: var(--verde);
+
+            color: var(--verde-claro);
+
+            min-height: 85px;
+
+            padding: 20px 50px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
+            font-size: 14px;
         }
 
         .footer-icons {
+
             display: flex;
-            gap: 20px;
-            font-size: 24px;
+
+            gap: 18px;
+
+            font-size: 22px;
         }
 
         .footer-icons i {
-            color: #DE9E36;
+
+            color: var(--dourado);
+
             cursor: pointer;
+
             transition: 0.3s;
         }
 
         .footer-icons i:hover {
-            color: #D7E9DE;
+
+            color: white;
+
+            transform: translateY(-2px);
         }
 
-        .opcoes .form-check-label {
-            font-size: 20px;
-            margin-left: 2px;
-        }
 
         /* =========================
            RESPONSIVO
         ========================= */
 
+        @media (max-width: 992px) {
+
+            main {
+                padding: 45px 20px 60px;
+            }
+
+            .coluna {
+                padding: 30px;
+            }
+
+            .titulo-principal h1 {
+                font-size: 36px;
+            }
+        }
+
+
         @media (max-width: 768px) {
 
             .navbar-custom {
-                height: auto;
                 padding: 15px 0;
             }
 
+            .navbar-custom .container-fluid {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
             .logo {
-                width: 42px;
-                height: 42px;
-                background-color: white;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 22px;
+                width: 50px;
+                height: 50px;
             }
 
             .dog-img {
-                width: 60px;
+                width: 48px;
+                height: 48px;
             }
 
             .btn-menu {
-                font-size: 15px;
-                margin-left: 5px;
+                font-size: 14px;
                 padding: 8px 10px;
+                margin-left: 0;
             }
 
-            .titulo {
-                margin-top: 40px;
+            .titulo-principal {
                 margin-bottom: 30px;
             }
 
-            .titulo h1 {
+            .titulo-principal h1 {
                 font-size: 32px;
             }
 
-            .subtitulo {
-                font-size: 14px;
+            .titulo-principal p {
+                font-size: 15px;
             }
 
-            .linha {
-                width: 50px;
+            .coluna {
+                min-height: auto;
+                padding: 28px 24px;
             }
 
-            .horario-card {
-                min-height: 300px;
+            .titulo-coluna {
+                font-size: 22px;
+            }
+
+            .btn-confirmar {
+                width: 100%;
+                min-width: 0;
             }
 
             footer {
-                padding: 15px;
+                padding: 20px;
             }
         }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 50px;
+
+        @media (max-width: 480px) {
+
+            .navbar-custom .container-fluid {
+                justify-content: center !important;
+            }
+
+            .btn-carteirinha {
+                margin-left: auto;
+            }
+
+            .titulo-principal h1 {
+                font-size: 28px;
+            }
+
+            .opcoes-pet {
+                gap: 15px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
         }
+
     </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="icon" type="image/png" href="../static/img/favicon.png">
 </head>
+
 
 <body>
 
-        <header>
+<div class="pagina">
 
-            <nav class="navbar-custom">
+    <!-- =========================
+         HEADER
+    ========================= -->
 
-                <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+    <header>
 
-                    <div class="logo">
-                        <img src="../static/img/logo.png" alt="Logo" class="logo">
-                    </div>
+        <nav class="navbar-custom">
 
-                    <div>
-                        <a href="apresentacao.html" class="btn-menu">Início</a>
-                        <a href="horarios.html" class="btn-menu">Horários</a>
-                    </div>
+            <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
 
-                    <a href="carteirinha.html" class="btn-carteirinha">
-                        <img src="../static/img/cachorro.png" class="dog-img" alt="Cachorro">
-                        <p>Perfil</p>
+                <a href="apresentacao.html">
+                    <img src="../static/img/logo.png"
+                         alt="Logo Patas & Bigodes"
+                         class="logo">
+                </a>
+
+
+                <div>
+
+                    <a href="apresentacao.html" class="btn-menu">
+                        Início
                     </a>
+
+                    <a href="horarios.html" class="btn-menu">
+                        Horários
+                    </a>
+
                 </div>
 
-            </nav>
 
-        </header>
+                <a href="carteirinha.html" class="btn-carteirinha">
+
+                    <img src="../static/img/cachorro.png"
+                         class="dog-img"
+                         alt="Perfil">
+
+                    <p>Perfil</p>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
 
 
-        <main>
-            <h1 titulo>Consulta</h1>
+    <!-- =========================
+         CONTEÚDO
+    ========================= -->
 
-            <div class="row g-3">
+    <main>
+
+        <div class="conteudo">
+
+            <!-- TÍTULO -->
+
+            <div class="titulo-principal">
+
+                <h1>Agende sua consulta</h1>
+
+                <p>
+                    Preencha os dados abaixo para cuidar da saúde do seu pet.
+                </p>
+
+                <div class="linha-titulo"></div>
+
+            </div>
+
+
+            <div class="row g-4">
+
 
                 <!-- =====================
-         FORMULÁRIO DO PET
-    ====================== -->
+                     FORMULÁRIO DO PET
+                ====================== -->
 
-                <div class="col-md-4">
+                <div class="col-lg-4">
 
                     <div class="coluna">
 
                         <h2 class="titulo-coluna">
+
+                            <i class="bi bi-heart"></i>
+
                             Seu Pet
+
                         </h2>
 
-                        <div class="d-flex justify-content-center gap-2 mb-3">
+
+                        <div class="opcoes-pet">
 
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="sexo" id="macho" value="macho">
 
-                                <label class="form-check-label" for="macho">
+                                <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="animal"
+                                    id="macho"
+                                    value="cachorro">
+
+                                <label
+                                    class="form-check-label"
+                                    for="macho">
+
+                                    <i class="bi bi-dog"></i>
                                     Cachorro
+
                                 </label>
+
                             </div>
 
 
-                            <div class="form-check-label">
+                            <div class="form-check">
 
-                                <input class="form-check-input" type="radio" name="sexo" id="femea" value="femea">
+                                <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="animal"
+                                    id="femea"
+                                    value="gato">
 
-                                <label class="form-check-label" for="femea">
+                                <label
+                                    class="form-check-label"
+                                    for="femea">
+
+                                    <i class="bi bi-github"></i>
                                     Gato
+
                                 </label>
 
                             </div>
 
                         </div>
 
-                        <label for="nomePet" class="form-label">
+
+                        <label
+                            for="nomePet"
+                            class="form-label">
+
                             Nome
+
                         </label>
 
-                        <input type="text" id="nomePet" class="form-control" placeholder="Nome do pet">
+                        <input
+                            type="text"
+                            id="nomePet"
+                            class="form-control"
+                            placeholder="Nome do pet">
 
 
-                        <label for="raca" class="form-label">
-                            Espécie/Raça
+                        <label
+                            for="raca"
+                            class="form-label">
+
+                            Espécie / Raça
+
                         </label>
 
-                        <input type="text" id="raca" class="form-control" placeholder="Ex: Golden Retriever">
+                        <input
+                            type="text"
+                            id="raca"
+                            class="form-control"
+                            placeholder="Ex.: Golden Retriever">
 
 
-                        <label for="idade" class="form-label">
+                        <label
+                            for="idade"
+                            class="form-label">
+
                             Idade
+
                         </label>
 
-                        <input type="number" id="idade" class="form-control" placeholder="Idade">
+                        <input
+                            type="number"
+                            id="idade"
+                            class="form-control"
+                            placeholder="Idade do pet">
 
                     </div>
 
@@ -437,45 +857,79 @@
 
 
                 <!-- =====================
-         FORMULÁRIO DO TUTOR
-    ====================== -->
+                     FORMULÁRIO DO TUTOR
+                ====================== -->
 
-                <div class="col-md-4">
+                <div class="col-lg-4">
 
                     <div class="coluna">
 
                         <h2 class="titulo-coluna">
+
+                            <i class="bi bi-person"></i>
+
                             Dados do Tutor
+
                         </h2>
 
 
-                        <label for="nomeTutor" class="form-label">
+                        <label
+                            for="nomeTutor"
+                            class="form-label">
+
                             Nome
+
                         </label>
 
-                        <input type="text" id="nomeTutor" class="form-control" placeholder="Nome completo">
+                        <input
+                            type="text"
+                            id="nomeTutor"
+                            class="form-control"
+                            placeholder="Nome completo">
 
 
-                        <label for="celular" class="form-label">
+                        <label
+                            for="celular"
+                            class="form-label">
+
                             Celular (WhatsApp)
+
                         </label>
 
-                        <input type="tel" id="celular" class="form-control" placeholder="(00) 00000-0000">
+                        <input
+                            type="tel"
+                            id="celular"
+                            class="form-control"
+                            placeholder="(00) 00000-0000">
 
 
-                        <label for="email" class="form-label">
+                        <label
+                            for="email"
+                            class="form-label">
+
                             E-mail
+
                         </label>
 
-                        <input type="email" id="email" class="form-control" placeholder="email@email.com">
+                        <input
+                            type="email"
+                            id="email"
+                            class="form-control"
+                            placeholder="email@email.com">
 
 
-                        <label for="informacoes" class="form-label">
+                        <label
+                            for="informacoes"
+                            class="form-label">
+
                             Informações adicionais
+
                         </label>
 
-                        <textarea id="informacoes" class="form-control" placeholder="Digite aqui..." rows="3">
-            </textarea>
+                        <textarea
+                            id="informacoes"
+                            class="form-control"
+                            placeholder="Digite aqui..."></textarea>
 
                     </div>
 
@@ -483,23 +937,33 @@
 
 
                 <!-- =====================
-         FORMULÁRIO DO SERVIÇO
-    ====================== -->
+                     SERVIÇO
+                ====================== -->
 
-                <div class="col-md-4">
+                <div class="col-lg-4">
 
                     <div class="coluna">
 
                         <h2 class="titulo-coluna">
-                            Selecione o serviço
+
+                            <i class="bi bi-calendar-heart"></i>
+
+                            Serviço
+
                         </h2>
 
 
-                        <label for="consulta" class="form-label">
+                        <label
+                            for="consulta"
+                            class="form-label">
+
                             Tipo de consulta
+
                         </label>
 
-                        <select id="consulta" class="form-select">
+                        <select
+                            id="consulta"
+                            class="form-select">
 
                             <option selected>
                                 Clínica Geral
@@ -520,14 +984,20 @@
                         </select>
 
 
-                        <label for="especialidade" class="form-label">
+                        <label
+                            for="especialidade"
+                            class="form-label">
+
                             Especialidade
+
                         </label>
 
-                        <select id="especialidade" class="form-select">
+                        <select
+                            id="especialidade"
+                            class="form-select">
 
                             <option selected>
-                                Especialidade
+                                Selecione uma especialidade
                             </option>
 
                             <option>
@@ -549,54 +1019,149 @@
                 </div>
 
             </div>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                CONFIRMAR CONSULTA
-            </button>
 
-            <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
+
+            <!-- =========================
+                 BOTÃO
+            ========================= -->
+
+            <div class="area-confirmar">
+
+                <button
+                    type="button"
+                    class="btn-confirmar"
+                    data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">
+
+                    <i class="bi bi-calendar-check"></i>
+
+                    Confirmar consulta
+
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 MODAL
+            ========================= -->
+
+            <div
+                class="modal fade"
+                id="staticBackdrop"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true">
+
+                <div class="modal-dialog modal-dialog-centered">
+
                     <div class="modal-content">
+
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Sua consulta foi confirmada! <i
-                                    class="bi bi-emoji-smile"></i></h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                            <h1
+                                class="modal-title fs-5"
+                                id="staticBackdropLabel">
+
+                                Consulta confirmada!
+                                <i class="bi bi-check-circle"></i>
+
+                            </h1>
+
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Fechar">
+                            </button>
+
                         </div>
+
+
                         <div class="modal-body">
-                            Para saber mais sobre a sua consulta, clique em VER ou na foto do seu cachorro para acessar
-                            a "Carteira-pet".
+
+                            <p class="mb-2">
+
+                                <strong>Pronto!</strong>
+                                A consulta do seu pet foi confirmada.
+
+                            </p>
+
+                            <p class="mb-0">
+
+                                Para consultar mais informações,
+                                acesse a <strong>Carteira-Pet</strong>
+                                pelo botão abaixo.
+
+                            </p>
+
                         </div>
+
+
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-ver-fechar" data-bs-dismiss="modal">FECHAR</button>
-                            <a href="carteirinha.html" class="btn btn-ver-fechar">VER</a>
+
+                            <button
+                                type="button"
+                                class="btn btn-ver-fechar"
+                                data-bs-dismiss="modal">
+
+                                Fechar
+
+                            </button>
+
+                            <a
+                                href="carteirinha.html"
+                                class="btn btn-ver-fechar">
+
+                                Ver Carteira-Pet
+
+                            </a>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
 
-        </main>
+        </div>
+
+    </main>
 
 
-        <footer>
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
-            <div>
-                Todos os direitos reservados
-            </div>
+    <footer>
 
-            <div class="contatos">
-                <i class="bi bi-instagram"></i>
-                <i class="bi bi-facebook"></i>
-            </div>
-
-        </footer>
+        <div>
+            © 2026 Patas & Bigodes · Todos os direitos reservados.
+        </div>
 
 
+        <div class="footer-icons">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+            <i class="bi bi-instagram"></i>
+
+            <i class="bi bi-facebook"></i>
+
+        </div>
+
+    </footer>
+
+</div>
+
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous">
+</script>
+
 </body>
 
 </html>
