@@ -1,20 +1,28 @@
+        :root {
+            --verde-escuro: #034C3C;
+            --verde: #4C8C7E;
+            --verde-claro: #DCECE5;
+            --amarelo: #E4A52B;
+            --azul-claro: #C9E3F8;
+            --branco: #FFFFFF;
+            --preto: #111111;
+            --borda: #B9D7CE;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Georgia, 'Times New Roman', serif;
         }
 
         body {
-            background-color: #D7E9DE;
+            background: var(--branco);
+            color: var(--preto);
+            line-height: 1.6;
             font-family: Georgia, 'Times New Roman', serif;
-            color: #034C3C;
         }
 
-        .pagina {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
 
         /* =========================
            HEADER
@@ -61,8 +69,8 @@
         }
 
         .logo img {
-            width: 42px;
-            height: 42px;
+            width: 52px;
+            height: 52px;
             object-fit: contain;
             border-radius: 50%;
         }
@@ -116,9 +124,9 @@
             font-weight: bold;
         }
 
-        .dog-img {
-            width: 42px;
-            height: 42px;
+        .botao-cachorro {
+            width: 52px;
+            height: 52px;
 
             background-color: white;
             border-radius: 50%;
@@ -129,60 +137,135 @@
         .perfil-link span {
             margin: 0;
         }
+/* =========================================================
+FOOTER
+========================================================= */
 
-        /* =========================
-   FOOTER / RODAPÉ
-========================= */
+footer {
 
-        footer {
-            background-color: #034C3C;
-            color: #D7E9DE;
+background-color: #034C3C;
 
-            min-height: 80px;
-            padding: 20px 40px;
+color: white;
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+box-shadow:
+    0 -4px 12px rgba(0, 0, 0, 0.12);
 
-        .footer-copy {
-            font-size: 15px;
-        }
+}
 
-        .footer-icons {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+.footer-content {
 
-        .footer-icons a {
-            color: #DE9E36;
-            text-decoration: none;
+width: min(1180px, 94%);
 
-            font-size: 24px;
+min-height: 100px;
 
-            transition: 0.3s;
-        }
+margin: 0 auto;
 
-        .footer-icons a:hover {
-            color: #D7E9DE;
-        }
-                .redes {
-            display: flex;
-            gap: 15px;
-            font-size: 20px;
-        }
+padding: 20px 0;
 
-        .redes a {
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+display: flex;
 
-        .redes a:hover {
-            color: #efa62f;
-        }
+align-items: center;
+
+justify-content: space-between;
+
+gap: 20px;
+
+}
+
+.footer-logo {
+
+display: flex;
+
+align-items: center;
+
+gap: 12px;
+
+}
+
+.footer-logo img {
+
+width: 52px;
+height: 52px;
+
+padding: 4px;
+
+border-radius: 50%;
+
+background-color: white;
+
+object-fit: contain;
+
+
+}
+
+.footer-logo strong {
+
+display: block;
+
+font-size: 17px;
+
+}
+
+.footer-logo span {
+
+display: block;
+
+color: rgba(255, 255, 255, 0.7);
+
+font-size: 15px;
+
+}
+
+.footer-social {
+
+display: flex;
+
+gap: 10px;
+
+}
+
+.footer-social a {
+
+width: 38px;
+height: 38px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+border-radius: 50%;
+
+background-color: rgba(255, 255, 255, 0.12);
+
+color: white;
+
+text-decoration: none;
+
+transition: 0.3s;
+
+}
+
+.footer-social a:hover {
+
+background-color: white;
+
+color: #3E7CB1;
+
+transform: translateY(-2px);
+
+}
+
+.footer-content > p {
+
+margin: 0;
+
+color: rgba(255, 255, 255, 0.75);
+
+font-size: 12px;
+
+}
 
         /* =========================
    RESPONSIVO
