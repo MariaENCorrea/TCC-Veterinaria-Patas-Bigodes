@@ -47,60 +47,129 @@
         ========================= */
 
         header {
-            height: 80px;
-            background-color: #005447;
+            background-color: #034C3C;
+            height: 90px;
+        }
+
+        .navbar-custom {
+            height: 90px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        /* CONTAINER */
+
+        .navbar-custom .container-fluid {
+            width: 100%;
+            height: 100%;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 6%;
-            box-shadow: 0 4px 18px rgba(0, 63, 54, 0.18);
-            position: relative;
-            z-index: 10;
         }
+
+        /* LOGO - CANTO ESQUERDO */
 
         .logo {
             width: 62px;
             height: 62px;
-            border-radius: 50%;
-            object-fit: contain;
-            background-color: #f5faf7;
-            padding: 3px;
-        }
 
-        nav {
             display: flex;
             align-items: center;
-            gap: 55px;
-        }
+            justify-content: center;
 
-        nav a {
-            color: var(--branco);
+            background-color: white;
+            border-radius: 50%;
+
             text-decoration: none;
-            font-size: 17px;
-            font-weight: bold;
-            position: relative;
-            padding: 8px 2px;
-            transition: 0.3s ease;
+
+            transition: 0.3s;
         }
 
-        nav a::after {
-            content: "";
+        .logo img {
+            width: 62px;
+            height: 62px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+
+        /* MENU - CENTRO */
+
+        .menu-links {
             position: absolute;
             left: 50%;
-            bottom: 0;
-            width: 0;
-            height: 2px;
-            background: var(--dourado);
             transform: translateX(-50%);
-            transition: 0.3s ease;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        nav a:hover {
-            color: var(--dourado-claro);
+        .btn-menu {
+            color: #D7E9DE;
+            text-decoration: none;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            padding: 10px 20px;
+            border-radius: 8px;
+
+            transition: 0.3s;
         }
 
-        nav a:hover::after {
-            width: 100%;
+        .btn-menu:hover {
+            background-color: #DE9E36;
+            color: #034C3C;
+        }
+
+        /* CACHORRO - CANTO DIREITO */
+
+        .botao-cachorro {
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: white;
+            border-radius: 50%;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .botao-cachorro img {
+            width: 52px;
+            height: 52px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .botao-cachorro:hover {
+            background-color: #DE9E36;
+            transform: scale(1.05);
+        }
+
+        .perfil-link {
+            color: #D7E9DE;
+            text-decoration: none;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            padding: 10px 20px;
+            border-radius: 8px;
+
+            transition: 0.3s;
         }
 
 
@@ -552,18 +621,29 @@
     ========================== -->
 
     <header>
+        <nav class="navbar-custom">
+            <div class="container-fluid px-4">
 
-        <img src="../static/img/favicon.png" alt="Logo Patas & Bigodes" class="logo">
+                <!-- LOGO -->
+                <a href="apresentacao.html" class="logo">
+                    <img src="../static/img/logo.png" alt="Logo">
+                </a>
 
+                <!-- MENU -->
+                <div class="menu-links">
+                    <a href="apresentacao.html" class="btn-menu">Início</a>
+                    <a href="consultas.html" class="btn-menu">Consultas</a>
+                </div>
 
-        <nav>
-            <a href="../templates/index.html">Início</a>
-            <a href="../templates/consulta.html">Consulta</a>
+                <!-- PERFIL -->
+                <a href="carteirinha.html" class="perfil-link">
+                    <img src="../static/img/cachorro.png" class="botao-cachorro" alt="Perfil">
+
+                    <span>Perfil</span>
+                </a>
+
+            </div>
         </nav>
-
-
-        <img src="../static/img/dog.png" alt="Perfil" class="logo">
-
     </header>
 
 
