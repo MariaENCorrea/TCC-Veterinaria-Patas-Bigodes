@@ -148,15 +148,134 @@
             margin: 0;
         }
 
+        /* =========================================================
+FOOTER
+========================================================= */
+
         footer {
-            background-color: var(--verde-escuro);
+
+            background-color: #034C3C;
+
             color: white;
-            min-height: 60px;
+
+            box-shadow:
+                0 -4px 12px rgba(0, 0, 0, 0.12);
+
+        }
+
+        .footer-content {
+
+            width: min(1180px, 94%);
+
+            min-height: 100px;
+
+            margin: 0 auto;
+
+            padding: 20px 0;
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
-            padding: 15px 30px;
-            font-size: 11px;
+
+            gap: 20px;
+
+        }
+
+        .footer-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+        .footer-logo img {
+
+            width: 52px;
+            height: 52px;
+
+            padding: 4px;
+
+            border-radius: 50%;
+
+            background-color: white;
+
+            object-fit: contain;
+
+
+        }
+
+        .footer-logo strong {
+
+            display: block;
+
+            font-size: 17px;
+
+        }
+
+        .footer-logo span {
+
+            display: block;
+
+            color: rgba(255, 255, 255, 0.7);
+
+            font-size: 15px;
+
+        }
+
+        .footer-social {
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+        .footer-social a {
+
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background-color: rgba(255, 255, 255, 0.12);
+
+            color: white;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+
+        }
+
+        .footer-social a:hover {
+
+            background-color: white;
+
+            color: #3E7CB1;
+
+            transform: translateY(-2px);
+
+        }
+
+        .footer-content>p {
+
+            margin: 0;
+
+            color: rgba(255, 255, 255, 0.75);
+
+            font-size: 12px;
+
         }
 
         .contatos {
@@ -275,7 +394,6 @@
             background-color: #c88d16;
             color: white;
         }
-
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="icon" type="image/png" href="../static/img/favicon.png">
@@ -284,19 +402,28 @@
 <body>
 
     <header>
-        <nav class="navbar">
-            <div class="container-fluid">
 
-                <a class="navbar-brand" href="#">
-                    <div class="logo">
-                        <img src="../static/img/logo.png" alt="Localização da Clínica Patas & Bigodes" class="mapa">
-                    </div>
+        <nav class="navbar">
+
+            <div class="container-fluid px-4">
+
+                <a href="index.html">
+
+                    <img src="../static/img/logo.png" alt="Patas & Bigodes" class="logo">
+
                 </a>
-                <a href="cadastro.html" class="btn-voltar">
-                    <i class="bi bi-box-arrow-left"></i>
+
+
+                <a href="index.html" class="btn-voltar" title="Voltar">
+
+                    <i class="bi bi-arrow-left"></i>
+
                 </a>
+
             </div>
+
         </nav>
+
     </header>
 
 
@@ -348,13 +475,46 @@
 
         <footer>
 
-            <div>
-                Todos os direitos reservados
-            </div>
+            <div class="footer-content">
 
-            <div class="contatos">
-                <i class="bi bi-instagram"></i>
-                <i class="bi bi-facebook"></i>
+                <div class="footer-logo">
+
+                    <img src="../static/img/logo.png" alt="Patas & Bigodes">
+
+                    <div>
+
+                        <strong>Patas & Bigodes</strong>
+
+                        <span>
+                            Cuidado que vira carinho.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="footer-social">
+
+                    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+
+                        <i class="bi bi-instagram"></i>
+
+                    </a>
+
+                    <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+
+                        <i class="bi bi-facebook"></i>
+
+                    </a>
+
+                </div>
+
+
+                <p>
+                    © 2026 Patas & Bigodes. Todos os direitos reservados.
+                </p>
+
             </div>
 
         </footer>
