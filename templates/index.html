@@ -4,632 +4,729 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Clínica Veterinária Patas & Bigodes">
-<meta name="author" content="Nycole">
-<meta name="keywords" content="veterinária, animais, pet, clínica veterinária">
+    <meta name="description" content="Clínica Veterinária Patas & Bigodes">
+    <meta name="author" content="Nycole">
+    <meta name="keywords" content="veterinária, animais, pet, clínica veterinária">
 
-<title>Clínica Patas & Bigodes</title>
+    <title>Clínica Patas & Bigodes</title>
 
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Bootstrap Icons -->
-<link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="../static/img/favicon.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../static/img/favicon.png">
 
-<style>
+    <style>
+        :root {
+            --verde-escuro: #005744;
+            --verde: #4d8b7d;
+            --verde-claro: #edf6f2;
+            --verde-muito-claro: #f7fbf9;
+            --amarelo: #e4a52b;
+            --amarelo-hover: #c98d18;
+            --branco: #ffffff;
+            --texto: #26332f;
+            --sombra: 0 15px 40px rgba(0, 87, 68, 0.12);
+        }
 
-    :root {
-        --verde-escuro: #005744;
-        --verde: #4d8b7d;
-        --verde-claro: #edf6f2;
-        --verde-muito-claro: #f7fbf9;
-        --amarelo: #e4a52b;
-        --amarelo-hover: #c98d18;
-        --branco: #ffffff;
-        --texto: #26332f;
-        --sombra: 0 15px 40px rgba(0, 87, 68, 0.12);
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    * {
-        box-sizing: border-box;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        margin: 0;
-        background-color: var(--verde-claro);
-        color: var(--texto);
-        font-family: Georgia, 'Times New Roman', serif;
-    }
+        body {
+            margin: 0;
+            background-color: var(--verde-claro);
+            color: var(--texto);
+            font-family: Georgia, 'Times New Roman', serif;
+        }
 
 
-    /* =========================
+        /* =========================
        CABEÇALHO
     ========================= */
 
-    header {
-        background-color: var(--verde-escuro);
-        height: 80px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
-        position: relative;
-        z-index: 10;
-    }
-
-    .navbar {
-        height: 100%;
-        padding: 0 35px;
-    }
-
-    .navbar-brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        color: white;
-        text-decoration: none;
-        transition: 0.3s;
-    }
-
-    .navbar-brand:hover {
-        color: white;
-        transform: translateY(-1px);
-    }
-
-    .logo {
-        width: 62px;
-        height: 62px;
-        background-color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    .logo img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        border-radius: 50%;
-    }
-
-    .nome-logo {
-        font-size: 25px;
-        font-weight: bold;
-        letter-spacing: 0.5px;
-    }
-
-    .nome-logo span {
-        color: var(--amarelo);
-    }
-
-
-    /* =========================
-       ÁREA PRINCIPAL
-    ========================= */
-
-    main {
-        background-color: var(--verde-claro);
-    }
-
-
-    /* =========================
-       SEÇÃO INICIAL
-    ========================= */
-
-    .inicio {
-        min-height: calc(100vh - 78px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 60px 30px;
-    }
-
-    .card-clinica {
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(
-            135deg,
-            #4d8b7d 0%,
-            #438375 100%
-        );
-        border: none;
-        border-radius: 28px;
-        width: 100%;
-        max-width: 1100px;
-        padding: 55px;
-        color: white;
-        box-shadow: var(--sombra);
-    }
-
-    /* detalhe decorativo */
-
-    .card-clinica::before {
-        content: "";
-        position: absolute;
-        width: 230px;
-        height: 230px;
-        border: 2px solid rgba(255, 255, 255, 0.10);
-        border-radius: 50%;
-        right: -90px;
-        top: -90px;
-    }
-
-    .card-clinica::after {
-        content: "";
-        position: absolute;
-        width: 160px;
-        height: 160px;
-        border: 2px solid rgba(255, 255, 255, 0.08);
-        border-radius: 50%;
-        left: -80px;
-        bottom: -80px;
-    }
-
-    .conteudo {
-        position: relative;
-        z-index: 2;
-        padding-right: 35px;
-    }
-
-    .tagline {
-        display: inline-block;
-        color: var(--amarelo);
-        font-size: 17px;
-        font-weight: bold;
-        margin-bottom: 18px;
-        letter-spacing: 0.5px;
-    }
-
-    .titulo {
-        font-size: clamp(40px, 5vw, 62px);
-        font-weight: bold;
-        line-height: 1.05;
-        margin-bottom: 22px;
-        color: white;
-    }
-
-    .titulo span {
-        color: var(--amarelo);
-    }
-
-    .descricao {
-        max-width: 480px;
-        font-size: 18px;
-        line-height: 1.7;
-        margin-bottom: 30px;
-        color: rgba(255, 255, 255, 0.92);
-    }
-
-
-    /* =========================
-       BOTÕES
-    ========================= */
-
-    .botoes {
-        display: flex;
-        gap: 14px;
-        flex-wrap: wrap;
-    }
-
-    .btn-clinica {
-        background-color: var(--amarelo);
-        border: 2px solid var(--amarelo);
-        color: #1d1d1d;
-        font-family: Georgia, 'Times New Roman', serif;
-        font-weight: bold;
-        font-size: 16px;
-        padding: 11px 25px;
-        border-radius: 10px;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.10);
-    }
-
-    .btn-clinica:hover {
-        background-color: var(--amarelo-hover);
-        border-color: var(--amarelo-hover);
-        color: white;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-    }
-
-    .btn-clinica i {
-        margin-right: 7px;
-    }
-
-
-    /* =========================
-       IMAGEM DOS ANIMAIS
-    ========================= */
-
-    .animais {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 15px;
-    }
-
-    .animais img {
-        width: 100%;
-        max-width: 470px;
-        height: 350px;
-        object-fit: cover;
-        border-radius: 22px;
-        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.20);
-        border: 6px solid rgba(255, 255, 255, 0.85);
-    }
-
-
-    /* =========================
-       LOCALIZAÇÃO
-    ========================= */
-
-    .localizacao {
-        min-height: 620px;
-        padding: 90px 30px;
-        display: flex;
-        align-items: center;
-        background-color: var(--verde-muito-claro);
-    }
-
-    .localizacao .container {
-        max-width: 1100px;
-    }
-
-    .titulo-localizacao {
-        text-align: center;
-        margin-bottom: 45px;
-    }
-
-    .titulo-localizacao h2 {
-        color: var(--verde-escuro);
-        font-size: 38px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
-    .titulo-localizacao p {
-        color: #63716c;
-        font-size: 16px;
-        margin: 0;
-    }
-
-    .mapa-container {
-        width: 100%;
-        max-width: 550px;
-        margin: auto;
-    }
-
-    .mapa {
-        width: 100%;
-        height: 330px;
-        object-fit: cover;
-        border-radius: 22px;
-        display: block;
-        box-shadow: var(--sombra);
-        border: 5px solid white;
-    }
-
-
-    /* =========================
-       ENDEREÇO
-    ========================= */
-
-    .endereco {
-        background-color: var(--verde-escuro);
-        color: white;
-        border-radius: 22px;
-        padding: 38px 30px;
-        max-width: 390px;
-        margin: auto;
-        text-align: center;
-        box-shadow: var(--sombra);
-    }
-
-    .icone-localizacao {
-        width: 60px;
-        height: 60px;
-        margin: 0 auto 18px;
-        background-color: rgba(228, 165, 43, 0.15);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--amarelo);
-        font-size: 28px;
-    }
-
-    .endereco h3 {
-        color: var(--amarelo);
-        font-size: 22px;
-        margin-bottom: 18px;
-        font-weight: bold;
-    }
-
-    .endereco p {
-        font-size: 15px;
-        line-height: 1.8;
-        margin: 0;
-        color: rgba(255, 255, 255, 0.92);
-    }
-
-
-    /* =========================
-       RODAPÉ
-    ========================= */
-
-    footer {
-        background-color: var(--verde-escuro);
-        color: white;
-        min-height: 85px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 20px 45px;
-        font-size: 13px;
-    }
-
-    .rodape-centro {
-        text-align: center;
-        color: rgba(255, 255, 255, 0.85);
-        font-size: 14px;
-    }
-
-    .contatos {
-        display: flex;
-        gap: 10px;
-    }
-
-    .contatos a {
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--amarelo);
-        background-color: rgba(255, 255, 255, 0.08);
-        text-decoration: none;
-        font-size: 17px;
-        transition: 0.3s;
-    }
-
-    .contatos a:hover {
-        background-color: var(--amarelo);
-        color: var(--verde-escuro);
-        transform: translateY(-3px);
-    }
-
-
-    /* =========================
-       RESPONSIVIDADE
-    ========================= */
-
-    @media (max-width: 991px) {
-
-        .inicio {
-            min-height: auto;
-            padding: 45px 20px;
-        }
-
-        .card-clinica {
-            padding: 45px 35px;
-        }
-
-        .conteudo {
-            padding-right: 0;
-            margin-bottom: 35px;
-        }
-
-        .titulo {
-            font-size: 48px;
-        }
-
-        .animais img {
-            max-width: 100%;
-            height: 320px;
-        }
-
-    }
-
-
-    @media (max-width: 768px) {
-
         header {
             background-color: var(--verde-escuro);
-            height: 80px
-
+            height: 80px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+            position: relative;
+            z-index: 10;
         }
 
         .navbar {
-            padding: 0 18px;
+            height: 100%;
+            padding: 0 35px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .navbar-brand:hover {
+            color: white;
+            transform: translateY(-1px);
         }
 
         .logo {
-            width: 42px;
-            height: 42px;
+            width: 62px;
+            height: 62px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
         }
 
         .nome-logo {
-            font-size: 21px;
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
         }
 
+        .nome-logo span {
+            color: var(--amarelo);
+        }
+
+
+        /* =========================
+       ÁREA PRINCIPAL
+    ========================= */
+
+        main {
+            background-color: var(--verde-claro);
+        }
+
+
+        /* =========================
+       SEÇÃO INICIAL
+    ========================= */
+
         .inicio {
-            padding: 30px 15px;
+            min-height: calc(100vh - 78px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 30px;
         }
 
         .card-clinica {
-            padding: 35px 22px;
-            border-radius: 22px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg,
+                    #4d8b7d 0%,
+                    #438375 100%);
+            border: none;
+            border-radius: 28px;
+            width: 100%;
+            max-width: 1100px;
+            padding: 55px;
+            color: white;
+            box-shadow: var(--sombra);
+        }
+
+        /* detalhe decorativo */
+
+        .card-clinica::before {
+            content: "";
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            border: 2px solid rgba(255, 255, 255, 0.10);
+            border-radius: 50%;
+            right: -90px;
+            top: -90px;
+        }
+
+        .card-clinica::after {
+            content: "";
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            left: -80px;
+            bottom: -80px;
         }
 
         .conteudo {
-            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding-right: 35px;
         }
 
         .tagline {
-            font-size: 15px;
+            display: inline-block;
+            color: var(--amarelo);
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 18px;
+            letter-spacing: 0.5px;
         }
 
         .titulo {
-            font-size: 40px;
+            font-size: clamp(40px, 5vw, 62px);
+            font-weight: bold;
+            line-height: 1.05;
+            margin-bottom: 22px;
+            color: white;
+        }
+
+        .titulo span {
+            color: var(--amarelo);
         }
 
         .descricao {
-            font-size: 16px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 480px;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.92);
         }
+
+
+        /* =========================
+       BOTÕES
+    ========================= */
 
         .botoes {
-            justify-content: center;
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
         }
 
+        .btn-clinica {
+            background-color: var(--amarelo);
+            border: 2px solid var(--amarelo);
+            color: #1d1d1d;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 11px 25px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.10);
+        }
+
+        .btn-clinica:hover {
+            background-color: var(--amarelo-hover);
+            border-color: var(--amarelo-hover);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .btn-clinica i {
+            margin-right: 7px;
+        }
+
+
+        /* =========================
+       IMAGEM DOS ANIMAIS
+    ========================= */
+
         .animais {
-            padding: 5px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
         }
 
         .animais img {
-            height: 250px;
-            border-width: 4px;
+            width: 100%;
+            max-width: 470px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 22px;
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.20);
+            border: 6px solid rgba(255, 255, 255, 0.85);
         }
 
+
+        /* =========================
+       LOCALIZAÇÃO
+    ========================= */
+
         .localizacao {
-            padding: 65px 20px;
+            min-height: 620px;
+            padding: 90px 30px;
+            display: flex;
+            align-items: center;
+            background-color: var(--verde-muito-claro);
+        }
+
+        .localizacao .container {
+            max-width: 1100px;
+        }
+
+        .titulo-localizacao {
+            text-align: center;
+            margin-bottom: 45px;
         }
 
         .titulo-localizacao h2 {
-            font-size: 30px;
+            color: var(--verde-escuro);
+            font-size: 38px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .titulo-localizacao p {
+            color: #63716c;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .mapa-container {
+            width: 100%;
+            max-width: 550px;
+            margin: auto;
         }
 
         .mapa {
-            height: 260px;
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            border-radius: 22px;
+            display: block;
+            box-shadow: var(--sombra);
+            border: 5px solid white;
         }
+
+
+        /* =========================
+       ENDEREÇO
+    ========================= */
 
         .endereco {
-            margin-top: 30px;
+            background-color: var(--verde-escuro);
+            color: white;
+            border-radius: 22px;
+            padding: 38px 30px;
+            max-width: 390px;
+            margin: auto;
+            text-align: center;
+            box-shadow: var(--sombra);
         }
+
+        .icone-localizacao {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 18px;
+            background-color: rgba(228, 165, 43, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--amarelo);
+            font-size: 28px;
+        }
+
+        .endereco h3 {
+            color: var(--amarelo);
+            font-size: 22px;
+            margin-bottom: 18px;
+            font-weight: bold;
+        }
+
+        .endereco p {
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+
+        /* =========================
+       RODAPÉ
+    ========================= */
 
         footer {
-            flex-direction: column;
-            text-align: center;
-            padding: 25px 15px;
+
+            background-color: #034C3C;
+
+            color: white;
+
+            box-shadow:
+                0 -4px 12px rgba(0, 0, 0, 0.12);
+
         }
 
-    }
+        .footer-content {
 
-</style>
+            width: min(1180px, 94%);
+
+            min-height: 100px;
+
+            margin: 0 auto;
+
+            padding: 20px 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+        }
+
+        .footer-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+        .footer-logo img {
+
+            width: 52px;
+            height: 52px;
+
+            padding: 4px;
+
+            border-radius: 50%;
+
+            background-color: white;
+
+            object-fit: contain;
+
+
+        }
+
+        .footer-logo strong {
+
+            display: block;
+
+            font-size: 17px;
+
+        }
+
+        .footer-logo span {
+
+            display: block;
+
+            color: rgba(255, 255, 255, 0.7);
+
+            font-size: 15px;
+
+        }
+
+        .footer-social {
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+        .footer-social a {
+
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background-color: rgba(255, 255, 255, 0.12);
+
+            color: white;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+
+        }
+
+        .footer-social a:hover {
+
+            background-color: white;
+
+            color: #3E7CB1;
+
+            transform: translateY(-2px);
+
+        }
+
+        .footer-content>p {
+
+            margin: 0;
+
+            color: rgba(255, 255, 255, 0.75);
+
+            font-size: 12px;
+
+        }
+
+
+        /* =========================
+       RESPONSIVIDADE
+    ========================= */
+
+        @media (max-width: 991px) {
+
+            .inicio {
+                min-height: auto;
+                padding: 45px 20px;
+            }
+
+            .card-clinica {
+                padding: 45px 35px;
+            }
+
+            .conteudo {
+                padding-right: 0;
+                margin-bottom: 35px;
+            }
+
+            .titulo {
+                font-size: 48px;
+            }
+
+            .animais img {
+                max-width: 100%;
+                height: 320px;
+            }
+
+        }
+
+
+        @media (max-width: 768px) {
+
+            header {
+                background-color: var(--verde-escuro);
+                height: 80px
+            }
+
+            .navbar {
+                padding: 0 18px;
+            }
+
+            .logo {
+                width: 42px;
+                height: 42px;
+            }
+
+            .nome-logo {
+                font-size: 21px;
+            }
+
+            .inicio {
+                padding: 30px 15px;
+            }
+
+            .card-clinica {
+                padding: 35px 22px;
+                border-radius: 22px;
+            }
+
+            .conteudo {
+                text-align: center;
+            }
+
+            .tagline {
+                font-size: 15px;
+            }
+
+            .titulo {
+                font-size: 40px;
+            }
+
+            .descricao {
+                font-size: 16px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .botoes {
+                justify-content: center;
+            }
+
+            .animais {
+                padding: 5px;
+            }
+
+            .animais img {
+                height: 250px;
+                border-width: 4px;
+            }
+
+            .localizacao {
+                padding: 65px 20px;
+            }
+
+            .titulo-localizacao h2 {
+                font-size: 30px;
+            }
+
+            .mapa {
+                height: 260px;
+            }
+
+            .endereco {
+                margin-top: 30px;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 15px;
+            }
+
+        }
+    </style>
 
 </head>
 
 <body>
 
-<!-- =========================
+    <!-- =========================
      CABEÇALHO
 ========================= -->
 
-<header>
+    <header>
 
-<nav class="navbar">
+        <nav class="navbar">
 
-    <div class="container-fluid">
+            <div class="container-fluid">
 
-       
 
-            <div class="logo">
 
-                <img
-                    src="../static/img/logo.png"
-                    alt="Logo Patas & Bigodes">
+                <div class="logo">
 
-            </div>
+                    <img src="../static/img/logo.png" alt="Logo Patas & Bigodes">
+
+                </div>
 
             </div>
 
-    </div>
+            </div>
 
-</nav>
+        </nav>
 
-</header>
+    </header>
 
-<main>
+    <main>
 
-<!-- =========================
+        <!-- =========================
      INÍCIO
 ========================= -->
 
-<section class="inicio" id="inicio">
+        <section class="inicio" id="inicio">
 
-<div class="card-clinica">
+            <div class="card-clinica">
 
-    <div class="container-fluid">
+                <div class="container-fluid">
 
-        <div class="row align-items-center">
-
-
-            <!-- CONTEÚDO -->
-
-            <div class="col-lg-6 col-md-6">
-
-                <div class="conteudo">
-
-                    <p class="tagline">
-
-                        Cuidado, carinho e saúde para seu pet.
-
-                    </p>
+                    <div class="row align-items-center">
 
 
-                    <h1 class="titulo">
+                        <!-- CONTEÚDO -->
 
-                        Bem-vindo!<br>
-                        Clínica<br>
-                        Patas <span>&amp;</span><br>
-                        <span>Bigodes</span>
+                        <div class="col-lg-6 col-md-6">
 
-                    </h1>
+                            <div class="conteudo">
 
+                                <p class="tagline">
 
-                    <p class="descricao">
+                                    Cuidado, carinho e saúde para seu pet.
 
-                        Aqui você encontrará um atendimento
-                        acolhedor e especializado para cuidar
-                        da saúde e do bem-estar do seu pet.
-
-                    </p>
+                                </p>
 
 
-                    <div class="botoes">
+                                <h1 class="titulo">
 
-                        <a href="cadastro.html" class="btn btn-clinica">
+                                    Bem-vindo!<br>
+                                    Clínica<br>
+                                    Patas <span>&amp;</span><br>
+                                    <span>Bigodes</span>
 
-                            <i class="bi bi-person-plus"></i>
-
-                            Cadastrar
-
-                        </a>
+                                </h1>
 
 
-                        <a href="login.html" class="btn btn-clinica">
+                                <p class="descricao">
 
-                            <i class="bi bi-box-arrow-in-right"></i>
+                                    Aqui você encontrará um atendimento
+                                    acolhedor e especializado para cuidar
+                                    da saúde e do bem-estar do seu pet.
 
-                            Entrar
+                                </p>
 
-                        </a>
+
+                                <div class="botoes">
+
+                                    <a href="cadastro.html" class="btn btn-clinica">
+
+                                        <i class="bi bi-person-plus"></i>
+
+                                        Cadastrar
+
+                                    </a>
+
+
+                                    <a href="login.html" class="btn btn-clinica">
+
+                                        <i class="bi bi-box-arrow-in-right"></i>
+
+                                        Entrar
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- IMAGEM -->
+
+                        <div class="col-lg-6 col-md-6">
+
+                            <div class="animais">
+
+                                <img src="../static/img/caes_gatos.jpg"
+                                    alt="Cachorro e gato da Clínica Patas & Bigodes">
+
+                            </div>
+
+                        </div>
+
 
                     </div>
 
@@ -637,179 +734,157 @@
 
             </div>
 
+        </section>
 
-
-            <!-- IMAGEM -->
-
-            <div class="col-lg-6 col-md-6">
-
-                <div class="animais">
-
-                    <img
-                        src="../static/img/caes_gatos.jpg"
-                        alt="Cachorro e gato da Clínica Patas & Bigodes">
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-<!-- =========================
+        <!-- =========================
      LOCALIZAÇÃO
 ========================= -->
 
-<section class="localizacao" id="contato">
+        <section class="localizacao" id="contato">
 
-<div class="container">
-
-
-    <div class="titulo-localizacao">
-
-        <h2>
-
-            <i class="bi bi-geo-alt-fill"></i>
-
-            Onde estamos
-
-        </h2>
-
-        <p>
-
-            Visite nossa clínica e venha conhecer nosso espaço.
-
-        </p>
-
-    </div>
+            <div class="container">
 
 
+                <div class="titulo-localizacao">
 
-    <div class="row align-items-center g-5">
+                    <h2>
 
+                        <i class="bi bi-geo-alt-fill"></i>
 
-        <!-- MAPA -->
+                        Onde estamos
 
-        <div class="col-md-7">
+                    </h2>
 
-            <div class="mapa-container">
+                    <p>
 
-                <img
-                    src="../static/img/mapa.png"
-                    alt="Localização da Clínica Patas & Bigodes"
-                    class="mapa">
+                        Visite nossa clínica e venha conhecer nosso espaço.
 
-            </div>
-
-        </div>
-
-
-
-        <!-- ENDEREÇO -->
-
-        <div class="col-md-5">
-
-            <div class="endereco">
-
-
-                <div class="icone-localizacao">
-
-                    <i class="bi bi-geo-alt-fill"></i>
+                    </p>
 
                 </div>
 
 
-                <h3>
 
-                    Estamos localizados em:
-
-                </h3>
+                <div class="row align-items-center g-5">
 
 
-                <p>
+                    <!-- MAPA -->
 
-                    Rua das Flores, 123
-                    <br>
+                    <div class="col-md-7">
 
-                    Bairro Jardim
-                    <br>
+                        <div class="mapa-container">
 
-                    São Paulo - SP
+                            <img src="../static/img/mapa.png" alt="Localização da Clínica Patas & Bigodes" class="mapa">
 
-                    <br><br>
+                        </div>
 
-                    <strong>CEP: 01234-567</strong>
+                    </div>
 
-                </p>
+
+
+                    <!-- ENDEREÇO -->
+
+                    <div class="col-md-5">
+
+                        <div class="endereco">
+
+
+                            <div class="icone-localizacao">
+
+                                <i class="bi bi-geo-alt-fill"></i>
+
+                            </div>
+
+
+                            <h3>
+
+                                Estamos localizados em:
+
+                            </h3>
+
+
+                            <p>
+
+                                Rua das Flores, 123
+                                <br>
+
+                                Bairro Jardim
+                                <br>
+
+                                São Paulo - SP
+
+                                <br><br>
+
+                                <strong>CEP: 01234-567</strong>
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
 
             </div>
 
-        </div>
+        </section>
 
+    </main>
 
-    </div>
-
-</div>
-
-</section>
-
-</main>
-
-<!-- =========================
+    <!-- =========================
      RODAPÉ
 ========================= -->
 
-<footer>
+    <footer>
 
-<div>
+        <div class="footer-content">
 
-    © 2026 Clínica Patas & Bigodes
+            <div class="footer-logo">
 
-</div>
+                <img src="../static/img/logo.png" alt="Patas & Bigodes">
 
+                <div>
 
-<div class="rodape-centro">
+                    <strong>Patas & Bigodes</strong>
 
-    Cuidando de quem te faz feliz 🐾
+                    <span>
+                        Cuidado que vira carinho.
+                    </span>
 
-</div>
+                </div>
 
-
-<div class="contatos">
-
-    <a href="#" aria-label="Instagram">
-
-        <i class="bi bi-instagram"></i>
-
-    </a>
+            </div>
 
 
-    <a href="#" aria-label="Facebook">
+            <div class="footer-social">
 
-        <i class="bi bi-facebook"></i>
+                <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
 
-    </a>
+                    <i class="bi bi-instagram"></i>
+
+                </a>
+
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+
+                    <i class="bi bi-facebook"></i>
+
+                </a>
+
+            </div>
 
 
-    <a href="#" aria-label="WhatsApp">
+            <p>
+                © 2026 Patas & Bigodes. Todos os direitos reservados.
+            </p>
 
-        <i class="bi bi-whatsapp"></i>
+        </div>
 
-    </a>
+    </footer>
 
-</div>
+    <!-- Bootstrap JS -->
 
-</footer>
-
-<!-- Bootstrap JS -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
