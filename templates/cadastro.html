@@ -11,13 +11,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <link rel="icon" type="image/png" href="../static/img/favicon.png">
 
     <style>
-
         /* =====================================================
            CORES ORIGINAIS
         ===================================================== */
@@ -59,32 +57,22 @@
 
         header {
             background-color: var(--verde-escuro);
-
-            height: 78px;
-
-            display: flex;
-            align-items: center;
-
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+            height: 80px;
         }
 
         .navbar {
-            width: 100%;
+            height: 100%;
         }
 
         .logo {
-            width: 42px;
-            height: 42px;
+            width: 62px;
+            height: 62px;
             background-color: white;
             border-radius: 50%;
-
-            padding: 4px;
-
-            transition: 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
         }
 
 
@@ -537,6 +525,13 @@
 
         @media (max-width: 576px) {
 
+            .logo img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                border-radius: 50%;
+            }
+
             header {
                 height: 68px;
             }
@@ -582,7 +577,6 @@
                 padding: 0 18px;
             }
         }
-
     </style>
 
 </head>
@@ -603,20 +597,12 @@
 
                 <a href="index.html">
 
-                    <img
-                        src="../static/img/logo.png"
-                        alt="Patas & Bigodes"
-                        class="logo"
-                    >
+                    <img src="../static/img/logo.png" alt="Patas & Bigodes" class="logo">
 
                 </a>
 
 
-                <a
-                    href="index.html"
-                    class="btn-voltar"
-                    title="Voltar"
-                >
+                <a href="index.html" class="btn-voltar" title="Voltar">
 
                     <i class="bi bi-arrow-left"></i>
 
@@ -688,20 +674,11 @@
 
                 <!-- NOME -->
 
-                <label
-                    for="nomeAnimal"
-                    class="form-label"
-                >
+                <label for="nomeAnimal" class="form-label">
                     Nome do Animal
                 </label>
 
-                <input
-                    type="text"
-                    class="form-control"
-                    id="nomeAnimal"
-                    placeholder="Digite o nome do animal"
-                    required
-                >
+                <input type="text" class="form-control" id="nomeAnimal" placeholder="Digite o nome do animal" required>
 
 
 
@@ -716,18 +693,9 @@
 
                     <div class="form-check">
 
-                        <input
-                            class="form-check-input"
-                            type="radio"
-                            name="sexo"
-                            id="macho"
-                            value="macho"
-                        >
+                        <input class="form-check-input" type="radio" name="sexo" id="macho" value="macho">
 
-                        <label
-                            class="form-check-label"
-                            for="macho"
-                        >
+                        <label class="form-check-label" for="macho">
                             Macho
                         </label>
 
@@ -736,18 +704,9 @@
 
                     <div class="form-check">
 
-                        <input
-                            class="form-check-input"
-                            type="radio"
-                            name="sexo"
-                            id="femea"
-                            value="femea"
-                        >
+                        <input class="form-check-input" type="radio" name="sexo" id="femea" value="femea">
 
-                        <label
-                            class="form-check-label"
-                            for="femea"
-                        >
+                        <label class="form-check-label" for="femea">
                             Fêmea
                         </label>
 
@@ -759,36 +718,21 @@
 
                 <!-- IDADE -->
 
-                <label
-                    for="idade"
-                    class="form-label"
-                >
+                <label for="idade" class="form-label">
                     Idade
                 </label>
 
-                <input
-                    type="number"
-                    class="form-control"
-                    id="idade"
-                    placeholder="Digite a idade"
-                    min="0"
-                >
+                <input type="number" class="form-control" id="idade" placeholder="Digite a idade" min="0">
 
 
 
                 <!-- ESPÉCIE -->
 
-                <label
-                    for="especie"
-                    class="form-label"
-                >
+                <label for="especie" class="form-label">
                     Espécie
                 </label>
 
-                <select
-                    class="form-select"
-                    id="especie"
-                >
+                <select class="form-select" id="especie">
 
                     <option selected disabled>
                         Selecione a espécie
@@ -816,19 +760,11 @@
 
                 <!-- RAÇA -->
 
-                <label
-                    for="raca"
-                    class="form-label"
-                >
+                <label for="raca" class="form-label">
                     Raça
                 </label>
 
-                <input
-                    type="text"
-                    class="form-control"
-                    id="raca"
-                    placeholder="Digite a raça"
-                >
+                <input type="text" class="form-control" id="raca" placeholder="Digite a raça">
 
             </form>
 
@@ -868,38 +804,22 @@
 
                 <!-- NOME -->
 
-                <label
-                    for="proprietario"
-                    class="form-label"
-                >
+                <label for="proprietario" class="form-label">
                     Nome Completo
                 </label>
 
-                <input
-                    type="text"
-                    class="form-control"
-                    id="proprietario"
-                    placeholder="Digite seu nome completo"
-                    required
-                >
+                <input type="text" class="form-control" id="proprietario" placeholder="Digite seu nome completo"
+                    required>
 
 
 
                 <!-- CPF -->
 
-                <label
-                    for="cpf"
-                    class="form-label"
-                >
+                <label for="cpf" class="form-label">
                     CPF
                 </label>
 
-                <input
-                    type="text"
-                    class="form-control"
-                    id="cpf"
-                    placeholder="000.000.000-00"
-                >
+                <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00">
 
 
                 <label for="cpf" class="form-label">
@@ -913,66 +833,37 @@
                     Número de Celular
                 </label>
 
-                <input
-                    type="tel"
-                    class="form-control"
-                    id="numero"
-                    placeholder="(00) 00000-0000"
-                >
+                <input type="tel" class="form-control" id="numero" placeholder="(00) 00000-0000">
 
 
 
                 <!-- EMAIL -->
 
-                <label
-                    for="email"
-                    class="form-label"
-                >
+                <label for="email" class="form-label">
                     E-mail
                 </label>
 
-                <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="exemplo@email.com"
-                >
+                <input type="email" class="form-control" id="email" placeholder="exemplo@email.com">
 
 
 
                 <!-- CIDADE -->
 
-                <label
-                    for="cidade"
-                    class="form-label"
-                >
+                <label for="cidade" class="form-label">
                     Cidade
                 </label>
 
-                <input
-                    type="text"
-                    class="form-control"
-                    id="cidade"
-                    placeholder="Digite sua cidade"
-                >
+                <input type="text" class="form-control" id="cidade" placeholder="Digite sua cidade">
 
 
 
                 <!-- BAIRRO -->
 
-                <label
-                    for="bairro"
-                    class="form-label"
-                >
+                <label for="bairro" class="form-label">
                     Bairro
                 </label>
 
-                <input
-                    type="text"
-                    class="form-control"
-                    id="bairro"
-                    placeholder="Digite seu bairro"
-                >
+                <input type="text" class="form-control" id="bairro" placeholder="Digite seu bairro">
 
             </form>
 
@@ -986,10 +877,7 @@
 
         <div class="area-botao">
 
-            <a
-                href="login.html"
-                class="btn-cadastrar"
-            >
+            <a href="login.html" class="btn-cadastrar">
 
                 <i class="bi bi-check2-circle"></i>
 
@@ -1027,8 +915,7 @@
 
 
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
     </script>
 
 </body>
