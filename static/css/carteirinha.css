@@ -1,1165 +1,1867 @@
-/* =========================================================
-   CONFIGURAÇÕES GERAIS
-========================================================= */
-
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  }
+
+html {
+scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    background-color: #C8E3FF;
-    font-family: Georgia, 'Times New Roman', serif;
-    color: #000;
+margin: 0;
+min-height: 100vh;
+
+background-color: #C8E3FF;
+
+font-family: Georgia, "Times New Roman", serif;
+
+color: #17202A;
+
 }
 
-
 /* =========================================================
-   CABEÇALHO
+CABEÇALHO
 ========================================================= */
 
 header {
-    background-color: #4F86B8;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-    position: relative;
-    z-index: 10;
+background-color: #4F86B8;
+
+box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.15);
+
+position: relative;
+
+z-index: 10;
+
 }
 
 .navbar-custom {
-    min-height: 90px;
-    display: flex;
-    align-items: center;
+min-height: 90px;
+
+display: flex;
+
+align-items: center;
+
 }
 
-.menu {
-    display: flex;
-    align-items: center;
-    background-color: #4F86B8;
-    margin: 0 auto;
-}
+/* =========================================================
+LOGO
+========================================================= */
 
 .logo {
-    width: 60px;
-    height: 60px;
-    background-color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+width: 60px;
+height: 60px;
+
+background-color: white;
+
+border-radius: 50%;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+padding: 5px;
+
+box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.15);
+
 }
 
 .logo img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+max-width: 100%;
+max-height: 100%;
+
+object-fit: contain;
+
+}
+
+/* =========================================================
+MENU
+========================================================= */
+
+.menu {
+display: flex;
+
+align-items: center;
+
+background-color: #4F86B8;
+
+margin: 0 auto;
+
+
 }
 
 .btn-menu {
-    color: #D7E9DE;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: bold;
-    margin-left: 20px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: 0.3s;
+color: #D7E9DE;
+
+
+text-decoration: none;
+
+font-size: 17px;
+
+font-weight: bold;
+
+margin-left: 20px;
+
+padding: 10px 20px;
+
+border-radius: 8px;
+
+transition: 0.3s;
+
+
 }
 
 .btn-menu:hover {
-    background-color: #C8E3FF;
-    color: #4F86B8;
-    transform: translateY(-2px);
+background-color: #C8E3FF;
+
+color: #4F86B8;
+
+transform: translateY(-2px);
+
 }
 
-
 /* =========================================================
-   FUNDO DA PÁGINA
+FUNDO
 ========================================================= */
 
 .fundo {
-    min-height: 100vh;
+min-height: calc(100vh - 90px);
 
-    background-color: #C8E3FF;
-    background-image: url("../img/pata.png");
-    background-repeat: repeat;
-    background-size: 55px 55px;
-    background-position: center;
 
-    padding: 30px 0 40px;
+padding: 40px 0 60px;
+
+background-color: #C8E3FF;
+
+background-image:
+    url("../img/pata.png");
+
+background-repeat: repeat;
+
+background-size: 55px 55px;
+
+background-position: center;
+
 }
 
-
 /* =========================================================
-   CONTEÚDO PRINCIPAL
+CONTEÚDO
 ========================================================= */
 
 main {
-    width: min(1100px, 95%);
-    margin: 0 auto;
+width: min(1180px, 94%);
+
+margin: 0 auto;
+
+
 }
 
+/* =========================================================
+TÍTULO
+========================================================= */
+
+.titulo-pagina {
+display: flex;
+
+
+align-items: flex-end;
+
+justify-content: space-between;
+
+margin-bottom: 25px;
+
+padding: 0 8px;
+
+}
+
+.status-pet {
+display: flex;
+
+align-items: center;
+
+gap: 8px;
+
+padding: 8px 14px;
+
+background-color: white;
+
+border-radius: 20px;
+
+color: #3E7CB1;
+
+font-size: 14px;
+
+box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.status-dot {
+width: 9px;
+height: 9px;
+
+border-radius: 50%;
+
+background-color: #4CAF50;
+
+}
 
 /* =========================================================
-   CARTEIRINHA
+CARTEIRINHA
 ========================================================= */
 
 .carteirinha {
-    margin-bottom: 45px;
+margin-bottom: 40px;
 }
-
-/*
-   A carteirinha fica separada da área azul-clara.
-*/
 
 .capa {
-    position: relative;
+position: relative;
 
-    min-height: 500px;
+min-height: 525px;
 
-    overflow: hidden;
+overflow: hidden;
 
-    background-color: #3E7CB1;
+border-radius: 25px;
 
-    border-radius: 24px;
+background-color: #3E7CB1;
 
-    box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.18);
+box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.20);
+
 }
-
-
-/* =========================================================
-   IMAGEM GRANDE DA CARTEIRINHA
-========================================================= */
 
 .capa-img {
-    position: absolute;
+position: absolute;
 
-    top: 0;
-    left: 0;
+inset: 0;
 
-    width: 100%;
-    height: 100%;
+width: 100%;
+height: 100%;
 
-    object-fit: cover;
+object-fit: cover;
 
-    opacity: 0.35;
+opacity: 0.32;
+
 }
 
+.overlay {
+position: absolute;
 
-/* =========================================================
-   CONTEÚDO DA CAPA
-========================================================= */
+inset: 0;
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(62, 124, 177, 0.95),
+        rgba(79, 134, 184, 0.72)
+    );
+
+}
 
 .conteudo-capa {
-    position: relative;
+position: relative;
 
-    z-index: 2;
+z-index: 2;
 
-    min-height: 500px;
+min-height: 525px;
 
-    padding: 35px 45px 25px;
+padding: 35px 50px 25px;
 
-    text-align: center;
+text-align: center;
+
 }
 
+/* =========================================================
+BOTÃO IMPRIMIR
+========================================================= */
+
+.btn-imprimir {
+position: absolute;
+
+top: 25px;
+right: 30px;
+
+display: flex;
+
+align-items: center;
+
+gap: 8px;
+
+padding: 9px 15px;
+
+border: none;
+
+border-radius: 9px;
+
+background-color: rgba(255, 255, 255, 0.95);
+
+color: #3E7CB1;
+
+font-family: Georgia, "Times New Roman", serif;
+
+font-weight: bold;
+
+cursor: pointer;
+
+transition: 0.3s;
+
+}
+
+.btn-imprimir:hover {
+background-color: #DE9E36;
+
+color: white;
+
+transform: translateY(-2px);
+
+
+}
 
 /* =========================================================
-   FOTO DO ANIMAL
+FOTO
 ========================================================= */
+
+.foto-container {
+position: relative;
+
+width: 140px;
+height: 140px;
+
+margin: 0 auto 14px;
+
+
+}
 
 .foto-animal {
-    width: 125px;
-    height: 125px;
+width: 140px;
+height: 140px;
 
-    object-fit: cover;
+object-fit: cover;
 
-    border-radius: 50%;
+border-radius: 50%;
 
-    border: 5px solid white;
+border: 5px solid white;
 
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.25);
+box-shadow:
+    0 7px 20px rgba(0, 0, 0, 0.25);
 
-    margin-bottom: 15px;
 }
 
+.badge-pet {
+position: absolute;
 
-/* Caso esteja usando a imagem com Bootstrap */
+right: 3px;
+bottom: 7px;
 
-.capa .rounded-circle {
-    width: 125px !important;
-    height: 125px !important;
+width: 31px;
+height: 31px;
 
-    object-fit: cover;
+display: flex;
 
-    border: 5px solid white;
+align-items: center;
 
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.25);
+justify-content: center;
 
-    position: relative;
-    z-index: 2;
+border-radius: 50%;
+
+background-color: #DE9E36;
+
+color: white;
+
+border: 3px solid white;
+
+font-size: 13px;
 }
-
 
 /* =========================================================
-   NOME DO ANIMAL
+NOME
 ========================================================= */
 
-.conteudo-capa h1,
-.capa .card-title {
-    margin: 5px 0 10px;
+.conteudo-capa h1 {
+margin: 5px 0;
 
-    color: #DE9E36;
+color: #DE9E36;
 
-    font-size: clamp(32px, 5vw, 48px);
+font-size: clamp(36px, 5vw, 52px);
 
-    font-weight: bold;
+font-weight: bold;
 
-    letter-spacing: 1px;
+letter-spacing: 3px;
 
-    position: relative;
-    z-index: 2;
 }
-
-
-/* =========================================================
-   DESCRIÇÃO
-========================================================= */
 
 .descricao {
-    color: white;
+margin: 0;
 
-    font-size: 18px;
+color: white;
 
-    margin-bottom: 25px;
+font-size: 17px;
+
 }
-
-.capa .card-text {
-    color: white;
-}
-
 
 /* =========================================================
-   INFORMAÇÕES DO ANIMAL
+INFORMAÇÕES
 ========================================================= */
 
-/*
-   A caixa de informações fica afastada
-   da imagem grande e das bordas.
-*/
-
 .informacoes {
-    width: min(760px, 90%);
+width: min(850px, 95%);
 
-    margin: 50px auto 45px;
+margin: 30px auto 25px;
 
-    padding: 28px 32px;
+padding: 20px;
 
-    text-align: left;
+display: grid;
 
-    background-color: rgba(255, 255, 255, 0.20);
+grid-template-columns: repeat(4, 1fr);
 
-    border-left: 5px solid #DE9E36;
+gap: 12px;
 
-    border-radius: 0 14px 14px 14px;
+background-color: rgba(255, 255, 255, 0.13);
 
-    box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.10);
+border: 1px solid rgba(255, 255, 255, 0.18);
 
-    position: relative;
-    z-index: 2;
+border-radius: 16px;
+
 }
 
-.informacoes p {
-    margin: 0 0 12px;
+.info-item {
+display: flex;
 
-    color: white;
+align-items: center;
 
-    font-size: 18px;
+gap: 12px;
 
-    line-height: 1.4;
+padding: 13px;
+
+text-align: left;
+
+border-radius: 12px;
+
+background-color: rgba(255, 255, 255, 0.10);
+
 }
 
-.informacoes p:last-child {
-    margin-bottom: 0;
+.info-icon {
+width: 40px;
+height: 40px;
+
+flex-shrink: 0;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+border-radius: 10px;
+
+background-color: white;
+
+color: #4F86B8;
+
+font-size: 18px;
+
 }
 
-.informacoes strong {
-    font-weight: bold;
+.info-item small {
+display: block;
+
+color: rgba(255, 255, 255, 0.75);
+
+font-size: 11px;
+
+margin-bottom: 3px;
+
 }
 
+.info-item strong {
+display: block;
+
+color: white;
+
+font-size: 15px;
+
+}
 
 /* =========================================================
-   PARTE INFERIOR DA CARTEIRINHA
+PARTE INFERIOR
 ========================================================= */
 
 .parte-inferior {
-    position: relative;
+width: min(850px, 95%);
 
-    display: flex;
+margin: 0 auto;
 
-    align-items: center;
+display: flex;
 
-    justify-content: center;
+align-items: center;
 
-    min-height: 50px;
+justify-content: space-between;
 
-    margin-top: 15px;
 }
 
-.atualizado {
-    color: white;
+.ultima-atualizacao {
+display: flex;
 
-    font-size: 15px;
+align-items: center;
+
+gap: 10px;
+
+color: white;
+
+text-align: left;
+
 }
 
+.ultima-atualizacao > i {
+font-size: 20px;
+}
 
-/* =========================================================
-   BOTÃO ATUALIZAR CADASTRO
-========================================================= */
+.ultima-atualizacao small {
+display: block;
+
+color: rgba(255, 255, 255, 0.70);
+
+font-size: 11px;
+
+}
+
+.ultima-atualizacao span {
+font-size: 14px;
+}
 
 .btn-atualizar {
-    position: absolute;
+display: flex;
 
-    right: 0;
-    bottom: 0;
+align-items: center;
 
-    padding: 10px 16px;
+gap: 8px;
 
-    border: none;
+padding: 11px 17px;
 
-    border-radius: 8px;
+border: none;
 
-    background-color: white;
+border-radius: 9px;
 
-    color: #000;
+background-color: white;
 
-    font-family: Georgia, 'Times New Roman', serif;
+color: #3E7CB1;
 
-    font-size: 15px;
+font-family: Georgia, "Times New Roman", serif;
 
-    cursor: pointer;
+font-weight: bold;
 
-    box-shadow:
-        0 3px 8px rgba(0, 0, 0, 0.12);
+cursor: pointer;
 
-    transition: 0.3s;
+transition: 0.3s;
+
 }
 
 .btn-atualizar:hover {
-    background-color: #DE9E36;
+background-color: #DE9E36;
 
-    color: white;
+color: white;
 
-    transform: translateY(-2px);
+transform: translateY(-2px);
+
 }
 
-
 /* =========================================================
-   ÁREA AZUL-CLARA
+ÁREA DE INFORMAÇÕES
 ========================================================= */
 
-/*
-   Esta área fica separada da carteirinha azul-escura.
-*/
-
 .area-informacoes {
-    background-color: #C8E3FF;
+overflow: hidden;
 
-    border-radius: 24px;
+background-color: #F7FBFF;
 
-    overflow: hidden;
+border-radius: 25px;
 
-    box-shadow:
-        0 7px 20px rgba(0, 0, 0, 0.12);
+box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.12);
 
-    margin-top: 35px;
 }
-
-
-/*
-   Compatibilidade com o HTML antigo
-*/
-
-.container.text-center {
-    width: 100%;
-    max-width: 1050px;
-
-    padding: 0;
-
-    overflow: hidden;
-
-    border-radius: 24px;
-}
-
 
 /* =========================================================
-   ABAS
+ABAS
 ========================================================= */
 
 .abas {
-    display: flex;
+display: flex;
 
-    align-items: center;
+gap: 8px;
 
-    gap: 15px;
+padding: 12px 18px;
 
-    background-color: white;
+background-color: white;
 
-    padding: 16px 25px;
+border-bottom: 1px solid #D8E8F5;
 
-    border-radius: 24px 24px 0 0;
 }
 
 .aba {
-    display: flex;
+display: flex;
 
-    align-items: center;
+align-items: center;
 
-    gap: 10px;
+gap: 9px;
 
-    padding: 12px 20px;
+padding: 12px 20px;
 
-    border: none;
+border: none;
 
-    background-color: transparent;
+border-radius: 10px;
 
-    border-radius: 25px;
+background: transparent;
 
-    color: #4F86B8;
+color: #4F86B8;
 
-    font-family: Georgia, 'Times New Roman', serif;
+font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 18px;
+font-size: 17px;
 
-    font-weight: bold;
+font-weight: bold;
 
-    cursor: pointer;
+cursor: pointer;
 
-    transition: 0.3s;
+transition: 0.3s;
+
 }
 
 .aba:hover {
-    background-color: #E8F4FF;
+background-color: #EEF7FF;
 }
 
-.aba.ativa {
-    background-color: #C8E3FF;
-}
+.aba.active {
+background-color: #C8E3FF;
 
+color: #3E7CB1;
+
+}
 
 /* =========================================================
-   ABAS DO BOOTSTRAP
-========================================================= */
-
-.nav {
-    padding: 18px 20px;
-
-    align-items: center;
-
-    gap: 10px;
-}
-
-.nav-link {
-    color: #4F86B8;
-
-    background-color: white;
-
-    border-radius: 10px !important;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 20px;
-
-    column-gap: 20px;
-
-    min-height: 52px;
-
-    padding: 10px 22px;
-
-    transition: 0.3s;
-}
-
-.nav-link:hover {
-    color: #4F86B8;
-
-    background-color: #F7FBFF;
-}
-
-.btn-atualizacoes,
-.btn-vacinas {
-    color: #4F86B8;
-
-    text-decoration: none;
-
-    font-family: Georgia, 'Times New Roman', serif;
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    padding: 11px 22px;
-
-    border-radius: 8px;
-
-    transition: 0.3s;
-
-    border: 0;
-
-    background-color: transparent;
-}
-
-.btn-atualizacoes:hover,
-.btn-vacinas:hover {
-    background-color: #4F86B8;
-
-    color: #C8E3FF;
-}
-
-
-/* =========================================================
-   CONTEÚDO DAS ABAS
+CONTEÚDO
 ========================================================= */
 
 .conteudo-abas {
-    padding: 35px 40px 40px;
+padding: 35px 45px 45px;
 }
 
-.conteudo-abas h2 {
-    margin: 0 0 40px;
+.titulo-secao {
+display: flex;
 
-    text-align: center;
+align-items: center;
 
-    color: #DE9E36;
+justify-content: space-between;
 
-    font-size: clamp(30px, 4vw, 38px);
+margin-bottom: 28px;
 
-    font-weight: bold;
 }
 
+.titulo-secao span {
+color: #4F86B8;
 
-/* Compatibilidade com HTML antigo */
+font-size: 12px;
 
-.atualizacao {
-    padding: 15px 25px 35px;
+font-weight: bold;
+
+letter-spacing: 1.5px;
+
 }
 
-.atualizacao h5,
-.vacinas h5 {
-    text-align: center;
+.titulo-secao h2 {
+margin: 3px 0 0;
 
-    color: #DE9E36;
 
-    font-size: clamp(28px, 4vw, 40px);
+color: #1F4F78;
 
-    font-weight: bold;
+font-size: 30px;
 
-    margin: 30px 0 40px;
+font-weight: bold;
+
 }
 
-h5 {
-    color: #DE9E36;
-}
+.contador {
+padding: 7px 13px;
 
+background-color: #E8F4FF;
+
+border-radius: 20px;
+
+color: #3E7CB1;
+
+font-size: 13px;
+
+font-weight: bold;
+
+}
 
 /* =========================================================
-   LISTA DE ATUALIZAÇÕES
+ATUALIZAÇÕES MÉDICAS
 ========================================================= */
 
 .lista-atualizacoes {
-    max-height: 450px;
 
-    overflow-y: auto;
 
-    padding: 5px 20px 15px 10px;
+width: 100%;
+
+display: flex;
+
+gap: 20px;
+
+overflow-x: auto;
+
+overflow-y: hidden;
+
+padding: 5px 5px 18px;
+
+scroll-behavior: smooth;
+
 }
 
+.atualizacao-item {
 
-/* Compatibilidade com HTML antigo */
+flex: 0 0 458px;
 
-#myTabContent .controle-atendimentos {
-    max-height: 450px;
+width: 458px;
 
-    overflow-y: auto;
+display: grid;
 
-    padding: 10px 12px 20px;
+grid-template-columns: 55px 1fr;
+
+gap: 12px;
+
+align-items: start;
+
 }
 
+/* DATA */
 
-/* =========================================================
-   CARDS DE ATUALIZAÇÕES MÉDICAS
-========================================================= */
+.data-atualizacao {
+
+width: 55px;
+
+padding: 9px 4px;
+
+text-align: center;
+
+background-color: white;
+
+border-radius: 12px;
+
+box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.08);
+
+border: 1px solid #D9EAF6;
+
+}
+
+.data-atualizacao strong {
+display: block;
+
+color: #3E7CB1;
+
+font-size: 23px;
+
+line-height: 1;
+
+}
+
+.data-atualizacao span {
+color: #DE9E36;
+
+font-size: 11px;
+
+font-weight: bold;
+
+}
+
+/* CARD */
 
 .mensagem {
-    display: flex;
 
-    align-items: center;
+width: 100%;
 
-    width: 100%;
+height: 123px;
 
-    min-height: 158px;
+min-height: 123px;
 
-    margin: 0 auto 25px;
+display: flex;
 
-    padding: 20px 28px;
+align-items: center;
 
-    background-color: #4F86B8;
+padding: 18px 20px;
 
-    border-left: 5px solid #DE9E36;
+background-color: #4F86B8;
 
-    border-radius: 15px;
+border-left: 5px solid #DE9E36;
 
-    color: white;
+border-radius: 13px;
 
-    box-shadow:
-        0 5px 14px rgba(0, 0, 0, 0.12);
+color: white;
 
-    transition: 0.3s;
-}
+box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.12);
 
-.mensagem:last-child {
-    margin-bottom: 0;
+transition: 0.3s;
+
+overflow: hidden;
+
 }
 
 .mensagem:hover {
-    transform: translateY(-2px);
 
-    box-shadow:
-        0 8px 18px rgba(0, 0, 0, 0.15);
+transform: translateY(-2px);
+
+box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15);
+
 }
 
-
-/* =========================================================
-   ÍCONE DOS CARDS
-========================================================= */
+/* ÍCONE */
 
 .icone-mensagem {
-    flex-shrink: 0;
 
-    width: 72px;
-    height: 72px;
+width: 48px;
+height: 48px;
 
-    display: flex;
+flex-shrink: 0;
 
-    align-items: center;
+display: flex;
 
-    justify-content: center;
+align-items: center;
 
-    margin-right: 25px;
+justify-content: center;
 
-    background-color: white;
+margin-right: 15px;
 
-    border-radius: 50%;
+border-radius: 50%;
 
-    color: #4F86B8;
+background-color: white;
 
-    font-size: 30px;
+color: #4F86B8;
+
+font-size: 21px;
+
 }
 
-
-/* =========================================================
-   TEXTO DOS CARDS
-========================================================= */
+/* TEXTO */
 
 .texto-mensagem {
-    text-align: left;
+
+flex: 1;
+
+min-width: 0;
+
+text-align: left;
+
 }
 
-.texto-mensagem p {
-    margin: 0 0 6px;
+.mensagem-topo {
 
-    color: white;
+display: flex;
 
-    font-size: 20px;
+align-items: center;
 
-    line-height: 1.25;
+gap: 8px;
+
+margin-bottom: 3px;
+
 }
 
 .texto-mensagem .titulo {
-    margin-bottom: 8px;
 
-    font-size: 27px;
+margin: 0;
 
-    font-weight: bold;
+color: white;
+
+font-size: 17px;
+
+font-weight: bold;
+
 }
 
+.tipo-atendimento {
 
-/*
-   Para o HTML antigo, que não possui
-   .texto-mensagem
-*/
+padding: 3px 7px;
 
-.mensagem p {
-    margin: 0 0 7px;
+border-radius: 20px;
 
-    color: white;
+background-color: rgba(255, 255, 255, 0.15);
 
-    line-height: 1.2;
+font-size: 9px;
+
+text-transform: uppercase;
+
 }
 
-.mensagem .titulo {
-    font-weight: bold;
+.assunto {
 
-    margin-bottom: 10px;
+margin: 0 0 4px;
+
+color: white;
+
+font-size: 14px;
+
+font-weight: bold;
+
 }
 
+.descricao-mensagem {
+
+margin: 0;
+
+color: rgba(255, 255, 255, 0.85);
+
+font-size: 11px;
+
+line-height: 1.35;
+
+}
 
 /* =========================================================
-   SCROLLBAR
+ROLAGEM DAS ATUALIZAÇÕES
 ========================================================= */
 
 .lista-atualizacoes::-webkit-scrollbar,
-.controle-atendimentos::-webkit-scrollbar {
-    width: 8px;
+.lista-vacinas::-webkit-scrollbar {
+
+height: 8px;
+
 }
 
 .lista-atualizacoes::-webkit-scrollbar-track,
-.controle-atendimentos::-webkit-scrollbar-track {
-    background-color: rgba(255, 255, 255, 0.45);
+.lista-vacinas::-webkit-scrollbar-track {
 
-    border-radius: 10px;
+background: #EAF4FC;
+
+border-radius: 10px;
+
 }
 
 .lista-atualizacoes::-webkit-scrollbar-thumb,
-.controle-atendimentos::-webkit-scrollbar-thumb {
-    background-color: #4F86B8;
+.lista-vacinas::-webkit-scrollbar-thumb {
 
-    border-radius: 10px;
+background: #4F86B8;
+
+border-radius: 10px;
+
 }
 
+.lista-atualizacoes::-webkit-scrollbar-thumb:hover,
+.lista-vacinas::-webkit-scrollbar-thumb:hover {
 
-/* =========================================================
-   ÁREA DE VACINAS
-========================================================= */
+background: #3E7CB1;
 
-.vacinas {
-    background-color: #C8E3FF;
-
-    width: 100%;
-
-    min-height: 600px;
-
-    border-radius: 0 0 24px 24px;
-
-    padding: 30px 35px 45px;
 }
 
-
 /* =========================================================
-   GRID DE VACINAS
+VACINAS
+MESMO PADRÃO DAS ATUALIZAÇÕES
 ========================================================= */
 
-.grid-vacinas {
-    display: grid;
+.lista-vacinas {
 
-    grid-template-columns:
-        repeat(2, minmax(0, 458px));
+width: 100%;
 
-    column-gap: 35px;
+display: flex;
 
-    row-gap: 35px;
+gap: 20px;
 
-    justify-content: center;
+overflow-x: auto;
+
+overflow-y: hidden;
+
+padding: 5px 5px 18px;
+
+scroll-behavior: smooth;
+
 }
 
+.vacina-item {
 
-/* =========================================================
-   ITEM DA VACINA
-========================================================= */
+flex: 0 0 458px;
 
-.item-vacina {
-    min-width: 0;
+width: 458px;
+
+display: grid;
+
+grid-template-columns: 55px 1fr;
+
+gap: 12px;
+
+align-items: start;
+
+
 }
 
+/* DATA DA VACINA */
 
-/* =========================================================
-   DATA DA VACINA
-========================================================= */
+.data-vacina {
 
-/*
-   A data permanece FORA do card.
-*/
+width: 55px;
 
-.data {
-    display: block;
+padding: 9px 4px;
 
-    font-size: 15px;
+text-align: center;
 
-    color: #000;
+background-color: white;
 
-    margin-left: 5px;
+border-radius: 12px;
 
-    margin-bottom: 10px;
+box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.08);
+
+border: 1px solid #D9EAF6;
+
 }
 
+.data-vacina strong {
 
-/* =========================================================
-   CARD DA VACINA
-========================================================= */
+display: block;
+
+color: #3E7CB1;
+
+font-size: 23px;
+
+line-height: 1;
+
+}
+
+.data-vacina span {
+
+color: #DE9E36;
+
+font-size: 11px;
+
+font-weight: bold;
+
+}
+
+/* CARD DA VACINA */
 
 .vacina {
-    background-color: #4F86B8;
 
-    width: 100%;
+width: 100%;
 
-    min-height: 123px;
+height: 123px;
 
-    border-radius: 12px;
+min-height: 123px;
 
-    padding: 16px 20px;
+display: flex;
 
-    text-align: left;
+align-items: center;
 
-    color: white;
+gap: 15px;
 
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.12);
+padding: 18px 20px;
 
-    transition: 0.3s;
+background-color: #4F86B8;
+
+border-left: 5px solid #DE9E36;
+
+border-radius: 13px;
+
+color: white;
+
+box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.12);
+
+transition: 0.3s;
+
+overflow: hidden;
+
 }
 
 .vacina:hover {
-    transform: translateY(-2px);
 
-    box-shadow:
-        0 8px 18px rgba(0, 0, 0, 0.16);
+transform: translateY(-2px);
+
+box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15);
+
+}
+
+/* ÍCONE DA VACINA */
+
+.icone-vacina {
+
+width: 48px;
+height: 48px;
+
+flex-shrink: 0;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+border-radius: 50%;
+
+background-color: white;
+
+color: #4F86B8;
+
+font-size: 21px;
+}
+
+.vacina h3 {
+
+margin: 0 0 4px;
+
+color: white;
+
+font-size: 17px;
+
 }
 
 .vacina p {
-    margin: 0 0 6px;
 
-    padding: 0;
+margin: 0 0 7px;
 
-    color: white;
+color: rgba(255, 255, 255, 0.82);
 
-    font-size: clamp(18px, 2.5vw, 30px);
+font-size: 11px;
 
-    line-height: 1.1;
 }
 
+.status-vacina {
+
+display: inline-flex;
+
+align-items: center;
+
+gap: 5px;
+
+padding: 4px 8px;
+
+background-color: rgba(255, 255, 255, 0.15);
+
+border-radius: 15px;
+
+font-size: 10px;
+
+font-weight: bold;
+
+}
 
 /* =========================================================
-   MODAL
+MODAL
 ========================================================= */
 
 .modal-content {
-    overflow: hidden;
 
-    border: none;
+overflow: hidden;
 
-    border-radius: 18px;
+border: none;
 
-    box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.25);
+border-radius: 18px;
+
+box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.25);
+
 }
 
 .modal-header {
-    background-color: #3E7CB1;
 
-    color: white;
+padding: 22px 25px;
 
-    border: none;
+border: none;
 
-    padding: 20px 25px;
+background-color: #3E7CB1;
+
+color: white;
+
+}
+
+.modal-subtitulo {
+
+display: block;
+
+margin-bottom: 3px;
+
+color: rgba(255, 255, 255, 0.7);
+
+font-size: 10px;
+
+font-weight: bold;
+
+letter-spacing: 1.5px;
+
 }
 
 .modal-title {
-    font-weight: bold;
+
+
+font-weight: bold;
+
 }
 
 .modal-body {
-    padding: 25px;
 
-    background-color: #F8FBFF;
+padding: 28px;
+
+background-color: #F8FBFF;
+
 }
 
-.modal-footer {
-    border: none;
+.form-section-title {
 
-    background-color: #F8FBFF;
+display: flex;
 
-    padding: 15px 25px 25px;
+align-items: center;
+
+gap: 8px;
+
+margin-bottom: 15px;
+
+padding-bottom: 8px;
+
+border-bottom: 1px solid #D9E8F3;
+
+color: #3E7CB1;
+
+font-weight: bold;
+
 }
 
 .form-label {
-    font-weight: bold;
+
+margin-bottom: 6px;
+
+color: #34495E;
+
+font-size: 14px;
+
+font-weight: bold;
+
 }
 
 .form-control,
 .form-select {
-    border-radius: 8px;
 
-    border: 1px solid #B8CFE3;
+min-height: 45px;
 
-    padding: 10px 12px;
+padding: 9px 12px;
+
+border: 1px solid #C5D8E7;
+
+border-radius: 9px;
+
 }
 
 .form-control:focus,
 .form-select:focus {
-    border-color: #4F86B8;
 
-    box-shadow:
-        0 0 0 3px rgba(79, 134, 184, 0.15);
+border-color: #4F86B8;
+
+box-shadow:
+    0 0 0 3px rgba(79, 134, 184, 0.15);
+
 }
 
+.modal-footer {
+
+padding: 15px 25px 22px;
+
+border: none;
+
+background-color: #F8FBFF;
+
+}
+
+.btn-cancelar,
+.btn-salvar {
+
+
+padding: 10px 18px;
+
+border: none;
+
+border-radius: 8px;
+
+font-family: Georgia, "Times New Roman", serif;
+
+font-weight: bold;
+
+cursor: pointer;
+
+transition: 0.3s;
+
+}
+
+.btn-cancelar {
+
+background-color: #E8EDF1;
+
+color: #475B6B;
+
+}
+
+.btn-cancelar:hover {
+
+background-color: #DCE3E8;
+
+}
+
+.btn-salvar {
+
+background-color: #3E7CB1;
+
+color: white;
+
+}
+
+.btn-salvar:hover {
+
+
+background-color: #326A9A;
+
+transform: translateY(-1px);
+
+}
 
 /* =========================================================
-   RODAPÉ
+FOOTER
 ========================================================= */
 
 footer {
-    margin-top: 0 !important;
 
-    padding: 25px 5% !important;
+background-color: #3E7CB1;
 
-    background-color: #3E7CB1;
+color: white;
 
-    box-shadow:
-        0 -3px 10px rgba(0, 0, 0, 0.12);
+box-shadow:
+    0 -4px 12px rgba(0, 0, 0, 0.12);
+
 }
 
-footer a {
-    transition: 0.3s;
+.footer-content {
+
+width: min(1180px, 94%);
+
+min-height: 100px;
+
+margin: 0 auto;
+
+padding: 20px 0;
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+gap: 20px;
+
 }
 
-footer a:hover {
-    opacity: 0.75;
+.footer-logo {
+
+display: flex;
+
+align-items: center;
+
+gap: 12px;
+
 }
 
+.footer-logo img {
+
+width: 48px;
+height: 48px;
+
+padding: 4px;
+
+border-radius: 50%;
+
+background-color: white;
+
+object-fit: contain;
+
+
+}
+
+.footer-logo strong {
+
+display: block;
+
+font-size: 17px;
+
+}
+
+.footer-logo span {
+
+display: block;
+
+color: rgba(255, 255, 255, 0.7);
+
+font-size: 12px;
+
+}
+
+.footer-social {
+
+display: flex;
+
+gap: 10px;
+
+}
+
+.footer-social a {
+
+width: 38px;
+height: 38px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+border-radius: 50%;
+
+background-color: rgba(255, 255, 255, 0.12);
+
+color: white;
+
+text-decoration: none;
+
+transition: 0.3s;
+
+}
+
+.footer-social a:hover {
+
+background-color: white;
+
+color: #3E7CB1;
+
+transform: translateY(-2px);
+
+}
+
+.footer-content > p {
+
+margin: 0;
+
+color: rgba(255, 255, 255, 0.75);
+
+font-size: 12px;
+
+}
 
 /* =========================================================
-   RESPONSIVIDADE
+RESPONSIVIDADE
 ========================================================= */
+
+@media (max-width: 900px) {
+
+.informacoes {
+
+    grid-template-columns: repeat(2, 1fr);
+}
+
+}
 
 @media (max-width: 768px) {
 
-    main {
-        width: 95%;
-    }
+.fundo {
 
-    .fundo {
-        padding: 15px 0 25px;
-    }
+    padding: 25px 0 40px;
+}
 
-    .navbar-custom {
-        min-height: 75px;
-    }
+main {
 
-    .btn-menu {
-        font-size: 14px;
+    width: 94%;
+}
 
-        margin-left: 5px;
+.navbar-custom {
 
-        padding: 8px 10px;
-    }
+    min-height: 75px;
+}
 
-    .carteirinha {
-        margin-bottom: 30px;
-    }
+.btn-menu {
 
-    .capa {
-        min-height: 560px;
+    padding: 8px 10px;
 
-        border-radius: 18px;
-    }
+    font-size: 13px;
+}
 
-    .capa-img {
-        height: 100%;
-    }
+.titulo-pagina {
 
-    .conteudo-capa {
-        min-height: 560px;
+    align-items: flex-start;
 
-        padding: 25px 20px;
-    }
+    flex-direction: column;
 
-    .foto-animal,
-    .capa .rounded-circle {
-        width: 105px !important;
+    gap: 12px;
+}
 
-        height: 105px !important;
-    }
+.status-pet {
 
-    .informacoes {
-        width: 100%;
+    font-size: 12px;
+}
 
-        margin: 40px auto 35px;
+.capa {
 
-        padding: 22px 20px;
-    }
+    min-height: 650px;
 
-    .informacoes p {
-        font-size: 16px;
-    }
+    border-radius: 18px;
+}
 
-    .parte-inferior {
-        flex-direction: column;
+.conteudo-capa {
 
-        gap: 15px;
-    }
+    min-height: 650px;
 
-    .btn-atualizar {
-        position: static;
-    }
+    padding: 30px 18px 22px;
+}
 
-    .area-informacoes {
-        margin-top: 25px;
+.btn-imprimir {
 
-        border-radius: 18px;
-    }
+    top: 18px;
 
-    .abas {
-        padding: 12px;
+    right: 18px;
 
-        gap: 5px;
-    }
+    padding: 8px 11px;
 
-    .aba {
-        padding: 10px 12px;
+    font-size: 12px;
+}
 
-        font-size: 14px;
-    }
+.foto-container,
+.foto-animal {
 
-    .nav {
-        padding: 14px 10px;
+    width: 110px;
 
-        gap: 7px;
-    }
+    height: 110px;
+}
 
-    .nav-link {
-        font-size: 14px;
+.informacoes {
 
-        min-height: 45px;
+    width: 100%;
 
-        padding: 8px 12px;
-    }
+    margin-top: 25px;
 
-    .conteudo-abas {
-        padding: 25px 15px;
-    }
+    padding: 12px;
 
-    .conteudo-abas h2 {
-        margin-bottom: 25px;
-    }
+    grid-template-columns: 1fr 1fr;
+}
 
-    .atualizacao {
-        padding: 10px 12px 25px;
-    }
+.info-item {
 
-    .lista-atualizacoes {
-        padding: 5px;
-    }
+    padding: 9px;
 
-    #myTabContent .controle-atendimentos {
-        padding: 5px;
-    }
+    gap: 8px;
+}
 
-    .mensagem {
-        min-height: 130px;
+.info-icon {
 
-        margin-bottom: 22px;
+    width: 34px;
 
-        padding: 18px;
-    }
+    height: 34px;
 
-    .icone-mensagem {
-        width: 55px;
-        height: 55px;
+    font-size: 15px;
+}
 
-        margin-right: 15px;
+.info-item small {
 
-        font-size: 23px;
-    }
+    font-size: 9px;
+}
 
-    .texto-mensagem p {
-        font-size: 16px;
-    }
+.info-item strong {
 
-    .texto-mensagem .titulo {
-        font-size: 21px;
-    }
+    font-size: 12px;
+}
 
-    .grid-vacinas {
-        grid-template-columns: 1fr;
+.parte-inferior {
 
-        gap: 28px;
-    }
+    width: 100%;
 
-    .vacinas {
-        padding: 20px 15px 30px;
-    }
+    flex-direction: column;
 
-    .data {
-        margin-bottom: 8px;
-    }
+    gap: 15px;
+}
+
+.ultima-atualizacao {
+
+    order: 2;
+}
+
+.btn-atualizar {
+
+    order: 1;
+
+    width: 100%;
+
+    justify-content: center;
+}
+
+.area-informacoes {
+
+    border-radius: 18px;
+}
+
+.abas {
+
+    padding: 8px;
+}
+
+.aba {
+
+    flex: 1;
+
+    justify-content: center;
+
+    padding: 10px 8px;
+
+    font-size: 13px;
+}
+
+.conteudo-abas {
+
+    padding: 25px 15px 30px;
+}
+
+.titulo-secao {
+
+    align-items: flex-start;
+
+    gap: 10px;
+}
+
+.titulo-secao h2 {
+
+    font-size: 24px;
+}
+
+.contador {
+
+    font-size: 11px;
 }
 
 
+/* CARDS MOBILE */
+
+.atualizacao-item,
+.vacina-item {
+
+    flex-basis: 380px;
+
+    width: 380px;
+
+    grid-template-columns: 45px 1fr;
+
+    gap: 8px;
+}
+
+.data-atualizacao,
+.data-vacina {
+
+    width: 43px;
+}
+
+.data-atualizacao strong,
+.data-vacina strong {
+
+    font-size: 19px;
+}
+
+.mensagem,
+.vacina {
+
+    height: 123px;
+
+    min-height: 123px;
+
+    padding: 14px;
+}
+
+.icone-mensagem,
+.icone-vacina {
+
+    width: 42px;
+
+    height: 42px;
+
+    margin-right: 5px;
+
+    font-size: 18px;
+}
+
+.mensagem-topo {
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+}
+
+.texto-mensagem .titulo {
+
+    font-size: 15px;
+}
+
+.assunto {
+
+    font-size: 13px;
+}
+
+.descricao-mensagem {
+
+    font-size: 10px;
+}
+
+.vacina {
+
+    gap: 10px;
+}
+
+.vacina h3 {
+
+    font-size: 15px;
+}
+
+.vacina p {
+
+    font-size: 10px;
+}
+
+.footer-content {
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 25px 0;
+}
+
+.footer-logo {
+
+    justify-content: center;
+}
+
+}
+
+@media (max-width: 450px) {
+
+.menu {
+
+    gap: 2px;
+}
+
+.btn-menu {
+
+    padding: 7px;
+}
+
+.informacoes {
+
+    gap: 7px;
+}
+
+.info-item {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+.info-item small {
+
+    margin-top: 2px;
+}
+
+.mensagem {
+
+    align-items: flex-start;
+}
+
+.icone-mensagem {
+
+    margin-top: 2px;
+}
+
+.atualizacao-item,
+.vacina-item {
+
+    flex-basis: 330px;
+
+    width: 330px;
+}
+
+}
+
 /* =========================================================
-   IMPRESSÃO
+IMPRESSÃO
 ========================================================= */
 
 @media print {
 
-    header,
-    footer,
-    .nav-tabs,
-    .abas,
-    .imprimir,
-    .btn-atualizar {
-        display: none !important;
-    }
+header,
+footer,
+.abas,
+.btn-imprimir,
+.btn-atualizar,
+.status-pet {
 
-    body,
-    .fundo {
-        background: white !important;
-    }
+    display: none !important;
+}
 
-    main {
-        width: 100% !important;
-    }
+body,
+.fundo {
 
-    .carteirinha {
-        margin-bottom: 20px !important;
-    }
+    background: white !important;
+}
 
-    .capa,
-    .area-informacoes {
-        box-shadow: none !important;
-    }
+main {
 
-    .lista-atualizacoes,
-    .controle-atendimentos {
-        max-height: none !important;
+    width: 100% !important;
+}
 
-        height: auto !important;
+.capa,
+.area-informacoes {
 
-        overflow: visible !important;
-    }
+    box-shadow: none !important;
+}
 
-    .mensagem,
-    .item-vacina {
-        break-inside: avoid;
+.lista-atualizacoes,
+.lista-vacinas {
 
-        page-break-inside: avoid;
-    }
+    overflow: visible !important;
 
-    .tab-pane {
-        display: block !important;
+    display: block !important;
+}
 
-        opacity: 1 !important;
-    }
+.atualizacao-item,
+.vacina-item {
 
-    @page {
-        size: A4;
+    width: 100% !important;
 
-        margin: 15mm;
-    }
+    margin-bottom: 20px;
+}
+
+.mensagem,
+.vacina,
+.atualizacao-item,
+.vacina-item {
+
+    break-inside: avoid;
+
+    page-break-inside: avoid;
+}
+
+.tab-pane {
+
+    display: block !important;
+
+    opacity: 1 !important;
+}
+
+@page {
+
+    size: A4;
+
+    margin: 12mm;
+}
 }

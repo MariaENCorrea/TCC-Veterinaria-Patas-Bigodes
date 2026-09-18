@@ -1,49 +1,38 @@
 <!doctype html>
+
 <html lang="pt-BR">
 
 <head>
 
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description" content="Carteirinha do animal - Patas & Bigodes">
-
     <meta name="author" content="Nycole">
-
     <meta name="keywords" content="veterinária, animais, pet, carteirinha">
 
     <link rel="icon" type="image/png" href="../static/img/favicon.png">
 
-    <title>Carteirinha do Panteira - Tutora Nycole</title>
-
+    <title>Carteirinha da Pantera - Patas & Bigodes</title>
 
     <!-- Bootstrap -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-        crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <!-- Bootstrap Icons -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-
-    <!-- CSS da página -->
+    <!-- CSS -->
     <link rel="stylesheet" href="../static/css/carteirinha.css">
+    ```
 
 </head>
 
-
 <body>
 
-
-    <!-- =========================================
-         CABEÇALHO
-    ========================================== -->
+    <!-- =====================================================
+     CABEÇALHO
+====================================================== -->
 
     <header>
 
@@ -51,47 +40,26 @@
 
             <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
 
-
                 <!-- LOGO -->
-
                 <div class="logo">
 
-                    <img
-                        src="../static/img/logo.png"
-                        alt="Logo Patas & Bigodes"
-                        class="logo">
+                    <img src="../static/img/logo.png" alt="Logo Patas & Bigodes">
 
                 </div>
 
-
                 <!-- MENU -->
-
                 <div class="menu">
 
-                    <a
-                        href="apresentacao.html"
-                        class="btn-menu">
-
+                    <a href="apresentacao.html" class="btn-menu">
                         Início
-
                     </a>
 
-
-                    <a
-                        href="horarios.html"
-                        class="btn-menu">
-
+                    <a href="horarios.html" class="btn-menu">
                         Horários
-
                     </a>
 
-
-                    <a
-                        href="consultas.html"
-                        class="btn-menu">
-
+                    <a href="consultas.html" class="btn-menu">
                         Consulta
-
                     </a>
 
                 </div>
@@ -103,160 +71,46 @@
     </header>
 
 
-
-    <!-- =========================================
-         FUNDO
-    ========================================== -->
+    <!-- =====================================================
+     FUNDO
+====================================================== -->
 
     <div class="fundo">
 
-
         <main>
 
+            <!-- STATUS -->
 
-            <!-- =========================================
-                 CARTEIRINHA DO ANIMAL
-            ========================================== -->
+            <div class="titulo-pagina">
+
+                <div class="status-pet">
+
+                    <span class="status-dot"></span>
+
+                    Cadastro ativo
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+             CARTEIRINHA
+        ================================================== -->
 
             <section class="carteirinha">
 
-
                 <div class="capa">
 
+                    <img src="../static/img/img-capa.avif" class="capa-img" alt="Imagem decorativa">
 
-                    <!-- IMAGEM GRANDE DE FUNDO -->
-
-                    <img
-                        src="../static/img/img-capa.avif"
-                        class="capa-img"
-                        alt="Imagem do animal">
-
+                    <div class="overlay"></div>
 
                     <div class="conteudo-capa">
 
-
-                        <!-- FOTO DO ANIMAL -->
-
-                        <img
-                            src="../static/img/image.png"
-                            class="foto-animal"
-                            alt="Imagem do animal">
-
-
-                        <!-- NOME -->
-
-                        <h1 id="nomePet">
-                            PANTERA
-                        </h1>
-
-
-                        <!-- DESCRIÇÃO -->
-
-                        <p class="descricao">
-                            Carteirinha de identificação do animal.
-                        </p>
-
-
-                        <!-- =================================
-                             INFORMAÇÕES DO ANIMAL
-                        ================================== -->
-
-                        <div class="informacoes">
-
-
-                            <p>
-
-                                <strong>
-                                    Data de Nascimento:
-                                </strong>
-
-                                <span id="dataNascimento">
-                                    ../../....
-                                </span>
-
-                            </p>
-
-
-                            <p>
-
-                                <strong>
-                                    Tutor:
-                                </strong>
-
-                                <span id="tutor">
-                                    ...........
-                                </span>
-
-                            </p>
-
-
-                            <p>
-
-                                <strong>
-                                    Cor:
-                                </strong>
-
-                                <span id="cor">
-                                    ...........
-                                </span>
-
-                            </p>
-
-
-                            <p>
-
-                                <strong>
-                                    Raça:
-                                </strong>
-
-                                <span id="raca">
-                                    ...........
-                                </span>
-
-                            </p>
-
-
-                        </div>
-
-
-                        <!-- =================================
-                             PARTE INFERIOR
-                        ================================== -->
-
-                        <div class="parte-inferior">
-
-
-                            <span class="atualizado">
-
-                                Last updated 3 mins ago
-
-                            </span>
-
-
-                            <!-- BOTÃO ATUALIZAR -->
-
-                            <button
-                                type="button"
-                                class="btn-atualizar"
-                                data-bs-toggle="modal"
-                                data-bs-target="#modalAtualizarCadastro">
-
-                                <i class="bi bi-pencil-square"></i>
-
-                                Atualizar cadastro
-
-                            </button>
-
-
-                        </div>
-
-
                         <!-- BOTÃO IMPRIMIR -->
 
-                        <button
-                            type="button"
-                            class="btn btn-light imprimir position-absolute top-0 end-0 m-3"
-                            onclick="window.print()">
+                        <button type="button" class="btn-imprimir" onclick="window.print()">
 
                             <i class="bi bi-printer"></i>
 
@@ -265,6 +119,142 @@
                         </button>
 
 
+                        <!-- FOTO -->
+
+                        <div class="foto-container">
+
+                            <img src="../static/img/image.png" class="foto-animal" alt="Foto da Pantera">
+
+                            <span class="badge-pet">
+
+                                <i class="bi bi-patch-check-fill"></i>
+
+                            </span>
+
+                        </div>
+
+
+                        <!-- NOME -->
+
+                        <h1 id="nomePet">PANTERA</h1>
+
+                        <p class="descricao">
+                            Carteirinha de identificação do animal
+                        </p>
+
+
+                        <!-- INFORMAÇÕES -->
+
+                        <div class="informacoes">
+
+                            <div class="info-item">
+
+                                <div class="info-icon">
+                                    <i class="bi bi-calendar-heart"></i>
+                                </div>
+
+                                <div>
+
+                                    <small>Data de nascimento</small>
+
+                                    <strong id="dataNascimento">
+                                        15/08/2022
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <div class="info-icon">
+                                    <i class="bi bi-person-heart"></i>
+                                </div>
+
+                                <div>
+
+                                    <small>Tutora</small>
+
+                                    <strong id="tutor">
+                                        Nycole
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <div class="info-icon">
+                                    <i class="bi bi-palette"></i>
+                                </div>
+
+                                <div>
+
+                                    <small>Cor</small>
+
+                                    <strong id="cor">
+                                        Preta
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <div class="info-icon">
+                                    <i class="bi bi-award"></i>
+                                </div>
+
+                                <div>
+
+                                    <small>Raça</small>
+
+                                    <strong id="raca">
+                                        SRD
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PARTE INFERIOR -->
+
+                        <div class="parte-inferior">
+
+                            <div class="ultima-atualizacao">
+
+                                <i class="bi bi-arrow-clockwise"></i>
+
+                                <div>
+
+                                    <small>Última atualização</small>
+
+                                    <span>Hoje, às 07:20</span>
+
+                                </div>
+
+                            </div>
+
+
+                            <button type="button" class="btn-atualizar" data-bs-toggle="modal"
+                                data-bs-target="#modalAtualizarCadastro">
+
+                                <i class="bi bi-pencil-square"></i>
+
+                                Atualizar cadastro
+
+                            </button>
+
+                        </div>
+
                     </div>
 
                 </div>
@@ -272,41 +262,24 @@
             </section>
 
 
-
-            <!-- =========================================
-                 ÁREA DE ATUALIZAÇÕES E VACINAS
-            ========================================== -->
+            <!-- =================================================
+             ÁREA DE INFORMAÇÕES
+        ================================================== -->
 
             <section class="area-informacoes">
 
 
-                <!-- =================================
-                     ABAS
-                ================================== -->
+                <!-- ABAS -->
 
-                <ul
-                    class="nav nav-tabs abas"
-                    id="myTab"
-                    role="tablist">
+                <ul class="nav nav-tabs abas" id="myTab" role="tablist">
 
+                    <li class="nav-item" role="presentation">
 
-                    <!-- ABA ATUALIZAÇÕES -->
+                        <button class="aba active" id="atualizacao-medica-tab" data-bs-toggle="tab"
+                            data-bs-target="#atualizacao-medica-tab-pane" type="button" role="tab"
+                            aria-controls="atualizacao-medica-tab-pane" aria-selected="true">
 
-                    <li
-                        class="nav-item"
-                        role="presentation">
-
-                        <button
-                            class="aba ativa"
-                            id="atualizacao-medica-tab"
-                            data-bs-toggle="tab"
-                            data-bs-target="#atualizacao-medica-tab-pane"
-                            type="button"
-                            role="tab"
-                            aria-controls="atualizacao-medica-tab-pane"
-                            aria-selected="true">
-
-                            <i class="bi bi-heart-pulse"></i>
+                            <i class="bi bi-heart-pulse-fill"></i>
 
                             Atualizações Médicas
 
@@ -315,21 +288,10 @@
                     </li>
 
 
-                    <!-- ABA VACINAS -->
+                    <li class="nav-item" role="presentation">
 
-                    <li
-                        class="nav-item"
-                        role="presentation">
-
-                        <button
-                            class="aba"
-                            id="vacinas-tab"
-                            data-bs-toggle="tab"
-                            data-bs-target="#vacinas-tab-pane"
-                            type="button"
-                            role="tab"
-                            aria-controls="vacinas-tab-pane"
-                            aria-selected="false">
+                        <button class="aba" id="vacinas-tab" data-bs-toggle="tab" data-bs-target="#vacinas-tab-pane"
+                            type="button" role="tab" aria-controls="vacinas-tab-pane" aria-selected="false">
 
                             <i class="bi bi-capsule"></i>
 
@@ -339,199 +301,294 @@
 
                     </li>
 
-
                 </ul>
 
 
+                <!-- CONTEÚDO DAS ABAS -->
 
-                <!-- =================================
-                     CONTEÚDO DAS ABAS
-                ================================== -->
-
-                <div
-                    class="tab-content"
-                    id="myTabContent">
+                <div class="tab-content" id="myTabContent">
 
 
+                    <!-- =================================================
+                     ATUALIZAÇÕES MÉDICAS
+                ================================================== -->
 
-                    <!-- =================================
-                         ATUALIZAÇÕES MÉDICAS
-                    ================================== -->
+                    <div class="tab-pane fade show active" id="atualizacao-medica-tab-pane" role="tabpanel"
+                        aria-labelledby="atualizacao-medica-tab">
 
-                    <div
-                        class="tab-pane fade show active"
-                        id="atualizacao-medica-tab-pane"
-                        role="tabpanel"
-                        aria-labelledby="atualizacao-medica-tab"
-                        tabindex="0">
+                        <div class="conteudo-abas">
+
+                            <div class="titulo-secao">
+
+                                <div>
+
+                                    <span>HISTÓRICO</span>
+
+                                    <h2>Atualizações médicas</h2>
+
+                                </div>
+
+                                <div class="contador">
+                                    5 registros
+                                </div>
+
+                            </div>
 
 
-                        <div
-                            class="conteudo-abas"
-                            id="atualizacao-medica">
-
-
-                            <h2>
-                                Atualizações Médicas
-                            </h2>
-
+                            <!-- ROLAGEM DAS ATUALIZAÇÕES -->
 
                             <div class="lista-atualizacoes">
 
 
-                                <!-- CARD 1 -->
+                                <!-- ATUALIZAÇÃO 1 -->
 
-                                <div class="mensagem">
+                                <article class="atualizacao-item">
 
-                                    <div class="icone-mensagem">
+                                    <div class="data-atualizacao">
 
-                                        <i class="bi bi-stethoscope"></i>
+                                        <strong>18</strong>
 
-                                    </div>
-
-
-                                    <div class="texto-mensagem">
-
-                                        <p class="titulo">
-                                            Doutor Sérgio
-                                        </p>
-
-                                        <p>
-                                            Consulta de rotina
-                                        </p>
-
-                                        <p>
-                                            Tudo dentro dos conformes.
-                                        </p>
+                                        <span>SET</span>
 
                                     </div>
 
-                                </div>
+                                    <div class="mensagem">
 
+                                        <div class="icone-mensagem">
 
+                                            <i class="bi bi-stethoscope"></i>
 
-                                <!-- CARD 2 -->
+                                        </div>
 
-                                <div class="mensagem">
+                                        <div class="texto-mensagem">
 
-                                    <div class="icone-mensagem">
+                                            <div class="mensagem-topo">
 
-                                        <i class="bi bi-stethoscope"></i>
+                                                <p class="titulo">
+                                                    Doutor Sérgio
+                                                </p>
 
-                                    </div>
+                                                <span class="tipo-atendimento">
+                                                    Consulta
+                                                </span>
 
+                                            </div>
 
-                                    <div class="texto-mensagem">
+                                            <p class="assunto">
+                                                Consulta de rotina
+                                            </p>
 
-                                        <p class="titulo">
-                                            Doutor Sérgio
-                                        </p>
+                                            <p class="descricao-mensagem">
+                                                Tudo dentro dos conformes.
+                                                Pantera apresentou boas condições
+                                                de saúde durante a avaliação.
+                                            </p>
 
-                                        <p>
-                                            Consulta de rotina
-                                        </p>
-
-                                        <p>
-                                            Tudo dentro dos conformes.
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-
-
-                                <!-- CARD 3 -->
-
-                                <div class="mensagem">
-
-                                    <div class="icone-mensagem">
-
-                                        <i class="bi bi-stethoscope"></i>
+                                        </div>
 
                                     </div>
 
+                                </article>
 
-                                    <div class="texto-mensagem">
 
-                                        <p class="titulo">
-                                            Doutor Sérgio
-                                        </p>
+                                <!-- ATUALIZAÇÃO 2 -->
 
-                                        <p>
-                                            Consulta de rotina
-                                        </p>
+                                <article class="atualizacao-item">
 
-                                        <p>
-                                            Tudo dentro dos conformes.
-                                        </p>
+                                    <div class="data-atualizacao">
+
+                                        <strong>12</strong>
+
+                                        <span>AGO</span>
 
                                     </div>
 
-                                </div>
+                                    <div class="mensagem">
 
+                                        <div class="icone-mensagem">
 
+                                            <i class="bi bi-heart-pulse"></i>
 
-                                <!-- CARD 4 -->
+                                        </div>
 
-                                <div class="mensagem">
+                                        <div class="texto-mensagem">
 
-                                    <div class="icone-mensagem">
+                                            <div class="mensagem-topo">
 
-                                        <i class="bi bi-stethoscope"></i>
+                                                <p class="titulo">
+                                                    Doutor Sérgio
+                                                </p>
 
-                                    </div>
+                                                <span class="tipo-atendimento">
+                                                    Avaliação
+                                                </span>
 
+                                            </div>
 
-                                    <div class="texto-mensagem">
+                                            <p class="assunto">
+                                                Avaliação geral
+                                            </p>
 
-                                        <p class="titulo">
-                                            Doutor Sérgio
-                                        </p>
+                                            <p class="descricao-mensagem">
+                                                Animal apresentou comportamento
+                                                normal e boa disposição.
+                                            </p>
 
-                                        <p>
-                                            Consulta de rotina
-                                        </p>
-
-                                        <p>
-                                            Tudo dentro dos conformes.
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-
-
-                                <!-- CARD 5 -->
-
-                                <div class="mensagem">
-
-                                    <div class="icone-mensagem">
-
-                                        <i class="bi bi-stethoscope"></i>
+                                        </div>
 
                                     </div>
 
+                                </article>
 
-                                    <div class="texto-mensagem">
 
-                                        <p class="titulo">
-                                            Doutor Sérgio
-                                        </p>
+                                <!-- ATUALIZAÇÃO 3 -->
 
-                                        <p>
-                                            Consulta de rotina
-                                        </p>
+                                <article class="atualizacao-item">
 
-                                        <p>
-                                            Tudo dentro dos conformes.
-                                        </p>
+                                    <div class="data-atualizacao">
+
+                                        <strong>24</strong>
+
+                                        <span>JUL</span>
 
                                     </div>
 
-                                </div>
+                                    <div class="mensagem">
 
+                                        <div class="icone-mensagem">
+
+                                            <i class="bi bi-clipboard2-pulse"></i>
+
+                                        </div>
+
+                                        <div class="texto-mensagem">
+
+                                            <div class="mensagem-topo">
+
+                                                <p class="titulo">
+                                                    Doutor Sérgio
+                                                </p>
+
+                                                <span class="tipo-atendimento">
+                                                    Exame
+                                                </span>
+
+                                            </div>
+
+                                            <p class="assunto">
+                                                Exames de rotina
+                                            </p>
+
+                                            <p class="descricao-mensagem">
+                                                Exames realizados conforme
+                                                orientação veterinária.
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+                                </article>
+
+
+                                <!-- ATUALIZAÇÃO 4 -->
+
+                                <article class="atualizacao-item">
+
+                                    <div class="data-atualizacao">
+
+                                        <strong>10</strong>
+
+                                        <span>JUN</span>
+
+                                    </div>
+
+                                    <div class="mensagem">
+
+                                        <div class="icone-mensagem">
+
+                                            <i class="bi bi-bandaid"></i>
+
+                                        </div>
+
+                                        <div class="texto-mensagem">
+
+                                            <div class="mensagem-topo">
+
+                                                <p class="titulo">
+                                                    Doutor Sérgio
+                                                </p>
+
+                                                <span class="tipo-atendimento">
+                                                    Retorno
+                                                </span>
+
+                                            </div>
+
+                                            <p class="assunto">
+                                                Retorno veterinário
+                                            </p>
+
+                                            <p class="descricao-mensagem">
+                                                Evolução positiva após o
+                                                atendimento anterior.
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+                                </article>
+
+
+                                <!-- ATUALIZAÇÃO 5 -->
+
+                                <article class="atualizacao-item">
+
+                                    <div class="data-atualizacao">
+
+                                        <strong>02</strong>
+
+                                        <span>MAI</span>
+
+                                    </div>
+
+                                    <div class="mensagem">
+
+                                        <div class="icone-mensagem">
+
+                                            <i class="bi bi-file-medical"></i>
+
+                                        </div>
+
+                                        <div class="texto-mensagem">
+
+                                            <div class="mensagem-topo">
+
+                                                <p class="titulo">
+                                                    Doutor Sérgio
+                                                </p>
+
+                                                <span class="tipo-atendimento">
+                                                    Cadastro
+                                                </span>
+
+                                            </div>
+
+                                            <p class="assunto">
+                                                Cadastro atualizado
+                                            </p>
+
+                                            <p class="descricao-mensagem">
+                                                Informações do animal
+                                                atualizadas no sistema.
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+                                </article>
 
                             </div>
 
@@ -540,342 +597,256 @@
                     </div>
 
 
+                    <!-- =================================================
+                     VACINAS
+                ================================================== -->
 
-                    <!-- =================================
-                         VACINAS
-                    ================================== -->
+                    <div class="tab-pane fade" id="vacinas-tab-pane" role="tabpanel" aria-labelledby="vacinas-tab">
 
-                    <div
-                        class="tab-pane fade"
-                        id="vacinas-tab-pane"
-                        role="tabpanel"
-                        aria-labelledby="vacinas-tab"
-                        tabindex="0">
+                        <div class="conteudo-abas">
+
+                            <div class="titulo-secao">
+
+                                <div>
+
+                                    <span>HISTÓRICO</span>
+
+                                    <h2>Vacinas</h2>
+
+                                </div>
+
+                                <div class="contador">
+                                    6 registros
+                                </div>
+
+                            </div>
 
 
-                        <div
-                            class="conteudo-abas vacinas"
-                            id="vacinas">
+                            <!-- MESMA ROLAGEM DAS ATUALIZAÇÕES -->
 
-
-                            <h2>
-                                Vacinas
-                            </h2>
-
-
-                            <div class="grid-vacinas">
+                            <div class="lista-vacinas">
 
 
                                 <!-- VACINA 1 -->
 
-                                <div class="item-vacina">
+                                <article class="vacina-item">
 
-                                    <small class="data">
-                                        17/fev
-                                    </small>
+                                    <div class="data-vacina">
 
-                                    <div class="vacina">
+                                        <strong>15</strong>
 
-                                        <p>
-                                            Vacina.....
-                                        </p>
-
-                                        <p>
-                                            Aplicada no dia
-                                        </p>
-
-                                        <p>
-                                            24/02/2026
-                                        </p>
+                                        <span>JAN</span>
 
                                     </div>
 
-                                </div>
+                                    <div class="vacina">
 
+                                        <div class="icone-vacina">
+
+                                            <i class="bi bi-shield-check"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <h3>Antirrábica</h3>
+
+                                            <p>Vacina contra raiva</p>
+
+                                            <span class="status-vacina">
+                                                Aplicada
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </article>
 
 
                                 <!-- VACINA 2 -->
 
-                                <div class="item-vacina">
+                                <article class="vacina-item">
 
-                                    <small class="data">
-                                        17/fev
-                                    </small>
+                                    <div class="data-vacina">
 
-                                    <div class="vacina">
+                                        <strong>20</strong>
 
-                                        <p>
-                                            Vacina.....
-                                        </p>
-
-                                        <p>
-                                            Aplicada no dia
-                                        </p>
-
-                                        <p>
-                                            24/02/2026
-                                        </p>
+                                        <span>FEV</span>
 
                                     </div>
 
-                                </div>
+                                    <div class="vacina">
 
+                                        <div class="icone-vacina">
+
+                                            <i class="bi bi-shield-check"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <h3>V10</h3>
+
+                                            <p>Vacina múltipla</p>
+
+                                            <span class="status-vacina">
+                                                Aplicada
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </article>
 
 
                                 <!-- VACINA 3 -->
 
-                                <div class="item-vacina">
+                                <article class="vacina-item">
 
-                                    <small class="data">
-                                        17/fev
-                                    </small>
+                                    <div class="data-vacina">
 
-                                    <div class="vacina">
+                                        <strong>18</strong>
 
-                                        <p>
-                                            Vacina.....
-                                        </p>
-
-                                        <p>
-                                            Aplicada no dia
-                                        </p>
-
-                                        <p>
-                                            24/02/2026
-                                        </p>
+                                        <span>MAR</span>
 
                                     </div>
 
-                                </div>
+                                    <div class="vacina">
 
+                                        <div class="icone-vacina">
+
+                                            <i class="bi bi-shield-check"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <h3>V10</h3>
+
+                                            <p>Reforço anual</p>
+
+                                            <span class="status-vacina">
+                                                Aplicada
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </article>
 
 
                                 <!-- VACINA 4 -->
 
-                                <div class="item-vacina">
+                                <article class="vacina-item">
 
-                                    <small class="data">
-                                        17/fev
-                                    </small>
+                                    <div class="data-vacina">
 
-                                    <div class="vacina">
+                                        <strong>10</strong>
 
-                                        <p>
-                                            Não tem 2ª dose
-                                        </p>
+                                        <span>ABR</span>
 
                                     </div>
 
-                                </div>
+                                    <div class="vacina">
 
+                                        <div class="icone-vacina">
+
+                                            <i class="bi bi-shield-check"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <h3>Giárdia</h3>
+
+                                            <p>Prevenção contra giardíase</p>
+
+                                            <span class="status-vacina">
+                                                Aplicada
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </article>
 
 
                                 <!-- VACINA 5 -->
 
-                                <div class="item-vacina">
+                                <article class="vacina-item">
 
-                                    <small class="data">
-                                        17/fev
-                                    </small>
+                                    <div class="data-vacina">
 
-                                    <div class="vacina">
+                                        <strong>15</strong>
 
-                                        <p>
-                                            Vacina
-                                        </p>
-
-                                        <p>
-                                            Aplicada no dia
-                                        </p>
-
-                                        <p>
-                                            24/02/2026
-                                        </p>
+                                        <span>MAI</span>
 
                                     </div>
 
-                                </div>
+                                    <div class="vacina">
 
+                                        <div class="icone-vacina">
+
+                                            <i class="bi bi-shield-check"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <h3>Antirrábica</h3>
+
+                                            <p>Reforço anual</p>
+
+                                            <span class="status-vacina">
+                                                Aplicada
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </article>
 
 
                                 <!-- VACINA 6 -->
 
-                                <div class="item-vacina">
+                                <article class="vacina-item">
 
-                                    <small class="data">
-                                        17/fev
-                                    </small>
+                                    <div class="data-vacina">
 
-                                    <div class="vacina">
+                                        <strong>20</strong>
 
-                                        <p>
-                                            Vacina
-                                        </p>
-
-                                        <p>
-                                            Aplicada no dia
-                                        </p>
-
-                                        <p>
-                                            24/02/2026
-                                        </p>
+                                        <span>JUN</span>
 
                                     </div>
 
-                                </div>
-
-
-
-                                <!-- VACINA 7 -->
-
-                                <div class="item-vacina">
-
-                                    <small class="data">
-                                        17/fev
-                                    </small>
-
                                     <div class="vacina">
 
-                                        <p>
-                                            Vacina
-                                        </p>
+                                        <div class="icone-vacina">
 
-                                        <p>
-                                            Aplicada no dia
-                                        </p>
+                                            <i class="bi bi-shield-check"></i>
 
-                                        <p>
-                                            24/02/2026
-                                        </p>
+                                        </div>
+
+                                        <div>
+
+                                            <h3>V10</h3>
+
+                                            <p>Reforço anual</p>
+
+                                            <span class="status-vacina">
+                                                Aplicada
+                                            </span>
+
+                                        </div>
 
                                     </div>
 
-                                </div>
-
-
-
-                                <!-- VACINA 8 -->
-
-                                <div class="item-vacina">
-
-                                    <small class="data">
-                                        17/fev
-                                    </small>
-
-                                    <div class="vacina">
-
-                                        <p>
-                                            Vacina
-                                        </p>
-
-                                        <p>
-                                            Aplicada no dia
-                                        </p>
-
-                                        <p>
-                                            24/02/2026
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-
-
-                                <!-- VACINA 9 -->
-
-                                <div class="item-vacina">
-
-                                    <small class="data">
-                                        17/fev
-                                    </small>
-
-                                    <div class="vacina">
-
-                                        <p>
-                                            Vacina
-                                        </p>
-
-                                        <p>
-                                            Aplicada no dia
-                                        </p>
-
-                                        <p>
-                                            24/02/2026
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-
-
-                                <!-- VACINA 10 -->
-
-                                <div class="item-vacina">
-
-                                    <small class="data">
-                                        17/fev
-                                    </small>
-
-                                    <div class="vacina">
-
-                                        <p>
-                                            Não tem 2ª dose
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-
-
-                                <!-- VACINA 11 -->
-
-                                <div class="item-vacina">
-
-                                    <small class="data">
-                                        17/fev
-                                    </small>
-
-                                    <div class="vacina">
-
-                                        <p>
-                                            Vacina
-                                        </p>
-
-                                        <p>
-                                            Aplicada no dia
-                                        </p>
-
-                                        <p>
-                                            24/02/2026
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-
-
-                                <!-- VACINA 12 -->
-
-                                <div class="item-vacina">
-
-                                    <small class="data">
-                                        17/fev
-                                    </small>
-
-                                    <div class="vacina">
-
-                                        <p>
-                                            Não tem 2ª dose
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
+                                </article>
 
                             </div>
 
@@ -883,312 +854,225 @@
 
                     </div>
 
-
                 </div>
 
             </section>
-
 
         </main>
 
     </div>
 
 
+    <!-- =====================================================
+     MODAL
+====================================================== -->
 
-    <!-- =========================================
-         MODAL DE ATUALIZAÇÃO DO CADASTRO
-    ========================================== -->
-
-    <div
-        class="modal fade"
-        id="modalAtualizarCadastro"
-        tabindex="-1"
-        aria-labelledby="modalAtualizarCadastroLabel"
+    <div class="modal fade" id="modalAtualizarCadastro" tabindex="-1" aria-labelledby="modalAtualizarCadastroLabel"
         aria-hidden="true">
-
 
         <div class="modal-dialog modal-dialog-centered modal-lg">
 
-
             <div class="modal-content">
 
+                <div class="modal-header">
 
-                <!-- CABEÇALHO DO MODAL -->
+                    <div>
 
-                <div
-                    class="modal-header"
-                    style="background-color: #3E7CB1; color: white;">
+                        <span class="modal-subtitulo">
+                            DADOS DO ANIMAL
+                        </span>
 
+                        <h1 class="modal-title" id="modalAtualizarCadastroLabel">
 
-                    <h1
-                        class="modal-title fs-5"
-                        id="modalAtualizarCadastroLabel">
+                            Atualizar cadastro
 
-                        Atualizar cadastro
+                        </h1>
 
-                    </h1>
+                    </div>
 
-
-                    <button
-                        type="button"
-                        class="btn-close btn-close-white"
-                        data-bs-dismiss="modal"
-                        aria-label="Fechar">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar">
                     </button>
-
 
                 </div>
 
 
-
-                <!-- CORPO DO MODAL -->
-
                 <div class="modal-body">
 
-
                     <form id="formCadastro">
+
+                        <div class="form-section-title">
+
+                            <i class="bi bi-heart"></i>
+
+                            Informações do animal
+
+                        </div>
 
 
                         <div class="row">
 
-
-                            <!-- NOME DO ANIMAL -->
-
                             <div class="col-md-6 mb-3">
 
-                                <label
-                                    for="inputNomeAnimal"
-                                    class="form-label">
+                                <label for="inputNomeAnimal" class="form-label">
 
                                     Nome do animal
 
                                 </label>
 
-
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputNomeAnimal"
-                                    placeholder="Digite o nome do animal"
-                                    required>
+                                <input type="text" class="form-control" id="inputNomeAnimal" value="Pantera" required>
 
                             </div>
 
 
-
-                            <!-- SEXO -->
-
                             <div class="col-md-6 mb-3">
 
-                                <label
-                                    for="inputSexoAnimal"
-                                    class="form-label">
+                                <label for="inputSexoAnimal" class="form-label">
 
                                     Sexo do animal
 
                                 </label>
 
+                                <select class="form-select" id="inputSexoAnimal" required>
 
-                                <select
-                                    class="form-select"
-                                    id="inputSexoAnimal"
-                                    required>
-
-
-                                    <option
-                                        value=""
-                                        selected
-                                        disabled>
-
+                                    <option disabled>
                                         Selecione o sexo
-
                                     </option>
 
-
-                                    <option value="Macho">
-                                        Macho
-                                    </option>
-
-
-                                    <option value="Fêmea">
+                                    <option selected>
                                         Fêmea
                                     </option>
 
+                                    <option>
+                                        Macho
+                                    </option>
 
                                 </select>
 
                             </div>
 
 
-
-                            <!-- IDADE -->
-
                             <div class="col-md-6 mb-3">
 
-                                <label
-                                    for="inputIdadeAnimal"
-                                    class="form-label">
+                                <label for="inputIdadeAnimal" class="form-label">
 
                                     Idade do animal
 
                                 </label>
 
-
-                                <input
-                                    type="number"
-                                    class="form-control"
-                                    id="inputIdadeAnimal"
-                                    placeholder="Digite a idade"
-                                    min="0"
+                                <input type="number" class="form-control" id="inputIdadeAnimal" value="4" min="0"
                                     required>
 
                             </div>
 
 
+                            <div class="col-md-6 mb-3">
 
-                            <!-- NOME DO PROPRIETÁRIO -->
+                                <label for="inputRaca" class="form-label">
+
+                                    Raça
+
+                                </label>
+
+                                <input type="text" class="form-control" id="inputRaca" value="SRD" required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-section-title mt-3">
+
+                            <i class="bi bi-person"></i>
+
+                            Informações da tutora
+
+                        </div>
+
+
+                        <div class="row">
 
                             <div class="col-md-6 mb-3">
 
-                                <label
-                                    for="inputNomeProprietario"
-                                    class="form-label">
+                                <label for="inputNomeProprietario" class="form-label">
 
                                     Nome do proprietário
 
                                 </label>
 
-
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputNomeProprietario"
-                                    placeholder="Digite o nome do proprietário"
+                                <input type="text" class="form-control" id="inputNomeProprietario" value="Nycole"
                                     required>
 
                             </div>
 
 
-
-                            <!-- CPF -->
-
                             <div class="col-md-6 mb-3">
 
-                                <label
-                                    for="inputCpf"
-                                    class="form-label">
+                                <label for="inputCpf" class="form-label">
 
-                                    CPF do proprietário
+                                    CPF
 
                                 </label>
 
-
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputCpf"
-                                    placeholder="000.000.000-00"
-                                    maxlength="14"
-                                    required>
+                                <input type="text" class="form-control" id="inputCpf" placeholder="000.000.000-00"
+                                    maxlength="14" required>
 
                             </div>
 
 
-
-                            <!-- CELULAR -->
-
                             <div class="col-md-6 mb-3">
 
-                                <label
-                                    for="inputCelular"
-                                    class="form-label">
+                                <label for="inputCelular" class="form-label">
 
-                                    Número de celular
+                                    Celular
 
                                 </label>
 
-
-                                <input
-                                    type="tel"
-                                    class="form-control"
-                                    id="inputCelular"
-                                    placeholder="(00) 00000-0000"
+                                <input type="tel" class="form-control" id="inputCelular" placeholder="(00) 00000-0000"
                                     required>
 
                             </div>
 
 
-
-                            <!-- EMAIL -->
-
                             <div class="col-md-6 mb-3">
 
-                                <label
-                                    for="inputEmail"
-                                    class="form-label">
+                                <label for="inputEmail" class="form-label">
 
-                                    E-mail do proprietário
+                                    E-mail
 
                                 </label>
 
-
-                                <input
-                                    type="email"
-                                    class="form-control"
-                                    id="inputEmail"
-                                    placeholder="exemplo@email.com"
+                                <input type="email" class="form-control" id="inputEmail" placeholder="exemplo@email.com"
                                     required>
 
                             </div>
 
 
-
-                            <!-- CIDADE -->
-
                             <div class="col-md-6 mb-3">
 
-                                <label
-                                    for="inputCidade"
-                                    class="form-label">
+                                <label for="inputCidade" class="form-label">
 
                                     Cidade
 
                                 </label>
 
-
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputCidade"
-                                    placeholder="Digite a cidade"
+                                <input type="text" class="form-control" id="inputCidade" placeholder="Digite a cidade"
                                     required>
 
                             </div>
 
 
-
-                            <!-- BAIRRO -->
-
                             <div class="col-md-6 mb-3">
 
-                                <label
-                                    for="inputBairro"
-                                    class="form-label">
+                                <label for="inputBairro" class="form-label">
 
                                     Bairro
 
                                 </label>
 
-
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputBairro"
-                                    placeholder="Digite o bairro"
+                                <input type="text" class="form-control" id="inputBairro" placeholder="Digite o bairro"
                                     required>
 
                             </div>
-
 
                         </div>
 
@@ -1197,27 +1081,15 @@
                 </div>
 
 
-
-                <!-- RODAPÉ DO MODAL -->
-
                 <div class="modal-footer">
 
-
-                    <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal">
+                    <button type="button" class="btn-cancelar" data-bs-dismiss="modal">
 
                         Cancelar
 
                     </button>
 
-
-                    <button
-                        type="button"
-                        class="btn"
-                        style="background-color: #3E7CB1; color: white;"
-                        onclick="atualizarCadastro()">
+                    <button type="button" class="btn-salvar" onclick="atualizarCadastro()">
 
                         <i class="bi bi-check-lg"></i>
 
@@ -1225,9 +1097,7 @@
 
                     </button>
 
-
                 </div>
-
 
             </div>
 
@@ -1236,86 +1106,62 @@
     </div>
 
 
+    <!-- =====================================================
+     FOOTER
+====================================================== -->
 
-    <!-- =========================================
-         RODAPÉ
-    ========================================== -->
+    <footer>
 
-    <footer
-        class="mt-4 py-3 border-top"
-        style="background-color: #3E7CB1;">
+        <div class="footer-content">
+
+            <div class="footer-logo">
+
+                <img src="../static/img/logo.png" alt="Patas & Bigodes">
+
+                <div>
+
+                    <strong>Patas & Bigodes</strong>
+
+                    <span>
+                        Cuidado que vira carinho.
+                    </span>
+
+                </div>
+
+            </div>
 
 
-        <div
-            class="container d-flex flex-wrap justify-content-between align-items-center">
+            <div class="footer-social">
+
+                <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+
+                    <i class="bi bi-instagram"></i>
+
+                </a>
+
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+
+                    <i class="bi bi-facebook"></i>
+
+                </a>
+
+            </div>
 
 
-            <p class="col-md-4 mb-0 text-white">
-
-                © 2026 Patas & Bigodes 🐾
-
+            <p>
+                © 2026 Patas & Bigodes. Todos os direitos reservados.
             </p>
-
-
-            <ul
-                class="nav col-md-4 justify-content-end list-unstyled d-flex mb-0">
-
-
-                <!-- INSTAGRAM -->
-
-                <li class="ms-3">
-
-                    <a
-                        class="text-white fs-4"
-                        href="https://www.instagram.com/"
-                        aria-label="Instagram"
-                        target="_blank">
-
-                        <i class="bi bi-instagram"></i>
-
-                    </a>
-
-                </li>
-
-
-                <!-- FACEBOOK -->
-
-                <li class="ms-3">
-
-                    <a
-                        class="text-white fs-4"
-                        href="https://www.facebook.com/"
-                        aria-label="Facebook"
-                        target="_blank">
-
-                        <i class="bi bi-facebook"></i>
-
-                    </a>
-
-                </li>
-
-
-            </ul>
 
         </div>
 
     </footer>
 
 
+    <!-- Bootstrap JS -->
 
-    <!-- =========================================
-         BOOTSTRAP JAVASCRIPT
-    ========================================== -->
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous">
-    </script>
-
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
 
 </body>
 
