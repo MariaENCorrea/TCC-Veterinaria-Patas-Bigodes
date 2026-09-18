@@ -1,0 +1,217 @@
+    /* =========================
+           CONTEÚDO
+        ========================= */
+
+        main {
+            flex: 1;
+            padding: 55px 6% 70px;
+            text-align: center;
+        }
+
+        .titulo {
+            font-size: 40px;
+            color: #005447;
+            margin-bottom: 12px;
+        }
+
+        .subtitulo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            font-size: 16px;
+            color: #005447;
+            margin-bottom: 48px;
+        }
+
+        .linha {
+            width: 90px;
+            height: 3px;
+            background-color: #efa62f;
+            border-radius: 10px;
+        }
+
+
+        /* =========================
+           CARDS DE HORÁRIOS
+        ========================= */
+
+        .horarios {
+            display: flex;
+            justify-content: center;
+            gap: 42px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 360px;
+            min-height: 335px;
+            background-color: #005447;
+            border-radius: 18px;
+            padding: 38px 54px;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0, 70, 60, 0.20);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 25px rgba(0, 70, 60, 0.28);
+        }
+
+        .icone {
+            font-size: 45px;
+            color: #efa62f;
+            margin-bottom: 25px;
+        }
+
+        .dia {
+            display: inline-block;
+            background-color: #efa62f;
+            color: #005447;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px 17px;
+            border-radius: 9px;
+            margin-bottom: 17px;
+        }
+
+        .divisao {
+            width: 100%;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.7);
+            margin: 0 auto 22px;
+        }
+
+        .hora {
+            color: #efa62f;
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 22px;
+        }
+
+        .descricao {
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+
+        /* =========================
+           STATUS
+        ========================= */
+
+        .status-area {
+            margin: 45px auto 0;
+            max-width: 760px;
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 20px 25px;
+            box-shadow: 0 5px 15px rgba(0, 70, 60, 0.12);
+        }
+
+        .status {
+            font-size: 20px;
+            font-weight: bold;
+            color: #16834f;
+            margin-bottom: 7px;
+        }
+
+        .proximo {
+            font-size: 15px;
+            color: #005447;
+        }
+
+
+        /* =========================
+           EMERGÊNCIA
+        ========================= */
+
+        .emergencia {
+            max-width: 760px;
+            margin: 25px auto 0;
+            padding: 22px 30px;
+            border-radius: 15px;
+            background-color: #005447;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            text-align: left;
+            box-shadow: 0 7px 16px rgba(0, 70, 60, 0.18);
+        }
+
+        .emergencia h3 {
+            color: #efa62f;
+            font-size: 19px;
+            margin-bottom: 5px;
+        }
+
+        .emergencia p {
+            font-size: 14px;
+        }
+
+        .botao {
+            background-color: #efa62f;
+            color: #005447;
+            text-decoration: none;
+            padding: 11px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            white-space: nowrap;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            background-color: #ffc45c;
+            transform: scale(1.04);
+        }
+
+        
+        @media (max-width: 900px) {
+
+     
+
+            .horarios {
+                gap: 25px;
+            }
+
+            .card {
+                width: 330px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+           
+            .titulo {
+                font-size: 31px;
+            }
+
+
+      
+            .subtitulo {
+                font-size: 14px;
+            }
+
+            .linha {
+                width: 45px;
+            }
+
+            main {
+                padding: 40px 20px;
+            }
+
+            .card {
+                width: 100%;
+                padding: 32px 30px;
+            }
+
+            .emergencia {
+                flex-direction: column;
+                text-align: center;
+            }
+
+       
+        }        

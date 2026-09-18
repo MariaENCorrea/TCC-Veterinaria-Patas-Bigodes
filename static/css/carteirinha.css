@@ -1,40 +1,67 @@
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
+    margin: 0;
     background-color: #C8E3FF;
     font-family: Georgia, 'Times New Roman', serif;
+    color: #000;
 }
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
 
 header {
     background-color: #4F86B8;
-}
-
-.menu {
-    background-color: #4F86B8;
-margin: 0 auto;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 10;
 }
 
 .navbar-custom {
-    height: 90px;
+    min-height: 90px;
     display: flex;
     align-items: center;
 }
 
+.menu {
+    display: flex;
+    align-items: center;
+    background-color: #4F86B8;
+    margin: 0 auto;
+}
+
 .logo {
-    width: 42px;
-    height: 42px;
+    width: 60px;
+    height: 60px;
     background-color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    padding: 5px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .btn-menu {
     color: #D7E9DE;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
-    margin-left: 25px;
+    margin-left: 20px;
     padding: 10px 20px;
     border-radius: 8px;
     transition: 0.3s;
@@ -43,294 +70,1050 @@ margin: 0 auto;
 .btn-menu:hover {
     background-color: #C8E3FF;
     color: #4F86B8;
-}
-
-.dog-img {
-    width: 42px;
-    height: 42px;
-    background-color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
+    transform: translateY(-2px);
 }
 
 
-
-.nav-link {
-    background-color: white;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    column-gap: 20px;
-    height: 100%;
-}
+/* =========================================================
+   FUNDO DA PÁGINA
+========================================================= */
 
 .fundo {
-    background-image: url("../img/pata.png");
-    background-size: 50px 50px;
-    background-position: center;
-    background-repeat: repeat;
     min-height: 100vh;
-}
 
-/* .fundo {
     background-color: #C8E3FF;
+    background-image: url("../img/pata.png");
+    background-repeat: repeat;
+    background-size: 55px 55px;
+    background-position: center;
 
-    background-image:
-        url("../img/pata.png"),
-        url("../img/pata.png"),
-        url("../img/pata.png");
-
-    background-size:
-        50px 50px,
-        30px 30px,
-        40px 40px;
-
-    background-position:
-        10px 20px,
-        80px 50px,
-        150px 10px;
-
-    background-repeat:
-        repeat,
-        repeat,
-        repeat;
-
-    min-height: 100vh;
-} */
-
-
-
-/* Navbar */
-.nav {
-    padding: 8px 16px;
-    align-items: center;
-    gap: 4px;
+    padding: 30px 0 40px;
 }
 
-.nav-link {
-    color: #000;
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+========================================================= */
+
+main {
+    width: min(1100px, 95%);
+    margin: 0 auto;
 }
+
+
+/* =========================================================
+   CARTEIRINHA
+========================================================= */
+
+.carteirinha {
+    margin-bottom: 45px;
+}
+
+/*
+   A carteirinha fica separada da área azul-clara.
+*/
 
 .capa {
+    position: relative;
+
+    min-height: 500px;
+
     overflow: hidden;
+
+    background-color: #3E7CB1;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
 }
 
+
+/* =========================================================
+   IMAGEM GRANDE DA CARTEIRINHA
+========================================================= */
+
 .capa-img {
-    height: 400px;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
     object-fit: cover;
+
     opacity: 0.35;
 }
 
-/* Área principal da carteirinha */
-main>div {
-    width: min(1100px, 95%);
-    padding: 40px 30px 30px;
-}
 
-/* Informações do animal */
-.informacoes {
-    margin: 25px auto 35px;
-    max-width: 700px;
-}
+/* =========================================================
+   CONTEÚDO DA CAPA
+========================================================= */
 
-.informacoes h3 {
-    margin-top: 12px !important;
-    margin-bottom: 12px;
-}
+.conteudo-capa {
+    position: relative;
 
-/* Área das abas */
-.container.text-center {
-    width: 100%;
-    max-width: 1050px;
-    padding: 0;
-    overflow: hidden;
-}
+    z-index: 2;
 
-#myTabContent .controle-atendimentos {
-    max-height: 450px;
-    overflow-y: auto;
-}
+    min-height: 500px;
 
-/* Títulos */
-h5 {
+    padding: 35px 45px 25px;
+
     text-align: center;
-    font-size: clamp(24px, 4vw, 40px);
-    color: #DE9E36;
-    margin: 25px 0;
 }
 
-/* Atualizações médicas */
 
-.btn-atualizacoes {
-    color: #4F86B8;
-    text-decoration: none;
-    font-size: 18px;
+/* =========================================================
+   FOTO DO ANIMAL
+========================================================= */
+
+.foto-animal {
+    width: 125px;
+    height: 125px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid white;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.25);
+
+    margin-bottom: 15px;
+}
+
+
+/* Caso esteja usando a imagem com Bootstrap */
+
+.capa .rounded-circle {
+    width: 125px !important;
+    height: 125px !important;
+
+    object-fit: cover;
+
+    border: 5px solid white;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.25);
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   NOME DO ANIMAL
+========================================================= */
+
+.conteudo-capa h1,
+.capa .card-title {
+    margin: 5px 0 10px;
+
+    color: #DE9E36;
+
+    font-size: clamp(32px, 5vw, 48px);
+
     font-weight: bold;
-    margin-left: 25px;
-    padding: 10px 20px;
+
+    letter-spacing: 1px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+========================================================= */
+
+.descricao {
+    color: white;
+
+    font-size: 18px;
+
+    margin-bottom: 25px;
+}
+
+.capa .card-text {
+    color: white;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DO ANIMAL
+========================================================= */
+
+/*
+   A caixa de informações fica afastada
+   da imagem grande e das bordas.
+*/
+
+.informacoes {
+    width: min(760px, 90%);
+
+    margin: 50px auto 45px;
+
+    padding: 28px 32px;
+
+    text-align: left;
+
+    background-color: rgba(255, 255, 255, 0.20);
+
+    border-left: 5px solid #DE9E36;
+
+    border-radius: 0 14px 14px 14px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.10);
+
+    position: relative;
+    z-index: 2;
+}
+
+.informacoes p {
+    margin: 0 0 12px;
+
+    color: white;
+
+    font-size: 18px;
+
+    line-height: 1.4;
+}
+
+.informacoes p:last-child {
+    margin-bottom: 0;
+}
+
+.informacoes strong {
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   PARTE INFERIOR DA CARTEIRINHA
+========================================================= */
+
+.parte-inferior {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 50px;
+
+    margin-top: 15px;
+}
+
+.atualizado {
+    color: white;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   BOTÃO ATUALIZAR CADASTRO
+========================================================= */
+
+.btn-atualizar {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    padding: 10px 16px;
+
+    border: none;
+
     border-radius: 8px;
+
+    background-color: white;
+
+    color: #000;
+
+    font-family: Georgia, 'Times New Roman', serif;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.12);
+
     transition: 0.3s;
 }
 
-.btn-atualizacoes:hover {
+.btn-atualizar:hover {
+    background-color: #DE9E36;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ÁREA AZUL-CLARA
+========================================================= */
+
+/*
+   Esta área fica separada da carteirinha azul-escura.
+*/
+
+.area-informacoes {
+    background-color: #C8E3FF;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.12);
+
+    margin-top: 35px;
+}
+
+
+/*
+   Compatibilidade com o HTML antigo
+*/
+
+.container.text-center {
+    width: 100%;
+    max-width: 1050px;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+}
+
+
+/* =========================================================
+   ABAS
+========================================================= */
+
+.abas {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background-color: white;
+
+    padding: 16px 25px;
+
+    border-radius: 24px 24px 0 0;
+}
+
+.aba {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    background-color: transparent;
+
+    border-radius: 25px;
+
+    color: #4F86B8;
+
+    font-family: Georgia, 'Times New Roman', serif;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.aba:hover {
+    background-color: #E8F4FF;
+}
+
+.aba.ativa {
+    background-color: #C8E3FF;
+}
+
+
+/* =========================================================
+   ABAS DO BOOTSTRAP
+========================================================= */
+
+.nav {
+    padding: 18px 20px;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.nav-link {
+    color: #4F86B8;
+
+    background-color: white;
+
+    border-radius: 10px !important;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+
+    column-gap: 20px;
+
+    min-height: 52px;
+
+    padding: 10px 22px;
+
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #4F86B8;
+
+    background-color: #F7FBFF;
+}
+
+.btn-atualizacoes,
+.btn-vacinas {
+    color: #4F86B8;
+
+    text-decoration: none;
+
+    font-family: Georgia, 'Times New Roman', serif;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    padding: 11px 22px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+
+    border: 0;
+
+    background-color: transparent;
+}
+
+.btn-atualizacoes:hover,
+.btn-vacinas:hover {
     background-color: #4F86B8;
+
     color: #C8E3FF;
 }
 
-.mensagem {
-    background-color: #4F86B8;
-    width: min(932px, 95%);
-    min-height: 130px;
-    height: auto;
 
-    margin: 20px auto;
+/* =========================================================
+   CONTEÚDO DAS ABAS
+========================================================= */
 
-    border-radius: 12px;
-    padding: 18px 20px;
-
-    text-align: left;
-    font-size: clamp(18px, 2.5vw, 30px);
-    color: #000;
-    box-sizing: border-box;
+.conteudo-abas {
+    padding: 35px 40px 40px;
 }
 
-.mensagem p {
+.conteudo-abas h2 {
+    margin: 0 0 40px;
+
+    text-align: center;
+
+    color: #DE9E36;
+
+    font-size: clamp(30px, 4vw, 38px);
+
+    font-weight: bold;
+}
+
+
+/* Compatibilidade com HTML antigo */
+
+.atualizacao {
+    padding: 15px 25px 35px;
+}
+
+.atualizacao h5,
+.vacinas h5 {
+    text-align: center;
+
+    color: #DE9E36;
+
+    font-size: clamp(28px, 4vw, 40px);
+
+    font-weight: bold;
+
+    margin: 30px 0 40px;
+}
+
+h5 {
+    color: #DE9E36;
+}
+
+
+/* =========================================================
+   LISTA DE ATUALIZAÇÕES
+========================================================= */
+
+.lista-atualizacoes {
+    max-height: 450px;
+
+    overflow-y: auto;
+
+    padding: 5px 20px 15px 10px;
+}
+
+
+/* Compatibilidade com HTML antigo */
+
+#myTabContent .controle-atendimentos {
+    max-height: 450px;
+
+    overflow-y: auto;
+
+    padding: 10px 12px 20px;
+}
+
+
+/* =========================================================
+   CARDS DE ATUALIZAÇÕES MÉDICAS
+========================================================= */
+
+.mensagem {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    min-height: 158px;
+
+    margin: 0 auto 25px;
+
+    padding: 20px 28px;
+
+    background-color: #4F86B8;
+
+    border-left: 5px solid #DE9E36;
+
+    border-radius: 15px;
+
+    color: white;
+
+    box-shadow:
+        0 5px 14px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s;
+}
+
+.mensagem:last-child {
+    margin-bottom: 0;
+}
+
+.mensagem:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   ÍCONE DOS CARDS
+========================================================= */
+
+.icone-mensagem {
+    flex-shrink: 0;
+
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-right: 25px;
+
+    background-color: white;
+
+    border-radius: 50%;
+
+    color: #4F86B8;
+
+    font-size: 30px;
+}
+
+
+/* =========================================================
+   TEXTO DOS CARDS
+========================================================= */
+
+.texto-mensagem {
+    text-align: left;
+}
+
+.texto-mensagem p {
     margin: 0 0 6px;
-    line-height: 1.15;
+
+    color: white;
+
+    font-size: 20px;
+
+    line-height: 1.25;
+}
+
+.texto-mensagem .titulo {
+    margin-bottom: 8px;
+
+    font-size: 27px;
+
+    font-weight: bold;
+}
+
+
+/*
+   Para o HTML antigo, que não possui
+   .texto-mensagem
+*/
+
+.mensagem p {
+    margin: 0 0 7px;
+
+    color: white;
+
+    line-height: 1.2;
 }
 
 .mensagem .titulo {
     font-weight: bold;
+
     margin-bottom: 10px;
 }
 
-/* Vacinas */
 
-.btn-vacinas {
-    color: #4F86B8;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: 25px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: 0.3s;
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.lista-atualizacoes::-webkit-scrollbar,
+.controle-atendimentos::-webkit-scrollbar {
+    width: 8px;
 }
 
-.btn-vacinas:hover {
+.lista-atualizacoes::-webkit-scrollbar-track,
+.controle-atendimentos::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.45);
+
+    border-radius: 10px;
+}
+
+.lista-atualizacoes::-webkit-scrollbar-thumb,
+.controle-atendimentos::-webkit-scrollbar-thumb {
     background-color: #4F86B8;
-    color: #C8E3FF;
+
+    border-radius: 10px;
 }
+
+
+/* =========================================================
+   ÁREA DE VACINAS
+========================================================= */
 
 .vacinas {
     background-color: #C8E3FF;
+
     width: 100%;
-    height: auto;
+
     min-height: 600px;
 
-    border-radius: 0 0 40px 40px;
-    padding: 15px 20px 30px;
-    box-sizing: border-box;
+    border-radius: 0 0 24px 24px;
+
+    padding: 30px 35px 45px;
 }
+
+
+/* =========================================================
+   GRID DE VACINAS
+========================================================= */
 
 .grid-vacinas {
     display: grid;
 
-    grid-template-columns: repeat(2, minmax(0, 458px));
+    grid-template-columns:
+        repeat(2, minmax(0, 458px));
 
-    gap: 25px;
+    column-gap: 35px;
+
+    row-gap: 35px;
 
     justify-content: center;
 }
+
+
+/* =========================================================
+   ITEM DA VACINA
+========================================================= */
 
 .item-vacina {
     min-width: 0;
 }
 
+
+/* =========================================================
+   DATA DA VACINA
+========================================================= */
+
+/*
+   A data permanece FORA do card.
+*/
+
+.data {
+    display: block;
+
+    font-size: 15px;
+
+    color: #000;
+
+    margin-left: 5px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   CARD DA VACINA
+========================================================= */
+
 .vacina {
     background-color: #4F86B8;
 
     width: 100%;
+
     min-height: 123px;
-    height: auto;
 
-    border-radius: 8px;
+    border-radius: 12px;
 
-    padding: 12px 16px;
-
-    box-sizing: border-box;
+    padding: 16px 20px;
 
     text-align: left;
-    color: #fff;
+
+    color: white;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s;
+}
+
+.vacina:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.16);
 }
 
 .vacina p {
-    margin: 0 0 5px;
+    margin: 0 0 6px;
+
     padding: 0;
+
+    color: white;
+
     font-size: clamp(18px, 2.5vw, 30px);
+
     line-height: 1.1;
 }
 
-.data {
-    display: block;
-    font-size: 15px;
-    color: #000;
-    margin-left: 5px;
-    margin-bottom: 4px;
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal-content {
+    overflow: hidden;
+
+    border: none;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.25);
 }
 
-/* Rodapé */
+.modal-header {
+    background-color: #3E7CB1;
+
+    color: white;
+
+    border: none;
+
+    padding: 20px 25px;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 25px;
+
+    background-color: #F8FBFF;
+}
+
+.modal-footer {
+    border: none;
+
+    background-color: #F8FBFF;
+
+    padding: 15px 25px 25px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control,
+.form-select {
+    border-radius: 8px;
+
+    border: 1px solid #B8CFE3;
+
+    padding: 10px 12px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #4F86B8;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 134, 184, 0.15);
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
 footer {
     margin-top: 0 !important;
-    padding: 20px 5% !important;
+
+    padding: 25px 5% !important;
+
+    background-color: #3E7CB1;
+
+    box-shadow:
+        0 -3px 10px rgba(0, 0, 0, 0.12);
 }
 
-/* Celular */
+footer a {
+    transition: 0.3s;
+}
+
+footer a:hover {
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
 @media (max-width: 768px) {
 
-    main>div {
+    main {
         width: 95%;
-        padding: 30px 15px 20px;
     }
 
-    .informacoes h3 {
-        font-size: 20px;
+    .fundo {
+        padding: 15px 0 25px;
     }
 
-    .grid-vacinas {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    .navbar-custom {
+        min-height: 75px;
     }
 
-    .vacinas {
-        padding: 10px 15px 25px;
+    .btn-menu {
+        font-size: 14px;
+
+        margin-left: 5px;
+
+        padding: 8px 10px;
     }
 
-    .mensagem {
+    .carteirinha {
+        margin-bottom: 30px;
+    }
+
+    .capa {
+        min-height: 560px;
+
+        border-radius: 18px;
+    }
+
+    .capa-img {
+        height: 100%;
+    }
+
+    .conteudo-capa {
+        min-height: 560px;
+
+        padding: 25px 20px;
+    }
+
+    .foto-animal,
+    .capa .rounded-circle {
+        width: 105px !important;
+
+        height: 105px !important;
+    }
+
+    .informacoes {
         width: 100%;
+
+        margin: 40px auto 35px;
+
+        padding: 22px 20px;
+    }
+
+    .informacoes p {
+        font-size: 16px;
+    }
+
+    .parte-inferior {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .btn-atualizar {
+        position: static;
+    }
+
+    .area-informacoes {
+        margin-top: 25px;
+
+        border-radius: 18px;
+    }
+
+    .abas {
+        padding: 12px;
+
+        gap: 5px;
+    }
+
+    .aba {
+        padding: 10px 12px;
+
+        font-size: 14px;
     }
 
     .nav {
-        flex-wrap: wrap;
+        padding: 14px 10px;
+
+        gap: 7px;
     }
 
     .nav-link {
         font-size: 14px;
+
+        min-height: 45px;
+
+        padding: 8px 12px;
+    }
+
+    .conteudo-abas {
+        padding: 25px 15px;
+    }
+
+    .conteudo-abas h2 {
+        margin-bottom: 25px;
+    }
+
+    .atualizacao {
+        padding: 10px 12px 25px;
+    }
+
+    .lista-atualizacoes {
+        padding: 5px;
+    }
+
+    #myTabContent .controle-atendimentos {
+        padding: 5px;
+    }
+
+    .mensagem {
+        min-height: 130px;
+
+        margin-bottom: 22px;
+
+        padding: 18px;
+    }
+
+    .icone-mensagem {
+        width: 55px;
+        height: 55px;
+
+        margin-right: 15px;
+
+        font-size: 23px;
+    }
+
+    .texto-mensagem p {
+        font-size: 16px;
+    }
+
+    .texto-mensagem .titulo {
+        font-size: 21px;
+    }
+
+    .grid-vacinas {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+    .vacinas {
+        padding: 20px 15px 30px;
+    }
+
+    .data {
+        margin-bottom: 8px;
     }
 }
 
 
+/* =========================================================
+   IMPRESSÃO
+========================================================= */
 
 @media print {
 
     header,
     footer,
-    .nav-tabs {
+    .nav-tabs,
+    .abas,
+    .imprimir,
+    .btn-atualizar {
         display: none !important;
     }
 
@@ -339,45 +1122,44 @@ footer {
         background: white !important;
     }
 
-    main>div {
-        background: white !important;
-        padding: 0 !important;
-        margin: 0 !important;
+    main {
         width: 100% !important;
     }
 
+    .carteirinha {
+        margin-bottom: 20px !important;
+    }
+
+    .capa,
+    .area-informacoes {
+        box-shadow: none !important;
+    }
+
+    .lista-atualizacoes,
     .controle-atendimentos {
         max-height: none !important;
+
         height: auto !important;
+
         overflow: visible !important;
-    }
-
-    .capa {
-        box-shadow: none !important;
-        break-inside: avoid;
-    }
-
-    .container {
-        max-width: 100% !important;
-    }
-
-    .tab-pane {
-        display: block !important;
-        opacity: 1 !important;
     }
 
     .mensagem,
     .item-vacina {
         break-inside: avoid;
+
         page-break-inside: avoid;
+    }
+
+    .tab-pane {
+        display: block !important;
+
+        opacity: 1 !important;
     }
 
     @page {
         size: A4;
-        margin: 15mm;
-    }
 
-    .imprimir {
-        display: none !important;
+        margin: 15mm;
     }
 }
