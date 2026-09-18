@@ -56,24 +56,60 @@
         ===================================================== */
 
         header {
-            background-color: var(--verde-escuro);
-            height: 80px;
-        }
+        background-color: var(--verde-escuro);
+        height: 80px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+        position: relative;
+        z-index: 10;
+    }
 
-        .navbar {
-            height: 100%;
-        }
+    .navbar {
+        height: 100%;
+        padding: 0 35px;
+    }
 
-        .logo {
-            width: 62px;
-            height: 62px;
-            background-color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-        }
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .navbar-brand:hover {
+        color: white;
+        transform: translateY(-1px);
+    }
+
+    .logo {
+        width: 62px;
+        height: 62px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+
+    .nome-logo {
+        font-size: 25px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
+
+    .nome-logo span {
+        color: var(--amarelo);
+    }
 
 
         /* =====================================================
