@@ -4,138 +4,599 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patas & Bigodes</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Patas & Bigodes | Clínica Veterinária</title>
 
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- CSS próprio -->
     <link rel="stylesheet" href="/static/css/apresentacao.css">
 </head>
 
 <body>
 
-    <header>
-        <nav class="navbar">
+    <!-- ================= HEADER ================= -->
 
-            <img src="../static/img/logo.png" class="logo" alt="Logo Patas & Bigodes">
+    <header class="header">
 
-            <div class="menu">
-                <a href="apresentacao.html">Início</a>
-                <a href="consultas.html">Consultas</a>
-                <a href="horarios.html">Horários</a>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <div class="container-fluid px-3 px-lg-4">
+
+                <!-- LOGO -->
+                <a href="apresentacao.html" class="navbar-brand">
+                    <img
+                        src="../static/img/logo.png"
+                        class="logo"
+                        alt="Logo Patas & Bigodes">
+                </a>
+
+                <!-- MENU MOBILE -->
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menu">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+                <!-- MENU -->
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+
+                    <div class="menu mx-auto">
+
+                        <a href="apresentacao.html" class="menu-link ativo">
+                            <i class="bi bi-house-heart"></i>
+                            Início
+                        </a>
+
+                        <a href="consultas.html" class="menu-link">
+                            <i class="bi bi-heart-pulse"></i>
+                            Consultas
+                        </a>
+
+                        <a href="horarios.html" class="menu-link">
+                            <i class="bi bi-calendar-heart"></i>
+                            Horários
+                        </a>
+
+                    </div>
+
+                    <!-- PERFIL -->
+                    <a href="carterinha.html" class="perfil-link">
+
+                        <img
+                            src="../static/img/cachorro.png"
+                            class="perfil"
+                            alt="Área do cliente">
+
+                    </a>
+
+                </div>
 
             </div>
 
-            <a href="carterinha.html">
-                <img src="../static/img/cachorro.png" class="perfil" alt="Perfil">
-            </a>
-
         </nav>
+
     </header>
 
 
+    <!-- ================= CONTEÚDO ================= -->
+
     <main>
 
-        <section class="layout">
+        <!-- HERO -->
 
-            <div class="coluna">
+        <section class="hero">
 
-                <img src="../static/img/vet.png" class="imagem-principal" alt="Parte externa da clínica">
+            <div class="container-fluid">
 
-                <div class="titulo">
-                    Patas <span>&</span> Bigodes
+                <div class="row g-4 align-items-stretch">
+
+                    <!-- COLUNA ESQUERDA -->
+
+                    <div class="col-lg-6">
+
+                        <div class="card-principal h-100">
+
+                            <div class="imagem-container">
+
+                                <img
+                                    src="../static/img/vet.png"
+                                    class="imagem-principal"
+                                    alt="Parte externa da clínica veterinária">
+
+                                <div class="imagem-legenda">
+                                    <i class="bi bi-heart-fill"></i>
+                                    Cuidado, carinho e confiança
+                                </div>
+
+                            </div>
+
+
+                            <div class="conteudo-principal">
+
+                                <h1 class="titulo">
+                                    Patas
+                                    <span>&</span>
+                                    Bigodes
+                                </h1>
+
+                                <p class="descricao">
+
+                                    A <strong>Patas & Bigodes</strong> é uma clínica
+                                    veterinária moderna e acolhedora, dedicada ao
+                                    cuidado completo de cães e gatos.
+
+                                    <br><br>
+
+                                    Contamos com profissionais especializados,
+                                    atendimento clínico, procedimentos cirúrgicos
+                                    e recursos para diagnóstico, sempre buscando
+                                    oferecer segurança, carinho e bem-estar para
+                                    os pets.
+
+                                </p>
+
+
+                                <!-- REDES SOCIAIS -->
+
+                                <div class="redes">
+
+                                    <span class="redes-titulo">
+                                        Siga a Patas & Bigodes:
+                                    </span>
+
+                                    <a href="#" class="rede" aria-label="Instagram">
+
+                                        <img
+                                            src="../static/img/insta.png"
+                                            alt="Instagram">
+
+                                    </a>
+
+                                    <a href="#" class="rede" aria-label="Facebook">
+
+                                        <img
+                                            src="../static/img/facebook.png"
+                                            alt="Facebook">
+
+                                    </a>
+
+                                </div>
+
+
+                                <!-- PETS -->
+
+                                <div class="animais">
+
+                                    <div class="animal-item">
+                                        <img
+                                            src="../static/img/cat.png"
+                                            class="animal"
+                                            alt="Gato">
+                                    </div>
+
+                                    <div class="animal-item destaque">
+                                        <img
+                                            src="../static/img/cat_dog.png"
+                                            class="animal"
+                                            alt="Gato e cachorro">
+                                    </div>
+
+                                    <div class="animal-item">
+                                        <img
+                                            src="../static/img/dog.png"
+                                            class="animal"
+                                            alt="Cachorro">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- COLUNA DIREITA -->
+
+                    <div class="col-lg-6">
+
+                        <div class="card-recepcao h-100">
+
+                            <div class="imagem-recepcao-container">
+
+                                <img
+                                    src="../static/img/vet2.png"
+                                    class="imagem-recepcao"
+                                    alt="Recepção da clínica">
+
+                                <div class="recepcao-badge">
+
+                                    <i class="bi bi-stars"></i>
+
+                                    Ambiente acolhedor
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profissionais-area">
+
+                                <div class="section-title">
+
+                                    <div>
+                                        <span>Conheça nossa equipe</span>
+
+                                        <h2>
+                                            Profissionais que cuidam
+                                            <strong>com carinho</strong>
+                                        </h2>
+                                    </div>
+
+                                    <i class="bi bi-heart-pulse"></i>
+
+                                </div>
+
+
+                                <!-- PROFISSIONAL 1 -->
+
+                                <article class="profissional">
+
+                                    <img
+                                        src="../static/img/dr_lucas.png"
+                                        class="foto-profissional"
+                                        alt="Dr. Lucas">
+
+                                    <div class="texto-profissional">
+
+                                        <h3>
+                                            Dr. Lucas
+                                        </h3>
+
+                                        <span class="cargo">
+                                            Clínico Geral
+                                        </span>
+
+                                        <p>
+                                            Responsável pelo atendimento clínico,
+                                            prevenção, diagnóstico e tratamento
+                                            de diversas condições de saúde dos pets.
+                                        </p>
+
+                                    </div>
+
+                                </article>
+
+
+                                <!-- PROFISSIONAL 2 -->
+
+                                <article class="profissional">
+
+                                    <img
+                                        src="../static/img/dra_ana.png"
+                                        class="foto-profissional"
+                                        alt="Dra. Ana">
+
+                                    <div class="texto-profissional">
+
+                                        <h3>
+                                            Dra. Ana
+                                        </h3>
+
+                                        <span class="cargo">
+                                            Cirurgiã
+                                        </span>
+
+                                        <p>
+                                            Especialista em procedimentos cirúrgicos,
+                                            realizando intervenções com precisão,
+                                            segurança e cuidado.
+                                        </p>
+
+                                    </div>
+
+                                </article>
+
+
+                                <!-- PROFISSIONAL 3 -->
+
+                                <article class="profissional">
+
+                                    <img
+                                        src="../static/img/dr_rafa.png"
+                                        class="foto-profissional"
+                                        alt="Dr. Rafael">
+
+                                    <div class="texto-profissional">
+
+                                        <h3>
+                                            Dr. Rafael
+                                        </h3>
+
+                                        <span class="cargo">
+                                            Auxiliar de Veterinário
+                                        </span>
+
+                                        <p>
+                                            Auxilia na preparação dos materiais,
+                                            organização dos animais e cuidados
+                                            durante os atendimentos.
+                                        </p>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="descricao">
-                    Patas & Bigodes é uma clínica veterinária moderna e
-                    acolhedora, dedicada ao cuidado completo de cães e gatos.
-                    Com uma equipe de profissionais especializados, oferecemos
-                    atendimento clínico, cirúrgico e diagnóstico com tecnologia
-                    avançada e muito carinho. Nosso compromisso é garantir
-                    saúde, bem-estar e qualidade de vida para os pets que fazem
-                    parte da sua família.
+            </div>
+
+        </section>
+
+
+        <!-- ================= BENEFÍCIOS ================= -->
+
+        <section class="beneficios-section">
+
+            <div class="container-fluid">
+
+                <div class="section-heading">
+
+                    <span>
+                        <i class="bi bi-stars"></i>
+                        Por que escolher a gente?
+                    </span>
+
+                    <h2>
+                        Tudo para o bem-estar do seu pet
+                    </h2>
+
+                    <p>
+                        Um espaço preparado para cuidar dos animais
+                        com segurança, carinho e atenção.
+                    </p>
+
                 </div>
 
-                <div class="redes">
-                    <a href="#" aria-label="Instagram">
-                        <img src="../static/img/insta.png" class="rede" alt="Instagram">
+
+                <div class="row g-4">
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <div class="beneficio">
+
+                            <div class="beneficio-icone">
+                                <i class="bi bi-heart-pulse-fill"></i>
+                            </div>
+
+                            <h3>
+                                Atendimento cuidadoso
+                            </h3>
+
+                            <p>
+                                Cada pet recebe atenção individual
+                                durante o atendimento.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <div class="beneficio">
+
+                            <div class="beneficio-icone">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+
+                            <h3>
+                                Segurança
+                            </h3>
+
+                            <p>
+                                Procedimentos realizados com cuidado
+                                e responsabilidade.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <div class="beneficio">
+
+                            <div class="beneficio-icone">
+                                <i class="bi bi-person-hearts"></i>
+                            </div>
+
+                            <h3>
+                                Equipe especializada
+                            </h3>
+
+                            <p>
+                                Profissionais preparados para cuidar
+                                de diferentes necessidades.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <div class="beneficio">
+
+                            <div class="beneficio-icone">
+                                <i class="bi bi-house-heart"></i>
+                            </div>
+
+                            <h3>
+                                Ambiente acolhedor
+                            </h3>
+
+                            <p>
+                                Um espaço confortável para pets
+                                e seus tutores.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= AGENDAMENTO ================= -->
+
+        <section class="agendamento-section">
+
+            <div class="container-fluid">
+
+                <div class="agendamento">
+
+                    <div class="agendamento-info">
+
+                        <div class="agendamento-icone">
+                            <i class="bi bi-calendar-heart-fill"></i>
+                        </div>
+
+                        <div>
+
+                            <span class="pequeno-titulo">
+                                Cuidado que começa com você
+                            </span>
+
+                            <h2>
+                                Agende uma consulta para seu pet
+                            </h2>
+
+                            <p>
+                                Escolha o melhor horário para cuidar
+                                de quem faz parte da sua família.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="consultas.html" class="btn-principal">
+
+                        <i class="bi bi-calendar-check"></i>
+
+                        Agendar consulta
+
                     </a>
 
-                    <a href="#" aria-label="Facebook">
-                        <img src="../static/img/facebook.png" class="rede" alt="Facebook">
-                    </a>
-                </div>
-
-                <div class="animais">
-                    <img src="../static/img/cat.png" class="animal" alt="Gato">
-
-                    <img src="../static/img/cat_dog.png" class="animal" alt="Gato e cachorro">
-
-                    <img src="../static/img/dog.png" class="animal" alt="Cachorro">
                 </div>
 
             </div>
 
-            </div>
-
-            </div>
+        </section>
 
 
-            <div class="coluna">
+        <!-- ================= INFORMAÇÕES ================= -->
 
-                <img src="../static/img/vet2.png" class="imagem-recepcao" alt="Recepção da clínica">
+        <section class="informacoes-section">
 
+            <div class="container-fluid">
 
-                <article class="profissional">
+                <div class="informacoes">
 
-                    <img src="../static/img/dr_lucas.png" class="foto-profissional" alt="Dr. Lucas">
+                    <div class="info-item">
 
-                    <div class="texto-profissional">
-                        <strong>Dr. Lucas – Clínico Geral</strong>
-                        <br>
+                        <i class="bi bi-clock"></i>
 
-                        Responsável pelo atendimento clínico,
-                        o Dr. Lucas está na prevenção, diagnóstico
-                        e tratamento de diversas condições de saúde
-                        dos pets.
+                        <strong>
+                            Horário
+                        </strong>
+
+                        <span>
+                            Segunda a sexta<br>
+                            08:00 às 18:00
+                        </span>
+
                     </div>
 
-                </article>
 
+                    <div class="info-item">
 
-                <article class="profissional">
+                        <i class="bi bi-geo-alt"></i>
 
-                    <img src="../static/img/dra_ana.png" class="foto-profissional" alt="Dra. Ana">
+                        <strong>
+                            Localização
+                        </strong>
 
-                    <div class="texto-profissional">
-                        <strong>Dra. Ana – Cirurgiã</strong>
-                        <br>
+                        <span>
+                            Rua dos Animais, 123<br>
+                            Centro
+                        </span>
 
-                        Especialista em procedimentos cirúrgicos,
-                        a Dra. Ana realiza intervenções com precisão
-                        e segurança, garantindo um bem-estar e
-                        recuperação tranquila dos pets.
                     </div>
 
-                </article>
 
+                    <div class="info-item">
 
-                <article class="profissional">
+                        <i class="bi bi-telephone"></i>
 
-                    <img src="../static/img/dr_rafa.png" class="foto-profissional" alt="Dr. Rafael">
+                        <strong>
+                            Telefone
+                        </strong>
 
-                    <div class="texto-profissional">
-                        <strong>Dr. Rafael – Auxiliar de Veterinário</strong>
-                        <br>
+                        <span>
+                            (11) 99999-9999
+                        </span>
 
-                        Ele ajuda na preparação de materiais,
-                        organização dos animais durante os atendimentos
-                        e exames, além de auxiliar nos cuidados básicos
-                        com os pets.
                     </div>
 
-                </article>
 
-            </div>
+                    <div class="info-item">
+
+                        <i class="bi bi-envelope-heart"></i>
+
+                        <strong>
+                            E-mail
+                        </strong>
+
+                        <span>
+                            contato@patasbigodes.com
+                        </span>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -144,16 +605,58 @@
     </main>
 
 
+    <!-- ================= FOOTER ================= -->
+
     <footer>
 
-        <span>Todos os direitos reservados</span>
+        <div class="footer-conteudo">
 
-        <div class="footer-icons">
-            <i class="bi bi-instagram"></i>
-            <i class="bi bi-facebook"></i>
+            <div>
+
+                <strong>
+                    Patas & Bigodes
+                </strong>
+
+                <span>
+                    Cuidando de quem faz parte da sua família.
+                </span>
+
+            </div>
+
+
+            <div class="footer-icons">
+
+                <a href="#" aria-label="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+
+                <a href="#" aria-label="Facebook">
+                    <i class="bi bi-facebook"></i>
+                </a>
+
+                <a href="#" aria-label="WhatsApp">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Patas & Bigodes —
+            Todos os direitos reservados.
+
         </div>
 
     </footer>
+
+
+    <!-- Bootstrap JS apenas para o menu responsivo -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
 
 </body>
 

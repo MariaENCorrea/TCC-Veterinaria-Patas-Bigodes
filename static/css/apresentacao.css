@@ -1,13 +1,36 @@
+/* =====================================================
+   PATAS & BIGODES
+   CSS PRINCIPAL
+   ===================================================== */
+
 :root {
+
     --verde-escuro: #034C3C;
     --verde: #4C8C7E;
     --verde-claro: #DCECE5;
+
     --amarelo: #E4A52B;
     --azul-claro: #C9E3F8;
+
     --branco: #FFFFFF;
     --preto: #111111;
+
     --borda: #B9D7CE;
+
+    --creme: #FFFDF8;
+    --cinza: #64716C;
+
+    --sombra:
+        0 12px 35px rgba(3, 76, 60, .12);
+
+    --sombra-forte:
+        0 18px 45px rgba(3, 76, 60, .18);
 }
+
+
+/* =====================================================
+   CONFIGURAÇÕES GERAIS
+   ===================================================== */
 
 * {
     box-sizing: border-box;
@@ -18,490 +41,1266 @@ html {
 }
 
 body {
+
     margin: 0;
-    background: var(--verde-claro);
+
+    background:
+        linear-gradient(180deg,
+            #DCECE5 0%,
+            #F7FBF8 45%,
+            #DCECE5 100%);
+
     color: var(--preto);
-    font-family: Georgia, "Times New Roman", serif;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 }
 
-/* =========================
-           HEADER
-        ========================= */
 
-header {
-    height: 68px;
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
     background: var(--verde-escuro);
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, .15);
 }
+
 
 .navbar {
-    height: 68px;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+    min-height: 76px;
+
+    padding: 8px 0;
 }
 
-.logo,
-.perfil {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+
+/* LOGO */
+
+.logo {
+
+    width: 58px;
+    height: 58px;
+
     object-fit: cover;
-    display: block;
+
+    border-radius: 50%;
+
     background: white;
+
+    padding: 3px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, .18);
+
+    transition: .3s;
 }
+
+.logo:hover {
+
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   MENU
+   ===================================================== */
 
 .menu {
+
     display: flex;
+
     align-items: center;
-    gap: 28px;
-}
 
-.menu a {
-    color: #D7E9DE;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 8px;
-    transition: .25s;
-}
+    justify-content: center;
 
-.menu a:hover {
-    background: var(--amarelo);
-    color: var(--verde-escuro);
-}
-
-/* =========================
-           CONTEÚDO
-        ========================= */
-
-main {
-    padding: 20px 22px 18px;
-}
-
-.layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.coluna {
-    min-width: 0;
-}
-
-/* =========================
-           IMAGENS PRINCIPAIS
-        ========================= */
-
-.imagem-principal {
-    width: 100%;
-    height: 310px;
-    object-fit: cover;
-    border-radius: 7px;
-    display: block;
-}
-
-.titulo {
-    margin-top: 7px;
-    margin-bottom: 7px;
-    padding: 5px;
-    text-align: center;
-    background: var(--verde);
-    border-radius: 6px;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.titulo span {
-    color: var(--amarelo);
-}
-
-.descricao {
-    background: var(--amarelo);
-    border-radius: 6px;
-    padding: 9px;
-    margin-bottom: 10px;
-    font-size: 20px;
-    line-height: 1.12;
-}
-
-/* =========================
-           REDES + PETS
-        ========================= */
-
-.redes {
-    display: flex;
     gap: 8px;
-    margin-bottom: 9px;
 }
 
-.rede {
-    width: 48px;
-    height: 48px;
-    padding: 5px;
-    background: white;
-    border-radius: 12px;
-    object-fit: contain;
-    transition: transform .2s;
+.menu-link {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 10px 16px;
+
+    border-radius: 30px;
+
+    color: #E7F4EE;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition: .3s;
 }
 
-.rede:hover {
+.menu-link i {
+
+    font-size: 17px;
+}
+
+.menu-link:hover,
+.menu-link.ativo {
+
+    background: var(--amarelo);
+
+    color: var(--verde-escuro);
+
     transform: translateY(-2px);
 }
 
-.animais {
+
+/* PERFIL */
+
+.perfil-link {
+
     display: flex;
-    gap: 12px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-left: 15px;
+}
+
+.perfil {
+
+    width: 52px;
+    height: 52px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    background: white;
+
+    padding: 3px;
+
+    border: 2px solid rgba(255, 255, 255, .7);
+
+    transition: .3s;
+}
+
+.perfil:hover {
+
+    transform: scale(1.08);
+
+    border-color: var(--amarelo);
+}
+
+
+/* =====================================================
+   MAIN
+   ===================================================== */
+
+main {
+
+    padding: 35px 0 45px;
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+
+    padding: 0 20px;
+}
+
+
+/* =====================================================
+   CARDS PRINCIPAIS
+   ===================================================== */
+
+.card-principal,
+.card-recepcao {
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, .78);
+
+    border: 1px solid rgba(185, 215, 206, .8);
+
+    border-radius: 24px;
+
+    box-shadow: var(--sombra);
+
+    backdrop-filter: blur(5px);
+
+    transition: .3s;
+}
+
+.card-principal:hover,
+.card-recepcao:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: var(--sombra-forte);
+}
+
+
+/* =====================================================
+   IMAGENS
+   ===================================================== */
+
+.imagem-container,
+.imagem-recepcao-container {
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.imagem-principal,
+.imagem-recepcao {
+
+    width: 100%;
+
+    height: 330px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform .6s;
+}
+
+.card-principal:hover .imagem-principal,
+.card-recepcao:hover .imagem-recepcao {
+
+    transform: scale(1.025);
+}
+
+
+/* =====================================================
+   BADGES DAS IMAGENS
+   ===================================================== */
+
+.imagem-legenda,
+.recepcao-badge {
+
+    position: absolute;
+
+    bottom: 18px;
+    left: 18px;
+
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    background: rgba(3, 76, 60, .92);
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, .2);
+}
+
+.imagem-legenda i,
+.recepcao-badge i {
+
+    color: var(--amarelo);
+
+    margin-right: 5px;
+}
+
+
+/* =====================================================
+   CONTEÚDO PRINCIPAL
+   ===================================================== */
+
+.conteudo-principal {
+
+    padding: 22px;
+}
+
+
+/* TÍTULO */
+
+.titulo {
+
+    margin: 0 0 14px;
+
+    padding: 13px;
+
+    text-align: center;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(135deg,
+            var(--verde),
+            #5C998B);
+
+    color: white;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 6px 15px rgba(3, 76, 60, .12);
+}
+
+.titulo span {
+
+    color: var(--amarelo);
+
+    margin: 0 4px;
+}
+
+
+/* =====================================================
+   DESCRIÇÃO
+   ===================================================== */
+
+.descricao {
+
+    margin: 0;
+
+    padding: 18px 20px;
+
+    background:
+        linear-gradient(135deg,
+            #FFF9E9,
+            #FFFDF8);
+
+    border-left: 5px solid var(--amarelo);
+
+    border-radius: 14px;
+
+    color: #38433F;
+
+    font-size: 17px;
+
+    line-height: 1.65;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, .05);
+}
+
+.descricao strong {
+
+    color: var(--verde-escuro);
+}
+
+
+/* =====================================================
+   REDES SOCIAIS
+   ===================================================== */
+
+.redes {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 18px;
+}
+
+.redes-titulo {
+
+    color: var(--verde-escuro);
+
+    font-weight: bold;
+
+    margin-right: 3px;
+}
+
+.rede {
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border: 2px solid var(--borda);
+
+    border-radius: 50%;
+
+    transition: .3s;
+}
+
+.rede img {
+
+    width: 25px;
+    height: 25px;
+
+    object-fit: contain;
+}
+
+.rede:hover {
+
+    background: var(--amarelo);
+
+    border-color: var(--amarelo);
+
+    transform:
+        translateY(-4px) rotate(4deg);
+}
+
+
+/* =====================================================
+   ANIMAIS
+   ===================================================== */
+
+.animais {
+
+    display: flex;
+
+    gap: 14px;
+
+    margin-top: 20px;
+}
+
+.animal-item {
+
+    width: 76px;
+    height: 76px;
+
+    padding: 4px;
+
+    border-radius: 50%;
+
+    background: var(--verde-claro);
+
+    border: 2px solid var(--borda);
+
+    transition: .3s;
+}
+
+.animal-item:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--amarelo);
+}
+
+.animal-item.destaque {
+
+    background: var(--amarelo);
+
+    border-color: var(--amarelo);
 }
 
 .animal {
-    width: 78px;
-    height: 78px;
-    object-fit: cover;
-    border: 4px solid var(--verde-escuro);
-    border-radius: 5px;
-}
 
-/* =========================
-           BENEFÍCIOS
-        ========================= */
-
-.beneficios {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 7px;
-    margin-top: 10px;
-}
-
-.beneficio {
-    min-height: 145px;
-    padding: 10px;
-    background: rgba(255, 255, 255, .40);
-    border: 2px solid var(--borda);
-    border-radius: 7px;
-}
-
-.beneficio-topo {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    margin-bottom: 9px;
-}
-
-.beneficio-icone {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: var(--verde-escuro);
-    color: white;
-    font-size: 19px;
-}
-
-.beneficio strong {
-    color: var(--verde-escuro);
-    font-size: 14px;
-    line-height: 1.05;
-}
-
-.beneficio p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.18;
-}
-
-/* =========================
-           AGENDAMENTO
-        ========================= */
-
-.agendamento {
-    margin-top: 10px;
-    padding: 12px 15px;
-    min-height: 110px;
-    border: 2px solid var(--borda);
-    border-radius: 7px;
-    background: rgba(255, 255, 255, .40);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-}
-
-.agendamento-info {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.agendamento-icone {
-    color: var(--verde-escuro);
-    font-size: 29px;
-}
-
-.agendamento h2 {
-    color: var(--verde-escuro);
-    margin: 0 0 3px;
-    font-size: 19px;
-}
-
-.agendamento p {
-    margin: 0;
-    font-size: 14px;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 13px;
-    background: var(--verde-escuro);
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    white-space: nowrap;
-    transition: .25s;
-}
-
-.btn:hover {
-    background: var(--amarelo);
-    color: var(--verde-escuro);
-}
-
-/* =========================
-           PROFISSIONAIS
-        ========================= */
-
-.imagem-recepcao {
     width: 100%;
-    height: 310px;
+    height: 100%;
+
     object-fit: cover;
-    border-radius: 7px;
-    display: block;
-    margin-bottom: 9px;
+
+    border-radius: 50%;
 }
+
+
+/* =====================================================
+   PROFISSIONAIS
+   ===================================================== */
+
+.profissionais-area {
+
+    padding: 22px;
+}
+
+
+/* TÍTULO DA EQUIPE */
+
+.section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.section-title span {
+
+    display: block;
+
+    color: var(--verde);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: .7px;
+}
+
+.section-title h2 {
+
+    margin: 3px 0 0;
+
+    color: var(--verde-escuro);
+
+    font-size: 22px;
+}
+
+.section-title h2 strong {
+
+    color: var(--amarelo);
+}
+
+.section-title>i {
+
+    font-size: 32px;
+
+    color: var(--amarelo);
+}
+
+
+/* CARD PROFISSIONAL */
 
 .profissional {
-    min-height: 80px;
-    padding: 4px;
-    margin-bottom: 7px;
-    background: var(--verde-escuro);
-    border-radius: 7px;
+
     display: flex;
+
     align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 12px;
+
+    padding: 10px;
+
+    background: #F7FBF8;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 17px;
+
+    transition: .3s;
+}
+
+.profissional:hover {
+
+    transform: translateX(4px);
+
+    border-color: var(--verde);
+
+    box-shadow:
+        0 7px 18px rgba(3, 76, 60, .10);
 }
 
 .foto-profissional {
-    width: 70px;
-    height: 84px;
+
+    width: 82px;
+    height: 94px;
+
+    flex-shrink: 0;
+
     object-fit: cover;
-    border-radius: 5px;
-    margin-right: 7px;
+
+    border-radius: 14px;
+
+    border: 3px solid white;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, .12);
 }
 
 .texto-profissional {
+
     flex: 1;
-    padding: 6px;
+}
+
+.texto-profissional h3 {
+
+    margin: 0;
+
+    color: var(--verde-escuro);
+
+    font-size: 18px;
+}
+
+.cargo {
+
+    display: inline-block;
+
+    margin: 3px 0 7px;
+
+    padding: 4px 10px;
+
+    border-radius: 20px;
+
     background: var(--azul-claro);
-    border-radius: 5px;
-    font-size: 17px;
-    line-height: 1.08;
-}
 
-.texto-profissional strong {
+    color: var(--verde-escuro);
+
     font-size: 12px;
+
+    font-weight: bold;
 }
 
-/* =========================
-           INFORMAÇÕES
-        ========================= */
+.texto-profissional p {
+
+    margin: 0;
+
+    color: #58645F;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   BENEFÍCIOS
+   ===================================================== */
+
+.beneficios-section {
+
+    margin-top: 35px;
+
+    padding: 45px 20px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, .8),
+            rgba(220, 236, 229, .8));
+}
+
+
+/* TÍTULO */
+
+.section-heading {
+
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+.section-heading>span {
+
+    color: var(--verde);
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.section-heading>span i {
+
+    color: var(--amarelo);
+}
+
+.section-heading h2 {
+
+    margin: 6px 0;
+
+    color: var(--verde-escuro);
+
+    font-size: 28px;
+}
+
+.section-heading p {
+
+    margin: 0;
+
+    color: var(--cinza);
+
+    font-size: 15px;
+}
+
+
+/* CARD BENEFÍCIO */
+
+.beneficio {
+
+    height: 100%;
+
+    padding: 25px 20px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, .85);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 7px 20px rgba(3, 76, 60, .08);
+
+    transition: .3s;
+}
+
+.beneficio:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 30px rgba(3, 76, 60, .13);
+
+    border-color: var(--verde);
+}
+
+.beneficio-icone {
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: var(--verde-claro);
+
+    color: var(--verde-escuro);
+
+    font-size: 27px;
+
+    transition: .3s;
+}
+
+.beneficio:hover .beneficio-icone {
+
+    background: var(--amarelo);
+
+    transform: scale(1.08);
+}
+
+.beneficio h3 {
+
+    margin-bottom: 8px;
+
+    color: var(--verde-escuro);
+
+    font-size: 18px;
+}
+
+.beneficio p {
+
+    margin: 0;
+
+    color: var(--cinza);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   AGENDAMENTO
+   ===================================================== */
+
+.agendamento-section {
+
+    padding: 30px 20px 10px;
+}
+
+.agendamento {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 25px 30px;
+
+    background:
+        linear-gradient(135deg,
+            var(--verde-escuro),
+            #075D4A);
+
+    border-radius: 22px;
+
+    color: white;
+
+    box-shadow:
+        0 12px 30px rgba(3, 76, 60, .20);
+}
+
+.agendamento-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.agendamento-icone {
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .12);
+
+    color: var(--amarelo);
+
+    font-size: 30px;
+}
+
+.pequeno-titulo {
+
+    color: #CFE5DC;
+
+    font-size: 13px;
+}
+
+.agendamento h2 {
+
+    margin: 2px 0 4px;
+
+    font-size: 22px;
+}
+
+.agendamento p {
+
+    margin: 0;
+
+    color: #DCECE5;
+
+    font-size: 14px;
+}
+
+
+/* BOTÃO */
+
+.btn-principal {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    background: var(--amarelo);
+
+    color: var(--verde-escuro);
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    transition: .3s;
+}
+
+.btn-principal:hover {
+
+    background: white;
+
+    color: var(--verde-escuro);
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   INFORMAÇÕES
+   ===================================================== */
+
+.informacoes-section {
+
+    padding: 25px 20px;
+}
 
 .informacoes {
-    margin-top: 10px;
-    padding: 10px 5px;
-    border: 2px solid var(--borda);
-    border-radius: 7px;
-    background: rgba(255, 255, 255, .40);
+
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, .78);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(3, 76, 60, .08);
 }
 
 .info-item {
-    min-height: 120px;
-    padding: 3px 10px;
+
+    padding: 25px 15px;
+
     text-align: center;
-    border-right: 1px solid #A9C9BF;
+
+    border-right: 1px solid var(--borda);
 }
 
 .info-item:last-child {
+
     border-right: none;
 }
 
 .info-item i {
+
     display: block;
-    color: var(--verde-escuro);
-    font-size: 28px;
-    margin-bottom: 3px;
+
+    margin-bottom: 8px;
+
+    color: var(--verde);
+
+    font-size: 27px;
 }
 
 .info-item strong {
+
     display: block;
+
+    margin-bottom: 5px;
+
     color: var(--verde-escuro);
-    font-size: 13px;
-    margin-bottom: 4px;
+
+    font-size: 15px;
 }
 
 .info-item span {
-    display: block;
-    font-size: 12px;
-    line-height: 1.16;
+
+    color: var(--cinza);
+
+    font-size: 13px;
+
+    line-height: 1.5;
 }
 
-.info-item .btn {
-    margin-top: 5px;
-    font-size: 12px;
-}
 
-/* =========================
-           FOOTER
-        ========================= */
+/* =====================================================
+   FOOTER
+   ===================================================== */
 
 footer {
-    min-height: 66px;
-    padding: 15px 30px;
+
+    padding: 25px 30px;
+
     background: var(--verde-escuro);
-    color: #D7E9DE;
+
+    color: #DCECE5;
+}
+
+.footer-conteudo {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer-conteudo strong {
+
+    display: block;
+
+    color: white;
+
+    font-size: 19px;
+}
+
+.footer-conteudo span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 13px;
 }
 
 .footer-icons {
+
     display: flex;
-    gap: 10px;
-    font-size: 17px;
+
+    gap: 9px;
 }
 
-/* =========================
-           RESPONSIVIDADE
-        ========================= */
+.footer-icons a {
 
-@media (max-width: 1050px) {
-    .descricao {
-        font-size: 17px;
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .10);
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+.footer-icons a:hover {
+
+    background: var(--amarelo);
+
+    color: var(--verde-escuro);
+
+    transform: translateY(-3px);
+}
+
+.copyright {
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(255, 255, 255, .15);
+
+    text-align: center;
+
+    font-size: 12px;
+
+    color: #BFD5CD;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+   ===================================================== */
+
+@media (max-width: 991px) {
+
+    .menu {
+
+        padding: 15px 0;
+
+        flex-direction: column;
+
+        gap: 4px;
     }
 
-    .texto-profissional {
-        font-size: 15px;
+    .menu-link {
+
+        width: 100%;
+
+        justify-content: center;
     }
 
-    .beneficios {
-        grid-template-columns: repeat(2, 1fr);
+    .perfil-link {
+
+        margin: 5px auto 10px;
     }
 
     .informacoes {
+
         grid-template-columns: repeat(2, 1fr);
     }
 
     .info-item:nth-child(2) {
+
         border-right: none;
     }
 
     .info-item:nth-child(-n+2) {
-        border-bottom: 1px solid #A9C9BF;
-        padding-bottom: 8px;
+
+        border-bottom: 1px solid var(--borda);
     }
 
-    .info-item:nth-child(n+3) {
-        padding-top: 8px;
+    .agendamento {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .btn-principal {
+
+        width: 100%;
+
+        justify-content: center;
     }
 }
 
-@media (max-width: 768px) {
 
-    header,
-    .navbar {
-        height: 60px;
-    }
-
-    .navbar {
-        padding: 0 12px;
-    }
-
-    .logo,
-    .perfil {
-        width: 38px;
-        height: 38px;
-    }
-
-    .menu {
-        gap: 2px;
-    }
-
-    .menu a {
-        font-size: 14px;
-        padding: 7px 9px;
-    }
+@media (max-width: 767px) {
 
     main {
-        padding: 12px;
+
+        padding-top: 20px;
     }
 
-    .layout {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    .hero {
+
+        padding: 0 12px;
     }
 
     .imagem-principal,
     .imagem-recepcao {
-        height: 230px;
+
+        height: 240px;
     }
 
     .titulo {
-        font-size: 20px;
+
+        font-size: 25px;
     }
 
     .descricao {
+
         font-size: 15px;
+
+        line-height: 1.55;
     }
 
-    .texto-profissional {
-        font-size: 14px;
+    .profissionais-area {
+
+        padding: 18px;
+    }
+
+    .section-title h2 {
+
+        font-size: 19px;
     }
 
     .agendamento {
+
+        padding: 22px;
+    }
+
+    .agendamento-info {
+
         align-items: flex-start;
+    }
+
+    .agendamento-icone {
+
+        width: 52px;
+        height: 52px;
+
+        font-size: 24px;
+    }
+
+    .agendamento h2 {
+
+        font-size: 19px;
+    }
+
+    .footer-conteudo {
+
         flex-direction: column;
+
+        text-align: center;
     }
 }
 
-@media (max-width: 480px) {
 
-    .beneficios,
+@media (max-width: 575px) {
+
+    .logo {
+
+        width: 48px;
+        height: 48px;
+    }
+
+    .navbar {
+
+        min-height: 64px;
+    }
+
+    .imagem-principal,
+    .imagem-recepcao {
+
+        height: 210px;
+    }
+
+    .conteudo-principal {
+
+        padding: 17px;
+    }
+
+    .animal-item {
+
+        width: 64px;
+        height: 64px;
+    }
+
     .informacoes {
+
         grid-template-columns: 1fr;
     }
 
     .info-item {
+
         border-right: none;
-        border-bottom: 1px solid #A9C9BF;
-        padding: 10px;
+
+        border-bottom: 1px solid var(--borda);
     }
 
     .info-item:last-child {
+
         border-bottom: none;
     }
 
-    .animal {
-        width: 68px;
-        height: 68px;
+    .agendamento-info {
+
+        flex-direction: column;
     }
 
-    footer {
-        padding: 12px 15px;
+    .section-heading h2 {
+
+        font-size: 23px;
     }
 }
