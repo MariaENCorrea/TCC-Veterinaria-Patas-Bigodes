@@ -74,7 +74,6 @@ body {
 
 /* =====================================================
    HEADER
-   IGUAL AO DA APRESENTAÇÃO
 ===================================================== */
 
 .header {
@@ -698,22 +697,27 @@ textarea.form-control {
 }
 
 
-/* =====================================================
+/* =========================================
    FOOTER
-   IGUAL AO DA APRESENTAÇÃO
-===================================================== */
+========================================= */
 
 footer {
+    background-color: #034C3C;
 
-    padding: 25px 30px;
+    color: white;
 
-    background: var(--verde-escuro);
-
-    color: #DCECE5;
+    box-shadow:
+        0 -4px 12px rgba(0, 0, 0, 0.12);
 }
 
+.footer-content {
+    width: min(1180px, 94%);
 
-.footer-conteudo {
+    min-height: 100px;
+
+    margin: 0 auto;
+
+    padding: 20px 0;
 
     display: flex;
 
@@ -725,36 +729,54 @@ footer {
 }
 
 
-.footer-conteudo strong {
+/* LOGO DO FOOTER */
 
-    display: block;
-
-    color: white;
-
-    font-size: 19px;
-}
-
-
-.footer-conteudo span {
-
-    display: block;
-
-    margin-top: 4px;
-
-    font-size: 13px;
-}
-
-
-.footer-icons {
-
+.footer-logo {
     display: flex;
 
-    gap: 9px;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.footer-logo img {
+    width: 52px;
+    height: 52px;
+
+    padding: 4px;
+
+    border-radius: 50%;
+
+    background-color: white;
+
+    object-fit: contain;
+}
+
+.footer-logo strong {
+    display: block;
+
+    font-size: 17px;
+}
+
+.footer-logo span {
+    display: block;
+
+    color:
+        rgba(255, 255, 255, 0.7);
+
+    font-size: 15px;
 }
 
 
-.footer-icons a {
+/* REDES SOCIAIS */
 
+.footer-social {
+    display: flex;
+
+    gap: 10px;
+}
+
+.footer-social a {
     width: 38px;
     height: 38px;
 
@@ -765,39 +787,34 @@ footer {
 
     border-radius: 50%;
 
-    background: rgba(255,255,255,.10);
+    background-color:
+        rgba(255, 255, 255, 0.12);
 
     color: white;
 
     text-decoration: none;
 
-    transition: .3s;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    background-color: white;
+
+    color: #3E7CB1;
+
+    transform: translateY(-2px);
 }
 
 
-.footer-icons a:hover {
+/* COPYRIGHT */
 
-    background: var(--amarelo);
+.footer-content > p {
+    margin: 0;
 
-    color: var(--verde-escuro);
-
-    transform: translateY(-3px);
-}
-
-
-.copyright {
-
-    margin-top: 20px;
-
-    padding-top: 15px;
-
-    border-top: 1px solid rgba(255,255,255,.15);
-
-    text-align: center;
+    color:
+        rgba(255, 255, 255, 0.75);
 
     font-size: 12px;
-
-    color: #BFD5CD;
 }
 
 
