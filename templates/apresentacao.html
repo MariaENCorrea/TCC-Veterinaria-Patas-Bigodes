@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patas & Bigodes</title>
 
-    <title>Patas & Bigodes | Clínica Veterinária</title>
-
-    <link rel="icon" href="../static/img/favicon.png">
-
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <style>
         :root {
@@ -25,651 +21,497 @@
         }
 
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
-            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background: var(--branco);
+            margin: 0;
+            background: var(--verde-claro);
             color: var(--preto);
-            line-height: 1.6;
-            font-family: Georgia, 'Times New Roman', serif;
+            font-family: Georgia, "Times New Roman", serif;
         }
 
-        /* ================= HEADER ================= */
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
-            background-color: #034C3C;
-            height: 90px;
+            height: 68px;
+            background: var(--verde-escuro);
         }
 
-        .navbar-custom {
-            height: 90px;
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-
-        /* CONTAINER */
-
-        .navbar-custom .container-fluid {
-            width: 100%;
-            height: 100%;
-
+        .navbar {
+            height: 68px;
+            padding: 0 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        /* LOGO - CANTO ESQUERDO */
+        .logo,
+        .perfil {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            background: white;
+        }
 
-        .logo {
-            width: 62px;
-            height: 62px;
-
+        .menu {
             display: flex;
             align-items: center;
-            justify-content: center;
-
-            background-color: white;
-            border-radius: 50%;
-
-            text-decoration: none;
-
-            transition: 0.3s;
+            gap: 28px;
         }
 
-        .logo img {
-            width: 62px;
-            height: 62px;
-            object-fit: contain;
-            border-radius: 50%;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-
-        /* MENU - CENTRO */
-
-        .menu-links {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-menu {
+        .menu a {
             color: #D7E9DE;
             text-decoration: none;
-
-            font-size: 18px;
-            font-weight: bold;
-
-            padding: 10px 20px;
-            border-radius: 8px;
-
-            transition: 0.3s;
-        }
-
-        .btn-menu:hover {
-            background-color: #DE9E36;
-            color: #034C3C;
-        }
-
-        /* CACHORRO - CANTO DIREITO */
-
-        .botao-cachorro {
-            width: 52px;
-            height: 52px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background-color: white;
-            border-radius: 50%;
-
-            text-decoration: none;
-
-            transition: 0.3s;
-        }
-
-        .botao-cachorro img {
-            width: 52px;
-            height: 52px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .botao-cachorro:hover {
-            background-color: #DE9E36;
-            transform: scale(1.05);
-        }
-
-        .perfil-link {
-            color: #D7E9DE;
-            text-decoration: none;
-
-            font-size: 18px;
-            font-weight: bold;
-
-            padding: 10px 20px;
-            border-radius: 8px;
-
-            transition: 0.3s;
-        }
-
-        /* ================= HERO ================= */
-
-        .hero {
-            max-width: 1250px;
-            margin: auto;
-            padding: 75px 30px 65px;
-
-            display: grid;
-            grid-template-columns: 1.05fr 0.95fr;
-            align-items: center;
-            gap: 70px;
-        }
-
-        .hero-text small {
-            color: var(--amarelo);
-            font-size: 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .hero-text h1 {
-            color: var(--verde-escuro);
-            font-size: 48px;
-            line-height: 1.15;
-            margin: 15px 0 20px;
-        }
-
-        .hero-text h1 span {
-            color: var(--verde);
-        }
-
-        .hero-text p {
-            color: #555;
-            font-size: 18px;
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        .botao {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-
-            background: var(--verde-escuro);
-            color: var(--branco);
-
-            text-decoration: none;
-            padding: 14px 25px;
-            border-radius: 10px;
-
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .botao:hover {
-            background: var(--verde);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(3, 76, 60, 0.18);
-        }
-
-        .hero-img {
-            position: relative;
-        }
-
-        .hero-img img {
-            width: 100%;
-            height: 430px;
-            object-fit: cover;
-            border-radius: 28px;
-            box-shadow: 0 20px 45px rgba(3, 76, 60, 0.15);
-        }
-
-        /* ================= SEÇÃO CLÍNICA ================= */
-
-        .clinica {
-            background: var(--verde-claro);
-            padding: 80px 30px;
-        }
-
-        .clinica-container {
-            max-width: 1250px;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            gap: 65px;
-            align-items: center;
-        }
-
-        .clinica-img img {
-            width: 100%;
-            height: 440px;
-            object-fit: cover;
-            border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(3, 76, 60, 0.15);
-        }
-
-        .clinica-text small {
-            color: var(--amarelo);
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .clinica-text h2 {
-            color: var(--verde-escuro);
-            font-size: 36px;
-            margin: 12px 0 20px;
-        }
-
-        .clinica-text p {
-            color: #444;
             font-size: 17px;
-            margin-bottom: 18px;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: .25s;
         }
 
-        /* ================= REDES SOCIAIS ================= */
+        .menu a:hover {
+            background: var(--amarelo);
+            color: var(--verde-escuro);
+        }
+
+        /* =========================
+           CONTEÚDO
+        ========================= */
+
+        main {
+            padding: 20px 22px 18px;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .coluna {
+            min-width: 0;
+        }
+
+        /* =========================
+           IMAGENS PRINCIPAIS
+        ========================= */
+
+        .imagem-principal {
+            width: 100%;
+            height: 310px;
+            object-fit: cover;
+            border-radius: 7px;
+            display: block;
+        }
+
+        .titulo {
+            margin-top: 7px;
+            margin-bottom: 7px;
+            padding: 5px;
+            text-align: center;
+            background: var(--verde);
+            border-radius: 6px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .titulo span {
+            color: var(--amarelo);
+        }
+
+        .descricao {
+            background: var(--amarelo);
+            border-radius: 6px;
+            padding: 9px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            line-height: 1.12;
+        }
+
+        /* =========================
+           REDES + PETS
+        ========================= */
 
         .redes {
             display: flex;
-            gap: 12px;
-            margin-top: 25px;
+            gap: 8px;
+            margin-bottom: 9px;
         }
 
-        .redes a {
-            width: 43px;
-            height: 43px;
+        .rede {
+            width: 48px;
+            height: 48px;
+            padding: 5px;
+            background: white;
+            border-radius: 12px;
+            object-fit: contain;
+            transition: transform .2s;
+        }
 
+        .rede:hover {
+            transform: translateY(-2px);
+        }
+
+        .animais {
+            display: flex;
+            gap: 12px;
+        }
+
+        .animal {
+            width: 78px;
+            height: 78px;
+            object-fit: cover;
+            border: 4px solid var(--verde-escuro);
+            border-radius: 5px;
+        }
+
+        /* =========================
+           BENEFÍCIOS
+        ========================= */
+
+        .beneficios {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 7px;
+            margin-top: 10px;
+        }
+
+        .beneficio {
+            min-height: 145px;
+            padding: 10px;
+            background: rgba(255,255,255,.40);
+            border: 2px solid var(--borda);
+            border-radius: 7px;
+        }
+
+        .beneficio-topo {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin-bottom: 9px;
+        }
+
+        .beneficio-icone {
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
             display: flex;
             align-items: center;
             justify-content: center;
-
-            background: var(--branco);
-            color: var(--verde-escuro);
-
             border-radius: 50%;
-            text-decoration: none;
-            font-size: 19px;
-
-            border: 1px solid var(--borda);
-            transition: 0.3s;
-        }
-
-        .redes a:hover {
             background: var(--verde-escuro);
-            color: var(--branco);
-            transform: translateY(-4px);
+            color: white;
+            font-size: 19px;
         }
 
-        /* ================= PETS ================= */
-
-        .pets {
-            max-width: 1250px;
-            margin: auto;
-            padding: 80px 30px;
-            text-align: center;
-        }
-
-        .titulo-secao small {
-            color: var(--amarelo);
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .titulo-secao h2 {
+        .beneficio strong {
             color: var(--verde-escuro);
-            font-size: 36px;
+            font-size: 14px;
+            line-height: 1.05;
+        }
+
+        .beneficio p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.18;
+        }
+
+        /* =========================
+           AGENDAMENTO
+        ========================= */
+
+        .agendamento {
             margin-top: 10px;
+            padding: 12px 15px;
+            min-height: 110px;
+            border: 2px solid var(--borda);
+            border-radius: 7px;
+            background: rgba(255,255,255,.40);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
         }
 
-        .titulo-secao p {
-            color: #666;
-            margin: 12px auto 40px;
-            max-width: 650px;
+        .agendamento-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .pets-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .pet-card {
-            overflow: hidden;
-            border-radius: 12px;
-            background: var(--branco);
-            border: 5px solid var(--borda);
-            box-shadow: 0 8px 25px rgba(3, 76, 60, 0.08);
-            transition: 0.3s;
-        }
-
-        .pet-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 18px 35px rgba(3, 76, 60, 0.15);
-        }
-
-        .pet-card img {
-            width: 100%;
-            height: 430px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .pet-card h3 {
+        .agendamento-icone {
             color: var(--verde-escuro);
-            padding: 18px;
+            font-size: 29px;
         }
 
-        /* ================= PROFISSIONAIS ================= */
-
-        .profissionais {
-            background: #f8fbfa;
-            padding: 80px 30px;
-        }
-
-        .prof-container {
-            max-width: 1250px;
-            margin: auto;
-        }
-
-        .profissionais-header {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .profissionais-header small {
-            color: var(--amarelo);
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .profissionais-header h2 {
+        .agendamento h2 {
             color: var(--verde-escuro);
-            font-size: 36px;
-            margin-top: 10px;
+            margin: 0 0 3px;
+            font-size: 19px;
         }
 
-        .prof-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .prof-card {
-            background: var(--branco);
-            border: 1px solid var(--borda);
-            border-radius: 22px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(3, 76, 60, 0.06);
-            transition: 0.3s;
-        }
-
-        .prof-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 30px rgba(3, 76, 60, 0.12);
-        }
-
-        .prof-card img {
-            width: 135px;
-            height: 135px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid var(--verde-claro);
-            padding: 4px;
-            margin-bottom: 18px;
-        }
-
-        .prof-card h3 {
-            color: var(--verde-escuro);
-            font-size: 20px;
-            margin-bottom: 7px;
-        }
-
-        .prof-card p {
-            color: var(--verde);
+        .agendamento p {
+            margin: 0;
             font-size: 14px;
         }
 
-        /* ================= FOOTER ================= */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 13px;
+            background: var(--verde-escuro);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            white-space: nowrap;
+            transition: .25s;
+        }
+
+        .btn:hover {
+            background: var(--amarelo);
+            color: var(--verde-escuro);
+        }
+
+        /* =========================
+           PROFISSIONAIS
+        ========================= */
+
+        .imagem-recepcao {
+            width: 100%;
+            height: 310px;
+            object-fit: cover;
+            border-radius: 7px;
+            display: block;
+            margin-bottom: 9px;
+        }
+
+        .profissional {
+            min-height: 80px;
+            padding: 4px;
+            margin-bottom: 7px;
+            background: var(--verde-escuro);
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+        }
+
+        .foto-profissional {
+            width: 70px;
+            height: 84px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 7px;
+        }
+
+        .texto-profissional {
+            flex: 1;
+            padding: 6px;
+            background: var(--azul-claro);
+            border-radius: 5px;
+            font-size: 17px;
+            line-height: 1.08;
+        }
+
+        .texto-profissional strong {
+            font-size: 12px;
+        }
+
+        /* =========================
+           INFORMAÇÕES
+        ========================= */
+
+        .informacoes {
+            margin-top: 10px;
+            padding: 10px 5px;
+            border: 2px solid var(--borda);
+            border-radius: 7px;
+            background: rgba(255,255,255,.40);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .info-item {
+            min-height: 120px;
+            padding: 3px 10px;
+            text-align: center;
+            border-right: 1px solid #A9C9BF;
+        }
+
+        .info-item:last-child {
+            border-right: none;
+        }
+
+        .info-item i {
+            display: block;
+            color: var(--verde-escuro);
+            font-size: 28px;
+            margin-bottom: 3px;
+        }
+
+        .info-item strong {
+            display: block;
+            color: var(--verde-escuro);
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .info-item span {
+            display: block;
+            font-size: 12px;
+            line-height: 1.16;
+        }
+
+        .info-item .btn {
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-
-            background-color: #034C3C;
-
-            color: white;
-
-            box-shadow:
-                0 -4px 12px rgba(0, 0, 0, 0.12);
-
-        }
-
-        .footer-content {
-
-            width: min(1180px, 94%);
-
-            min-height: 100px;
-
-            margin: 0 auto;
-
-            padding: 20px 0;
-
+            min-height: 66px;
+            padding: 15px 30px;
+            background: var(--verde-escuro);
+            color: #D7E9DE;
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
-            gap: 20px;
-
         }
 
-        .footer-logo {
-
+        .footer-icons {
             display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-
-        }
-
-        .footer-logo img {
-
-            width: 52px;
-            height: 52px;
-
-            padding: 4px;
-
-            border-radius: 50%;
-
-            background-color: white;
-
-            object-fit: contain;
-
-
-        }
-
-        .footer-logo strong {
-
-            display: block;
-
-            font-size: 17px;
-
-        }
-
-        .footer-logo span {
-
-            display: block;
-
-            color: rgba(255, 255, 255, 0.7);
-
-            font-size: 15px;
-
-        }
-
-        .footer-social {
-
-            display: flex;
-
             gap: 10px;
-
+            font-size: 17px;
         }
 
-        .footer-social a {
+        /* =========================
+           RESPONSIVIDADE
+        ========================= */
 
-            width: 38px;
-            height: 38px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            border-radius: 50%;
-
-            background-color: rgba(255, 255, 255, 0.12);
-
-            color: white;
-
-            text-decoration: none;
-
-            transition: 0.3s;
-
-        }
-
-        .footer-social a:hover {
-
-            background-color: white;
-
-            color: #3E7CB1;
-
-            transform: translateY(-2px);
-
-        }
-
-        .footer-content>p {
-
-            margin: 0;
-
-            color: rgba(255, 255, 255, 0.75);
-
-            font-size: 12px;
-
-        }
-
-        /* ================= RESPONSIVO ================= */
-
-        @media (max-width: 900px) {
-
-            .hero,
-            .clinica-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
+        @media (max-width: 1050px) {
+            .descricao {
+                font-size: 17px;
             }
 
-            .hero-text {
-                text-align: center;
+            .texto-profissional {
+                font-size: 15px;
             }
 
-            .hero-text p {
-                margin-left: auto;
-                margin-right: auto;
+            .beneficios {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .hero-img {
-                max-width: 650px;
-                margin: auto;
+            .informacoes {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .pets-grid,
-            .prof-grid {
-                grid-template-columns: 1fr 1fr;
+            .info-item:nth-child(2) {
+                border-right: none;
             }
 
-            .clinica-text {
-                text-align: center;
+            .info-item:nth-child(-n+2) {
+                border-bottom: 1px solid #A9C9BF;
+                padding-bottom: 8px;
             }
 
-            .redes {
-                justify-content: center;
+            .info-item:nth-child(n+3) {
+                padding-top: 8px;
             }
         }
 
-        @media (max-width: 650px) {
+        @media (max-width: 768px) {
+            header,
+            .navbar {
+                height: 60px;
+            }
 
             .navbar {
-                height: auto;
-                padding: 20px;
-                flex-wrap: wrap;
-                gap: 20px;
+                padding: 0 12px;
             }
 
-            .logo {
-                width: 130px;
+            .logo,
+            .perfil {
+                width: 38px;
+                height: 38px;
             }
 
             .menu {
-                order: 3;
-                width: 100%;
-                justify-content: center;
-                gap: 25px;
+                gap: 2px;
             }
 
-            .hero {
-                padding: 55px 20px;
+            .menu a {
+                font-size: 14px;
+                padding: 7px 9px;
             }
 
-            .hero-text h1 {
-                font-size: 36px;
+            main {
+                padding: 12px;
             }
 
-            .hero-img img {
-                height: 300px;
+            .layout {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
 
-            .clinica,
-            .pets,
-            .profissionais {
-                padding: 60px 20px;
+            .imagem-principal,
+            .imagem-recepcao {
+                height: 230px;
             }
 
-            .clinica-img img {
-                height: 300px;
+            .titulo {
+                font-size: 20px;
             }
 
-            .titulo-secao h2,
-            .profissionais-header h2,
-            .clinica-text h2 {
-                font-size: 30px;
+            .descricao {
+                font-size: 15px;
             }
 
-            .pets-grid,
-            .prof-grid {
+            .texto-profissional {
+                font-size: 14px;
+            }
+
+            .agendamento {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .beneficios,
+            .informacoes {
                 grid-template-columns: 1fr;
             }
 
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
+            .info-item {
+                border-right: none;
+                border-bottom: 1px solid #A9C9BF;
+                padding: 10px;
+            }
+
+            .info-item:last-child {
+                border-bottom: none;
+            }
+
+            .animal {
+                width: 68px;
+                height: 68px;
+            }
+
+            footer {
+                padding: 12px 15px;
             }
         }
     </style>
@@ -677,116 +519,80 @@
 
 <body>
 
-    <!-- ================= HEADER ================= -->
-
-
     <header>
-        <nav class="navbar-custom">
-            <div class="container-fluid px-4">
+        <nav class="navbar">
 
-                <!-- LOGO -->
-                <a href="apresentacao.html" class="logo">
-                    <img src="../static/img/logo.png" alt="Logo">
-                </a>
+            <img src="../static/img/logo.png"
+                 class="logo"
+                 alt="Logo Patas & Bigodes">
 
-                <!-- MENU -->
-                <div class="menu-links">
-                    <a href="horarios.html" class="btn-menu">Horários</a>
-                    <a href="consultas.html" class="btn-menu">Consultas</a>
-                </div>
-
-                <!-- PERFIL -->
-                <a href="carteirinha.html" class="perfil-link">
-                    <img src="../static/img/cachorro.png" class="botao-cachorro" alt="Perfil">
-
-                    <span>Perfil</span>
-                </a>
-
+            <div class="menu">
+                <a href="apresentacao.html">Ínicio</a>
+                <a href="consultas.html">Consultas</a>
+                <a href="horarios.html">Horários</a>
             </div>
+
+            <a href="carterinha.html">
+                <img src="../static/img/cachorro.png"
+                     class="perfil"
+                     alt="Perfil">
+            </a>
+
         </nav>
     </header>
 
 
-    <!-- ================= HERO ================= -->
-
     <main>
 
-        <section class="hero">
+        <section class="layout">
 
-            <div class="hero-text">
+            <div class="coluna">
 
-                <small>Clínica Veterinária</small>
+                <img src="../static/img/vet.png"
+                     class="imagem-principal"
+                     alt="Parte externa da clínica">
 
-                <h1>
-                    Cuidando de quem
-                    <span>faz parte da família.</span>
-                </h1>
-
-                <p>
-                    Na Patas & Bigodes, seu pet recebe carinho,
-                    atenção e cuidados veterinários de qualidade
-                    em um ambiente seguro e acolhedor.
-                </p>
-
-                <a href="consultas.html" class="botao">
-                    <i class="bi bi-calendar-heart"></i>
-                    Agendar consulta
-                </a>
-
-            </div>
-
-            <div class="hero-img">
-
-                <img src="../static/img/vet.png" alt="Atendimento veterinário">
-
-                <div class="detalhe"></div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= SOBRE A CLÍNICA ================= -->
-
-        <section class="clinica">
-
-            <div class="clinica-container">
-
-                <div class="clinica-img">
-
-                    <img src="../static/img/vet2.png" alt="Equipe da clínica veterinária">
-
+                <div class="titulo">
+                    Patas <span>&</span> Bigodes
                 </div>
 
-                <div class="clinica-text">
+                <div class="descricao">
+                    Patas & Bigodes é uma clínica veterinária moderna e
+                    acolhedora, dedicada ao cuidado completo de cães e gatos.
+                    Com uma equipe de profissionais especializados, oferecemos
+                    atendimento clínico, cirúrgico e diagnóstico com tecnologia
+                    avançada e muito carinho. Nosso compromisso é garantir
+                    saúde, bem-estar e qualidade de vida para os pets que fazem
+                    parte da sua família.
+                </div>
 
-                    <small>Sobre nós</small>
+                <div class="redes">
+                    <a href="#" aria-label="Instagram">
+                        <img src="../static/img/insta.png"
+                             class="rede"
+                             alt="Instagram">
+                    </a>
 
-                    <h2>
-                        Amor e cuidado em cada atendimento
-                    </h2>
+                    <a href="#" aria-label="Facebook">
+                        <img src="../static/img/facebook.png"
+                             class="rede"
+                             alt="Facebook">
+                    </a>
+                </div>
 
-                    <p>
-                        A Patas & Bigodes nasceu para oferecer
-                        um atendimento veterinário completo,
-                        humanizado e cheio de carinho.
-                    </p>
+                <div class="animais">
+                    <img src="../static/img/cat.png"
+                         class="animal"
+                         alt="Gato">
 
-                    <p>
-                        Nossa equipe trabalha para proporcionar
-                        saúde, conforto e bem-estar para cães,
-                        gatos e outros animais.
-                    </p>
+                    <img src="../static/img/cat_dog.png"
+                         class="animal"
+                         alt="Gato e cachorro">
 
-                    <div class="redes">
-
-                        <a href="#" title="Instagram">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-
-                        <a href="#" title="Facebook">
-                            <i class="bi bi-facebook"></i>
-                        </a>
+                    <img src="../static/img/dog.png"
+                         class="animal"
+                         alt="Cachorro">
+                </div>
 
                     </div>
 
@@ -794,105 +600,69 @@
 
             </div>
 
-        </section>
+
+            <div class="coluna">
+
+                <img src="../static/img/vet2.png"
+                     class="imagem-recepcao"
+                     alt="Recepção da clínica">
 
 
-        <!-- ================= PETS ================= -->
+                <article class="profissional">
 
-        <section class="pets">
+                    <img src="../static/img/dr_lucas.png"
+                         class="foto-profissional"
+                         alt="Dr. Lucas">
 
-            <div class="titulo-secao">
+                    <div class="texto-profissional">
+                        <strong>Dr. Lucas – Clínico Geral</strong>
+                        <br>
 
-                <small>Nossos pacientes</small>
-
-                <h2>
-                    Eles também merecem o melhor
-                </h2>
-
-                <p>
-                    Trabalhamos para que cada pet se sinta
-                    seguro, confortável e bem cuidado.
-                </p>
-
-            </div>
-
-            <div class="pets-grid">
-
-                <div class="pet-card">
-                    <img src="../static/img/dog.png" alt="Cachorro">
-                    <h3>Cães</h3>
-                </div>
-
-                <div class="pet-card">
-                    <img src="../static/img/cat.png" alt="Gato">
-                    <h3>Gatos</h3>
-                </div>
-
-                <div class="pet-card">
-                    <img src="../static/img/caes_gatos.jpg" alt="Cães e gatos">
-                    <h3>Amigos de todas as espécies</h3>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= PROFISSIONAIS ================= -->
-
-        <section class="profissionais">
-
-            <div class="prof-container">
-
-                <div class="profissionais-header">
-
-                    <small>Nossa equipe</small>
-
-                    <h2>
-                        Profissionais que cuidam com carinho
-                    </h2>
-
-                </div>
-
-                <div class="prof-grid">
-
-                    <div class="prof-card">
-
-                        <img src="../static/img/dr_lucas.png" alt="Dr. Lucas">
-
-                        <h3>Dr. Lucas</h3>
-
-                        <p>
-                            Clínico Geral
-                        </p>
-
+                        Responsável pelo atendimento clínico,
+                        o Dr. Lucas está na prevenção, diagnóstico
+                        e tratamento de diversas condições de saúde
+                        dos pets.
                     </div>
 
+                </article>
 
-                    <div class="prof-card">
 
-                        <img src="../static/img/dra_ana.png" alt="Dra. Ana">
+                <article class="profissional">
 
-                        <h3>Dra. Ana</h3>
+                    <img src="../static/img/dra_ana.png"
+                         class="foto-profissional"
+                         alt="Dra. Ana">
 
-                        <p>
-                            Cirurgiã
-                        </p>
+                    <div class="texto-profissional">
+                        <strong>Dra. Ana – Cirurgiã</strong>
+                        <br>
 
+                        Especialista em procedimentos cirúrgicos,
+                        a Dra. Ana realiza intervenções com precisão
+                        e segurança, garantindo um bem-estar e
+                        recuperação tranquila dos pets.
                     </div>
 
+                </article>
 
-                    <div class="prof-card">
 
-                        <img src="../static/img/dr_rafa.png" alt="Dr. Rafael">
+                <article class="profissional">
 
-                        <h3>Dr. Rafael</h3>
+                    <img src="../static/img/dr_rafa.png"
+                         class="foto-profissional"
+                         alt="Dr. Rafael">
 
-                        <p>
-                            Auxiliar de Veterinário
-                        </p>
+                    <div class="texto-profissional">
+                        <strong>Dr. Rafael – Auxiliar de Veterinário</strong>
+                        <br>
 
+                        Ele ajuda na preparação de materiais,
+                        organização dos animais durante os atendimentos
+                        e exames, além de auxiliar nos cuidados básicos
+                        com os pets.
                     </div>
+
+                </article>
 
                 </div>
 
@@ -903,54 +673,16 @@
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
-
     <footer>
 
-        <div class="footer-content">
+        <span>Todos os direitos reservados</span>
 
-            <div class="footer-logo">
-
-                <img src="../static/img/logo.png" alt="Patas & Bigodes">
-
-                <div>
-
-                    <strong>Patas & Bigodes</strong>
-
-                    <span>
-                        Cuidado que vira carinho.
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="footer-social">
-
-                <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-
-                    <i class="bi bi-instagram"></i>
-
-                </a>
-
-                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-
-                    <i class="bi bi-facebook"></i>
-
-                </a>
-
-            </div>
-
-
-            <p>
-                © 2026 Patas & Bigodes. Todos os direitos reservados.
-            </p>
-
+        <div class="footer-icons">
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-facebook"></i>
         </div>
 
     </footer>
 
 </body>
-
 </html>
