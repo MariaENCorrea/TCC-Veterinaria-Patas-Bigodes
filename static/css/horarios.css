@@ -1,217 +1,848 @@
-    /* =========================
-           CONTEÚDO
-        ========================= */
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
 
-        main {
-            flex: 1;
-            padding: 55px 6% 70px;
-            text-align: center;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .titulo {
-            font-size: 40px;
-            color: #005447;
-            margin-bottom: 12px;
-        }
+:root {
+    --verde: #034C3C;
+    --verde-medio: #4D8B7D;
+    --verde-claro: #D7E9DE;
 
-        .subtitulo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            font-size: 16px;
-            color: #005447;
-            margin-bottom: 48px;
-        }
+    --dourado: #DE9E36;
+    --dourado-claro: #F8C766;
 
-        .linha {
-            width: 90px;
-            height: 3px;
-            background-color: #efa62f;
-            border-radius: 10px;
-        }
+    --branco: #FFFFFF;
 
+    --texto: #26332F;
+    --fundo: #F3F8F5;
+}
 
-        /* =========================
-           CARDS DE HORÁRIOS
-        ========================= */
+html {
+    scroll-behavior: smooth;
+}
 
-        .horarios {
-            display: flex;
-            justify-content: center;
-            gap: 42px;
-            flex-wrap: wrap;
-        }
+body {
+    min-height: 100vh;
 
-        .card {
-            width: 360px;
-            min-height: 335px;
-            background-color: #005447;
-            border-radius: 18px;
-            padding: 38px 54px;
-            color: white;
-            box-shadow: 0 10px 20px rgba(0, 70, 60, 0.20);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+    font-family: Georgia, "Times New Roman", serif;
 
-        .card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 25px rgba(0, 70, 60, 0.28);
-        }
+    color: var(--texto);
 
-        .icone {
-            font-size: 45px;
-            color: #efa62f;
-            margin-bottom: 25px;
-        }
+    background:
+        radial-gradient(
+            circle at top left,
+            #E5F2EC 0%,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #E2F0E9 0%,
+            transparent 35%
+        ),
+        var(--fundo);
+}
 
-        .dia {
-            display: inline-block;
-            background-color: #efa62f;
-            color: #005447;
-            font-size: 24px;
-            font-weight: bold;
-            padding: 10px 17px;
-            border-radius: 9px;
-            margin-bottom: 17px;
-        }
+.pagina {
+    min-height: 100vh;
 
-        .divisao {
-            width: 100%;
-            height: 2px;
-            background-color: rgba(255, 255, 255, 0.7);
-            margin: 0 auto 22px;
-        }
-
-        .hora {
-            color: #efa62f;
-            font-size: 26px;
-            font-weight: bold;
-            margin-bottom: 22px;
-        }
-
-        .descricao {
-            font-size: 15px;
-            letter-spacing: 0.5px;
-        }
+    display: flex;
+    flex-direction: column;
+}
 
 
-        /* =========================
-           STATUS
-        ========================= */
+/* =========================================
+   HEADER
+   IGUAL AO DE CONSULTAS
+========================================= */
 
-        .status-area {
-            margin: 45px auto 0;
-            max-width: 760px;
-            background-color: #fff;
-            border-radius: 15px;
-            padding: 20px 25px;
-            box-shadow: 0 5px 15px rgba(0, 70, 60, 0.12);
-        }
+.header {
+    position: sticky;
 
-        .status {
-            font-size: 20px;
-            font-weight: bold;
-            color: #16834f;
-            margin-bottom: 7px;
-        }
+    top: 0;
 
-        .proximo {
-            font-size: 15px;
-            color: #005447;
-        }
+    z-index: 1000;
 
+    background-color: var(--verde);
 
-        /* =========================
-           EMERGÊNCIA
-        ========================= */
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.15);
+}
 
-        .emergencia {
-            max-width: 760px;
-            margin: 25px auto 0;
-            padding: 22px 30px;
-            border-radius: 15px;
-            background-color: #005447;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            text-align: left;
-            box-shadow: 0 7px 16px rgba(0, 70, 60, 0.18);
-        }
+.navbar {
+    min-height: 76px;
 
-        .emergencia h3 {
-            color: #efa62f;
-            font-size: 19px;
-            margin-bottom: 5px;
-        }
-
-        .emergencia p {
-            font-size: 14px;
-        }
-
-        .botao {
-            background-color: #efa62f;
-            color: #005447;
-            text-decoration: none;
-            padding: 11px 18px;
-            border-radius: 8px;
-            font-weight: bold;
-            white-space: nowrap;
-            transition: 0.3s;
-        }
-
-        .botao:hover {
-            background-color: #ffc45c;
-            transform: scale(1.04);
-        }
-
-        
-        @media (max-width: 900px) {
-
-     
-
-            .horarios {
-                gap: 25px;
-            }
-
-            .card {
-                width: 330px;
-            }
-        }
+    padding: 8px 0;
+}
 
 
-        @media (max-width: 600px) {
+/* LOGO */
 
-           
-            .titulo {
-                font-size: 31px;
-            }
+.logo {
+    width: 58px;
+    height: 58px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    background-color: white;
+
+    padding: 3px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.18);
+
+    transition: 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
 
 
-      
-            .subtitulo {
-                font-size: 14px;
-            }
+/* MENU */
 
-            .linha {
-                width: 45px;
-            }
+.menu {
+    display: flex;
 
-            main {
-                padding: 40px 20px;
-            }
+    align-items: center;
 
-            .card {
-                width: 100%;
-                padding: 32px 30px;
-            }
+    justify-content: center;
 
-            .emergencia {
-                flex-direction: column;
-                text-align: center;
-            }
+    gap: 10px;
+}
 
-       
-        }        
+.menu-link {
+    color: #D7E9DE;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.menu-link i {
+    margin-right: 5px;
+}
+
+.menu-link:hover {
+    background-color: var(--dourado);
+
+    color: var(--verde);
+}
+
+
+/* ITEM ATIVO */
+
+.menu-link.ativo {
+    background-color: rgba(255, 255, 255, 0.10);
+
+    color: #FFFFFF;
+}
+
+
+/* PERFIL */
+
+.perfil-link {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+}
+
+.perfil {
+    width: 58px;
+    height: 58px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    background-color: white;
+
+    padding: 3px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.18);
+
+    transition: 0.3s;
+}
+
+.perfil:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
+
+main {
+    flex: 1;
+
+    width: 100%;
+
+    padding: 55px 30px 70px;
+}
+
+.conteudo {
+    max-width: 1250px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   CABEÇALHO DA PÁGINA
+========================================= */
+
+.cabecalho-pagina {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.titulo {
+    color: var(--verde);
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+.subtitulo {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    color: #53756D;
+
+    font-size: 16px;
+}
+
+.linha {
+    width: 75px;
+
+    height: 3px;
+
+    background-color: var(--dourado);
+
+    border-radius: 20px;
+}
+
+
+/* =========================================
+   CARDS DE HORÁRIOS
+========================================= */
+
+.horarios {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+
+    align-items: stretch;
+}
+
+.card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 330px;
+
+    padding: 34px 38px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            #006153,
+            #00483E
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 70, 60, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    transition: 0.35s ease;
+}
+
+
+/* DETALHE DECORATIVO */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(239, 166, 47, 0.07);
+
+    top: -55px;
+    right: -45px;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 35px rgba(0, 70, 60, 0.23),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+
+/* ÍCONE */
+
+.icone {
+    width: 62px;
+    height: 62px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(239, 166, 47, 0.13);
+
+    border:
+        1px solid rgba(239, 166, 47, 0.35);
+
+    color: var(--dourado);
+
+    font-size: 28px;
+}
+
+
+/* DIA */
+
+.dia {
+    display: inline-block;
+
+    background-color: var(--dourado);
+
+    color: var(--verde);
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    padding: 9px 18px;
+
+    border-radius: 50px;
+
+    margin-bottom: 19px;
+}
+
+
+/* DIVISÃO */
+
+.divisao {
+    width: 100%;
+
+    height: 1px;
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    margin:
+        0 auto 22px;
+}
+
+
+/* HORÁRIO */
+
+.hora {
+    color: var(--dourado-claro);
+
+    font-size: 27px;
+
+    font-weight: bold;
+
+    margin-bottom: 22px;
+}
+
+
+/* DESCRIÇÃO */
+
+.descricao {
+    font-size: 13px;
+
+    letter-spacing: 1.2px;
+
+    color:
+        rgba(255, 255, 255, 0.78);
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status-area {
+    max-width: 760px;
+
+    margin: 42px auto 0;
+
+    padding: 21px 28px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    border:
+        1px solid rgba(0, 84, 71, 0.08);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 70, 60, 0.08);
+
+    backdrop-filter: blur(5px);
+}
+
+.status {
+    color: #16834F;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.status i {
+    font-size: 10px;
+
+    margin-right: 5px;
+}
+
+.proximo {
+    color: #55736D;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   EMERGÊNCIA
+========================================= */
+
+.emergencia {
+    max-width: 760px;
+
+    margin: 22px auto 0;
+
+    padding: 23px 27px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    text-align: left;
+
+    color: white;
+
+    background-color: var(--verde);
+
+    border-radius: 18px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 10px 25px rgba(0, 70, 60, 0.14);
+}
+
+.emergencia h3 {
+    color: var(--dourado-claro);
+
+    font-size: 18px;
+
+    margin-bottom: 7px;
+}
+
+.emergencia h3 i {
+    margin-right: 5px;
+}
+
+.emergencia p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+}
+
+
+/* BOTÃO */
+
+.botao {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    color: var(--verde);
+
+    background-color: var(--dourado);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s ease;
+}
+
+.botao:hover {
+    background-color: var(--dourado-claro);
+
+    color: var(--verde);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================
+   FOOTER
+   IGUAL AO DE CONSULTAS
+========================================= */
+
+footer {
+    background-color: #034C3C;
+
+    color: white;
+
+    box-shadow:
+        0 -4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.footer-content {
+    width: min(1180px, 94%);
+
+    min-height: 100px;
+
+    margin: 0 auto;
+
+    padding: 20px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* LOGO DO FOOTER */
+
+.footer-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.footer-logo img {
+    width: 52px;
+    height: 52px;
+
+    padding: 4px;
+
+    border-radius: 50%;
+
+    background-color: white;
+
+    object-fit: contain;
+}
+
+.footer-logo strong {
+    display: block;
+
+    font-size: 17px;
+}
+
+.footer-logo span {
+    display: block;
+
+    color:
+        rgba(255, 255, 255, 0.7);
+
+    font-size: 15px;
+}
+
+
+/* REDES SOCIAIS */
+
+.footer-social {
+    display: flex;
+
+    gap: 10px;
+}
+
+.footer-social a {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color:
+        rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    background-color: white;
+
+    color: #3E7CB1;
+
+    transform: translateY(-2px);
+}
+
+
+/* COPYRIGHT */
+
+.footer-content > p {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.75);
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .horarios {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .card:last-child {
+        grid-column: 1 / -1;
+
+        max-width: 430px;
+
+        width: 100%;
+
+        justify-self: center;
+    }
+}
+
+
+@media (max-width: 992px) {
+
+    main {
+        padding:
+            45px 20px 60px;
+    }
+
+    .titulo {
+        font-size: 36px;
+    }
+
+    .menu {
+        padding:
+            15px 0;
+    }
+
+    .menu-link {
+        display: block;
+
+        text-align: center;
+    }
+
+    .perfil-link {
+        margin-left: auto;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        min-height: 68px;
+    }
+
+    .logo,
+    .perfil {
+        width: 50px;
+        height: 50px;
+    }
+
+    .titulo {
+        font-size: 32px;
+    }
+
+    .subtitulo {
+        font-size: 15px;
+    }
+
+    .linha {
+        width: 50px;
+    }
+
+    .horarios {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .card,
+    .card:last-child {
+        width: 100%;
+
+        max-width: none;
+
+        grid-column: auto;
+
+        min-height: 300px;
+    }
+
+    .emergencia {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding:
+            24px 20px;
+    }
+
+    .botao {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 25px 0;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    main {
+        padding:
+            35px 15px 50px;
+    }
+
+    .titulo {
+        font-size: 28px;
+    }
+
+    .subtitulo {
+        font-size: 14px;
+
+        gap: 8px;
+    }
+
+    .linha {
+        width: 30px;
+    }
+
+    .card {
+        padding:
+            30px 25px;
+    }
+
+    .dia {
+        font-size: 18px;
+    }
+
+    .hora {
+        font-size: 24px;
+    }
+
+    .footer-content {
+        width: 90%;
+    }
+
+}

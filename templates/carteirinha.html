@@ -1,9 +1,7 @@
 <!doctype html>
-
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,49 +14,80 @@
     <title>Carteirinha da Pantera - Patas & Bigodes</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="../static/css/carteirinha.css">
-
 </head>
 
 <body>
 
     <!-- =====================================================
-     CABEÇALHO
-====================================================== -->
+         HEADER
+    ====================================================== -->
 
-    <header>
+    <header class="header">
 
-        <nav class="navbar-custom">
+        <nav class="navbar navbar-expand-lg navbar-dark">
 
-            <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+            <div class="container-fluid px-3 px-lg-4">
 
                 <!-- LOGO -->
-                <div class="logo">
+                <a href="apresentacao.html" class="navbar-brand">
+                    <img src="../static/img/logo.png"
+                        class="logo"
+                        alt="Logo Patas & Bigodes">
+                </a>
 
-                    <img src="../static/img/logo.png" alt="Logo Patas & Bigodes">
+                <!-- BOTÃO MOBILE -->
+                <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menu">
 
-                </div>
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
 
                 <!-- MENU -->
-                <div class="menu">
+                <div class="collapse navbar-collapse" id="menuPrincipal">
 
-                    <a href="apresentacao.html" class="btn-menu">
-                        Início
-                    </a>
+                    <div class="menu mx-auto">
 
-                    <a href="horarios.html" class="btn-menu">
-                        Horários
-                    </a>
+                        <a href="apresentacao.html" class="menu-link">
+                            <i class="bi bi-house-heart"></i>
+                            Início
+                        </a>
 
-                    <a href="consultas.html" class="btn-menu">
-                        Consulta
+                        <a href="consultas.html" class="menu-link">
+                            <i class="bi bi-heart-pulse"></i>
+                            Consultas
+                        </a>
+
+                        <a href="horarios.html" class="menu-link">
+                            <i class="bi bi-calendar-heart"></i>
+                            Horários
+                        </a>
+
+                    </div>
+
+                    <!-- ÁREA DO CLIENTE -->
+                    <a href="carteirinha.html" class="perfil-link ativo">
+
+                        <img src="../static/img/cachorro.png"
+                            class="perfil"
+                            alt="Área do cliente">
+
                     </a>
 
                 </div>
@@ -71,8 +100,8 @@
 
 
     <!-- =====================================================
-     FUNDO
-====================================================== -->
+         FUNDO
+    ====================================================== -->
 
     <div class="fundo">
 
@@ -94,14 +123,16 @@
 
 
             <!-- =================================================
-             CARTEIRINHA
-        ================================================== -->
+                 CARTEIRINHA
+            ================================================== -->
 
             <section class="carteirinha">
 
                 <div class="capa">
 
-                    <img src="../static/img/img-capa.avif" class="capa-img" alt="Imagem decorativa">
+                    <img src="../static/img/img-capa.avif"
+                        class="capa-img"
+                        alt="Imagem decorativa">
 
                     <div class="overlay"></div>
 
@@ -109,7 +140,9 @@
 
                         <!-- BOTÃO IMPRIMIR -->
 
-                        <button type="button" class="btn-imprimir" onclick="window.print()">
+                        <button type="button"
+                            class="btn-imprimir"
+                            onclick="window.print()">
 
                             <i class="bi bi-printer"></i>
 
@@ -122,12 +155,12 @@
 
                         <div class="foto-container">
 
-                            <img src="../static/img/image.png" class="foto-animal" alt="Foto da Pantera">
+                            <img src="../static/img/image.png"
+                                class="foto-animal"
+                                alt="Foto da Pantera">
 
                             <span class="badge-pet">
-
                                 <i class="bi bi-patch-check-fill"></i>
-
                             </span>
 
                         </div>
@@ -153,13 +186,11 @@
                                 </div>
 
                                 <div>
-
                                     <small>Data de nascimento</small>
 
                                     <strong id="dataNascimento">
                                         15/08/2022
                                     </strong>
-
                                 </div>
 
                             </div>
@@ -172,13 +203,11 @@
                                 </div>
 
                                 <div>
-
                                     <small>Tutora</small>
 
                                     <strong id="tutor">
                                         Nycole
                                     </strong>
-
                                 </div>
 
                             </div>
@@ -191,13 +220,11 @@
                                 </div>
 
                                 <div>
-
                                     <small>Cor</small>
 
                                     <strong id="cor">
                                         Preta
                                     </strong>
-
                                 </div>
 
                             </div>
@@ -210,13 +237,11 @@
                                 </div>
 
                                 <div>
-
                                     <small>Raça</small>
 
                                     <strong id="raca">
                                         SRD
                                     </strong>
-
                                 </div>
 
                             </div>
@@ -233,17 +258,16 @@
                                 <i class="bi bi-arrow-clockwise"></i>
 
                                 <div>
-
                                     <small>Última atualização</small>
-
                                     <span>Hoje, às 07:20</span>
-
                                 </div>
 
                             </div>
 
 
-                            <button type="button" class="btn-atualizar" data-bs-toggle="modal"
+                            <button type="button"
+                                class="btn-atualizar"
+                                data-bs-toggle="modal"
                                 data-bs-target="#modalAtualizarCadastro">
 
                                 <i class="bi bi-pencil-square"></i>
@@ -262,21 +286,27 @@
 
 
             <!-- =================================================
-             ÁREA DE INFORMAÇÕES
-        ================================================== -->
+                 ÁREA DE INFORMAÇÕES
+            ================================================== -->
 
             <section class="area-informacoes">
 
-
                 <!-- ABAS -->
 
-                <ul class="nav nav-tabs abas" id="myTab" role="tablist">
+                <ul class="nav nav-tabs abas"
+                    id="myTab"
+                    role="tablist">
 
                     <li class="nav-item" role="presentation">
 
-                        <button class="aba active" id="atualizacao-medica-tab" data-bs-toggle="tab"
-                            data-bs-target="#atualizacao-medica-tab-pane" type="button" role="tab"
-                            aria-controls="atualizacao-medica-tab-pane" aria-selected="true">
+                        <button class="aba active"
+                            id="atualizacao-medica-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#atualizacao-medica-tab-pane"
+                            type="button"
+                            role="tab"
+                            aria-controls="atualizacao-medica-tab-pane"
+                            aria-selected="true">
 
                             <i class="bi bi-heart-pulse-fill"></i>
 
@@ -289,8 +319,14 @@
 
                     <li class="nav-item" role="presentation">
 
-                        <button class="aba" id="vacinas-tab" data-bs-toggle="tab" data-bs-target="#vacinas-tab-pane"
-                            type="button" role="tab" aria-controls="vacinas-tab-pane" aria-selected="false">
+                        <button class="aba"
+                            id="vacinas-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#vacinas-tab-pane"
+                            type="button"
+                            role="tab"
+                            aria-controls="vacinas-tab-pane"
+                            aria-selected="false">
 
                             <i class="bi bi-capsule"></i>
 
@@ -307,12 +343,11 @@
 
                 <div class="tab-content" id="myTabContent">
 
+                    <!-- ATUALIZAÇÕES MÉDICAS -->
 
-                    <!-- =================================================
-                     ATUALIZAÇÕES MÉDICAS
-                ================================================== -->
-
-                    <div class="tab-pane fade show active" id="atualizacao-medica-tab-pane" role="tabpanel"
+                    <div class="tab-pane fade show active"
+                        id="atualizacao-medica-tab-pane"
+                        role="tabpanel"
                         aria-labelledby="atualizacao-medica-tab">
 
                         <div class="conteudo-abas">
@@ -320,11 +355,8 @@
                             <div class="titulo-secao">
 
                                 <div>
-
                                     <span>HISTÓRICO</span>
-
                                     <h2>Atualizações médicas</h2>
-
                                 </div>
 
                                 <div class="contador">
@@ -334,29 +366,21 @@
                             </div>
 
 
-                            <!-- ROLAGEM DAS ATUALIZAÇÕES -->
-
                             <div class="lista-atualizacoes">
-
 
                                 <!-- ATUALIZAÇÃO 1 -->
 
                                 <article class="atualizacao-item">
 
                                     <div class="data-atualizacao">
-
                                         <strong>18</strong>
-
                                         <span>SET</span>
-
                                     </div>
 
                                     <div class="mensagem">
 
                                         <div class="icone-mensagem">
-
                                             <i class="bi bi-stethoscope"></i>
-
                                         </div>
 
                                         <div class="texto-mensagem">
@@ -395,19 +419,14 @@
                                 <article class="atualizacao-item">
 
                                     <div class="data-atualizacao">
-
                                         <strong>12</strong>
-
                                         <span>AGO</span>
-
                                     </div>
 
                                     <div class="mensagem">
 
                                         <div class="icone-mensagem">
-
                                             <i class="bi bi-heart-pulse"></i>
-
                                         </div>
 
                                         <div class="texto-mensagem">
@@ -445,19 +464,14 @@
                                 <article class="atualizacao-item">
 
                                     <div class="data-atualizacao">
-
                                         <strong>24</strong>
-
                                         <span>JUL</span>
-
                                     </div>
 
                                     <div class="mensagem">
 
                                         <div class="icone-mensagem">
-
                                             <i class="bi bi-clipboard2-pulse"></i>
-
                                         </div>
 
                                         <div class="texto-mensagem">
@@ -495,19 +509,14 @@
                                 <article class="atualizacao-item">
 
                                     <div class="data-atualizacao">
-
                                         <strong>10</strong>
-
                                         <span>JUN</span>
-
                                     </div>
 
                                     <div class="mensagem">
 
                                         <div class="icone-mensagem">
-
                                             <i class="bi bi-bandaid"></i>
-
                                         </div>
 
                                         <div class="texto-mensagem">
@@ -545,19 +554,14 @@
                                 <article class="atualizacao-item">
 
                                     <div class="data-atualizacao">
-
                                         <strong>02</strong>
-
                                         <span>MAI</span>
-
                                     </div>
 
                                     <div class="mensagem">
 
                                         <div class="icone-mensagem">
-
                                             <i class="bi bi-file-medical"></i>
-
                                         </div>
 
                                         <div class="texto-mensagem">
@@ -596,22 +600,20 @@
                     </div>
 
 
-                    <!-- =================================================
-                     VACINAS
-                ================================================== -->
+                    <!-- VACINAS -->
 
-                    <div class="tab-pane fade" id="vacinas-tab-pane" role="tabpanel" aria-labelledby="vacinas-tab">
+                    <div class="tab-pane fade"
+                        id="vacinas-tab-pane"
+                        role="tabpanel"
+                        aria-labelledby="vacinas-tab">
 
                         <div class="conteudo-abas">
 
                             <div class="titulo-secao">
 
                                 <div>
-
                                     <span>HISTÓRICO</span>
-
                                     <h2>Vacinas</h2>
-
                                 </div>
 
                                 <div class="contador">
@@ -621,41 +623,29 @@
                             </div>
 
 
-                            <!-- MESMA ROLAGEM DAS ATUALIZAÇÕES -->
-
                             <div class="lista-vacinas">
 
-
                                 <!-- VACINA 1 -->
-
                                 <article class="vacina-item">
 
                                     <div class="data-vacina">
-
                                         <strong>15</strong>
-
                                         <span>JAN</span>
-
                                     </div>
 
                                     <div class="vacina">
 
                                         <div class="icone-vacina">
-
                                             <i class="bi bi-shield-check"></i>
-
                                         </div>
 
                                         <div>
-
                                             <h3>Antirrábica</h3>
-
                                             <p>Vacina contra raiva</p>
 
                                             <span class="status-vacina">
                                                 Aplicada
                                             </span>
-
                                         </div>
 
                                     </div>
@@ -664,35 +654,26 @@
 
 
                                 <!-- VACINA 2 -->
-
                                 <article class="vacina-item">
 
                                     <div class="data-vacina">
-
                                         <strong>20</strong>
-
                                         <span>FEV</span>
-
                                     </div>
 
                                     <div class="vacina">
 
                                         <div class="icone-vacina">
-
                                             <i class="bi bi-shield-check"></i>
-
                                         </div>
 
                                         <div>
-
                                             <h3>V10</h3>
-
                                             <p>Vacina múltipla</p>
 
                                             <span class="status-vacina">
                                                 Aplicada
                                             </span>
-
                                         </div>
 
                                     </div>
@@ -701,35 +682,26 @@
 
 
                                 <!-- VACINA 3 -->
-
                                 <article class="vacina-item">
 
                                     <div class="data-vacina">
-
                                         <strong>18</strong>
-
                                         <span>MAR</span>
-
                                     </div>
 
                                     <div class="vacina">
 
                                         <div class="icone-vacina">
-
                                             <i class="bi bi-shield-check"></i>
-
                                         </div>
 
                                         <div>
-
                                             <h3>V10</h3>
-
                                             <p>Reforço anual</p>
 
                                             <span class="status-vacina">
                                                 Aplicada
                                             </span>
-
                                         </div>
 
                                     </div>
@@ -738,35 +710,26 @@
 
 
                                 <!-- VACINA 4 -->
-
                                 <article class="vacina-item">
 
                                     <div class="data-vacina">
-
                                         <strong>10</strong>
-
                                         <span>ABR</span>
-
                                     </div>
 
                                     <div class="vacina">
 
                                         <div class="icone-vacina">
-
                                             <i class="bi bi-shield-check"></i>
-
                                         </div>
 
                                         <div>
-
                                             <h3>Giárdia</h3>
-
                                             <p>Prevenção contra giardíase</p>
 
                                             <span class="status-vacina">
                                                 Aplicada
                                             </span>
-
                                         </div>
 
                                     </div>
@@ -775,35 +738,26 @@
 
 
                                 <!-- VACINA 5 -->
-
                                 <article class="vacina-item">
 
                                     <div class="data-vacina">
-
                                         <strong>15</strong>
-
                                         <span>MAI</span>
-
                                     </div>
 
                                     <div class="vacina">
 
                                         <div class="icone-vacina">
-
                                             <i class="bi bi-shield-check"></i>
-
                                         </div>
 
                                         <div>
-
                                             <h3>Antirrábica</h3>
-
                                             <p>Reforço anual</p>
 
                                             <span class="status-vacina">
                                                 Aplicada
                                             </span>
-
                                         </div>
 
                                     </div>
@@ -812,35 +766,26 @@
 
 
                                 <!-- VACINA 6 -->
-
                                 <article class="vacina-item">
 
                                     <div class="data-vacina">
-
                                         <strong>20</strong>
-
                                         <span>JUN</span>
-
                                     </div>
 
                                     <div class="vacina">
 
                                         <div class="icone-vacina">
-
                                             <i class="bi bi-shield-check"></i>
-
                                         </div>
 
                                         <div>
-
                                             <h3>V10</h3>
-
                                             <p>Reforço anual</p>
 
                                             <span class="status-vacina">
                                                 Aplicada
                                             </span>
-
                                         </div>
 
                                     </div>
@@ -863,10 +808,13 @@
 
 
     <!-- =====================================================
-     MODAL
-====================================================== -->
+         MODAL
+    ====================================================== -->
 
-    <div class="modal fade" id="modalAtualizarCadastro" tabindex="-1" aria-labelledby="modalAtualizarCadastroLabel"
+    <div class="modal fade"
+        id="modalAtualizarCadastro"
+        tabindex="-1"
+        aria-labelledby="modalAtualizarCadastroLabel"
         aria-hidden="true">
 
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -881,7 +829,8 @@
                             DADOS DO ANIMAL
                         </span>
 
-                        <h1 class="modal-title" id="modalAtualizarCadastroLabel">
+                        <h1 class="modal-title"
+                            id="modalAtualizarCadastroLabel">
 
                             Atualizar cadastro
 
@@ -889,7 +838,10 @@
 
                     </div>
 
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar">
+                    <button type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
                     </button>
 
                 </div>
@@ -900,38 +852,38 @@
                     <form id="formCadastro">
 
                         <div class="form-section-title">
-
                             <i class="bi bi-heart"></i>
-
                             Informações do animal
-
                         </div>
-
 
                         <div class="row">
 
                             <div class="col-md-6 mb-3">
 
-                                <label for="inputNomeAnimal" class="form-label">
-
+                                <label for="inputNomeAnimal"
+                                    class="form-label">
                                     Nome do animal
-
                                 </label>
 
-                                <input type="text" class="form-control" id="inputNomeAnimal" value="Pantera" required>
+                                <input type="text"
+                                    class="form-control"
+                                    id="inputNomeAnimal"
+                                    value="Pantera"
+                                    required>
 
                             </div>
 
 
                             <div class="col-md-6 mb-3">
 
-                                <label for="inputSexoAnimal" class="form-label">
-
+                                <label for="inputSexoAnimal"
+                                    class="form-label">
                                     Sexo do animal
-
                                 </label>
 
-                                <select class="form-select" id="inputSexoAnimal" required>
+                                <select class="form-select"
+                                    id="inputSexoAnimal"
+                                    required>
 
                                     <option disabled>
                                         Selecione o sexo
@@ -952,13 +904,16 @@
 
                             <div class="col-md-6 mb-3">
 
-                                <label for="inputIdadeAnimal" class="form-label">
-
+                                <label for="inputIdadeAnimal"
+                                    class="form-label">
                                     Idade do animal
-
                                 </label>
 
-                                <input type="number" class="form-control" id="inputIdadeAnimal" value="4" min="0"
+                                <input type="number"
+                                    class="form-control"
+                                    id="inputIdadeAnimal"
+                                    value="4"
+                                    min="0"
                                     required>
 
                             </div>
@@ -966,13 +921,16 @@
 
                             <div class="col-md-6 mb-3">
 
-                                <label for="inputRaca" class="form-label">
-
+                                <label for="inputRaca"
+                                    class="form-label">
                                     Raça
-
                                 </label>
 
-                                <input type="text" class="form-control" id="inputRaca" value="SRD" required>
+                                <input type="text"
+                                    class="form-control"
+                                    id="inputRaca"
+                                    value="SRD"
+                                    required>
 
                             </div>
 
@@ -992,13 +950,15 @@
 
                             <div class="col-md-6 mb-3">
 
-                                <label for="inputNomeProprietario" class="form-label">
-
+                                <label for="inputNomeProprietario"
+                                    class="form-label">
                                     Nome do proprietário
-
                                 </label>
 
-                                <input type="text" class="form-control" id="inputNomeProprietario" value="Nycole"
+                                <input type="text"
+                                    class="form-control"
+                                    id="inputNomeProprietario"
+                                    value="Nycole"
                                     required>
 
                             </div>
@@ -1006,27 +966,32 @@
 
                             <div class="col-md-6 mb-3">
 
-                                <label for="inputCpf" class="form-label">
-
+                                <label for="inputCpf"
+                                    class="form-label">
                                     CPF
-
                                 </label>
 
-                                <input type="text" class="form-control" id="inputCpf" placeholder="000.000.000-00"
-                                    maxlength="14" required>
+                                <input type="text"
+                                    class="form-control"
+                                    id="inputCpf"
+                                    placeholder="000.000.000-00"
+                                    maxlength="14"
+                                    required>
 
                             </div>
 
 
                             <div class="col-md-6 mb-3">
 
-                                <label for="inputCelular" class="form-label">
-
+                                <label for="inputCelular"
+                                    class="form-label">
                                     Celular
-
                                 </label>
 
-                                <input type="tel" class="form-control" id="inputCelular" placeholder="(00) 00000-0000"
+                                <input type="tel"
+                                    class="form-control"
+                                    id="inputCelular"
+                                    placeholder="(00) 00000-0000"
                                     required>
 
                             </div>
@@ -1034,13 +999,15 @@
 
                             <div class="col-md-6 mb-3">
 
-                                <label for="inputEmail" class="form-label">
-
+                                <label for="inputEmail"
+                                    class="form-label">
                                     E-mail
-
                                 </label>
 
-                                <input type="email" class="form-control" id="inputEmail" placeholder="exemplo@email.com"
+                                <input type="email"
+                                    class="form-control"
+                                    id="inputEmail"
+                                    placeholder="exemplo@email.com"
                                     required>
 
                             </div>
@@ -1048,13 +1015,15 @@
 
                             <div class="col-md-6 mb-3">
 
-                                <label for="inputCidade" class="form-label">
-
+                                <label for="inputCidade"
+                                    class="form-label">
                                     Cidade
-
                                 </label>
 
-                                <input type="text" class="form-control" id="inputCidade" placeholder="Digite a cidade"
+                                <input type="text"
+                                    class="form-control"
+                                    id="inputCidade"
+                                    placeholder="Digite a cidade"
                                     required>
 
                             </div>
@@ -1062,13 +1031,15 @@
 
                             <div class="col-md-6 mb-3">
 
-                                <label for="inputBairro" class="form-label">
-
+                                <label for="inputBairro"
+                                    class="form-label">
                                     Bairro
-
                                 </label>
 
-                                <input type="text" class="form-control" id="inputBairro" placeholder="Digite o bairro"
+                                <input type="text"
+                                    class="form-control"
+                                    id="inputBairro"
+                                    placeholder="Digite o bairro"
                                     required>
 
                             </div>
@@ -1082,13 +1053,17 @@
 
                 <div class="modal-footer">
 
-                    <button type="button" class="btn-cancelar" data-bs-dismiss="modal">
+                    <button type="button"
+                        class="btn-cancelar"
+                        data-bs-dismiss="modal">
 
                         Cancelar
 
                     </button>
 
-                    <button type="button" class="btn-salvar" onclick="atualizarCadastro()">
+                    <button type="button"
+                        class="btn-salvar"
+                        onclick="atualizarCadastro()">
 
                         <i class="bi bi-check-lg"></i>
 
@@ -1106,8 +1081,8 @@
 
 
     <!-- =====================================================
-     FOOTER
-====================================================== -->
+         FOOTER
+    ====================================================== -->
 
     <footer>
 
@@ -1115,7 +1090,8 @@
 
             <div class="footer-logo">
 
-                <img src="../static/img/logo.png" alt="Patas & Bigodes">
+                <img src="../static/img/logo.png"
+                    alt="Patas & Bigodes">
 
                 <div>
 
@@ -1132,13 +1108,17 @@
 
             <div class="footer-social">
 
-                <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                <a href="https://www.instagram.com/"
+                    target="_blank"
+                    aria-label="Instagram">
 
                     <i class="bi bi-instagram"></i>
 
                 </a>
 
-                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                <a href="https://www.facebook.com/"
+                    target="_blank"
+                    aria-label="Facebook">
 
                     <i class="bi bi-facebook"></i>
 
@@ -1159,8 +1139,9 @@
     <!-- Bootstrap JS -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
-        </script>
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous">
+    </script>
 
 </body>
 

@@ -1,3 +1,7 @@
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================= */
+
 * {
     box-sizing: border-box;
 }
@@ -12,179 +16,173 @@ body {
 
     background-color: #C8E3FF;
 
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: Georgia, "Times New Roman", serif;
 
     color: #17202A;
-
 }
 
-/* =========================
-           HEADER
-        ========================= */
-
-header {
-    background-color: #034C3C;
-    height: 80px;
-}
-
-.navbar-custom {
-    min-height: 90px;
-    display: flex;
-    align-items: center;
-}
-
-.navbar-custom .container-fluid {
-    max-width: 1500px;
-}
-
-.logo {
-    width: 62px;
-    height: 62px;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: white;
-    padding: 4px;
-}
-
-.btn-menu {
-    position: relative;
-    color: var(--verde-claro);
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: bold;
-    margin-left: 10px;
-    padding: 12px 18px;
-    border-radius: 10px;
-    transition: 0.3s ease;
-}
-
-.btn-menu:hover {
-    background-color: rgba(222, 158, 54, 0.15);
-    color: var(--dourado);
-}
-
-.btn-menu::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 6px;
-    left: 50%;
-    background-color: var(--dourado);
-    transition: 0.3s ease;
-    transform: translateX(-50%);
-}
-
-.btn-menu:hover::after {
-    width: 60%;
-}
-
-.btn-carteirinha {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: var(--verde-claro);
-    font-size: 16px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn-carteirinha:hover {
-    color: var(--dourado);
-}
-
-.btn-carteirinha p {
-    margin: 0;
-}
-
-.dog-img {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: white;
-    padding: 4px;
-    transition: 0.3s;
-}
-
-.btn-carteirinha:hover .dog-img {
-    transform: scale(1.06);
-}
-
-
-/* =========================
-           MAIN
-        ========================= */
-
-main {
-    flex: 1;
-    width: 100%;
-    padding: 55px 30px 70px;
-}
-
-.conteudo {
-    max-width: 1450px;
-    margin: auto;
-}
 
 /* =========================================================
-MENU
+   PALETA
 ========================================================= */
+
+:root {
+    --azul-principal: #3E7CB1;
+    --azul-medio: #4F86B8;
+    --azul-claro: #C8E3FF;
+    --azul-suave: #E8F4FF;
+
+    --dourado: #DE9E36;
+    --dourado-claro: #F8C766;
+
+    --branco: #FFFFFF;
+    --texto: #17202A;
+
+    --borda: #D9EAF6;
+}
+
+
+/* =========================================================
+   HEADER
+   Mesmo padrão da página Consultas
+========================================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: var(--azul-principal);
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.navbar {
+    min-height: 76px;
+    padding: 8px 0;
+}
+
+
+/* LOGO */
+
+.logo {
+    width: 58px;
+    height: 58px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    background-color: white;
+
+    padding: 3px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.18);
+
+    transition: 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+
+/* MENU */
 
 .menu {
     display: flex;
 
     align-items: center;
+    justify-content: center;
 
-    background-color: #4F86B8;
-
-    margin: 0 auto;
-
-
+    gap: 10px;
 }
 
-.btn-menu {
-    color: #D7E9DE;
-
+.menu-link {
+    color: #EAF5FF;
 
     text-decoration: none;
 
     font-size: 17px;
-
     font-weight: bold;
 
-    margin-left: 20px;
-
-    padding: 10px 20px;
+    padding: 10px 15px;
 
     border-radius: 8px;
 
     transition: 0.3s;
-
-
 }
 
-.btn-menu:hover {
-    background-color: #C8E3FF;
+.menu-link i {
+    margin-right: 5px;
+}
 
-    color: #4F86B8;
+.menu-link:hover {
+    background-color: var(--azul-claro);
+
+    color: var(--azul-principal);
 
     transform: translateY(-2px);
-
 }
 
+.menu-link.ativo {
+    background-color: rgba(255, 255, 255, 0.15);
+
+    color: white;
+}
+
+
+/* PERFIL */
+
+.perfil-link {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+}
+
+.perfil {
+    width: 58px;
+    height: 58px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    background-color: white;
+
+    padding: 3px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.18);
+
+    transition: 0.3s;
+}
+
+.perfil:hover {
+    transform: scale(1.05);
+}
+
+.perfil-link.ativo .perfil {
+    outline: 3px solid var(--dourado);
+    outline-offset: 2px;
+}
+
+
 /* =========================================================
-FUNDO
+   FUNDO
 ========================================================= */
 
 .fundo {
-    min-height: calc(100vh - 90px);
-
+    min-height: calc(100vh - 76px);
 
     padding: 40px 0 60px;
 
-    background-color: #C8E3FF;
+    background-color: var(--azul-claro);
 
     background-image:
         url("../img/pata.png");
@@ -194,37 +192,34 @@ FUNDO
     background-size: 55px 55px;
 
     background-position: center;
-
 }
 
+
 /* =========================================================
-CONTEÚDO
+   CONTEÚDO PRINCIPAL
 ========================================================= */
 
 main {
     width: min(1180px, 94%);
 
     margin: 0 auto;
-
-
 }
 
+
 /* =========================================================
-TÍTULO
+   STATUS
 ========================================================= */
 
 .titulo-pagina {
     display: flex;
 
+    align-items: center;
 
-    align-items: flex-end;
-
-    justify-content: space-between;
+    justify-content: flex-end;
 
     margin-bottom: 25px;
 
     padding: 0 8px;
-
 }
 
 .status-pet {
@@ -240,7 +235,7 @@ TÍTULO
 
     border-radius: 20px;
 
-    color: #3E7CB1;
+    color: var(--azul-principal);
 
     font-size: 14px;
 
@@ -255,11 +250,11 @@ TÍTULO
     border-radius: 50%;
 
     background-color: #4CAF50;
-
 }
 
+
 /* =========================================================
-CARTEIRINHA
+   CARTEIRINHA
 ========================================================= */
 
 .carteirinha {
@@ -275,11 +270,10 @@ CARTEIRINHA
 
     border-radius: 25px;
 
-    background-color: #3E7CB1;
+    background-color: var(--azul-principal);
 
     box-shadow:
         0 12px 30px rgba(0, 0, 0, 0.20);
-
 }
 
 .capa-img {
@@ -293,7 +287,6 @@ CARTEIRINHA
     object-fit: cover;
 
     opacity: 0.32;
-
 }
 
 .overlay {
@@ -302,10 +295,11 @@ CARTEIRINHA
     inset: 0;
 
     background:
-        linear-gradient(135deg,
+        linear-gradient(
+            135deg,
             rgba(62, 124, 177, 0.95),
-            rgba(79, 134, 184, 0.72));
-
+            rgba(79, 134, 184, 0.72)
+        );
 }
 
 .conteudo-capa {
@@ -318,11 +312,11 @@ CARTEIRINHA
     padding: 35px 50px 25px;
 
     text-align: center;
-
 }
 
+
 /* =========================================================
-BOTÃO IMPRIMIR
+   BOTÃO IMPRIMIR
 ========================================================= */
 
 .btn-imprimir {
@@ -345,7 +339,7 @@ BOTÃO IMPRIMIR
 
     background-color: rgba(255, 255, 255, 0.95);
 
-    color: #3E7CB1;
+    color: var(--azul-principal);
 
     font-family: Georgia, "Times New Roman", serif;
 
@@ -354,21 +348,19 @@ BOTÃO IMPRIMIR
     cursor: pointer;
 
     transition: 0.3s;
-
 }
 
 .btn-imprimir:hover {
-    background-color: #DE9E36;
+    background-color: var(--dourado);
 
     color: white;
 
     transform: translateY(-2px);
-
-
 }
 
+
 /* =========================================================
-FOTO
+   FOTO
 ========================================================= */
 
 .foto-container {
@@ -378,8 +370,6 @@ FOTO
     height: 140px;
 
     margin: 0 auto 14px;
-
-
 }
 
 .foto-animal {
@@ -394,7 +384,6 @@ FOTO
 
     box-shadow:
         0 7px 20px rgba(0, 0, 0, 0.25);
-
 }
 
 .badge-pet {
@@ -409,12 +398,11 @@ FOTO
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border-radius: 50%;
 
-    background-color: #DE9E36;
+    background-color: var(--dourado);
 
     color: white;
 
@@ -423,21 +411,21 @@ FOTO
     font-size: 13px;
 }
 
+
 /* =========================================================
-NOME
+   NOME
 ========================================================= */
 
 .conteudo-capa h1 {
     margin: 5px 0;
 
-    color: #DE9E36;
+    color: var(--dourado);
 
     font-size: clamp(36px, 5vw, 52px);
 
     font-weight: bold;
 
     letter-spacing: 3px;
-
 }
 
 .descricao {
@@ -446,11 +434,11 @@ NOME
     color: white;
 
     font-size: 17px;
-
 }
 
+
 /* =========================================================
-INFORMAÇÕES
+   INFORMAÇÕES
 ========================================================= */
 
 .informacoes {
@@ -471,7 +459,6 @@ INFORMAÇÕES
     border: 1px solid rgba(255, 255, 255, 0.18);
 
     border-radius: 16px;
-
 }
 
 .info-item {
@@ -488,7 +475,6 @@ INFORMAÇÕES
     border-radius: 12px;
 
     background-color: rgba(255, 255, 255, 0.10);
-
 }
 
 .info-icon {
@@ -500,17 +486,15 @@ INFORMAÇÕES
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border-radius: 10px;
 
     background-color: white;
 
-    color: #4F86B8;
+    color: var(--azul-medio);
 
     font-size: 18px;
-
 }
 
 .info-item small {
@@ -521,7 +505,6 @@ INFORMAÇÕES
     font-size: 11px;
 
     margin-bottom: 3px;
-
 }
 
 .info-item strong {
@@ -530,11 +513,11 @@ INFORMAÇÕES
     color: white;
 
     font-size: 15px;
-
 }
 
+
 /* =========================================================
-PARTE INFERIOR
+   PARTE INFERIOR
 ========================================================= */
 
 .parte-inferior {
@@ -547,7 +530,6 @@ PARTE INFERIOR
     align-items: center;
 
     justify-content: space-between;
-
 }
 
 .ultima-atualizacao {
@@ -560,10 +542,9 @@ PARTE INFERIOR
     color: white;
 
     text-align: left;
-
 }
 
-.ultima-atualizacao>i {
+.ultima-atualizacao > i {
     font-size: 20px;
 }
 
@@ -573,7 +554,6 @@ PARTE INFERIOR
     color: rgba(255, 255, 255, 0.70);
 
     font-size: 11px;
-
 }
 
 .ultima-atualizacao span {
@@ -595,7 +575,7 @@ PARTE INFERIOR
 
     background-color: white;
 
-    color: #3E7CB1;
+    color: var(--azul-principal);
 
     font-family: Georgia, "Times New Roman", serif;
 
@@ -604,20 +584,19 @@ PARTE INFERIOR
     cursor: pointer;
 
     transition: 0.3s;
-
 }
 
 .btn-atualizar:hover {
-    background-color: #DE9E36;
+    background-color: var(--dourado);
 
     color: white;
 
     transform: translateY(-2px);
-
 }
 
+
 /* =========================================================
-ÁREA DE INFORMAÇÕES
+   ÁREA DE INFORMAÇÕES
 ========================================================= */
 
 .area-informacoes {
@@ -629,11 +608,11 @@ PARTE INFERIOR
 
     box-shadow:
         0 8px 25px rgba(0, 0, 0, 0.12);
-
 }
 
+
 /* =========================================================
-ABAS
+   ABAS
 ========================================================= */
 
 .abas {
@@ -646,7 +625,6 @@ ABAS
     background-color: white;
 
     border-bottom: 1px solid #D8E8F5;
-
 }
 
 .aba {
@@ -664,7 +642,7 @@ ABAS
 
     background: transparent;
 
-    color: #4F86B8;
+    color: var(--azul-medio);
 
     font-family: Georgia, "Times New Roman", serif;
 
@@ -675,7 +653,6 @@ ABAS
     cursor: pointer;
 
     transition: 0.3s;
-
 }
 
 .aba:hover {
@@ -683,14 +660,14 @@ ABAS
 }
 
 .aba.active {
-    background-color: #C8E3FF;
+    background-color: var(--azul-claro);
 
-    color: #3E7CB1;
-
+    color: var(--azul-principal);
 }
 
+
 /* =========================================================
-CONTEÚDO
+   CONTEÚDO DAS ABAS
 ========================================================= */
 
 .conteudo-abas {
@@ -705,54 +682,49 @@ CONTEÚDO
     justify-content: space-between;
 
     margin-bottom: 28px;
-
 }
 
 .titulo-secao span {
-    color: #4F86B8;
+    color: var(--azul-medio);
 
     font-size: 12px;
 
     font-weight: bold;
 
     letter-spacing: 1.5px;
-
 }
 
 .titulo-secao h2 {
     margin: 3px 0 0;
-
 
     color: #1F4F78;
 
     font-size: 30px;
 
     font-weight: bold;
-
 }
 
 .contador {
     padding: 7px 13px;
 
-    background-color: #E8F4FF;
+    background-color: var(--azul-suave);
 
     border-radius: 20px;
 
-    color: #3E7CB1;
+    color: var(--azul-principal);
 
     font-size: 13px;
 
     font-weight: bold;
-
 }
 
+
 /* =========================================================
-ATUALIZAÇÕES MÉDICAS
+   ATUALIZAÇÕES MÉDICAS
 ========================================================= */
 
-.lista-atualizacoes {
-
-
+.lista-atualizacoes,
+.lista-vacinas {
     width: 100%;
 
     display: flex;
@@ -766,11 +738,10 @@ ATUALIZAÇÕES MÉDICAS
     padding: 5px 5px 18px;
 
     scroll-behavior: smooth;
-
 }
 
-.atualizacao-item {
-
+.atualizacao-item,
+.vacina-item {
     flex: 0 0 458px;
 
     width: 458px;
@@ -782,13 +753,13 @@ ATUALIZAÇÕES MÉDICAS
     gap: 12px;
 
     align-items: start;
-
 }
+
 
 /* DATA */
 
-.data-atualizacao {
-
+.data-atualizacao,
+.data-vacina {
     width: 55px;
 
     padding: 9px 4px;
@@ -802,34 +773,36 @@ ATUALIZAÇÕES MÉDICAS
     box-shadow:
         0 3px 10px rgba(0, 0, 0, 0.08);
 
-    border: 1px solid #D9EAF6;
-
+    border: 1px solid var(--borda);
 }
 
-.data-atualizacao strong {
+.data-atualizacao strong,
+.data-vacina strong {
     display: block;
 
-    color: #3E7CB1;
+    color: var(--azul-principal);
 
     font-size: 23px;
 
     line-height: 1;
-
 }
 
-.data-atualizacao span {
-    color: #DE9E36;
+.data-atualizacao span,
+.data-vacina span {
+    color: var(--dourado);
 
     font-size: 11px;
 
     font-weight: bold;
-
 }
 
-/* CARD */
 
-.mensagem {
+/* =========================================================
+   CARDS
+========================================================= */
 
+.mensagem,
+.vacina {
     width: 100%;
 
     height: 123px;
@@ -842,9 +815,9 @@ ATUALIZAÇÕES MÉDICAS
 
     padding: 18px 20px;
 
-    background-color: #4F86B8;
+    background-color: var(--azul-medio);
 
-    border-left: 5px solid #DE9E36;
+    border-left: 5px solid var(--dourado);
 
     border-radius: 13px;
 
@@ -856,22 +829,21 @@ ATUALIZAÇÕES MÉDICAS
     transition: 0.3s;
 
     overflow: hidden;
-
 }
 
-.mensagem:hover {
-
+.mensagem:hover,
+.vacina:hover {
     transform: translateY(-2px);
 
     box-shadow:
         0 8px 20px rgba(0, 0, 0, 0.15);
-
 }
 
-/* ÍCONE */
 
-.icone-mensagem {
+/* ÍCONES */
 
+.icone-mensagem,
+.icone-vacina {
     width: 48px;
     height: 48px;
 
@@ -880,35 +852,35 @@ ATUALIZAÇÕES MÉDICAS
     display: flex;
 
     align-items: center;
-
     justify-content: center;
-
-    margin-right: 15px;
 
     border-radius: 50%;
 
     background-color: white;
 
-    color: #4F86B8;
+    color: var(--azul-medio);
 
     font-size: 21px;
-
 }
 
-/* TEXTO */
+.icone-mensagem {
+    margin-right: 15px;
+}
+
+
+/* =========================================================
+   TEXTO DOS CARDS
+========================================================= */
 
 .texto-mensagem {
-
     flex: 1;
 
     min-width: 0;
 
     text-align: left;
-
 }
 
 .mensagem-topo {
-
     display: flex;
 
     align-items: center;
@@ -916,11 +888,9 @@ ATUALIZAÇÕES MÉDICAS
     gap: 8px;
 
     margin-bottom: 3px;
-
 }
 
 .texto-mensagem .titulo {
-
     margin: 0;
 
     color: white;
@@ -928,11 +898,9 @@ ATUALIZAÇÕES MÉDICAS
     font-size: 17px;
 
     font-weight: bold;
-
 }
 
 .tipo-atendimento {
-
     padding: 3px 7px;
 
     border-radius: 20px;
@@ -942,11 +910,9 @@ ATUALIZAÇÕES MÉDICAS
     font-size: 9px;
 
     text-transform: uppercase;
-
 }
 
 .assunto {
-
     margin: 0 0 4px;
 
     color: white;
@@ -954,11 +920,9 @@ ATUALIZAÇÕES MÉDICAS
     font-size: 14px;
 
     font-weight: bold;
-
 }
 
 .descricao-mensagem {
-
     margin: 0;
 
     color: rgba(255, 255, 255, 0.85);
@@ -966,218 +930,34 @@ ATUALIZAÇÕES MÉDICAS
     font-size: 11px;
 
     line-height: 1.35;
-
 }
+
 
 /* =========================================================
-ROLAGEM DAS ATUALIZAÇÕES
+   VACINAS
 ========================================================= */
-
-.lista-atualizacoes::-webkit-scrollbar,
-.lista-vacinas::-webkit-scrollbar {
-
-    height: 8px;
-
-}
-
-.lista-atualizacoes::-webkit-scrollbar-track,
-.lista-vacinas::-webkit-scrollbar-track {
-
-    background: #EAF4FC;
-
-    border-radius: 10px;
-
-}
-
-.lista-atualizacoes::-webkit-scrollbar-thumb,
-.lista-vacinas::-webkit-scrollbar-thumb {
-
-    background: #4F86B8;
-
-    border-radius: 10px;
-
-}
-
-.lista-atualizacoes::-webkit-scrollbar-thumb:hover,
-.lista-vacinas::-webkit-scrollbar-thumb:hover {
-
-    background: #3E7CB1;
-
-}
-
-/* =========================================================
-VACINAS
-MESMO PADRÃO DAS ATUALIZAÇÕES
-========================================================= */
-
-.lista-vacinas {
-
-    width: 100%;
-
-    display: flex;
-
-    gap: 20px;
-
-    overflow-x: auto;
-
-    overflow-y: hidden;
-
-    padding: 5px 5px 18px;
-
-    scroll-behavior: smooth;
-
-}
-
-.vacina-item {
-
-    flex: 0 0 458px;
-
-    width: 458px;
-
-    display: grid;
-
-    grid-template-columns: 55px 1fr;
-
-    gap: 12px;
-
-    align-items: start;
-
-
-}
-
-/* DATA DA VACINA */
-
-.data-vacina {
-
-    width: 55px;
-
-    padding: 9px 4px;
-
-    text-align: center;
-
-    background-color: white;
-
-    border-radius: 12px;
-
-    box-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.08);
-
-    border: 1px solid #D9EAF6;
-
-}
-
-.data-vacina strong {
-
-    display: block;
-
-    color: #3E7CB1;
-
-    font-size: 23px;
-
-    line-height: 1;
-
-}
-
-.data-vacina span {
-
-    color: #DE9E36;
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-}
-
-/* CARD DA VACINA */
 
 .vacina {
-
-    width: 100%;
-
-    height: 123px;
-
-    min-height: 123px;
-
-    display: flex;
-
-    align-items: center;
-
     gap: 15px;
-
-    padding: 18px 20px;
-
-    background-color: #4F86B8;
-
-    border-left: 5px solid #DE9E36;
-
-    border-radius: 13px;
-
-    color: white;
-
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.12);
-
-    transition: 0.3s;
-
-    overflow: hidden;
-
-}
-
-.vacina:hover {
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.15);
-
-}
-
-/* ÍCONE DA VACINA */
-
-.icone-vacina {
-
-    width: 48px;
-    height: 48px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background-color: white;
-
-    color: #4F86B8;
-
-    font-size: 21px;
 }
 
 .vacina h3 {
-
     margin: 0 0 4px;
 
     color: white;
 
     font-size: 17px;
-
 }
 
 .vacina p {
-
     margin: 0 0 7px;
 
     color: rgba(255, 255, 255, 0.82);
 
     font-size: 11px;
-
 }
 
 .status-vacina {
-
     display: inline-flex;
 
     align-items: center;
@@ -1193,15 +973,43 @@ MESMO PADRÃO DAS ATUALIZAÇÕES
     font-size: 10px;
 
     font-weight: bold;
-
 }
 
+
 /* =========================================================
-MODAL
+   BARRA DE ROLAGEM
+========================================================= */
+
+.lista-atualizacoes::-webkit-scrollbar,
+.lista-vacinas::-webkit-scrollbar {
+    height: 8px;
+}
+
+.lista-atualizacoes::-webkit-scrollbar-track,
+.lista-vacinas::-webkit-scrollbar-track {
+    background: #EAF4FC;
+
+    border-radius: 10px;
+}
+
+.lista-atualizacoes::-webkit-scrollbar-thumb,
+.lista-vacinas::-webkit-scrollbar-thumb {
+    background: var(--azul-medio);
+
+    border-radius: 10px;
+}
+
+.lista-atualizacoes::-webkit-scrollbar-thumb:hover,
+.lista-vacinas::-webkit-scrollbar-thumb:hover {
+    background: var(--azul-principal);
+}
+
+
+/* =========================================================
+   MODAL
 ========================================================= */
 
 .modal-content {
-
     overflow: hidden;
 
     border: none;
@@ -1210,23 +1018,19 @@ MODAL
 
     box-shadow:
         0 15px 40px rgba(0, 0, 0, 0.25);
-
 }
 
 .modal-header {
-
     padding: 22px 25px;
 
     border: none;
 
-    background-color: #3E7CB1;
+    background-color: var(--azul-principal);
 
     color: white;
-
 }
 
 .modal-subtitulo {
-
     display: block;
 
     margin-bottom: 3px;
@@ -1238,26 +1042,19 @@ MODAL
     font-weight: bold;
 
     letter-spacing: 1.5px;
-
 }
 
 .modal-title {
-
-
     font-weight: bold;
-
 }
 
 .modal-body {
-
     padding: 28px;
 
     background-color: #F8FBFF;
-
 }
 
 .form-section-title {
-
     display: flex;
 
     align-items: center;
@@ -1270,14 +1067,12 @@ MODAL
 
     border-bottom: 1px solid #D9E8F3;
 
-    color: #3E7CB1;
+    color: var(--azul-principal);
 
     font-weight: bold;
-
 }
 
 .form-label {
-
     margin-bottom: 6px;
 
     color: #34495E;
@@ -1285,12 +1080,10 @@ MODAL
     font-size: 14px;
 
     font-weight: bold;
-
 }
 
 .form-control,
 .form-select {
-
     min-height: 45px;
 
     padding: 9px 12px;
@@ -1298,33 +1091,29 @@ MODAL
     border: 1px solid #C5D8E7;
 
     border-radius: 9px;
-
 }
 
 .form-control:focus,
 .form-select:focus {
-
-    border-color: #4F86B8;
+    border-color: var(--azul-medio);
 
     box-shadow:
         0 0 0 3px rgba(79, 134, 184, 0.15);
-
 }
 
 .modal-footer {
-
     padding: 15px 25px 22px;
 
     border: none;
 
     background-color: #F8FBFF;
-
 }
+
+
+/* BOTÕES DO MODAL */
 
 .btn-cancelar,
 .btn-salvar {
-
-
     padding: 10px 18px;
 
     border: none;
@@ -1338,57 +1127,46 @@ MODAL
     cursor: pointer;
 
     transition: 0.3s;
-
 }
 
 .btn-cancelar {
-
     background-color: #E8EDF1;
 
     color: #475B6B;
-
 }
 
 .btn-cancelar:hover {
-
     background-color: #DCE3E8;
-
 }
 
 .btn-salvar {
-
-    background-color: #3E7CB1;
+    background-color: var(--azul-principal);
 
     color: white;
-
 }
 
 .btn-salvar:hover {
-
-
     background-color: #326A9A;
 
     transform: translateY(-1px);
-
 }
 
+
 /* =========================================================
-FOOTER
+   FOOTER
+   Mesmo padrão da página Consultas
 ========================================================= */
 
 footer {
-
-    background-color: #3E7CB1;
+    background-color: var(--azul-principal);
 
     color: white;
 
     box-shadow:
         0 -4px 12px rgba(0, 0, 0, 0.12);
-
 }
 
 .footer-content {
-
     width: min(1180px, 94%);
 
     min-height: 100px;
@@ -1404,23 +1182,19 @@ footer {
     justify-content: space-between;
 
     gap: 20px;
-
 }
 
 .footer-logo {
-
     display: flex;
 
     align-items: center;
 
     gap: 12px;
-
 }
 
 .footer-logo img {
-
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
 
     padding: 4px;
 
@@ -1429,45 +1203,35 @@ footer {
     background-color: white;
 
     object-fit: contain;
-
-
 }
 
 .footer-logo strong {
-
     display: block;
 
     font-size: 17px;
-
 }
 
 .footer-logo span {
-
     display: block;
 
     color: rgba(255, 255, 255, 0.7);
 
-    font-size: 12px;
-
+    font-size: 15px;
 }
 
 .footer-social {
-
     display: flex;
 
     gap: 10px;
-
 }
 
 .footer-social a {
-
     width: 38px;
     height: 38px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border-radius: 50%;
@@ -1479,98 +1243,89 @@ footer {
     text-decoration: none;
 
     transition: 0.3s;
-
 }
 
 .footer-social a:hover {
-
     background-color: white;
 
-    color: #3E7CB1;
+    color: var(--azul-principal);
 
     transform: translateY(-2px);
-
 }
 
-.footer-content>p {
-
+.footer-content > p {
     margin: 0;
 
     color: rgba(255, 255, 255, 0.75);
 
     font-size: 12px;
-
 }
 
+
 /* =========================================================
-RESPONSIVIDADE
+   RESPONSIVIDADE
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
 
     .informacoes {
-
         grid-template-columns: repeat(2, 1fr);
     }
 
 }
 
+
+@media (max-width: 992px) {
+
+    .menu {
+        align-items: stretch;
+
+        flex-direction: column;
+
+        width: 100%;
+
+        margin-top: 15px;
+
+        padding-bottom: 10px;
+    }
+
+    .menu-link {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .perfil-link {
+        margin: 10px auto;
+    }
+
+}
+
+
 @media (max-width: 768px) {
 
     .fundo {
-
         padding: 25px 0 40px;
     }
 
     main {
-
         width: 94%;
     }
 
-    .navbar-custom {
-
-        min-height: 75px;
-    }
-
-    .btn-menu {
-
-        padding: 8px 10px;
-
-        font-size: 13px;
-    }
-
-    .titulo-pagina {
-
-        align-items: flex-start;
-
-        flex-direction: column;
-
-        gap: 12px;
-    }
-
-    .status-pet {
-
-        font-size: 12px;
-    }
-
     .capa {
-
         min-height: 650px;
 
         border-radius: 18px;
     }
 
     .conteudo-capa {
-
         min-height: 650px;
 
         padding: 30px 18px 22px;
     }
 
     .btn-imprimir {
-
         top: 18px;
-
         right: 18px;
 
         padding: 8px 11px;
@@ -1580,14 +1335,11 @@ RESPONSIVIDADE
 
     .foto-container,
     .foto-animal {
-
         width: 110px;
-
         height: 110px;
     }
 
     .informacoes {
-
         width: 100%;
 
         margin-top: 25px;
@@ -1598,33 +1350,27 @@ RESPONSIVIDADE
     }
 
     .info-item {
-
         padding: 9px;
 
         gap: 8px;
     }
 
     .info-icon {
-
         width: 34px;
-
         height: 34px;
 
         font-size: 15px;
     }
 
     .info-item small {
-
         font-size: 9px;
     }
 
     .info-item strong {
-
         font-size: 12px;
     }
 
     .parte-inferior {
-
         width: 100%;
 
         flex-direction: column;
@@ -1633,12 +1379,10 @@ RESPONSIVIDADE
     }
 
     .ultima-atualizacao {
-
         order: 2;
     }
 
     .btn-atualizar {
-
         order: 1;
 
         width: 100%;
@@ -1647,17 +1391,14 @@ RESPONSIVIDADE
     }
 
     .area-informacoes {
-
         border-radius: 18px;
     }
 
     .abas {
-
         padding: 8px;
     }
 
     .aba {
-
         flex: 1;
 
         justify-content: center;
@@ -1668,33 +1409,25 @@ RESPONSIVIDADE
     }
 
     .conteudo-abas {
-
         padding: 25px 15px 30px;
     }
 
     .titulo-secao {
-
         align-items: flex-start;
 
         gap: 10px;
     }
 
     .titulo-secao h2 {
-
         font-size: 24px;
     }
 
     .contador {
-
         font-size: 11px;
     }
 
-
-    /* CARDS MOBILE */
-
     .atualizacao-item,
     .vacina-item {
-
         flex-basis: 380px;
 
         width: 380px;
@@ -1706,19 +1439,16 @@ RESPONSIVIDADE
 
     .data-atualizacao,
     .data-vacina {
-
         width: 43px;
     }
 
     .data-atualizacao strong,
     .data-vacina strong {
-
         font-size: 19px;
     }
 
     .mensagem,
     .vacina {
-
         height: 123px;
 
         min-height: 123px;
@@ -1728,9 +1458,7 @@ RESPONSIVIDADE
 
     .icone-mensagem,
     .icone-vacina {
-
         width: 42px;
-
         height: 42px;
 
         margin-right: 5px;
@@ -1739,44 +1467,36 @@ RESPONSIVIDADE
     }
 
     .mensagem-topo {
-
         flex-wrap: wrap;
 
         gap: 5px;
     }
 
     .texto-mensagem .titulo {
-
         font-size: 15px;
     }
 
     .assunto {
-
         font-size: 13px;
     }
 
     .descricao-mensagem {
-
         font-size: 10px;
     }
 
     .vacina {
-
         gap: 10px;
     }
 
     .vacina h3 {
-
         font-size: 15px;
     }
 
     .vacina p {
-
         font-size: 10px;
     }
 
     .footer-content {
-
         flex-direction: column;
 
         justify-content: center;
@@ -1787,54 +1507,34 @@ RESPONSIVIDADE
     }
 
     .footer-logo {
-
         justify-content: center;
     }
 
 }
 
+
 @media (max-width: 450px) {
 
-    .menu {
-
-        gap: 2px;
-    }
-
-    .btn-menu {
-
-        padding: 7px;
-    }
-
     .informacoes {
-
         gap: 7px;
     }
 
     .info-item {
-
         flex-direction: column;
 
         align-items: flex-start;
     }
 
-    .info-item small {
-
-        margin-top: 2px;
-    }
-
     .mensagem {
-
         align-items: flex-start;
     }
 
     .icone-mensagem {
-
         margin-top: 2px;
     }
 
     .atualizacao-item,
     .vacina-item {
-
         flex-basis: 330px;
 
         width: 330px;
@@ -1842,8 +1542,9 @@ RESPONSIVIDADE
 
 }
 
+
 /* =========================================================
-IMPRESSÃO
+   IMPRESSÃO
 ========================================================= */
 
 @media print {
@@ -1854,30 +1555,25 @@ IMPRESSÃO
     .btn-imprimir,
     .btn-atualizar,
     .status-pet {
-
         display: none !important;
     }
 
     body,
     .fundo {
-
         background: white !important;
     }
 
     main {
-
         width: 100% !important;
     }
 
     .capa,
     .area-informacoes {
-
         box-shadow: none !important;
     }
 
     .lista-atualizacoes,
     .lista-vacinas {
-
         overflow: visible !important;
 
         display: block !important;
@@ -1885,7 +1581,6 @@ IMPRESSÃO
 
     .atualizacao-item,
     .vacina-item {
-
         width: 100% !important;
 
         margin-bottom: 20px;
@@ -1895,21 +1590,18 @@ IMPRESSÃO
     .vacina,
     .atualizacao-item,
     .vacina-item {
-
         break-inside: avoid;
 
         page-break-inside: avoid;
     }
 
     .tab-pane {
-
         display: block !important;
 
         opacity: 1 !important;
     }
 
     @page {
-
         size: A4;
 
         margin: 12mm;

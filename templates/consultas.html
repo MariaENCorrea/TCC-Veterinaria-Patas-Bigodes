@@ -1,20 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Consultas | Patas & Bigodes</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-    <link rel="icon" type="image/png" href="../static/img/favicon.png">
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="../static/img/favicon.png">
 
-    <link rel="stylesheet" href="../static/css/consultas.css">
+    <!-- CSS da página -->
+    <link
+        rel="stylesheet"
+        href="../static/css/consultas.css">
+
 </head>
 
 
@@ -22,45 +36,103 @@
 
     <div class="pagina">
 
-        <!-- =========================
-         HEADER
-    ========================= -->
+        <!-- =================================================
+             HEADER
+        ================================================== -->
 
-        <header>
+        <header class="header">
 
-            <nav class="navbar-custom">
+            <nav class="navbar navbar-expand-lg navbar-dark">
 
-                <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+                <div class="container-fluid px-3 px-lg-4">
 
-                    <a href="apresentacao.html">
-                        <img src="../static/img/logo.png" alt="Logo Patas & Bigodes" class="logo">
+                    <!-- LOGO -->
+
+                    <a
+                        href="apresentacao.html"
+                        class="navbar-brand">
+
+                        <img
+                            src="../static/img/logo.png"
+                            class="logo"
+                            alt="Logo Patas & Bigodes">
+
                     </a>
 
 
-                    <div>
+                    <!-- MENU MOBILE -->
 
-                        <a href="apresentacao.html" class="btn-menu">
-                            Início
-                        </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menuPrincipal"
+                        aria-controls="menuPrincipal"
+                        aria-expanded="false"
+                        aria-label="Abrir menu">
 
-                        <a href="consultas.html" class="btn-menu">
-                            Consultas
-                        </a>
+                        <span class="navbar-toggler-icon"></span>
 
-                        <a href="horarios.html" class="btn-menu">
-                            Horários
+                    </button>
+
+
+                    <!-- MENU -->
+
+                    <div
+                        class="collapse navbar-collapse"
+                        id="menuPrincipal">
+
+                        <div class="menu mx-auto">
+
+                            <a
+                                href="apresentacao.html"
+                                class="menu-link">
+
+                                <i class="bi bi-house-heart"></i>
+
+                                Início
+
+                            </a>
+
+
+                            <a
+                                href="consultas.html"
+                                class="menu-link ativo">
+
+                                <i class="bi bi-heart-pulse"></i>
+
+                                Consultas
+
+                            </a>
+
+
+                            <a
+                                href="horarios.html"
+                                class="menu-link">
+
+                                <i class="bi bi-calendar-heart"></i>
+
+                                Horários
+
+                            </a>
+
+                        </div>
+
+
+                        <!-- PERFIL -->
+
+                        <a
+                            href="carterinha.html"
+                            class="perfil-link">
+
+                            <img
+                                src="../static/img/cachorro.png"
+                                class="perfil"
+                                alt="Área do cliente">
+
                         </a>
 
                     </div>
-
-
-                    <a href="carteirinha.html" class="btn-carteirinha">
-
-                        <img src="../static/img/cachorro.png" class="dog-img" alt="Perfil">
-
-                        <p>Perfil</p>
-
-                    </a>
 
                 </div>
 
@@ -69,22 +141,31 @@
         </header>
 
 
-        <!-- =========================
-         CONTEÚDO
-    ========================= -->
+        <!-- =================================================
+             CONTEÚDO
+        ================================================== -->
 
         <main>
 
             <div class="conteudo">
 
+
                 <!-- TÍTULO -->
 
                 <div class="titulo-principal">
 
-                    <h1>Agende sua consulta</h1>
+                    <span class="subtitulo">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                        Cuidado para o seu melhor amigo
+                    </span>
+
+                    <h1>
+                        Agende sua consulta
+                    </h1>
 
                     <p>
-                        Preencha os dados abaixo para cuidar da saúde do seu pet.
+                        Preencha os dados abaixo para cuidar
+                        da saúde e do bem-estar do seu pet.
                     </p>
 
                     <div class="linha-titulo"></div>
@@ -92,12 +173,16 @@
                 </div>
 
 
+                <!-- =================================================
+                     FORMULÁRIOS
+                ================================================== -->
+
                 <div class="row g-4">
 
 
-                    <!-- =====================
-                     FORMULÁRIO DO PET
-                ====================== -->
+                    <!-- ==============================
+                         PET
+                    =============================== -->
 
                     <div class="col-lg-4">
 
@@ -105,24 +190,37 @@
 
                             <h2 class="titulo-coluna">
 
-                                <i class="bi bi-heart"></i>
+                                <span class="icone-titulo">
+                                    <i class="bi bi-heart-fill"></i>
+                                </span>
 
                                 Seu Pet
 
                             </h2>
 
 
+                            <!-- TIPO DE ANIMAL -->
+
+                            <label class="form-label">
+                                Qual é o seu pet?
+                            </label>
+
                             <div class="opcoes-pet">
 
                                 <div class="form-check">
 
-                                    <input class="form-check-input" type="radio" name="animal" id="macho"
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="animal"
+                                        id="cachorro"
                                         value="cachorro">
 
-                                    <label class="form-check-label" for="macho">
+                                    <label
+                                        class="form-check-label"
+                                        for="cachorro">
 
-                                        <i class="bi bi-dog"></i>
-                                        Cachorro
+                                        🐶 Cachorro
 
                                     </label>
 
@@ -131,12 +229,18 @@
 
                                 <div class="form-check">
 
-                                    <input class="form-check-input" type="radio" name="animal" id="femea" value="gato">
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="animal"
+                                        id="gato"
+                                        value="gato">
 
-                                    <label class="form-check-label" for="femea">
+                                    <label
+                                        class="form-check-label"
+                                        for="gato">
 
-                                        <i class="bi bi-github"></i>
-                                        Gato
+                                        🐱 Gato
 
                                     </label>
 
@@ -145,40 +249,64 @@
                             </div>
 
 
-                            <label for="nomePet" class="form-label">
+                            <!-- NOME -->
 
-                                Nome
+                            <label
+                                for="nomePet"
+                                class="form-label">
+
+                                Nome do pet
 
                             </label>
 
-                            <input type="text" id="nomePet" class="form-control" placeholder="Nome do pet">
+                            <input
+                                type="text"
+                                id="nomePet"
+                                class="form-control"
+                                placeholder="Digite o nome do pet">
 
 
-                            <label for="raca" class="form-label">
+                            <!-- RAÇA -->
+
+                            <label
+                                for="raca"
+                                class="form-label">
 
                                 Espécie / Raça
 
                             </label>
 
-                            <input type="text" id="raca" class="form-control" placeholder="Ex.: Golden Retriever">
+                            <input
+                                type="text"
+                                id="raca"
+                                class="form-control"
+                                placeholder="Ex.: Golden Retriever">
 
 
-                            <label for="idade" class="form-label">
+                            <!-- IDADE -->
+
+                            <label
+                                for="idade"
+                                class="form-label">
 
                                 Idade
 
                             </label>
 
-                            <input type="number" id="idade" class="form-control" placeholder="Idade do pet">
+                            <input
+                                type="number"
+                                id="idade"
+                                class="form-control"
+                                placeholder="Idade do pet">
 
                         </div>
 
                     </div>
 
 
-                    <!-- =====================
-                     FORMULÁRIO DO TUTOR
-                ====================== -->
+                    <!-- ==============================
+                         TUTOR
+                    =============================== -->
 
                     <div class="col-lg-4">
 
@@ -186,56 +314,89 @@
 
                             <h2 class="titulo-coluna">
 
-                                <i class="bi bi-person"></i>
+                                <span class="icone-titulo">
+                                    <i class="bi bi-person-heart"></i>
+                                </span>
 
                                 Dados do Tutor
 
                             </h2>
 
 
-                            <label for="nomeTutor" class="form-label">
+                            <!-- NOME -->
 
-                                Nome
+                            <label
+                                for="nomeTutor"
+                                class="form-label">
 
-                            </label>
-
-                            <input type="text" id="nomeTutor" class="form-control" placeholder="Nome completo">
-
-
-                            <label for="celular" class="form-label">
-
-                                Celular (WhatsApp)
+                                Nome completo
 
                             </label>
 
-                            <input type="tel" id="celular" class="form-control" placeholder="(00) 00000-0000">
+                            <input
+                                type="text"
+                                id="nomeTutor"
+                                class="form-control"
+                                placeholder="Digite seu nome completo">
 
 
-                            <label for="email" class="form-label">
+                            <!-- CELULAR -->
+
+                            <label
+                                for="celular"
+                                class="form-label">
+
+                                Celular / WhatsApp
+
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="celular"
+                                class="form-control"
+                                placeholder="(00) 00000-0000">
+
+
+                            <!-- EMAIL -->
+
+                            <label
+                                for="email"
+                                class="form-label">
 
                                 E-mail
 
                             </label>
 
-                            <input type="email" id="email" class="form-control" placeholder="email@email.com">
+                            <input
+                                type="email"
+                                id="email"
+                                class="form-control"
+                                placeholder="seuemail@email.com">
 
 
-                            <label for="informacoes" class="form-label">
+                            <!-- INFORMAÇÕES -->
+
+                            <label
+                                for="informacoes"
+                                class="form-label">
 
                                 Informações adicionais
 
                             </label>
 
-                            <textarea id="informacoes" class="form-control" placeholder="Digite aqui..."></textarea>
+                            <textarea
+                                id="informacoes"
+                                class="form-control"
+                                placeholder="Conte um pouco mais sobre o seu pet..."></textarea>
 
                         </div>
 
                     </div>
 
 
-                    <!-- =====================
-                     SERVIÇO
-                ====================== -->
+                    <!-- ==============================
+                         SERVIÇO
+                    =============================== -->
 
                     <div class="col-lg-4">
 
@@ -243,20 +404,28 @@
 
                             <h2 class="titulo-coluna">
 
-                                <i class="bi bi-calendar-heart"></i>
+                                <span class="icone-titulo">
+                                    <i class="bi bi-calendar-heart-fill"></i>
+                                </span>
 
                                 Serviço
 
                             </h2>
 
 
-                            <label for="consulta" class="form-label">
+                            <!-- TIPO DE CONSULTA -->
+
+                            <label
+                                for="consulta"
+                                class="form-label">
 
                                 Tipo de consulta
 
                             </label>
 
-                            <select id="consulta" class="form-select">
+                            <select
+                                id="consulta"
+                                class="form-select">
 
                                 <option selected>
                                     Clínica Geral
@@ -277,13 +446,19 @@
                             </select>
 
 
-                            <label for="especialidade" class="form-label">
+                            <!-- ESPECIALIDADE -->
+
+                            <label
+                                for="especialidade"
+                                class="form-label">
 
                                 Especialidade
 
                             </label>
 
-                            <select id="especialidade" class="form-select">
+                            <select
+                                id="especialidade"
+                                class="form-select">
 
                                 <option selected>
                                     Selecione uma especialidade
@@ -303,6 +478,67 @@
 
                             </select>
 
+
+                            <!-- DATA -->
+
+                            <label
+                                for="data"
+                                class="form-label">
+
+                                Data da consulta
+
+                            </label>
+
+                            <input
+                                type="date"
+                                id="data"
+                                class="form-control">
+
+
+                            <!-- HORÁRIO -->
+
+                            <label
+                                for="horario"
+                                class="form-label">
+
+                                Horário
+
+                            </label>
+
+                            <select
+                                id="horario"
+                                class="form-select">
+
+                                <option selected>
+                                    Selecione um horário
+                                </option>
+
+                                <option>
+                                    08:00
+                                </option>
+
+                                <option>
+                                    09:00
+                                </option>
+
+                                <option>
+                                    10:00
+                                </option>
+
+                                <option>
+                                    14:00
+                                </option>
+
+                                <option>
+                                    15:00
+                                </option>
+
+                                <option>
+                                    16:00
+                                </option>
+
+                            </select>
+
                         </div>
 
                     </div>
@@ -310,13 +546,17 @@
                 </div>
 
 
-                <!-- =========================
-                 BOTÃO
-            ========================= -->
+                <!-- =================================================
+                     BOTÃO
+                ================================================== -->
 
                 <div class="area-confirmar">
 
-                    <button type="button" class="btn-confirmar" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <button
+                        type="button"
+                        class="btn-confirmar"
+                        data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
 
                         <i class="bi bi-calendar-check"></i>
 
@@ -327,27 +567,41 @@
                 </div>
 
 
-                <!-- =========================
-                 MODAL
-            ========================= -->
+                <!-- =================================================
+                     MODAL
+                ================================================== -->
 
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div
+                    class="modal fade"
+                    id="staticBackdrop"
+                    data-bs-backdrop="static"
+                    data-bs-keyboard="false"
+                    tabindex="-1"
+                    aria-labelledby="staticBackdropLabel"
+                    aria-hidden="true">
 
                     <div class="modal-dialog modal-dialog-centered">
 
                         <div class="modal-content">
 
+
                             <div class="modal-header">
 
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                                <h1
+                                    class="modal-title"
+                                    id="staticBackdropLabel">
 
                                     Consulta confirmada!
-                                    <i class="bi bi-check-circle"></i>
+
+                                    <i class="bi bi-check-circle-fill"></i>
 
                                 </h1>
 
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar">
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Fechar">
                                 </button>
 
                             </div>
@@ -355,9 +609,10 @@
 
                             <div class="modal-body">
 
-                                <p class="mb-2">
+                                <p>
 
                                     <strong>Pronto!</strong>
+
                                     A consulta do seu pet foi confirmada.
 
                                 </p>
@@ -365,7 +620,8 @@
                                 <p class="mb-0">
 
                                     Para consultar mais informações,
-                                    acesse a <strong>Carteira-Pet</strong>
+                                    acesse a
+                                    <strong>Carteira-Pet</strong>
                                     pelo botão abaixo.
 
                                 </p>
@@ -375,13 +631,19 @@
 
                             <div class="modal-footer">
 
-                                <button type="button" class="btn btn-ver-fechar" data-bs-dismiss="modal">
+                                <button
+                                    type="button"
+                                    class="btn btn-ver-fechar"
+                                    data-bs-dismiss="modal">
 
                                     Fechar
 
                                 </button>
 
-                                <a href="carteirinha.html" class="btn btn-ver-fechar">
+
+                                <a
+                                    href="carteirinha.html"
+                                    class="btn btn-ver-fechar">
 
                                     Ver Carteira-Pet
 
@@ -400,51 +662,65 @@
         </main>
 
 
-        <!-- =========================
-         FOOTER
-    ========================= -->
+        <!-- =================================================
+             FOOTER
+             IGUAL AO DA APRESENTAÇÃO
+        ================================================== -->
 
         <footer>
 
-            <div class="footer-content">
+            <div class="footer-conteudo">
 
-                <div class="footer-logo">
+                <div>
 
-                    <img src="../static/img/logo.png" alt="Patas & Bigodes">
+                    <strong>
+                        Patas & Bigodes
+                    </strong>
 
-                    <div>
-
-                        <strong>Patas & Bigodes</strong>
-
-                        <span>
-                            Cuidado que vira carinho.
-                        </span>
-
-                    </div>
+                    <span>
+                        Cuidando de quem faz parte da sua família.
+                    </span>
 
                 </div>
 
 
-                <div class="footer-social">
+                <div class="footer-icons">
 
-                    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                    <a
+                        href="#"
+                        aria-label="Instagram">
 
                         <i class="bi bi-instagram"></i>
 
                     </a>
 
-                    <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+
+                    <a
+                        href="#"
+                        aria-label="Facebook">
 
                         <i class="bi bi-facebook"></i>
 
                     </a>
 
+
+                    <a
+                        href="#"
+                        aria-label="WhatsApp">
+
+                        <i class="bi bi-whatsapp"></i>
+
+                    </a>
+
                 </div>
 
+            </div>
 
-                <p>
-                    © 2026 Patas & Bigodes. Todos os direitos reservados.
-                </p>
+
+            <div class="copyright">
+
+                © 2026 Patas & Bigodes —
+                Todos os direitos reservados.
 
             </div>
 
@@ -453,9 +729,11 @@
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
-        </script>
+    <!-- Bootstrap JavaScript -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
 
 </body>
 
