@@ -32,9 +32,9 @@
 
             <div class="container">
 
-                <a class="navbar-brand d-flex align-items-center" th:href="@{/}">
+                <a class="navbar-brand d-flex align-items-center" href="/templates/apresentacao.html">
 
-                    <img th:src="@{/img/logo.png}" alt="Logo Patas & Bigodes" class="logo me-2">
+                    <img src="../static/img/logo.png" alt="Logo Patas & Bigodes" class="logo me-2">
 
                     <span class="fw-bold">
                         PATAS & BIGODES
@@ -175,12 +175,7 @@
 
                         <div class="foto-pet-container">
 
-                            <img th:if="${animal.foto != null and !#strings.isEmpty(animal.foto)}"
-                                th:src="@{${animal.foto}}" th:alt="${'Foto de ' + animal.nome}" class="foto-pet">
-
-                            <img th:unless="${animal.foto != null and !#strings.isEmpty(animal.foto)}"
-                                th:src="@{/img/pantera.png}" th:alt="${'Foto de ' + animal.nome}" class="foto-pet">
-
+                            <img src="../static/img/pantera.avif" alt="">
                         </div>
 
                         <span class="badge badge-pet mt-3">

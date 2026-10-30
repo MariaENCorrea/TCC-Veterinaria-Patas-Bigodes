@@ -8,15 +8,13 @@
     <title>Cadastro | Patas & Bigodes</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" th:href="@{/img/favicon.png}">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
 
     <!-- CSS -->
     <link rel="stylesheet" href="../static/css/cadastro.css">
@@ -33,19 +31,13 @@
         <nav class="navbar">
             <div class="container-fluid px-4">
 
-                <a th:href="@{/}"
-                   class="navbar-brand"
-                   aria-label="Página inicial">
+                <a  href="/templates/index.html" class="navbar-brand" aria-label="Página inicial">
 
-                    <img src="../static/img/logo.png"
-                         alt="Logo Patas & Bigodes"
-                         class="logo">
+                    <img src="../static/img/logo.png" alt="Logo Patas & Bigodes" class="logo">
                 </a>
 
-                <a th:href="@{/}"
-                   class="btn-voltar"
-                   title="Voltar para a página inicial"
-                   aria-label="Voltar para a página inicial">
+                <a href="/templates/index.html" class="btn-voltar" title="Voltar para a página inicial"
+                    aria-label="Voltar para a página inicial">
 
                     <i class="bi bi-arrow-left"></i>
                 </a>
@@ -69,27 +61,13 @@
                 Crie seu cadastro e mantenha as informações do seu pet organizadas.
             </p>
 
-            <!-- Mensagens do servidor -->
-            <div th:if="${mensagem != null}"
-                 class="alert alert-success mensagem"
-                 role="alert"
-                 th:text="${mensagem}">
-            </div>
-
-            <div th:if="${erro != null}"
-                 class="alert alert-danger mensagem"
-                 role="alert"
-                 th:text="${erro}">
-            </div>
+            
 
             <!-- =================================================
                  FORMULÁRIO ÚNICO
             ================================================= -->
 
-            <form class="formulario-cadastro"
-                  id="formularioCadastro"
-                  th:action="@{/cadastro}"
-                  method="post">
+            <form class="formulario-cadastro" id="formularioCadastro" th:action="@{/cadastro}" method="post">
 
                 <div class="formularios">
 
@@ -97,8 +75,7 @@
                          DADOS DO ANIMAL
                     ========================================== -->
 
-                    <section class="formulario"
-                             aria-labelledby="tituloAnimal">
+                    <section class="formulario" aria-labelledby="tituloAnimal">
 
                         <div class="cabecalho-formulario">
 
@@ -123,13 +100,8 @@
                             Nome do Animal
                         </label>
 
-                        <input type="text"
-                               class="form-control"
-                               id="nomeAnimal"
-                               name="nomeAnimal"
-                               placeholder="Digite o nome do animal"
-                               maxlength="100"
-                               required>
+                        <input type="text" class="form-control" id="nomeAnimal" name="nomeAnimal"
+                            placeholder="Digite o nome do animal" maxlength="100" required>
 
                         <!-- Sexo -->
                         <label class="form-label">
@@ -139,12 +111,8 @@
                         <div class="opcoes">
 
                             <div class="form-check">
-                                <input class="form-check-input"
-                                       type="radio"
-                                       name="sexo"
-                                       id="macho"
-                                       value="Macho"
-                                       required>
+                                <input class="form-check-input" type="radio" name="sexo" id="macho" value="Macho"
+                                    required>
 
                                 <label class="form-check-label" for="macho">
                                     Macho
@@ -152,11 +120,7 @@
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input"
-                                       type="radio"
-                                       name="sexo"
-                                       id="femea"
-                                       value="Fêmea">
+                                <input class="form-check-input" type="radio" name="sexo" id="femea" value="Fêmea">
 
                                 <label class="form-check-label" for="femea">
                                     Fêmea
@@ -170,24 +134,15 @@
                             Idade
                         </label>
 
-                        <input type="number"
-                               class="form-control"
-                               id="idade"
-                               name="idade"
-                               placeholder="Digite a idade em anos"
-                               min="0"
-                               max="100"
-                               step="1">
+                        <input type="number" class="form-control" id="idade" name="idade"
+                            placeholder="Digite a idade em anos" min="0" max="100" step="1">
 
                         <!-- Espécie -->
                         <label for="especie" class="form-label">
                             Espécie
                         </label>
 
-                        <select class="form-select"
-                                id="especie"
-                                name="especie"
-                                required>
+                        <select class="form-select" id="especie" name="especie" required>
 
                             <option value="" selected disabled>
                                 Selecione a espécie
@@ -205,12 +160,8 @@
                             Raça
                         </label>
 
-                        <input type="text"
-                               class="form-control"
-                               id="raca"
-                               name="raca"
-                               placeholder="Digite a raça"
-                               maxlength="100">
+                        <input type="text" class="form-control" id="raca" name="raca" placeholder="Digite a raça"
+                            maxlength="100">
 
                     </section>
 
@@ -218,8 +169,7 @@
                          DADOS DO PROPRIETÁRIO
                     ========================================== -->
 
-                    <section class="formulario"
-                             aria-labelledby="tituloProprietario">
+                    <section class="formulario" aria-labelledby="tituloProprietario">
 
                         <div class="cabecalho-formulario">
 
@@ -244,97 +194,56 @@
                             Nome Completo
                         </label>
 
-                        <input type="text"
-                               class="form-control"
-                               id="proprietario"
-                               name="nomeProprietario"
-                               placeholder="Digite seu nome completo"
-                               maxlength="150"
-                               autocomplete="name"
-                               required>
+                        <input type="text" class="form-control" id="proprietario" name="nomeProprietario"
+                            placeholder="Digite seu nome completo" maxlength="150" autocomplete="name" required>
 
                         <!-- CPF -->
                         <label for="cpf" class="form-label">
                             CPF
                         </label>
 
-                        <input type="text"
-                               class="form-control"
-                               id="cpf"
-                               name="cpf"
-                               placeholder="000.000.000-00"
-                               maxlength="14"
-                               inputmode="numeric"
-                               autocomplete="off">
+                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00"
+                            maxlength="14" inputmode="numeric" autocomplete="off">
 
                         <!-- RG -->
                         <label for="rg" class="form-label">
                             RG do Proprietário
                         </label>
 
-                        <input type="text"
-                               class="form-control"
-                               id="rg"
-                               name="rg"
-                               placeholder="Digite seu RG"
-                               maxlength="20"
-                               required>
+                        <input type="text" class="form-control" id="rg" name="rg" placeholder="Digite seu RG"
+                            maxlength="20" required>
 
                         <!-- Telefone -->
                         <label for="numero" class="form-label">
                             Número de Celular
                         </label>
 
-                        <input type="tel"
-                               class="form-control"
-                               id="numero"
-                               name="telefone"
-                               placeholder="(00) 00000-0000"
-                               maxlength="15"
-                               inputmode="tel"
-                               autocomplete="tel"
-                               required>
+                        <input type="tel" class="form-control" id="numero" name="telefone" placeholder="(00) 00000-0000"
+                            maxlength="15" inputmode="tel" autocomplete="tel" required>
 
                         <!-- E-mail -->
                         <label for="email" class="form-label">
                             E-mail
                         </label>
 
-                        <input type="email"
-                               class="form-control"
-                               id="email"
-                               name="email"
-                               placeholder="exemplo@email.com"
-                               maxlength="150"
-                               autocomplete="email"
-                               required>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@email.com"
+                            maxlength="150" autocomplete="email" required>
 
                         <!-- Cidade -->
                         <label for="cidade" class="form-label">
                             Cidade
                         </label>
 
-                        <input type="text"
-                               class="form-control"
-                               id="cidade"
-                               name="cidade"
-                               placeholder="Digite sua cidade"
-                               maxlength="100"
-                               autocomplete="address-level2"
-                               required>
+                        <input type="text" class="form-control" id="cidade" name="cidade"
+                            placeholder="Digite sua cidade" maxlength="100" autocomplete="address-level2" required>
 
                         <!-- Bairro -->
                         <label for="bairro" class="form-label">
                             Bairro
                         </label>
 
-                        <input type="text"
-                               class="form-control"
-                               id="bairro"
-                               name="bairro"
-                               placeholder="Digite seu bairro"
-                               maxlength="100"
-                               required>
+                        <input type="text" class="form-control" id="bairro" name="bairro"
+                            placeholder="Digite seu bairro" maxlength="100" required>
 
                     </section>
 
@@ -415,4 +324,5 @@
     <script th:src="@{/js/cadastro.js}"></script>
 
 </body>
+
 </html>
