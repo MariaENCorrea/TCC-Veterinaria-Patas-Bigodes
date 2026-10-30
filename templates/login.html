@@ -17,24 +17,22 @@
 <body>
 
     <header>
-
         <nav class="navbar">
-
             <div class="container-fluid px-4">
 
-                <img src="../static/img/logo.png" alt="Patas & Bigodes" class="logo">
+                <a th:href="@{/}" class="navbar-brand" aria-label="Página inicial">
 
+                    <img src="../static/img/logo.png" alt="Logo Patas & Bigodes" class="logo">
+                </a>
 
-                <a href="index.html" class="btn-voltar" title="Voltar">
+                <a href="/templates/cadastro.html" class="btn-voltar" title="Voltar para a página inicial"
+                    aria-label="Voltar para a página inicial">
 
                     <i class="bi bi-arrow-left"></i>
-
                 </a>
 
             </div>
-
         </nav>
-
     </header>
 
 
@@ -97,7 +95,7 @@
 
     </main>
 
-    
+
     <footer>
 
         <div class="footer-content">
