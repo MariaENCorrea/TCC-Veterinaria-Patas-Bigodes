@@ -1,0 +1,683 @@
+/* =====================================================
+           CORES ORIGINAIS
+        ===================================================== */
+
+:root {
+    --verde-escuro: #005744;
+    --verde: #4d8b7d;
+    --verde-claro: #dceee7;
+    --amarelo: #e4a52b;
+    --branco: #ffffff;
+    --preto: #000000;
+}
+
+
+/* =====================================================
+           CONFIGURAÇÕES GERAIS
+        ===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-color: var(--verde-claro);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =====================================================
+           HEADER
+        ===================================================== */
+
+header {
+    background-color: var(--verde-escuro);
+    height: 80px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+    position: relative;
+    z-index: 10;
+}
+
+.navbar {
+    height: 100%;
+    padding: 0 35px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar-brand:hover {
+    color: white;
+    transform: translateY(-1px);
+}
+
+.logo {
+    width: 62px;
+    height: 62px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.nome-logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.nome-logo span {
+    color: var(--amarelo);
+}
+
+
+/* =====================================================
+           BOTÃO VOLTAR
+        ===================================================== */
+
+.btn-voltar {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--amarelo);
+
+    color: var(--preto);
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    font-size: 19px;
+
+    transition: all 0.3s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #c98e18;
+
+    color: var(--branco);
+
+    transform: translateX(-3px);
+}
+
+
+/* =====================================================
+           CONTEÚDO
+        ===================================================== */
+
+main {
+    flex: 1;
+
+    padding: 45px 20px 55px;
+}
+
+
+/* =====================================================
+           TÍTULO
+        ===================================================== */
+
+.titulo {
+    text-align: center;
+
+    color: var(--verde-escuro);
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    margin: 0;
+
+    letter-spacing: 0.3px;
+}
+
+.linha-titulo {
+    width: 55px;
+    height: 4px;
+
+    background-color: var(--amarelo);
+
+    border-radius: 20px;
+
+    margin: 12px auto 10px;
+}
+
+.subtitulo {
+    text-align: center;
+
+    color: var(--verde-escuro);
+
+    font-size: 16px;
+
+    margin: 0 auto 38px;
+
+    opacity: 0.8;
+}
+
+
+/* =====================================================
+           ÁREA DOS FORMULÁRIOS
+        ===================================================== */
+
+.formularios {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+
+/* =====================================================
+           CARD
+        ===================================================== */
+
+.formulario {
+    background-color: var(--verde);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* detalhe superior do card */
+
+.formulario::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background-color: var(--amarelo);
+}
+
+
+/* =====================================================
+           CABEÇALHO DOS CARDS
+        ===================================================== */
+
+.cabecalho-formulario {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.icone-formulario {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--amarelo);
+
+    color: var(--verde-escuro);
+
+    border-radius: 12px;
+
+    font-size: 22px;
+}
+
+.titulo-formulario {
+    color: var(--branco);
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    margin: 0;
+}
+
+.descricao-formulario {
+    color: rgba(255, 255, 255, 0.8);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    margin: 3px 0 0;
+}
+
+
+/* =====================================================
+           LABELS
+        ===================================================== */
+
+.form-label {
+    color: var(--amarelo);
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+
+/* =====================================================
+           INPUTS
+        ===================================================== */
+
+.form-control,
+.form-select {
+
+    height: 44px;
+
+    background-color: var(--branco);
+
+    border: 1px solid rgba(0, 0, 0, 0.35);
+
+    border-radius: 9px;
+
+    padding: 8px 13px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    margin-bottom: 19px;
+
+    transition: all 0.25s ease;
+}
+
+.form-control:hover,
+.form-select:hover {
+    border-color: var(--amarelo);
+}
+
+.form-control:focus,
+.form-select:focus {
+
+    border-color: var(--amarelo);
+
+    box-shadow:
+        0 0 0 3px rgba(228, 165, 43, 0.20);
+
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #8a8a8a;
+}
+
+
+/* =====================================================
+           SEXO
+        ===================================================== */
+
+.opcoes {
+
+    display: flex;
+
+    gap: 30px;
+
+    margin-bottom: 20px;
+}
+
+.form-check {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0;
+}
+
+.form-check-input {
+
+    width: 17px;
+    height: 17px;
+
+    margin: 0;
+
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+
+    background-color: var(--amarelo);
+
+    border-color: var(--amarelo);
+}
+
+.form-check-label {
+
+    color: var(--branco);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+           BOTÃO CADASTRAR
+        ===================================================== */
+
+.area-botao {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 35px;
+}
+
+.btn-cadastrar {
+
+    min-width: 245px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    background-color: var(--amarelo);
+
+    color: var(--preto);
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.4px;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.15);
+
+    transition: all 0.3s ease;
+}
+
+.btn-cadastrar:hover {
+
+    background-color: #c98e18;
+
+    color: var(--branco);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =====================================================
+           FOOTER
+        ===================================================== */
+
+/* ==========================================
+   RODAPÉ
+========================================== */
+
+footer {
+
+    background-color: #034C3C;
+
+    color: white;
+
+    box-shadow:
+        0 -4px 12px rgba(0, 0, 0, 0.12);
+
+}
+
+.footer-content {
+
+    width: min(1180px, 94%);
+
+    min-height: 100px;
+
+    margin: 0 auto;
+
+    padding: 20px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+.footer-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+.footer-logo img {
+
+    width: 52px;
+    height: 52px;
+
+    padding: 4px;
+
+    border-radius: 50%;
+
+    background-color: white;
+
+    object-fit: contain;
+
+
+}
+
+.footer-logo strong {
+
+    display: block;
+
+    font-size: 17px;
+
+}
+
+.footer-logo span {
+
+    display: block;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 15px;
+
+}
+
+.footer-social {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+.footer-social a {
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+
+}
+
+.footer-social a:hover {
+
+    background-color: white;
+
+    color: #3E7CB1;
+
+    transform: translateY(-2px);
+
+}
+
+.footer-content>p {
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 12px;
+
+}
+
+.contatos {
+    color: var(--amarelo);
+    font-size: 16px;
+}
+
+/* =====================================================
+           RESPONSIVIDADE
+        ===================================================== */
+
+@media (max-width: 850px) {
+
+    .formularios {
+
+        grid-template-columns: 1fr;
+
+        max-width: 650px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+
+    header {
+        height: 68px;
+    }
+
+    .logo {
+        width: 44px;
+        height: 44px;
+    }
+
+    main {
+        padding: 30px 15px 40px;
+    }
+
+    .titulo {
+        font-size: 32px;
+    }
+
+    .subtitulo {
+        font-size: 14px;
+
+        margin-bottom: 28px;
+    }
+
+    .formulario {
+        padding: 23px 20px;
+
+        border-radius: 16px;
+    }
+
+    .titulo-formulario {
+        font-size: 20px;
+    }
+
+    .descricao-formulario {
+        font-size: 11px;
+    }
+
+    .btn-cadastrar {
+        width: 100%;
+    }
+
+    footer {
+        padding: 0 18px;
+    }
+}
