@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -8,16 +8,19 @@
     <title>Cadastro | Patas & Bigodes</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-    <link rel="icon" type="image/png" href="../static/img/favicon.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" th:href="@{/img/favicon.png}">
 
     <style>
         /* =====================================================
-           CORES ORIGINAIS
+           CORES
         ===================================================== */
 
         :root {
@@ -29,7 +32,6 @@
             --preto: #000000;
         }
 
-
         /* =====================================================
            CONFIGURAÇÕES GERAIS
         ===================================================== */
@@ -38,79 +40,65 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             min-height: 100vh;
-
             background-color: var(--verde-claro);
-
             font-family: Georgia, "Times New Roman", serif;
-
             display: flex;
             flex-direction: column;
         }
 
-
         /* =====================================================
-           HEADER
+           CABEÇALHO
         ===================================================== */
 
         header {
             background-color: var(--verde-escuro);
-            height: 80px;
+            min-height: 80px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
             position: relative;
             z-index: 10;
         }
 
         .navbar {
-            height: 100%;
+            min-height: 80px;
             padding: 0 35px;
+        }
+
+        .navbar .container-fluid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
         }
 
         .navbar-brand {
             display: flex;
             align-items: center;
             gap: 12px;
-            color: white;
+            margin: 0;
+            padding: 0;
             text-decoration: none;
-            transition: 0.3s;
         }
 
         .navbar-brand:hover {
-            color: white;
-            transform: translateY(-1px);
+            opacity: 0.9;
         }
 
         .logo {
             width: 62px;
             height: 62px;
-            background-color: white;
+            background-color: var(--branco);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            display: block;
+            object-fit: contain;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
-
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 50%;
-        }
-
-        .nome-logo {
-            font-size: 25px;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-        }
-
-        .nome-logo span {
-            color: var(--amarelo);
-        }
-
 
         /* =====================================================
            BOTÃO VOLTAR
@@ -119,43 +107,39 @@
         .btn-voltar {
             width: 43px;
             height: 43px;
-
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-
             background-color: var(--amarelo);
-
             color: var(--preto);
-
             border-radius: 50%;
-
             text-decoration: none;
-
             font-size: 19px;
-
             transition: all 0.3s ease;
         }
 
         .btn-voltar:hover {
             background-color: #c98e18;
-
             color: var(--branco);
-
             transform: translateX(-3px);
         }
 
-
         /* =====================================================
-           CONTEÚDO
+           CONTEÚDO PRINCIPAL
         ===================================================== */
 
         main {
             flex: 1;
-
+            width: 100%;
             padding: 45px 20px 55px;
         }
 
+        .conteudo-principal {
+            width: 100%;
+            max-width: 1150px;
+            margin: 0 auto;
+        }
 
         /* =====================================================
            TÍTULO
@@ -163,97 +147,82 @@
 
         .titulo {
             text-align: center;
-
             color: var(--verde-escuro);
-
             font-size: 42px;
-
             font-weight: bold;
-
             margin: 0;
-
             letter-spacing: 0.3px;
         }
 
         .linha-titulo {
             width: 55px;
             height: 4px;
-
             background-color: var(--amarelo);
-
             border-radius: 20px;
-
             margin: 12px auto 10px;
         }
 
         .subtitulo {
             text-align: center;
-
             color: var(--verde-escuro);
-
             font-size: 16px;
-
             margin: 0 auto 38px;
-
-            opacity: 0.8;
+            opacity: 0.85;
+            line-height: 1.6;
         }
 
+        /* =====================================================
+           MENSAGENS DO THYMELEAF
+        ===================================================== */
+
+        .mensagem {
+            max-width: 1050px;
+            margin: 0 auto 25px;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+        }
 
         /* =====================================================
-           ÁREA DOS FORMULÁRIOS
+           FORMULÁRIO PRINCIPAL
         ===================================================== */
+
+        .formulario-cadastro {
+            width: 100%;
+        }
 
         .formularios {
             max-width: 1050px;
-
             margin: auto;
-
             display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 30px;
+            align-items: start;
         }
 
-
         /* =====================================================
-           CARD
+           CARDS
         ===================================================== */
 
         .formulario {
+            min-width: 0;
             background-color: var(--verde);
-
             border-radius: 20px;
-
             padding: 30px;
-
-            box-shadow:
-                0 10px 25px rgba(0, 0, 0, 0.12);
-
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
             border: 1px solid rgba(255, 255, 255, 0.15);
-
             position: relative;
-
             overflow: hidden;
         }
 
-
-        /* detalhe superior do card */
-
         .formulario::before {
             content: "";
-
             position: absolute;
-
             top: 0;
             left: 0;
-
             width: 100%;
             height: 5px;
-
             background-color: var(--amarelo);
         }
-
 
         /* =====================================================
            CABEÇALHO DOS CARDS
@@ -261,320 +230,268 @@
 
         .cabecalho-formulario {
             display: flex;
-
             align-items: center;
-
             gap: 14px;
-
             margin-bottom: 28px;
-
             padding-bottom: 18px;
-
             border-bottom: 1px solid rgba(255, 255, 255, 0.25);
         }
 
         .icone-formulario {
             width: 46px;
             height: 46px;
-
+            flex-shrink: 0;
             display: flex;
-
             align-items: center;
             justify-content: center;
-
             background-color: var(--amarelo);
-
             color: var(--verde-escuro);
-
             border-radius: 12px;
-
             font-size: 22px;
         }
 
         .titulo-formulario {
             color: var(--branco);
-
             font-size: 23px;
-
             font-weight: bold;
-
             margin: 0;
         }
 
         .descricao-formulario {
-            color: rgba(255, 255, 255, 0.8);
-
+            color: rgba(255, 255, 255, 0.85);
             font-family: Arial, sans-serif;
-
             font-size: 12px;
-
             margin: 3px 0 0;
         }
-
 
         /* =====================================================
            LABELS
         ===================================================== */
 
-        .form-label {
+        .formulario .form-label {
+            display: block;
             color: var(--amarelo);
-
             font-size: 16px;
-
             font-weight: bold;
-
             margin-bottom: 7px;
         }
 
-
         /* =====================================================
-           INPUTS
+           INPUTS E SELECTS
         ===================================================== */
 
-        .form-control,
-        .form-select {
-
+        .formulario .form-control,
+        .formulario .form-select {
+            width: 100%;
+            min-height: 44px;
             height: 44px;
-
             background-color: var(--branco);
-
-            border: 1px solid rgba(0, 0, 0, 0.35);
-
+            border: 1px solid rgba(0, 0, 0, 0.25);
             border-radius: 9px;
-
             padding: 8px 13px;
-
             font-family: Arial, sans-serif;
-
             font-size: 14px;
-
             margin-bottom: 19px;
-
-            transition: all 0.25s ease;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .form-control:hover,
-        .form-select:hover {
+        .formulario .form-control:hover,
+        .formulario .form-select:hover {
             border-color: var(--amarelo);
         }
 
-        .form-control:focus,
-        .form-select:focus {
-
+        .formulario .form-control:focus,
+        .formulario .form-select:focus {
             border-color: var(--amarelo);
-
-            box-shadow:
-                0 0 0 3px rgba(228, 165, 43, 0.20);
-
+            box-shadow: 0 0 0 3px rgba(228, 165, 43, 0.20);
             outline: none;
         }
 
-        .form-control::placeholder {
-            color: #8a8a8a;
+        .formulario .form-control::placeholder {
+            color: #777777;
         }
 
+        .formulario .form-control.is-invalid,
+        .formulario .form-select.is-invalid {
+            border-color: #dc3545;
+        }
+
+        .formulario .form-control.is-valid,
+        .formulario .form-select.is-valid {
+            border-color: #198754;
+        }
+
+        .formulario .invalid-feedback {
+            margin-top: -14px;
+            margin-bottom: 12px;
+            font-family: Arial, sans-serif;
+        }
 
         /* =====================================================
-           SEXO
+           SEXO DO ANIMAL
         ===================================================== */
 
         .opcoes {
-
             display: flex;
-
+            flex-wrap: wrap;
             gap: 30px;
-
             margin-bottom: 20px;
         }
 
-        .form-check {
-
+        .opcoes .form-check {
             display: flex;
-
             align-items: center;
-
             gap: 7px;
-
             padding: 0;
+            margin: 0;
         }
 
-        .form-check-input {
-
+        .opcoes .form-check-input {
             width: 17px;
             height: 17px;
-
+            flex-shrink: 0;
             margin: 0;
-
             cursor: pointer;
         }
 
-        .form-check-input:checked {
-
+        .opcoes .form-check-input:checked {
             background-color: var(--amarelo);
-
             border-color: var(--amarelo);
         }
 
-        .form-check-label {
-
+        .opcoes .form-check-label {
             color: var(--branco);
-
             font-family: Arial, sans-serif;
-
             font-size: 14px;
-
             cursor: pointer;
         }
 
-
         /* =====================================================
-           BOTÃO CADASTRAR
+           ÁREA DO BOTÃO
         ===================================================== */
 
         .area-botao {
-
             display: flex;
-
             justify-content: center;
-
             margin-top: 35px;
         }
 
         .btn-cadastrar {
-
             min-width: 245px;
-
-            height: 50px;
-
-            display: flex;
-
+            min-height: 50px;
+            display: inline-flex;
             align-items: center;
-
             justify-content: center;
-
             gap: 9px;
-
+            padding: 12px 25px;
             background-color: var(--amarelo);
-
             color: var(--preto);
-
             border: none;
-
             border-radius: 10px;
-
             font-family: Arial, sans-serif;
-
             font-size: 15px;
-
             font-weight: bold;
-
             letter-spacing: 0.4px;
-
             text-decoration: none;
-
-            box-shadow:
-                0 5px 15px rgba(0, 0, 0, 0.15);
-
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
             transition: all 0.3s ease;
         }
 
         .btn-cadastrar:hover {
-
             background-color: #c98e18;
-
             color: var(--branco);
-
             transform: translateY(-2px);
-
-            box-shadow:
-                0 8px 18px rgba(0, 0, 0, 0.18);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
         }
 
+        .btn-cadastrar:focus-visible,
+        .btn-voltar:focus-visible {
+            outline: 3px solid var(--branco);
+            outline-offset: 3px;
+        }
 
         /* =====================================================
-           FOOTER
+           RODAPÉ
         ===================================================== */
 
         footer {
-
-            min-height: 50px;
-
+            min-height: 55px;
             background-color: var(--verde-escuro);
-
             color: var(--branco);
-
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
-            padding: 0 30px;
-
+            gap: 15px;
+            padding: 12px 30px;
             font-family: Arial, sans-serif;
-
             font-size: 12px;
         }
 
         .contatos {
-
             display: flex;
-
             align-items: center;
-
             gap: 15px;
-
             color: var(--amarelo);
-
             font-size: 18px;
         }
 
+        .contatos a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contatos a:hover {
+            color: var(--branco);
+        }
+
         .contatos i {
-
             cursor: pointer;
-
             transition: 0.3s;
         }
 
         .contatos i:hover {
-
             color: var(--branco);
-
             transform: translateY(-2px);
         }
-
 
         /* =====================================================
            RESPONSIVIDADE
         ===================================================== */
 
         @media (max-width: 850px) {
-
             .formularios {
-
                 grid-template-columns: 1fr;
-
                 max-width: 650px;
+            }
+
+            .formulario {
+                padding: 28px;
             }
         }
 
-
         @media (max-width: 576px) {
-
-            .logo img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-                border-radius: 50%;
+            header,
+            .navbar {
+                min-height: 68px;
             }
 
-            header {
-                height: 68px;
+            .navbar {
+                padding: 0 10px;
+            }
+
+            .navbar .container-fluid {
+                padding: 0 10px !important;
             }
 
             .logo {
-                width: 44px;
-                height: 44px;
+                width: 46px;
+                height: 46px;
+            }
+
+            .btn-voltar {
+                width: 39px;
+                height: 39px;
             }
 
             main {
@@ -587,14 +504,27 @@
 
             .subtitulo {
                 font-size: 14px;
-
                 margin-bottom: 28px;
+            }
+
+            .formularios {
+                gap: 22px;
             }
 
             .formulario {
                 padding: 23px 20px;
-
                 border-radius: 16px;
+            }
+
+            .cabecalho-formulario {
+                gap: 11px;
+                margin-bottom: 23px;
+            }
+
+            .icone-formulario {
+                width: 42px;
+                height: 42px;
+                font-size: 20px;
             }
 
             .titulo-formulario {
@@ -605,324 +535,366 @@
                 font-size: 11px;
             }
 
+            .area-botao {
+                margin-top: 25px;
+            }
+
             .btn-cadastrar {
                 width: 100%;
+                max-width: 400px;
             }
 
             footer {
-                padding: 0 18px;
+                padding: 14px 18px;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
-
 </head>
 
-
 <body>
-
 
     <!-- =====================================================
          CABEÇALHO
     ===================================================== -->
 
     <header>
-
         <nav class="navbar">
-
             <div class="container-fluid px-4">
 
-                <img src="../static/img/logo.png" alt="Patas & Bigodes" class="logo">
+                <a th:href="@{/}"
+                   class="navbar-brand"
+                   aria-label="Página inicial">
 
+                    <img th:src="@{/img/logo.png}"
+                         alt="Logo Patas & Bigodes"
+                         class="logo">
+                </a>
 
-                <a href="index.html" class="btn-voltar" title="Voltar">
+                <a th:href="@{/}"
+                   class="btn-voltar"
+                   title="Voltar para a página inicial"
+                   aria-label="Voltar para a página inicial">
 
                     <i class="bi bi-arrow-left"></i>
-
                 </a>
 
             </div>
-
         </nav>
-
     </header>
-
-
 
     <!-- =====================================================
          CONTEÚDO PRINCIPAL
     ===================================================== -->
 
     <main>
+        <div class="conteudo-principal">
 
+            <h1 class="titulo">Cadastre-se</h1>
 
-        <h1 class="titulo">
-            Cadastre-se
-        </h1>
+            <div class="linha-titulo"></div>
 
+            <p class="subtitulo">
+                Crie seu cadastro e mantenha as informações do seu pet organizadas.
+            </p>
 
-        <div class="linha-titulo"></div>
+            <!-- Mensagens do servidor -->
+            <div th:if="${mensagem != null}"
+                 class="alert alert-success mensagem"
+                 role="alert"
+                 th:text="${mensagem}">
+            </div>
 
-
-        <p class="subtitulo">
-            Crie seu cadastro e mantenha as informações do seu pet organizadas.
-        </p>
-
-
-
-        <div class="formularios">
-
+            <div th:if="${erro != null}"
+                 class="alert alert-danger mensagem"
+                 role="alert"
+                 th:text="${erro}">
+            </div>
 
             <!-- =================================================
-                 FORMULÁRIO DO ANIMAL
+                 FORMULÁRIO ÚNICO
             ================================================= -->
 
-            <form class="formulario">
+            <form class="formulario-cadastro"
+                  id="formularioCadastro"
+                  th:action="@{/cadastro}"
+                  method="post">
 
+                <div class="formularios">
 
-                <div class="cabecalho-formulario">
+                    <!-- =========================================
+                         DADOS DO ANIMAL
+                    ========================================== -->
 
-                    <div class="icone-formulario">
+                    <section class="formulario"
+                             aria-labelledby="tituloAnimal">
 
-                        <i class="bi bi-heart-pulse-fill"></i>
+                        <div class="cabecalho-formulario">
 
-                    </div>
+                            <div class="icone-formulario">
+                                <i class="bi bi-heart-pulse-fill"></i>
+                            </div>
 
+                            <div>
+                                <h2 class="titulo-formulario" id="tituloAnimal">
+                                    Dados do Animal
+                                </h2>
 
-                    <div>
+                                <p class="descricao-formulario">
+                                    Informe os dados do seu pet
+                                </p>
+                            </div>
 
-                        <h2 class="titulo-formulario">
-                            Dados do Animal
-                        </h2>
+                        </div>
 
-                        <p class="descricao-formulario">
-                            Informe os dados do seu pet
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- NOME -->
-
-                <label for="nomeAnimal" class="form-label">
-                    Nome do Animal
-                </label>
-
-                <input type="text" class="form-control" id="nomeAnimal" placeholder="Digite o nome do animal" required>
-
-
-
-                <!-- SEXO -->
-
-                <label class="form-label">
-                    Sexo
-                </label>
-
-
-                <div class="opcoes">
-
-                    <div class="form-check">
-
-                        <input class="form-check-input" type="radio" name="sexo" id="macho" value="macho">
-
-                        <label class="form-check-label" for="macho">
-                            Macho
+                        <!-- Nome do animal -->
+                        <label for="nomeAnimal" class="form-label">
+                            Nome do Animal
                         </label>
 
-                    </div>
+                        <input type="text"
+                               class="form-control"
+                               id="nomeAnimal"
+                               name="nomeAnimal"
+                               placeholder="Digite o nome do animal"
+                               maxlength="100"
+                               required>
 
-
-                    <div class="form-check">
-
-                        <input class="form-check-input" type="radio" name="sexo" id="femea" value="femea">
-
-                        <label class="form-check-label" for="femea">
-                            Fêmea
+                        <!-- Sexo -->
+                        <label class="form-label">
+                            Sexo
                         </label>
 
-                    </div>
+                        <div class="opcoes">
+
+                            <div class="form-check">
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="sexo"
+                                       id="macho"
+                                       value="Macho"
+                                       required>
+
+                                <label class="form-check-label" for="macho">
+                                    Macho
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="sexo"
+                                       id="femea"
+                                       value="Fêmea">
+
+                                <label class="form-check-label" for="femea">
+                                    Fêmea
+                                </label>
+                            </div>
+
+                        </div>
+
+                        <!-- Idade -->
+                        <label for="idade" class="form-label">
+                            Idade
+                        </label>
+
+                        <input type="number"
+                               class="form-control"
+                               id="idade"
+                               name="idade"
+                               placeholder="Digite a idade em anos"
+                               min="0"
+                               max="100"
+                               step="1">
+
+                        <!-- Espécie -->
+                        <label for="especie" class="form-label">
+                            Espécie
+                        </label>
+
+                        <select class="form-select"
+                                id="especie"
+                                name="especie"
+                                required>
+
+                            <option value="" selected disabled>
+                                Selecione a espécie
+                            </option>
+
+                            <option value="Cachorro">Cachorro</option>
+                            <option value="Gato">Gato</option>
+                            <option value="Ave">Ave</option>
+                            <option value="Outro">Outro</option>
+
+                        </select>
+
+                        <!-- Raça -->
+                        <label for="raca" class="form-label">
+                            Raça
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="raca"
+                               name="raca"
+                               placeholder="Digite a raça"
+                               maxlength="100">
+
+                    </section>
+
+                    <!-- =========================================
+                         DADOS DO PROPRIETÁRIO
+                    ========================================== -->
+
+                    <section class="formulario"
+                             aria-labelledby="tituloProprietario">
+
+                        <div class="cabecalho-formulario">
+
+                            <div class="icone-formulario">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
+
+                            <div>
+                                <h2 class="titulo-formulario" id="tituloProprietario">
+                                    Dados do Proprietário
+                                </h2>
+
+                                <p class="descricao-formulario">
+                                    Informe seus dados pessoais
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <!-- Nome completo -->
+                        <label for="proprietario" class="form-label">
+                            Nome Completo
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="proprietario"
+                               name="nomeProprietario"
+                               placeholder="Digite seu nome completo"
+                               maxlength="150"
+                               autocomplete="name"
+                               required>
+
+                        <!-- CPF -->
+                        <label for="cpf" class="form-label">
+                            CPF
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="cpf"
+                               name="cpf"
+                               placeholder="000.000.000-00"
+                               maxlength="14"
+                               inputmode="numeric"
+                               autocomplete="off">
+
+                        <!-- RG -->
+                        <label for="rg" class="form-label">
+                            RG do Proprietário
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="rg"
+                               name="rg"
+                               placeholder="Digite seu RG"
+                               maxlength="20"
+                               required>
+
+                        <!-- Telefone -->
+                        <label for="numero" class="form-label">
+                            Número de Celular
+                        </label>
+
+                        <input type="tel"
+                               class="form-control"
+                               id="numero"
+                               name="telefone"
+                               placeholder="(00) 00000-0000"
+                               maxlength="15"
+                               inputmode="tel"
+                               autocomplete="tel"
+                               required>
+
+                        <!-- E-mail -->
+                        <label for="email" class="form-label">
+                            E-mail
+                        </label>
+
+                        <input type="email"
+                               class="form-control"
+                               id="email"
+                               name="email"
+                               placeholder="exemplo@email.com"
+                               maxlength="150"
+                               autocomplete="email"
+                               required>
+
+                        <!-- Cidade -->
+                        <label for="cidade" class="form-label">
+                            Cidade
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="cidade"
+                               name="cidade"
+                               placeholder="Digite sua cidade"
+                               maxlength="100"
+                               autocomplete="address-level2"
+                               required>
+
+                        <!-- Bairro -->
+                        <label for="bairro" class="form-label">
+                            Bairro
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="bairro"
+                               name="bairro"
+                               placeholder="Digite seu bairro"
+                               maxlength="100"
+                               required>
+
+                    </section>
 
                 </div>
 
+                <!-- =============================================
+                     BOTÃO DE ENVIO
+                ============================================== -->
 
+                <div class="area-botao">
 
-                <!-- IDADE -->
-
-                <label for="idade" class="form-label">
-                    Idade
-                </label>
-
-                <input type="number" class="form-control" id="idade" placeholder="Digite a idade" min="0">
-
-
-
-                <!-- ESPÉCIE -->
-
-                <label for="especie" class="form-label">
-                    Espécie
-                </label>
-
-                <select class="form-select" id="especie">
-
-                    <option selected disabled>
-                        Selecione a espécie
-                    </option>
-
-                    <option>
-                        Cachorro
-                    </option>
-
-                    <option>
-                        Gato
-                    </option>
-
-                    <option>
-                        Ave
-                    </option>
-
-                    <option>
-                        Outro
-                    </option>
-
-                </select>
-
-
-
-                <!-- RAÇA -->
-
-                <label for="raca" class="form-label">
-                    Raça
-                </label>
-
-                <input type="text" class="form-control" id="raca" placeholder="Digite a raça">
-
-            </form>
-
-
-
-            <!-- =================================================
-                 FORMULÁRIO DO PROPRIETÁRIO
-            ================================================= -->
-
-            <form class="formulario">
-
-
-                <div class="cabecalho-formulario">
-
-                    <div class="icone-formulario">
-
-                        <i class="bi bi-person-fill"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <h2 class="titulo-formulario">
-                            Dados do Proprietário
-                        </h2>
-
-                        <p class="descricao-formulario">
-                            Informe seus dados pessoais
-                        </p>
-
-                    </div>
+                    <button type="submit" class="btn-cadastrar">
+                        <i class="bi bi-check2-circle"></i>
+                        Finalizar Cadastro
+                    </button>
 
                 </div>
-
-
-
-                <!-- NOME -->
-
-                <label for="proprietario" class="form-label">
-                    Nome Completo
-                </label>
-
-                <input type="text" class="form-control" id="proprietario" placeholder="Digite seu nome completo"
-                    required>
-
-
-
-                <!-- CPF -->
-
-                <label for="cpf" class="form-label">
-                    CPF
-                </label>
-
-                <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00">
-
-
-                <label for="cpf" class="form-label">
-                    RG do Proprietário
-                </label>
-
-                <input type="text" class="form-control" id="rg" placeholder="RG">
-
-
-                <label for="cpf" class="form-label">
-                    Número de Celular
-                </label>
-
-                <input type="tel" class="form-control" id="numero" placeholder="(00) 00000-0000">
-
-
-
-                <!-- EMAIL -->
-
-                <label for="email" class="form-label">
-                    E-mail
-                </label>
-
-                <input type="email" class="form-control" id="email" placeholder="exemplo@email.com">
-
-
-
-                <!-- CIDADE -->
-
-                <label for="cidade" class="form-label">
-                    Cidade
-                </label>
-
-                <input type="text" class="form-control" id="cidade" placeholder="Digite sua cidade">
-
-
-
-                <!-- BAIRRO -->
-
-                <label for="bairro" class="form-label">
-                    Bairro
-                </label>
-
-                <input type="text" class="form-control" id="bairro" placeholder="Digite seu bairro">
 
             </form>
 
         </div>
-
-
-
-        <!-- =====================================================
-             BOTÃO
-        ===================================================== -->
-
-        <div class="area-botao">
-
-            <a href="login.html" class="btn-cadastrar">
-
-                <i class="bi bi-check2-circle"></i>
-
-                Finalizar Cadastro
-
-            </a>
-
-        </div>
-
-
     </main>
-
-
 
     <!-- =====================================================
          RODAPÉ
@@ -931,21 +903,36 @@
     <footer>
 
         <div>
-            Todos os direitos reservados
+            &copy; 2026 Patas &amp; Bigodes. Todos os direitos reservados.
         </div>
 
         <div class="contatos">
-            <i class="bi bi-instagram"></i>
-            <i class="bi bi-facebook"></i>
+
+            <a href="#"
+               aria-label="Instagram"
+               title="Instagram"
+               onclick="return false;">
+
+                <i class="bi bi-instagram"></i>
+            </a>
+
+            <a href="#"
+               aria-label="Facebook"
+               title="Facebook"
+               onclick="return false;">
+
+                <i class="bi bi-facebook"></i>
+            </a>
+
         </div>
 
     </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <!-- JavaScript do cadastro -->
+    <script th:src="@{/js/cadastro.js}"></script>
 
 </body>
-
 </html>

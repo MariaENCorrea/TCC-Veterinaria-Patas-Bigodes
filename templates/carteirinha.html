@@ -11,1319 +11,1113 @@
     <link rel="icon" th:href="@{/img/favicon.png}" type="image/png">
 
     <!-- Bootstrap -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
 
     <!-- CSS da carteirinha -->
     <link rel="stylesheet" th:href="@{/css/carteirinha.css}">
+    <link rel="stylesheet" href="../static/css/carteirinha.css">
 </head>
 
 <body>
 
-<!-- =====================================================
+    <!-- =====================================================
      CABEÇALHO
 ===================================================== -->
 
-<header class="cabecalho">
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <header class="cabecalho">
+        <nav class="navbar navbar-expand-lg navbar-dark">
 
-        <div class="container">
+            <div class="container">
 
-            <a class="navbar-brand d-flex align-items-center"
-               th:href="@{/}">
+                <a class="navbar-brand d-flex align-items-center" th:href="@{/}">
 
-                <img
-                    th:src="@{/img/logo.png}"
-                    alt="Logo Patas & Bigodes"
-                    class="logo me-2">
+                    <img th:src="@{/img/logo.png}" alt="Logo Patas & Bigodes" class="logo me-2">
 
-                <span class="fw-bold">
-                    PATAS & BIGODES
-                </span>
+                    <span class="fw-bold">
+                        PATAS & BIGODES
+                    </span>
 
-            </a>
+                </a>
 
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#menuPrincipal"
-                aria-controls="menuPrincipal"
-                aria-expanded="false"
-                aria-label="Abrir menu">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
 
-                <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
 
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/}">
+                                <i class="bi bi-house-door me-1"></i>
+                                Início
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/sobre}">
+                                Sobre nós
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" th:href="@{/carteirinha/{id}(id=${animal.id})}">
+                                Carteirinha
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- =====================================================
+     CONTEÚDO PRINCIPAL
+===================================================== -->
+
+    <main class="container py-5">
+
+        <!-- Título da página -->
+
+        <section class="titulo-pagina text-center mb-4">
+
+            <span class="icone-titulo">
+                <i class="bi bi-heart-pulse-fill"></i>
+            </span>
+
+            <h1>Carteirinha do Pet</h1>
+
+            <p>
+                Acompanhe as informações, vacinas e atualizações
+                médicas do seu melhor amigo.
+            </p>
+
+        </section>
+
+
+        <!-- Mensagens de sucesso ou erro -->
+
+        <div th:if="${mensagem != null}" class="alert alert-success alert-dismissible fade show" role="alert">
+
+            <i class="bi bi-check-circle-fill me-2"></i>
+
+            <span th:text="${mensagem}">
+                Operação realizada com sucesso.
+            </span>
+
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar">
             </button>
 
-            <div class="collapse navbar-collapse" id="menuPrincipal">
+        </div>
 
-                <ul class="navbar-nav ms-auto align-items-lg-center">
 
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/}">
-                            <i class="bi bi-house-door me-1"></i>
-                            Início
-                        </a>
-                    </li>
+        <div th:if="${erro != null}" class="alert alert-danger alert-dismissible fade show" role="alert">
 
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/sobre}">
-                            Sobre nós
-                        </a>
-                    </li>
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
 
-                    <li class="nav-item">
-                        <a class="nav-link active"
-                           th:href="@{/carteirinha/{id}(id=${animal.id})}">
-                            Carteirinha
-                        </a>
-                    </li>
+            <span th:text="${erro}">
+                Não foi possível realizar a operação.
+            </span>
 
-                </ul>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar">
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+         CARTEIRINHA DO ANIMAL
+    ================================================== -->
+
+        <section class="carteirinha">
+
+            <!-- Capa -->
+
+            <div class="capa">
+
+                <div class="capa-conteudo">
+
+                    <div class="icone-patinha">
+                        <i class="bi bi-heart-fill"></i>
+                    </div>
+
+                    <h2>Minha carteirinha</h2>
+
+                    <p>
+                        Saúde, cuidado e amor em cada etapa.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Informações do animal -->
+
+            <div class="area-informacoes">
+
+                <div class="row align-items-center g-4">
+
+                    <!-- Foto -->
+
+                    <div class="col-12 col-md-4 text-center">
+
+                        <div class="foto-pet-container">
+
+                            <img th:if="${animal.foto != null and !#strings.isEmpty(animal.foto)}"
+                                th:src="@{${animal.foto}}" th:alt="${'Foto de ' + animal.nome}" class="foto-pet">
+
+                            <img th:unless="${animal.foto != null and !#strings.isEmpty(animal.foto)}"
+                                th:src="@{/img/pantera.png}" th:alt="${'Foto de ' + animal.nome}" class="foto-pet">
+
+                        </div>
+
+                        <span class="badge badge-pet mt-3">
+
+                            <i class="bi bi-patch-check-fill me-1"></i>
+
+                            Carteirinha do pet
+
+                        </span>
+
+                    </div>
+
+
+                    <!-- Dados principais -->
+
+                    <div class="col-12 col-md-8">
+
+                        <div class="dados-pet">
+
+                            <span class="subtitulo">
+                                CONHEÇA NOSSO AMIGUINHO
+                            </span>
+
+                            <h2 id="nomePet" th:text="${animal.nome}">
+                                PANTERA
+                            </h2>
+
+                            <p class="texto-tutor">
+
+                                <i class="bi bi-person-fill"></i>
+
+                                Tutora:
+
+                                <strong id="tutor"
+                                    th:text="${animal.tutor != null ? animal.tutor.nome : 'Não informado'}">
+                                    Nycole
+                                </strong>
+
+                            </p>
+
+
+                            <div class="row g-3 mt-2">
+
+                                <!-- Raça -->
+
+                                <div class="col-12 col-sm-6">
+
+                                    <div class="informacao-item">
+
+                                        <i class="bi bi-paw-fill"></i>
+
+                                        <div>
+                                            <small>Raça</small>
+
+                                            <strong id="raca"
+                                                th:text="${animal.raca != null ? animal.raca : 'Não informada'}">
+                                                SRD
+                                            </strong>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Sexo -->
+
+                                <div class="col-12 col-sm-6">
+
+                                    <div class="informacao-item">
+
+                                        <i class="bi bi-gender-ambiguous"></i>
+
+                                        <div>
+                                            <small>Sexo</small>
+
+                                            <strong id="sexo"
+                                                th:text="${animal.sexo != null ? animal.sexo : 'Não informado'}">
+                                                Não informado
+                                            </strong>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Data de nascimento -->
+
+                                <div class="col-12 col-sm-6">
+
+                                    <div class="informacao-item">
+
+                                        <i class="bi bi-calendar-heart"></i>
+
+                                        <div>
+                                            <small>Nascimento</small>
+
+                                            <strong id="dataNascimento"
+                                                th:text="${animal.dataNascimento != null ? #temporals.format(animal.dataNascimento, 'dd/MM/yyyy') : 'Não informado'}">
+                                                Não informado
+                                            </strong>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Cor -->
+
+                                <div class="col-12 col-sm-6">
+
+                                    <div class="informacao-item">
+
+                                        <i class="bi bi-palette-fill"></i>
+
+                                        <div>
+                                            <small>Cor</small>
+
+                                            <strong id="cor"
+                                                th:text="${animal.cor != null ? animal.cor : 'Não informada'}">
+                                                Não informada
+                                            </strong>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Botões -->
+
+                            <div class="acoes-carteirinha mt-4">
+
+                                <button type="button" class="btn btn-atualizar" data-bs-toggle="modal"
+                                    data-bs-target="#modalAtualizarCadastro">
+
+                                    <i class="bi bi-pencil-square me-2"></i>
+
+                                    Atualizar cadastro
+
+                                </button>
+
+
+                                <button type="button" class="btn btn-imprimir">
+
+                                    <i class="bi bi-printer-fill me-2"></i>
+
+                                    Imprimir carteirinha
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+         RESUMO
+    ================================================== -->
+
+        <section class="resumo-carteirinha mt-4">
+
+            <div class="row g-3">
+
+                <!-- Atualizações médicas -->
+
+                <div class="col-12 col-md-6">
+
+                    <div class="card-resumo">
+
+                        <div class="icone-resumo">
+                            <i class="bi bi-clipboard2-pulse-fill"></i>
+                        </div>
+
+                        <div>
+
+                            <span>Atualizações médicas</span>
+
+                            <h3 th:text="${totalAtualizacoes != null ? totalAtualizacoes : 0}">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Vacinas -->
+
+                <div class="col-12 col-md-6">
+
+                    <div class="card-resumo">
+
+                        <div class="icone-resumo">
+                            <i class="bi bi-shield-plus"></i>
+                        </div>
+
+                        <div>
+
+                            <span>Registros de vacinas</span>
+
+                            <h3 th:text="${totalVacinas != null ? totalVacinas : 0}">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+         ABAS
+    ================================================== -->
+
+        <section class="historico-pet mt-5">
+
+            <div class="cabecalho-historico">
+
+                <h2>
+                    <i class="bi bi-journal-medical me-2"></i>
+                    Histórico do pet
+                </h2>
+
+                <p>
+                    Consulte os registros de saúde da sua companheira.
+                </p>
+
+            </div>
+
+
+            <!-- Navegação das abas -->
+
+            <ul class="nav nav-tabs abas-carteirinha" id="abasCarteirinha" role="tablist">
+
+                <li class="nav-item" role="presentation">
+
+                    <button class="nav-link active" id="abaAtualizacoes" data-bs-toggle="tab"
+                        data-bs-target="#conteudoAtualizacoes" type="button" role="tab"
+                        aria-controls="conteudoAtualizacoes" aria-selected="true">
+
+                        <i class="bi bi-clipboard2-pulse me-2"></i>
+
+                        Atualizações médicas
+
+                        <span class="contador" th:text="${totalAtualizacoes != null ? totalAtualizacoes : 0}">
+                            0
+                        </span>
+
+                    </button>
+
+                </li>
+
+
+                <li class="nav-item" role="presentation">
+
+                    <button class="nav-link" id="abaVacinas" data-bs-toggle="tab" data-bs-target="#conteudoVacinas"
+                        type="button" role="tab" aria-controls="conteudoVacinas" aria-selected="false">
+
+                        <i class="bi bi-shield-plus me-2"></i>
+
+                        Vacinas
+
+                        <span class="contador" th:text="${totalVacinas != null ? totalVacinas : 0}">
+                            0
+                        </span>
+
+                    </button>
+
+                </li>
+
+            </ul>
+
+
+            <!-- Conteúdo das abas -->
+
+            <div class="tab-content conteudo-abas" id="conteudoCarteirinha">
+
+
+                <!-- =============================================
+                 ABA: ATUALIZAÇÕES MÉDICAS
+            ============================================== -->
+
+                <div class="tab-pane fade show active" id="conteudoAtualizacoes" role="tabpanel"
+                    aria-labelledby="abaAtualizacoes" tabindex="0">
+
+                    <div class="ferramentas-historico">
+
+                        <div class="campo-busca">
+
+                            <i class="bi bi-search"></i>
+
+                            <input type="search" id="buscarAtualizacoes" class="form-control"
+                                placeholder="Buscar atualização médica..." aria-label="Buscar atualização médica">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="lista-atualizacoes">
+
+
+                        <!-- Registros cadastrados no banco -->
+
+                        <article class="atualizacao-item" th:each="atualizacao : ${atualizacoes}">
+
+                            <div class="data-atualizacao">
+
+                                <i class="bi bi-calendar-check-fill"></i>
+
+                                <span
+                                    th:text="${atualizacao.dataAtendimento != null ? #temporals.format(atualizacao.dataAtendimento, 'dd/MM/yyyy') : 'Data não informada'}">
+                                    10/10/2026
+                                </span>
+
+                            </div>
+
+
+                            <div class="card-historico">
+
+                                <div class="icone-historico">
+
+                                    <i class="bi bi-heart-pulse-fill"></i>
+
+                                </div>
+
+
+                                <div class="conteudo-historico">
+
+                                    <div class="titulo-historico">
+
+                                        <h3
+                                            th:text="${atualizacao.assunto != null ? atualizacao.assunto : 'Atendimento veterinário'}">
+                                            Atendimento veterinário
+                                        </h3>
+
+                                        <span class="badge-tipo"
+                                            th:text="${atualizacao.tipoAtendimento != null ? atualizacao.tipoAtendimento : 'Consulta'}">
+                                            Consulta
+                                        </span>
+
+                                    </div>
+
+
+                                    <p class="descricao-historico"
+                                        th:text="${atualizacao.descricao != null ? atualizacao.descricao : 'Nenhuma descrição informada.'}">
+                                        Descrição do atendimento.
+                                    </p>
+
+
+                                    <p class="veterinario">
+
+                                        <i class="bi bi-person-badge-fill me-1"></i>
+
+                                        Veterinário:
+
+                                        <strong
+                                            th:text="${atualizacao.veterinario != null ? atualizacao.veterinario : 'Não informado'}">
+                                            Não informado
+                                        </strong>
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Estado vazio -->
+
+                        <div class="estado-vazio" th:if="${#lists.isEmpty(atualizacoes)}">
+
+                            <i class="bi bi-clipboard2-x"></i>
+
+                            <h3>Nenhuma atualização médica</h3>
+
+                            <p>
+                                Ainda não existem registros médicos para este pet.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =============================================
+                 ABA: VACINAS
+            ============================================== -->
+
+                <div class="tab-pane fade" id="conteudoVacinas" role="tabpanel" aria-labelledby="abaVacinas"
+                    tabindex="0">
+
+                    <div class="ferramentas-historico">
+
+                        <div class="campo-busca">
+
+                            <i class="bi bi-search"></i>
+
+                            <input type="search" id="buscarVacinas" class="form-control" placeholder="Buscar vacina..."
+                                aria-label="Buscar vacina">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="lista-vacinas">
+
+
+                        <!-- Registros cadastrados no banco -->
+
+                        <article class="vacina-item" th:each="vacina : ${vacinas}">
+
+                            <div class="data-atualizacao">
+
+                                <i class="bi bi-calendar-check-fill"></i>
+
+                                <span
+                                    th:text="${vacina.dataAplicacao != null ? #temporals.format(vacina.dataAplicacao, 'dd/MM/yyyy') : 'Data não informada'}">
+                                    10/10/2026
+                                </span>
+
+                            </div>
+
+
+                            <div class="card-historico">
+
+                                <div class="icone-historico icone-vacina">
+
+                                    <i class="bi bi-shield-fill-check"></i>
+
+                                </div>
+
+
+                                <div class="conteudo-historico">
+
+                                    <div class="titulo-historico">
+
+                                        <h3 th:text="${vacina.nome}">
+                                            Nome da vacina
+                                        </h3>
+
+
+                                        <span class="badge-tipo"
+                                            th:text="${vacina.status != null ? vacina.status : 'Registrada'}">
+                                            Registrada
+                                        </span>
+
+                                    </div>
+
+
+                                    <p class="descricao-historico"
+                                        th:text="${vacina.descricao != null ? vacina.descricao : 'Nenhuma descrição informada.'}">
+                                        Descrição da vacina.
+                                    </p>
+
+
+                                    <p class="proxima-dose">
+
+                                        <i class="bi bi-calendar-event me-1"></i>
+
+                                        Próxima dose:
+
+                                        <strong
+                                            th:text="${vacina.proximaDose != null ? #temporals.format(vacina.proximaDose, 'dd/MM/yyyy') : 'Não informada'}">
+                                            Não informada
+                                        </strong>
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Estado vazio -->
+
+                        <div class="estado-vazio" th:if="${#lists.isEmpty(vacinas)}">
+
+                            <i class="bi bi-shield-x"></i>
+
+                            <h3>Nenhuma vacina registrada</h3>
+
+                            <p>
+                                Ainda não existem vacinas cadastradas para este pet.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+         AVISO
+    ================================================== -->
+
+        <section class="aviso-carteirinha mt-4">
+
+            <i class="bi bi-info-circle-fill"></i>
+
+            <p>
+                Mantenha os dados da carteirinha atualizados.
+                Para orientações sobre vacinas, consultas e tratamentos,
+                procure um médico-veterinário.
+            </p>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+     MODAL: ATUALIZAR CADASTRO
+===================================================== -->
+
+    <div class="modal fade" id="modalAtualizarCadastro" tabindex="-1" aria-labelledby="tituloModalCadastro"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+
+            <div class="modal-content">
+
+
+                <!-- Cabeçalho do modal -->
+
+                <div class="modal-header">
+
+                    <div>
+
+                        <h2 class="modal-title" id="tituloModalCadastro">
+
+                            <i class="bi bi-pencil-square me-2"></i>
+
+                            Atualizar cadastro
+
+                        </h2>
+
+                        <p class="mb-0">
+                            Altere os dados do pet e de sua tutora.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar">
+                    </button>
+
+                </div>
+
+
+
+                <!-- Formulário -->
+
+                <form id="formCadastro" th:action="@{/carteirinha/{id}/atualizar(id=${animal.id})}" method="post">
+
+
+                    <div class="modal-body">
+
+                        <!-- Proteção CSRF para projetos com Spring Security -->
+                        <!-- Se não utilizar Spring Security, este campo não é necessário. -->
+
+                        <input type="hidden" th:if="${_csrf != null}" th:name="${_csrf.parameterName}"
+                            th:value="${_csrf.token}">
+
+
+                        <!-- Dados do animal -->
+
+                        <div class="grupo-formulario">
+
+                            <h3>
+                                <i class="bi bi-paw-fill me-2"></i>
+                                Dados do animal
+                            </h3>
+
+
+                            <div class="row g-3">
+
+
+                                <!-- Nome -->
+
+                                <div class="col-12 col-md-6">
+
+                                    <label for="inputNomeAnimal" class="form-label">
+
+                                        Nome do animal
+
+                                    </label>
+
+                                    <input type="text" class="form-control" id="inputNomeAnimal" name="nome"
+                                        th:value="${animal.nome}" maxlength="100" required>
+
+                                </div>
+
+
+                                <!-- Data de nascimento -->
+
+                                <div class="col-12 col-md-6">
+
+                                    <label for="inputDataNascimento" class="form-label">
+
+                                        Data de nascimento
+
+                                    </label>
+
+                                    <input type="date" class="form-control" id="inputDataNascimento"
+                                        name="dataNascimento"
+                                        th:value="${animal.dataNascimento != null ? #temporals.format(animal.dataNascimento, 'yyyy-MM-dd') : ''}">
+
+                                </div>
+
+
+                                <!-- Sexo -->
+
+                                <div class="col-12 col-md-6">
+
+                                    <label for="inputSexoAnimal" class="form-label">
+
+                                        Sexo
+
+                                    </label>
+
+                                    <select class="form-select" id="inputSexoAnimal" name="sexo">
+
+                                        <option value="">
+                                            Selecione
+                                        </option>
+
+                                        <option value="Fêmea" th:selected="${animal.sexo == 'Fêmea'}">
+                                            Fêmea
+                                        </option>
+
+                                        <option value="Macho" th:selected="${animal.sexo == 'Macho'}">
+                                            Macho
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <!-- Raça -->
+
+                                <div class="col-12 col-md-6">
+
+                                    <label for="inputRaca" class="form-label">
+
+                                        Raça
+
+                                    </label>
+
+                                    <input type="text" class="form-control" id="inputRaca" name="raca"
+                                        th:value="${animal.raca}" maxlength="100">
+
+                                </div>
+
+
+                                <!-- Cor -->
+
+                                <div class="col-12">
+
+                                    <label for="inputCorAnimal" class="form-label">
+
+                                        Cor do animal
+
+                                    </label>
+
+                                    <input type="text" class="form-control" id="inputCorAnimal" name="cor"
+                                        th:value="${animal.cor}" maxlength="100">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Dados da tutora -->
+
+                        <div class="grupo-formulario mt-4">
+
+                            <h3>
+                                <i class="bi bi-person-fill me-2"></i>
+                                Dados da tutora
+                            </h3>
+
+
+                            <div class="row g-3">
+
+
+                                <!-- Nome da tutora -->
+
+                                <div class="col-12 col-md-6">
+
+                                    <label for="inputNomeProprietario" class="form-label">
+
+                                        Nome completo
+
+                                    </label>
+
+                                    <input type="text" class="form-control" id="inputNomeProprietario" name="nomeTutor"
+                                        th:value="${animal.tutor != null ? animal.tutor.nome : ''}" maxlength="150"
+                                        required>
+
+                                </div>
+
+
+                                <!-- CPF -->
+
+                                <div class="col-12 col-md-6">
+
+                                    <label for="inputCpf" class="form-label">
+
+                                        CPF
+                                    </label>
+
+                                    <input type="text" class="form-control" id="inputCpf" name="cpf"
+                                        th:value="${animal.tutor != null ? animal.tutor.cpf : ''}"
+                                        placeholder="000.000.000-00" maxlength="14" inputmode="numeric">
+
+                                </div>
+
+
+                                <!-- Celular -->
+
+                                <div class="col-12 col-md-6">
+
+                                    <label for="inputCelular" class="form-label">
+
+                                        Celular
+                                    </label>
+
+                                    <input type="tel" class="form-control" id="inputCelular" name="celular"
+                                        th:value="${animal.tutor != null ? animal.tutor.celular : ''}"
+                                        placeholder="(00) 00000-0000" maxlength="15" inputmode="tel">
+
+                                </div>
+
+
+                                <!-- E-mail -->
+
+                                <div class="col-12 col-md-6">
+
+                                    <label for="inputEmail" class="form-label">
+
+                                        E-mail
+                                    </label>
+
+                                    <input type="email" class="form-control" id="inputEmail" name="email"
+                                        th:value="${animal.tutor != null ? animal.tutor.email : ''}" maxlength="150">
+
+                                </div>
+
+
+                                <!-- Cidade -->
+
+                                <div class="col-12 col-md-6">
+
+                                    <label for="inputCidade" class="form-label">
+
+                                        Cidade
+                                    </label>
+
+                                    <input type="text" class="form-control" id="inputCidade" name="cidade"
+                                        th:value="${animal.tutor != null ? animal.tutor.cidade : ''}" maxlength="100">
+
+                                </div>
+
+
+                                <!-- Bairro -->
+
+                                <div class="col-12 col-md-6">
+
+                                    <label for="inputBairro" class="form-label">
+
+                                        Bairro
+                                    </label>
+
+                                    <input type="text" class="form-control" id="inputBairro" name="bairro"
+                                        th:value="${animal.tutor != null ? animal.tutor.bairro : ''}" maxlength="100">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Mensagem de validação do JavaScript -->
+
+                        <div id="mensagemCarteirinha" class="mt-3" aria-live="polite">
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Rodapé do modal -->
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+
+                            <i class="bi bi-x-circle me-1"></i>
+
+                            Cancelar
+
+                        </button>
+
+
+                        <button type="submit" class="btn btn-atualizar" id="btnSalvarCadastro">
+
+                            <i class="bi bi-check-circle me-1"></i>
+
+                            Salvar alterações
+
+                        </button>
+
+                    </div>
+
+                </form>
 
             </div>
 
         </div>
 
-    </nav>
-</header>
+    </div>
 
 
-<!-- =====================================================
-     CONTEÚDO PRINCIPAL
+
+    <!-- =====================================================
+     RODAPÉ
 ===================================================== -->
 
-<main class="container py-5">
+    <footer class="rodape">
 
-    <!-- Título da página -->
+        <div class="container">
 
-    <section class="titulo-pagina text-center mb-4">
+            <div class="rodape-conteudo">
 
-        <span class="icone-titulo">
-            <i class="bi bi-heart-pulse-fill"></i>
-        </span>
+                <div class="rodape-marca">
 
-        <h1>Carteirinha do Pet</h1>
+                    <i class="bi bi-heart-pulse-fill"></i>
 
-        <p>
-            Acompanhe as informações, vacinas e atualizações
-            médicas do seu melhor amigo.
-        </p>
+                    <span>PATAS & BIGODES</span>
 
-    </section>
-
-
-    <!-- Mensagens de sucesso ou erro -->
-
-    <div
-        th:if="${mensagem != null}"
-        class="alert alert-success alert-dismissible fade show"
-        role="alert">
-
-        <i class="bi bi-check-circle-fill me-2"></i>
-
-        <span th:text="${mensagem}">
-            Operação realizada com sucesso.
-        </span>
-
-        <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="alert"
-            aria-label="Fechar">
-        </button>
-
-    </div>
-
-
-    <div
-        th:if="${erro != null}"
-        class="alert alert-danger alert-dismissible fade show"
-        role="alert">
-
-        <i class="bi bi-exclamation-triangle-fill me-2"></i>
-
-        <span th:text="${erro}">
-            Não foi possível realizar a operação.
-        </span>
-
-        <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="alert"
-            aria-label="Fechar">
-        </button>
-
-    </div>
-
-
-    <!-- =================================================
-         CARTEIRINHA DO ANIMAL
-    ================================================== -->
-
-    <section class="carteirinha">
-
-        <!-- Capa -->
-
-        <div class="capa">
-
-            <div class="capa-conteudo">
-
-                <div class="icone-patinha">
-                    <i class="bi bi-heart-fill"></i>
                 </div>
 
-                <h2>Minha carteirinha</h2>
 
                 <p>
-                    Saúde, cuidado e amor em cada etapa.
+                    Cuidado, carinho e saúde para quem faz parte da família.
+                </p>
+
+                <p>
+                    Cuidado, carinho e saúde para quem faz parte da família.
+                </p>
+
+                <div class="rodape-redes">
+
+                    <a href="#" aria-label="Instagram" title="Instagram">
+
+                        <i class="bi bi-instagram"></i>
+
+                    </a>
+
+
+                    <a href="#" aria-label="Facebook" title="Facebook">
+
+                        <i class="bi bi-facebook"></i>
+
+                    </a>
+
+                </div>
+
+
+                <hr>
+
+
+                <p class="copyright">
+
+                    © 2026 Patas & Bigodes 🐾
+
+                    Todos os direitos reservados.
+
                 </p>
 
             </div>
 
         </div>
 
+    </footer>
 
-        <!-- Informações do animal -->
 
-        <div class="area-informacoes">
 
-            <div class="row align-items-center g-4">
-
-                <!-- Foto -->
-
-                <div class="col-12 col-md-4 text-center">
-
-                    <div class="foto-pet-container">
-
-                        <img
-                            th:if="${animal.foto != null and !#strings.isEmpty(animal.foto)}"
-                            th:src="@{${animal.foto}}"
-                            th:alt="${'Foto de ' + animal.nome}"
-                            class="foto-pet">
-
-                        <img
-                            th:unless="${animal.foto != null and !#strings.isEmpty(animal.foto)}"
-                            th:src="@{/img/pantera.png}"
-                            th:alt="${'Foto de ' + animal.nome}"
-                            class="foto-pet">
-
-                    </div>
-
-                    <span class="badge badge-pet mt-3">
-
-                        <i class="bi bi-patch-check-fill me-1"></i>
-
-                        Carteirinha do pet
-
-                    </span>
-
-                </div>
-
-
-                <!-- Dados principais -->
-
-                <div class="col-12 col-md-8">
-
-                    <div class="dados-pet">
-
-                        <span class="subtitulo">
-                            CONHEÇA NOSSO AMIGUINHO
-                        </span>
-
-                        <h2 id="nomePet"
-                            th:text="${animal.nome}">
-                            PANTERA
-                        </h2>
-
-                        <p class="texto-tutor">
-
-                            <i class="bi bi-person-fill"></i>
-
-                            Tutora:
-
-                            <strong
-                                id="tutor"
-                                th:text="${animal.tutor != null ? animal.tutor.nome : 'Não informado'}">
-                                Nycole
-                            </strong>
-
-                        </p>
-
-
-                        <div class="row g-3 mt-2">
-
-                            <!-- Raça -->
-
-                            <div class="col-12 col-sm-6">
-
-                                <div class="informacao-item">
-
-                                    <i class="bi bi-paw-fill"></i>
-
-                                    <div>
-                                        <small>Raça</small>
-
-                                        <strong
-                                            id="raca"
-                                            th:text="${animal.raca != null ? animal.raca : 'Não informada'}">
-                                            SRD
-                                        </strong>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                            <!-- Sexo -->
-
-                            <div class="col-12 col-sm-6">
-
-                                <div class="informacao-item">
-
-                                    <i class="bi bi-gender-ambiguous"></i>
-
-                                    <div>
-                                        <small>Sexo</small>
-
-                                        <strong
-                                            id="sexo"
-                                            th:text="${animal.sexo != null ? animal.sexo : 'Não informado'}">
-                                            Não informado
-                                        </strong>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                            <!-- Data de nascimento -->
-
-                            <div class="col-12 col-sm-6">
-
-                                <div class="informacao-item">
-
-                                    <i class="bi bi-calendar-heart"></i>
-
-                                    <div>
-                                        <small>Nascimento</small>
-
-                                        <strong
-                                            id="dataNascimento"
-                                            th:text="${animal.dataNascimento != null ? #temporals.format(animal.dataNascimento, 'dd/MM/yyyy') : 'Não informado'}">
-                                            Não informado
-                                        </strong>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                            <!-- Cor -->
-
-                            <div class="col-12 col-sm-6">
-
-                                <div class="informacao-item">
-
-                                    <i class="bi bi-palette-fill"></i>
-
-                                    <div>
-                                        <small>Cor</small>
-
-                                        <strong
-                                            id="cor"
-                                            th:text="${animal.cor != null ? animal.cor : 'Não informada'}">
-                                            Não informada
-                                        </strong>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Botões -->
-
-                        <div class="acoes-carteirinha mt-4">
-
-                            <button
-                                type="button"
-                                class="btn btn-atualizar"
-                                data-bs-toggle="modal"
-                                data-bs-target="#modalAtualizarCadastro">
-
-                                <i class="bi bi-pencil-square me-2"></i>
-
-                                Atualizar cadastro
-
-                            </button>
-
-
-                            <button
-                                type="button"
-                                class="btn btn-imprimir">
-
-                                <i class="bi bi-printer-fill me-2"></i>
-
-                                Imprimir carteirinha
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         RESUMO
-    ================================================== -->
-
-    <section class="resumo-carteirinha mt-4">
-
-        <div class="row g-3">
-
-            <!-- Atualizações médicas -->
-
-            <div class="col-12 col-md-6">
-
-                <div class="card-resumo">
-
-                    <div class="icone-resumo">
-                        <i class="bi bi-clipboard2-pulse-fill"></i>
-                    </div>
-
-                    <div>
-
-                        <span>Atualizações médicas</span>
-
-                        <h3
-                            th:text="${totalAtualizacoes != null ? totalAtualizacoes : 0}">
-                            0
-                        </h3>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Vacinas -->
-
-            <div class="col-12 col-md-6">
-
-                <div class="card-resumo">
-
-                    <div class="icone-resumo">
-                        <i class="bi bi-shield-plus"></i>
-                    </div>
-
-                    <div>
-
-                        <span>Registros de vacinas</span>
-
-                        <h3
-                            th:text="${totalVacinas != null ? totalVacinas : 0}">
-                            0
-                        </h3>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         ABAS
-    ================================================== -->
-
-    <section class="historico-pet mt-5">
-
-        <div class="cabecalho-historico">
-
-            <h2>
-                <i class="bi bi-journal-medical me-2"></i>
-                Histórico do pet
-            </h2>
-
-            <p>
-                Consulte os registros de saúde da sua companheira.
-            </p>
-
-        </div>
-
-
-        <!-- Navegação das abas -->
-
-        <ul class="nav nav-tabs abas-carteirinha"
-            id="abasCarteirinha"
-            role="tablist">
-
-            <li class="nav-item" role="presentation">
-
-                <button
-                    class="nav-link active"
-                    id="abaAtualizacoes"
-                    data-bs-toggle="tab"
-                    data-bs-target="#conteudoAtualizacoes"
-                    type="button"
-                    role="tab"
-                    aria-controls="conteudoAtualizacoes"
-                    aria-selected="true">
-
-                    <i class="bi bi-clipboard2-pulse me-2"></i>
-
-                    Atualizações médicas
-
-                    <span
-                        class="contador"
-                        th:text="${totalAtualizacoes != null ? totalAtualizacoes : 0}">
-                        0
-                    </span>
-
-                </button>
-
-            </li>
-
-
-            <li class="nav-item" role="presentation">
-
-                <button
-                    class="nav-link"
-                    id="abaVacinas"
-                    data-bs-toggle="tab"
-                    data-bs-target="#conteudoVacinas"
-                    type="button"
-                    role="tab"
-                    aria-controls="conteudoVacinas"
-                    aria-selected="false">
-
-                    <i class="bi bi-shield-plus me-2"></i>
-
-                    Vacinas
-
-                    <span
-                        class="contador"
-                        th:text="${totalVacinas != null ? totalVacinas : 0}">
-                        0
-                    </span>
-
-                </button>
-
-            </li>
-
-        </ul>
-
-
-        <!-- Conteúdo das abas -->
-
-        <div class="tab-content conteudo-abas" id="conteudoCarteirinha">
-
-
-            <!-- =============================================
-                 ABA: ATUALIZAÇÕES MÉDICAS
-            ============================================== -->
-
-            <div
-                class="tab-pane fade show active"
-                id="conteudoAtualizacoes"
-                role="tabpanel"
-                aria-labelledby="abaAtualizacoes"
-                tabindex="0">
-
-                <div class="ferramentas-historico">
-
-                    <div class="campo-busca">
-
-                        <i class="bi bi-search"></i>
-
-                        <input
-                            type="search"
-                            id="buscarAtualizacoes"
-                            class="form-control"
-                            placeholder="Buscar atualização médica..."
-                            aria-label="Buscar atualização médica">
-
-                    </div>
-
-                </div>
-
-
-                <div class="lista-atualizacoes">
-
-
-                    <!-- Registros cadastrados no banco -->
-
-                    <article
-                        class="atualizacao-item"
-                        th:each="atualizacao : ${atualizacoes}">
-
-                        <div class="data-atualizacao">
-
-                            <i class="bi bi-calendar-check-fill"></i>
-
-                            <span
-                                th:text="${atualizacao.dataAtendimento != null ? #temporals.format(atualizacao.dataAtendimento, 'dd/MM/yyyy') : 'Data não informada'}">
-                                10/10/2026
-                            </span>
-
-                        </div>
-
-
-                        <div class="card-historico">
-
-                            <div class="icone-historico">
-
-                                <i class="bi bi-heart-pulse-fill"></i>
-
-                            </div>
-
-
-                            <div class="conteudo-historico">
-
-                                <div class="titulo-historico">
-
-                                    <h3
-                                        th:text="${atualizacao.assunto != null ? atualizacao.assunto : 'Atendimento veterinário'}">
-                                        Atendimento veterinário
-                                    </h3>
-
-                                    <span
-                                        class="badge-tipo"
-                                        th:text="${atualizacao.tipoAtendimento != null ? atualizacao.tipoAtendimento : 'Consulta'}">
-                                        Consulta
-                                    </span>
-
-                                </div>
-
-
-                                <p
-                                    class="descricao-historico"
-                                    th:text="${atualizacao.descricao != null ? atualizacao.descricao : 'Nenhuma descrição informada.'}">
-                                    Descrição do atendimento.
-                                </p>
-
-
-                                <p class="veterinario">
-
-                                    <i class="bi bi-person-badge-fill me-1"></i>
-
-                                    Veterinário:
-
-                                    <strong
-                                        th:text="${atualizacao.veterinario != null ? atualizacao.veterinario : 'Não informado'}">
-                                        Não informado
-                                    </strong>
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Estado vazio -->
-
-                    <div
-                        class="estado-vazio"
-                        th:if="${#lists.isEmpty(atualizacoes)}">
-
-                        <i class="bi bi-clipboard2-x"></i>
-
-                        <h3>Nenhuma atualização médica</h3>
-
-                        <p>
-                            Ainda não existem registros médicos para este pet.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =============================================
-                 ABA: VACINAS
-            ============================================== -->
-
-            <div
-                class="tab-pane fade"
-                id="conteudoVacinas"
-                role="tabpanel"
-                aria-labelledby="abaVacinas"
-                tabindex="0">
-
-                <div class="ferramentas-historico">
-
-                    <div class="campo-busca">
-
-                        <i class="bi bi-search"></i>
-
-                        <input
-                            type="search"
-                            id="buscarVacinas"
-                            class="form-control"
-                            placeholder="Buscar vacina..."
-                            aria-label="Buscar vacina">
-
-                    </div>
-
-                </div>
-
-
-                <div class="lista-vacinas">
-
-
-                    <!-- Registros cadastrados no banco -->
-
-                    <article
-                        class="vacina-item"
-                        th:each="vacina : ${vacinas}">
-
-                        <div class="data-atualizacao">
-
-                            <i class="bi bi-calendar-check-fill"></i>
-
-                            <span
-                                th:text="${vacina.dataAplicacao != null ? #temporals.format(vacina.dataAplicacao, 'dd/MM/yyyy') : 'Data não informada'}">
-                                10/10/2026
-                            </span>
-
-                        </div>
-
-
-                        <div class="card-historico">
-
-                            <div class="icone-historico icone-vacina">
-
-                                <i class="bi bi-shield-fill-check"></i>
-
-                            </div>
-
-
-                            <div class="conteudo-historico">
-
-                                <div class="titulo-historico">
-
-                                    <h3
-                                        th:text="${vacina.nome}">
-                                        Nome da vacina
-                                    </h3>
-
-
-                                    <span
-                                        class="badge-tipo"
-                                        th:text="${vacina.status != null ? vacina.status : 'Registrada'}">
-                                        Registrada
-                                    </span>
-
-                                </div>
-
-
-                                <p
-                                    class="descricao-historico"
-                                    th:text="${vacina.descricao != null ? vacina.descricao : 'Nenhuma descrição informada.'}">
-                                    Descrição da vacina.
-                                </p>
-
-
-                                <p class="proxima-dose">
-
-                                    <i class="bi bi-calendar-event me-1"></i>
-
-                                    Próxima dose:
-
-                                    <strong
-                                        th:text="${vacina.proximaDose != null ? #temporals.format(vacina.proximaDose, 'dd/MM/yyyy') : 'Não informada'}">
-                                        Não informada
-                                    </strong>
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Estado vazio -->
-
-                    <div
-                        class="estado-vazio"
-                        th:if="${#lists.isEmpty(vacinas)}">
-
-                        <i class="bi bi-shield-x"></i>
-
-                        <h3>Nenhuma vacina registrada</h3>
-
-                        <p>
-                            Ainda não existem vacinas cadastradas para este pet.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         AVISO
-    ================================================== -->
-
-    <section class="aviso-carteirinha mt-4">
-
-        <i class="bi bi-info-circle-fill"></i>
-
-        <p>
-            Mantenha os dados da carteirinha atualizados.
-            Para orientações sobre vacinas, consultas e tratamentos,
-            procure um médico-veterinário.
-        </p>
-
-    </section>
-
-</main>
-
-
-
-<!-- =====================================================
-     MODAL: ATUALIZAR CADASTRO
-===================================================== -->
-
-<div
-    class="modal fade"
-    id="modalAtualizarCadastro"
-    tabindex="-1"
-    aria-labelledby="tituloModalCadastro"
-    aria-hidden="true">
-
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-
-        <div class="modal-content">
-
-
-            <!-- Cabeçalho do modal -->
-
-            <div class="modal-header">
-
-                <div>
-
-                    <h2
-                        class="modal-title"
-                        id="tituloModalCadastro">
-
-                        <i class="bi bi-pencil-square me-2"></i>
-
-                        Atualizar cadastro
-
-                    </h2>
-
-                    <p class="mb-0">
-                        Altere os dados do pet e de sua tutora.
-                    </p>
-
-                </div>
-
-
-                <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Fechar">
-                </button>
-
-            </div>
-
-
-
-            <!-- Formulário -->
-
-            <form
-                id="formCadastro"
-                th:action="@{/carteirinha/{id}/atualizar(id=${animal.id})}"
-                method="post">
-
-
-                <div class="modal-body">
-
-                    <!-- Proteção CSRF para projetos com Spring Security -->
-                    <!-- Se não utilizar Spring Security, este campo não é necessário. -->
-
-                    <input
-                        type="hidden"
-                        th:if="${_csrf != null}"
-                        th:name="${_csrf.parameterName}"
-                        th:value="${_csrf.token}">
-
-
-                    <!-- Dados do animal -->
-
-                    <div class="grupo-formulario">
-
-                        <h3>
-                            <i class="bi bi-paw-fill me-2"></i>
-                            Dados do animal
-                        </h3>
-
-
-                        <div class="row g-3">
-
-
-                            <!-- Nome -->
-
-                            <div class="col-12 col-md-6">
-
-                                <label
-                                    for="inputNomeAnimal"
-                                    class="form-label">
-
-                                    Nome do animal
-
-                                </label>
-
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputNomeAnimal"
-                                    name="nome"
-                                    th:value="${animal.nome}"
-                                    maxlength="100"
-                                    required>
-
-                            </div>
-
-
-                            <!-- Data de nascimento -->
-
-                            <div class="col-12 col-md-6">
-
-                                <label
-                                    for="inputDataNascimento"
-                                    class="form-label">
-
-                                    Data de nascimento
-
-                                </label>
-
-                                <input
-                                    type="date"
-                                    class="form-control"
-                                    id="inputDataNascimento"
-                                    name="dataNascimento"
-                                    th:value="${animal.dataNascimento != null ? #temporals.format(animal.dataNascimento, 'yyyy-MM-dd') : ''}">
-
-                            </div>
-
-
-                            <!-- Sexo -->
-
-                            <div class="col-12 col-md-6">
-
-                                <label
-                                    for="inputSexoAnimal"
-                                    class="form-label">
-
-                                    Sexo
-
-                                </label>
-
-                                <select
-                                    class="form-select"
-                                    id="inputSexoAnimal"
-                                    name="sexo">
-
-                                    <option value="">
-                                        Selecione
-                                    </option>
-
-                                    <option
-                                        value="Fêmea"
-                                        th:selected="${animal.sexo == 'Fêmea'}">
-                                        Fêmea
-                                    </option>
-
-                                    <option
-                                        value="Macho"
-                                        th:selected="${animal.sexo == 'Macho'}">
-                                        Macho
-                                    </option>
-
-                                </select>
-
-                            </div>
-
-
-                            <!-- Raça -->
-
-                            <div class="col-12 col-md-6">
-
-                                <label
-                                    for="inputRaca"
-                                    class="form-label">
-
-                                    Raça
-
-                                </label>
-
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputRaca"
-                                    name="raca"
-                                    th:value="${animal.raca}"
-                                    maxlength="100">
-
-                            </div>
-
-
-                            <!-- Cor -->
-
-                            <div class="col-12">
-
-                                <label
-                                    for="inputCorAnimal"
-                                    class="form-label">
-
-                                    Cor do animal
-
-                                </label>
-
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputCorAnimal"
-                                    name="cor"
-                                    th:value="${animal.cor}"
-                                    maxlength="100">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- Dados da tutora -->
-
-                    <div class="grupo-formulario mt-4">
-
-                        <h3>
-                            <i class="bi bi-person-fill me-2"></i>
-                            Dados da tutora
-                        </h3>
-
-
-                        <div class="row g-3">
-
-
-                            <!-- Nome da tutora -->
-
-                            <div class="col-12 col-md-6">
-
-                                <label
-                                    for="inputNomeProprietario"
-                                    class="form-label">
-
-                                    Nome completo
-
-                                </label>
-
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputNomeProprietario"
-                                    name="nomeTutor"
-                                    th:value="${animal.tutor != null ? animal.tutor.nome : ''}"
-                                    maxlength="150"
-                                    required>
-
-                            </div>
-
-
-                            <!-- CPF -->
-
-                            <div class="col-12 col-md-6">
-
-                                <label
-                                    for="inputCpf"
-                                    class="form-label">
-
-                                    CPF
-                                </label>
-
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputCpf"
-                                    name="cpf"
-                                    th:value="${animal.tutor != null ? animal.tutor.cpf : ''}"
-                                    placeholder="000.000.000-00"
-                                    maxlength="14"
-                                    inputmode="numeric">
-
-                            </div>
-
-
-                            <!-- Celular -->
-
-                            <div class="col-12 col-md-6">
-
-                                <label
-                                    for="inputCelular"
-                                    class="form-label">
-
-                                    Celular
-                                </label>
-
-                                <input
-                                    type="tel"
-                                    class="form-control"
-                                    id="inputCelular"
-                                    name="celular"
-                                    th:value="${animal.tutor != null ? animal.tutor.celular : ''}"
-                                    placeholder="(00) 00000-0000"
-                                    maxlength="15"
-                                    inputmode="tel">
-
-                            </div>
-
-
-                            <!-- E-mail -->
-
-                            <div class="col-12 col-md-6">
-
-                                <label
-                                    for="inputEmail"
-                                    class="form-label">
-
-                                    E-mail
-                                </label>
-
-                                <input
-                                    type="email"
-                                    class="form-control"
-                                    id="inputEmail"
-                                    name="email"
-                                    th:value="${animal.tutor != null ? animal.tutor.email : ''}"
-                                    maxlength="150">
-
-                            </div>
-
-
-                            <!-- Cidade -->
-
-                            <div class="col-12 col-md-6">
-
-                                <label
-                                    for="inputCidade"
-                                    class="form-label">
-
-                                    Cidade
-                                </label>
-
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputCidade"
-                                    name="cidade"
-                                    th:value="${animal.tutor != null ? animal.tutor.cidade : ''}"
-                                    maxlength="100">
-
-                            </div>
-
-
-                            <!-- Bairro -->
-
-                            <div class="col-12 col-md-6">
-
-                                <label
-                                    for="inputBairro"
-                                    class="form-label">
-
-                                    Bairro
-                                </label>
-
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputBairro"
-                                    name="bairro"
-                                    th:value="${animal.tutor != null ? animal.tutor.bairro : ''}"
-                                    maxlength="100">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Mensagem de validação do JavaScript -->
-
-                    <div
-                        id="mensagemCarteirinha"
-                        class="mt-3"
-                        aria-live="polite">
-                    </div>
-
-                </div>
-
-
-
-                <!-- Rodapé do modal -->
-
-                <div class="modal-footer">
-
-                    <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal">
-
-                        <i class="bi bi-x-circle me-1"></i>
-
-                        Cancelar
-
-                    </button>
-
-
-                    <button
-                        type="submit"
-                        class="btn btn-atualizar"
-                        id="btnSalvarCadastro">
-
-                        <i class="bi bi-check-circle me-1"></i>
-
-                        Salvar alterações
-
-                    </button>
-
-                </div>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     RODAPÉ
-===================================================== -->
-
-<footer class="rodape">
-
-    <div class="container">
-
-        <div class="rodape-conteudo">
-
-            <div class="rodape-marca">
-
-                <i class="bi bi-heart-pulse-fill"></i>
-
-                <span>PATAS & BIGODES</span>
-
-            </div>
-
-
-            <p>
-                Cuidado, carinho e saúde para quem faz parte da família.
-            </p>
-
-            <p>
-                Cuidado, carinho e saúde para quem faz parte da família.
-            </p>
-
-            <div class="rodape-redes">
-
-                <a
-                    href="#"
-                    aria-label="Instagram"
-                    title="Instagram">
-
-                    <i class="bi bi-instagram"></i>
-
-                </a>
-
-
-                <a
-                    href="#"
-                    aria-label="Facebook"
-                    title="Facebook">
-
-                    <i class="bi bi-facebook"></i>
-
-                </a>
-
-            </div>
-
-
-            <hr>
-
-
-            <p class="copyright">
-
-                © 2026 Patas & Bigodes 🐾
-
-                Todos os direitos reservados.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</footer>
-
-
-
-<!-- =====================================================
+    <!-- =====================================================
      SCRIPTS
 ===================================================== -->
 
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
 
-<script th:src="@{/js/carteirinha.js}"></script>
+    <script th:src="@{/js/carteirinha.js}"></script>
 
 </body>
+
 </html>
